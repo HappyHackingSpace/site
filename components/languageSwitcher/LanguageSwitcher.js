@@ -15,7 +15,7 @@ const LanguageSwitcher = () => {
 
   return (
     <Flex sx={{ gap: 2, alignItems: 'center' }}>
-      <Text sx={{ fontSize: 1, fontWeight: 'bold' }}>Language:</Text>
+      
       {languages.map((lang) => (
         <Button
           key={lang.code}
