@@ -20,72 +20,85 @@ import Nav from '../components/nav'
 import Footer from '../components/footer'
 import { startCase } from 'lodash'
 
-export const Logo = ({ name }) => (
-  <Card variant="sunken" sx={{ p: [3, 3] }}>
-    <Image
-      src={`https://assets.hackclub.com/${name}.svg`}
-      sx={{ width: '100%', height: 96, mb: 1 }}
-      alt={startCase(name)}
-    />
-    <Text
-      as="div"
-      variant="subheadline"
-      sx={{ fontSize: [2, 3], mt: 2, mb: 2 }}
-    >
-      {startCase(name)
-        .replace('Flag Orpheus', 'Orpheus Flag –')
-        .replace('Bw', ' (B/W)')
-        .replace('Hcb', 'HCB')}
-    </Text>
-    <Grid
-      columns="repeat(3, 1fr)"
-      gap={3}
-      sx={{
-        alignItems: 'center',
-        a: {
-          bg: 'elevated',
-          color: 'cyan',
-          boxShadow: 'none',
-          py: 1,
-          ':hover,:focus': { bg: 'cyan', color: 'white' }
-        }
-      }}
-    >
-      <Button as="a" href={`https://assets.hackclub.com/${name}.svg`}>
-        SVG
-      </Button>
-      <Button as="a" href={`https://assets.hackclub.com/${name}.png`}>
-        PNG
-      </Button>
-      <Button as="a" href={`https://assets.hackclub.com/${name}.pdf`}>
-        PDF
-      </Button>
-    </Grid>
-    <Input
-      as="textarea"
-      rows={2}
-      value={`https://assets.hackclub.com/${name}.svg`}
-      sx={{ mt: 2, py: 1 }}
-      disabled
-    />
-  </Card>
-)
 
-const HTML = ({ file, html }) => (
-  <tr>
-    <td>
-      <img
-        src={`https://assets.hackclub.com/${file}.svg`}
-        alt={startCase(file)}
-      />
-    </td>
-    <td>
-      <Text as="pre" variant="styles.pre">
-        {html}
-      </Text>
-    </td>
-  </tr>
-)
+export const Logo = ({ name }) => {
+ const isWhiteLogo = name.includes('white') || name.includes('wo')
+ 
+ return (
+   <Card variant="sunken" sx={{ 
+     p: [2, 2], 
+   bg: '#E0E6ED'
+   }}>
+     <Image
+       src={`/branding/${name}.avif`}
+       sx={{ width: '100%', height: 80, mb: 1, objectFit: 'contain' }}
+       alt={startCase(name)}
+     />
+     <Text
+       as="div"
+       variant="subheadline"
+       sx={{ fontSize: [1, 2], mt: 1, mb: 2 }}
+     >
+       {startCase(name)
+         .replace('Hhs', 'HHS')
+         .replace('Wo', 'W/O')
+         .replace('Logo', '')}
+     </Text>
+     <Grid
+       columns="repeat(3, 1fr)"
+       gap={2}
+       sx={{
+         alignItems: 'center',
+         a: {
+           bg: 'elevated',
+           color: 'cyan',
+           boxShadow: 'none',
+           py: 1,
+           fontSize: 1,
+           ':hover,:focus': { bg: 'cyan', color: 'white' }
+         }
+       }}
+     >
+       <Button as="a" href={`/branding/${name}.avif`}>
+         AVIF
+       </Button>
+       <Button as="a" href={`/branding/${name}.png`}>
+         PNG
+       </Button>
+       <Button as="a" href={`/branding/${name}.pdf`}>
+         PDF
+       </Button>
+     </Grid>
+     <Input
+       as="textarea"
+       rows={2}
+       value={`/branding/${name}.avif`}
+       sx={{ mt: 2, py: 1, fontSize: 1 }}
+       disabled
+     />
+   </Card>
+ )
+}
+
+const HTML = ({ file, html }) => {
+  
+  return (
+    <tr>
+      <td style={{ backgroundColor: '#E0E6ED', padding: '8px' }}>
+        <img
+          src={`/branding/${file}.avif`}
+          alt={startCase(file)}
+        />
+      </td>
+      <td>
+        <Text as="pre" variant="styles.pre">
+          {html}
+        </Text>
+      </td>
+    </tr>
+  )
+}
+
 
 const ColorSwatch = ({ bg }) => (
   <Card
@@ -105,7 +118,7 @@ const ColorSwatch = ({ bg }) => (
   </Card>
 )
 
-const Page = ({ css }) => (
+const Page = ({ css, logoNames, bannerFiles }) => (
   <>
     <Meta
       as={Head}
@@ -127,7 +140,7 @@ const Page = ({ css }) => (
     >
       <Container variant="copy">
         <Heading as="h1" variant="title" sx={{ color: 'primary', mt: [2, 4] }}>
-          Hack Club Brand
+          Happy Hacking Space Brand
         </Heading>
         <Heading as="h2" variant="subtitle" sx={{ mt: 3, color: 'text' }}>
           Download HQ’s logos and preview our brand colors & font.
@@ -142,23 +155,11 @@ const Page = ({ css }) => (
       }}
     >
       <Heading variant="headline">Logos</Heading>
-      <Grid columns={[null, 2, 3]} gap={3}>
-        {[
-          'flag-orpheus-top',
-          'flag-orpheus-left',
-          'flag-standalone',
-          'flag-orpheus-top-bw',
-          'flag-orpheus-left-bw',
-          'flag-standalone-bw',
-          'flag-standalone-wtransparent',
-          'icon-rounded',
-          'icon-square',
-          'icon-progress-rounded',
-          'icon-progress-square'
-        ].map(key => (
-          <Logo name={key} key={key} />
-        ))}
-      </Grid>
+      <Grid columns={[2, 3, 4]} gap={3}>
+  {logoNames.map(key => (
+    <Logo name={key} key={key} />
+  ))}
+</Grid>
       <Button
         as="a"
         href="https://assets.hackclub.com/2020_branding.zip"
@@ -169,22 +170,7 @@ const Page = ({ css }) => (
         Download all →
       </Button>
 
-      <Heading id="bank" variant="headline">
-        HCB Logos
-      </Heading>
-      <Grid columns={[null, 2, 3]} gap={3}>
-        <Logo name="hcb-light" />
-        <Logo name="hcb-dark" />
-      </Grid>
-      <Button
-        as="a"
-        href="https://hcb.hackclub.com/branding"
-        variant="outline"
-        mt={3}
-        mb={[4, 5]}
-      >
-        See all HCB logos →
-      </Button>
+    
 
       <Heading id="banners" variant="headline">
         HTML banners
@@ -193,6 +179,7 @@ const Page = ({ css }) => (
         as="table"
         sx={{
           display: 'block',
+          mb: [4, 5],
           overflowX: 'auto',
           whiteSpace: 'nowrap',
           maxWidth: '100%',
@@ -207,22 +194,17 @@ const Page = ({ css }) => (
             <th>HTML code</th>
           </tr>
         </Box>
-        <tbody>
-          <HTML
-            file="flag-orpheus-top"
-            html={`<a href="https://hackclub.com/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club"/></a>`}
-          />
-          <HTML
-            file="flag-orpheus-left"
-            html={`<a href="https://hackclub.com/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.hackclub.com/flag-orpheus-left.svg" alt="Hack Club"/></a>`}
-          />
-          <HTML
-            file={`banners/${new Date().getFullYear()}`}
-            html={`<a href="https://hackclub.com/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.hackclub.com/banners/${new Date().getFullYear()}.svg" alt="Hack Club"/></a>`}
-          />
-        </tbody>
+       <tbody>
+    {bannerFiles.map(file => (
+      <HTML
+        key={file}
+        file={file}
+        html={`<a href="https://hackclub.com/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="/branding/${file}.avif" alt="Hack Club"/></a>`}
+      />
+    ))}
+  </tbody>
       </Box>
-      <Button
+      {/* <Button
         as="a"
         href="https://hackclub.com/banner"
         variant="outline"
@@ -230,7 +212,7 @@ const Page = ({ css }) => (
         mb={[4, 5]}
       >
         React component →
-      </Button>
+      </Button> */}
       <Heading variant="headline">Colors</Heading>
       <Grid columns={[2, 4]} gap={3} mb={[4, 5]}>
         {[
@@ -246,7 +228,7 @@ const Page = ({ css }) => (
           <ColorSwatch key={key} bg={key} />
         ))}
       </Grid>
-      <Heading variant="headline">Fonts</Heading>
+      {/* <Heading variant="headline">Fonts</Heading>
       <Text variant="title">Phantom Sans</Text>
       <Text variant="subtitle" sx={{ mb: 3, ml: 2 }}>
         is our brand font.
@@ -258,8 +240,8 @@ const Page = ({ css }) => (
         <Text as="pre" variant="styles.pre">
           {css}
         </Text>
-      </Box>
-      <Heading variant="headline">Icons</Heading>
+      </Box> */}
+      {/* <Heading variant="headline">Icons</Heading>
       <Text as="p" variant="subtitle" sx={{ mb: 3 }}>
         We have a custom iconset, published as{' '}
         <A href="https://github.com/hackclub/icons">@hackclub/icons</A>.
@@ -315,7 +297,7 @@ const Page = ({ css }) => (
         variant="outline"
       >
         CSS Theme on GitHub →
-      </Button>
+      </Button> */}
     </Container>
     <Footer />
   </>
@@ -325,9 +307,29 @@ export default Page
 
 export const getStaticProps = () => {
   const fs = require('fs')
+  const path = require('path')
   const css = fs.readFileSync(
     './node_modules/@hackclub/theme/fonts/reg-ital-bold.css',
     'utf8'
   )
-  return { props: { css } }
+
+  const brandingPath = path.join(process.cwd(), 'public', 'branding')
+  const files = fs.readdirSync(brandingPath)
+  
+  const logoNames = files
+    .filter(file => file.endsWith('.avif'))
+    .map(file => file.replace('.avif', ''))
+    
+  const bannerFiles = files
+    .filter(file => file.endsWith('.avif'))
+    .map(file => file.replace('.avif', ''))
+    .slice(0, 4)
+
+  return { 
+    props: { 
+      css,
+      logoNames,
+      bannerFiles
+    } 
+  }
 }
