@@ -44,6 +44,8 @@ import Som from '../components/index/cards/som'
 import Athena from '../components/index/cards/athena'
 import Highway from '../components/index/cards/highway'
 import Shipwrecked from '../components/index/cards/shipwrecked'
+import i18n from '../lib/i18n'
+import { useTranslation } from 'react-i18next'
 /** @jsxImportSource theme-ui */
 
 function Page({
@@ -71,6 +73,7 @@ function Page({
   let [key, setKey] = useState(0)
 
   const { asPath } = useRouter()
+  const { t } = useTranslation()
 
   let jsConfetti = useRef()
 
@@ -232,7 +235,7 @@ function Page({
               }}
               as="h4"
             >
-              Welcome to Happy Hacking Space
+              {t('header.welcome')}
             </Text>
             <Heading>
               <Text
@@ -248,7 +251,7 @@ function Page({
                   width: '100%'
                 }}
               >
-                We are <Comma>{slackData.total_members_count}</Comma>{' '}
+                {t('header.weAre')} <Comma>{slackData.total_members_count}</Comma>{' '}
                 <Text
                   sx={{
                     color: 'transparent',
@@ -277,12 +280,11 @@ function Page({
                     }}
                     aria-hidden="true"
                   >
-                    hackers
+                    {t('header.hackers')}
                   </Text>
-                  hackers
+                  {t('header.hackers')}
                 </Text>
-                <br sx={{ display: ['inline', 'none', 'none'] }} /> from in and around
-                the Mesopotamia who hack together
+                <br sx={{ display: ['inline', 'none', 'none'] }} /> {t('header.fromAroundWorld')}
               </Text>
               <Button
                 variant="ctaLg"
@@ -292,20 +294,9 @@ function Page({
                 mr={3}
                 sx={{ transformOrigin: 'center left' }}
               >
-                Join us
+                {t('header.joinUs')}
               </Button>
-              {/* <Button
-                variant="ctaLg"
-                as="a"
-                href="https://shipwrecked.hack.club/3"
-                mt={3}
-                sx={{ 
-                  transformOrigin: 'left',
-                  backgroundImage: t => t.util.gx('green', 'blue'),
-                }}
-              >
-                Sign Up: Private Island Hackathon
-              </Button> */}
+             
             </Heading>
           </Box>
           <Box
@@ -335,7 +326,7 @@ function Page({
               }}
               title="📸 Photo by Seyma Alpay Bakir, Diyarbakir"
             >
-              Hackers at AMA with HHS
+              {t('header.hackersAtAMA')}
             </Badge>
           </Box>
         </Box>
@@ -353,7 +344,7 @@ function Page({
               as="h1"
               sx={{ fontSize: ['36px', '48px', '56px'] }}
             >
-              Discover the{' '}
+              {t('joyOfCode.title')}{' '}
               <Text
                 as="span"
                 sx={{
@@ -367,9 +358,9 @@ function Page({
                   WebkitTextFillColor: 'transparent'
                 }}
               >
-                joy of hacking
+                {t('joyOfCode.subtitle')}
               </Text>
-              , together.
+              {t('joyOfCode.together')}
             </Text>
             <Text
               variant="subtitle"
@@ -380,12 +371,9 @@ function Page({
                 maxWidth: '62ch'
               }}
             >
-              Every day, hackers of Happy Hacking Space gather online and
-              in-person to hack, craft,and explore, together. Whether you're a beginner
-              programmer or have years of experience, there's a place for you at
-              Happy Hacking Space. Read about our{' '}
+              {t('joyOfCode.description')}{' '}
               <Link href="/philosophy" target="_blank" rel="noopener">
-                hacker ethic
+                {t('joyOfCode.hackerEthic')}
               </Link>
               .
             </Text>
@@ -549,14 +537,13 @@ function Page({
                   </Text>
                   <Text as="p" variant="subtitle">
                     <strong sx={{ mb: 1 }}>
-                      Connect with other coders
+                     {t('joyOfCode.steps.connect.title')}
                     </strong>
-                    Have a coding question? Looking for project feedback? You'll
-                    find hundreds of fabulous people to talk to in our {' '}
+                    { t('joyOfCode.steps.connect.description')}{' '}
                     <Link href="https://join.happyhacking.space" target="_blank" rel="noopener">
-                      Community{' '}
+                      {t('joyOfCode.steps.connect.community')}
                     </Link>
-                    , active at all hours.
+                   {t('joyOfCode.steps.connect.activeAtAllHours')}
                   </Text>
                 </Grid>
                 <Grid
@@ -583,14 +570,13 @@ function Page({
                     }}
                   >
                     <strong sx={{ mb: 1 }}>
-                      Build open source learning tools
+                      {t('joyOfCode.steps.build.title')}
                     </strong>
-                    We build large open source projects together (
+                    {t('joyOfCode.steps.build.description')}{' '}
                     <Link href="https://github.com/happyhackingspace" target="_blank">
-                      3k+&nbsp;PRs a year
+                      {t('joyOfCode.steps.build.prs')}
                     </Link>
-                    ) like this website, a game engine, daily streak system, and
-                    more!
+                    {t('joyOfCode.steps.build.likeThisWebsite')}
                   </Text>
                 </Grid>
                 <Grid
@@ -610,15 +596,14 @@ function Page({
                     3
                   </Text>
                   <Text as="p" variant="subtitle">
-                    <strong sx={{ mb: 1 }}>Gather IRL with other hackers</strong>
-                    Meet other Happy Hackers in the community to build
-                    together at one of the 400+{' '}
+                    <strong sx={{ mb: 1 }}>{t('joyOfCode.steps.gather.title')}</strong>
+                    {t('joyOfCode.steps.gather.description')}{' '}
                     <Link href="/clubs" target="_blank" rel="noopener">
-                      Clubs
+                      {t('common.clubs')}
                     </Link>{' '}
-                    and{' '}
+                    {t('common.and')}{' '}
                     <Link href="/hackathons" target="_blank" rel="noopener">
-                      hackathons
+                      {t('common.hackathons')}
                     </Link>
                     .
                   </Text>
