@@ -7,6 +7,7 @@ import Icon from './icon'
 import Flag from './flag'
 import ScrollLock from 'react-scrolllock'
 import NextLink from 'next/link'
+import LanguageSwitcher from '../components/languageSwitcher/LanguageSwitcher'
 
 const rgbaBgColor = (props, opacity) =>
   `rgba(
@@ -147,6 +148,8 @@ const Navigation = props => (
     <NextLink href="https://toolbox.hackclub.com/" passHref>
       <Link>Toolbox</Link>
     </NextLink>
+
+
   </NavBar>
 )
 
@@ -225,6 +228,7 @@ function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
           color={baseColor}
           dark={dark}
         />
+        <LanguageSwitcher />
         <ToggleContainer color={toggleColor} onClick={handleToggleMenu}>
           <Icon glyph={toggled ? 'view-close' : 'menu'} />
         </ToggleContainer>
