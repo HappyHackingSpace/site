@@ -1,3 +1,4 @@
+import i18n from './next-i18next.config.js';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -25,6 +26,7 @@ const nextConfig = {
       }
     ]
   },
+  i18n,
   webpack: (config, { isServer }) => {
     return config
   },

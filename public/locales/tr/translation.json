@@ -1,0 +1,95 @@
+{
+    "meta": {
+      "title": "Lise Hackerları İçin Bir Yuva",
+      "description": "Hack Club, gençlerin büyük düşünme ve büyük işler yapma konusunda yetenek, ağ ve teknik beceri geliştirdiği küresel kar amacı gütmeyen lise yapımcıları ve öğrenci liderliğindeki kodlama kulüpleri ağıdır."
+    },
+    "header": {
+      "welcome": "Hack Club'a Hoş Geldiniz",
+      "weAre": "Biz",
+      "teenHackers": "genç hackerız",
+      "fromAroundWorld": "dünyanın dört bir yanından birlikte kod yazıyoruz",
+      "joinSlack": "Slack'e Katıl",
+      "signUpHackathon": "Kayıt Ol: Özel Ada Hackathonu",
+      "hackersAtOuternet": "Vermont'taki Outernet'te Hackerlar"
+    },
+    "joyOfCode": {
+      "title": "Kodlamanın keyfini birlikte keşfedin.",
+      "subtitle": "Her gün binlerce Hack Clubber kod ile bir şeyler yapmak için çevrimiçi ve yüz yüze toplanıyor. İster yeni başlayan bir programcı olun ister yıllarca deneyiminiz olsun, Hack Club'ta sizin için bir yer var.",
+      "hackerEthic": "hacker etiği",
+      "steps": {
+        "connect": {
+          "title": "Diğer genç kodlayıcılarla bağlantı kurun",
+          "description": "Kodlama sorunuz mu var? Proje geri bildirimi mi arıyorsunuz? Küresel Slack'imizde (Discord gibi) her saatte aktif olan yüzlerce harika insanla konuşacaksınız."
+        },
+        "build": {
+          "title": "Açık kaynak öğrenme araçları geliştirin",
+          "description": "Bu web sitesi, oyun motoru, günlük seri sistemi ve daha fazlası gibi büyük açık kaynak projeleri birlikte geliştiriyoruz (yılda 3k+ PR)!"
+        },
+        "gather": {
+          "title": "Diğer yapımcılarla gerçek hayatta buluşun",
+          "description": "400+ Hack Club'ından birinde ve lise hackathonlarında topluluğunuzdaki diğer Hack Clubberlarla birlikte inşa etmek için buluşun."
+        }
+      }
+    },
+    "connect": {
+      "title": "Dünyanın dört bir yanından yapımcılarla bağlantı kurun",
+      "subtitle": "Kod sevgimizi paylaşmak ve birlikte bir şeyler yapmak için hem çevrimiçi hem de yüz yüze toplanıyoruz!"
+    },
+    "announcement": {
+      "copy": "Bu yaz yaratmak için sizin!",
+      "caption": "Ücretsiz Flipper Zero'lar, Framework Dizüstü Bilgisayarlar, 3D Yazıcılar ve daha fazlasını alın. Summer of Making'e katılın! 16 Haziran - 31 Ağustos."
+    },
+    "console": {
+      "haiku": "Beyaz kağıt yaprakları\nBasılmayı bekliyor\nBoş bir konsol bekliyor"
+    },
+    "easter": {
+      "konamiAlert": "Hey, Konami Kodunu yazdın!",
+      "paperWelcome": "Hoş geldin, cesur hacker! Seni topluluğumuzda görmek isteriz. hack.af/slack'ten davetini al. \"Hack Club Slack'ine neden katılmak istiyorsun?\" sorusuna 🦄 ekle, sana özel çıkartmalar gönderelim!"
+    },
+    "footer": {
+      "linkStyle": "a{renk: #338eda}"
+    },
+    "special": {
+      "genZVideo": "Videolarla özel Gen Z modu etkinleştirildi"
+    },
+    "openSource": {
+      "title": "Birlikte açık kaynak oyunlar ve araçlar geliştiriyoruz",
+      "subtitle": "Hack Club ekibindeki mühendislerle işbirliği içinde, Hack Clubberlar birbirleri için öğrenme araçları geliştiriyorlar. Araçlarımızla bir şeyler geliştirerek veya araçların kendilerine katkıda bulunarak bu projelere dahil olun.",
+      "liveFromGithub": "GitHub'dan Canlı"
+    },
+    "irlCommunity": {
+      "title": "Gerçek hayattaki topluluğunuzu bulun.",
+      "subtitle": "Binlerce Hack Clubber hackathonlar ve okul sonrası kodlama kulüpleri düzenliyor ve bunlara katılıyor."
+    },
+    "recap": {
+      "eyebrow": "Çok şeyimiz var - Özetleyelim",
+      "title": "Hack Club'ta ikinci evinizi bulun"
+    },
+    "cards": {
+      "joinSlack": {
+        "title": "Slack'imize Katılın",
+        "description": "Slack'te diğer teknik gençlerle bağlantı kurun ve birlikte projeler geliştirin."
+      },
+      "exploreTools": {
+        "title": "Açık Kaynak Araçlarımızı Keşfedin",
+        "description": "Şu anda oyun motoru, günlük seri sistemi, grafik oyunu ve daha fazlasını geliştiriyoruz!"
+      },
+      "startClub": {
+        "title": "Bir Kulüp Kurun",
+        "description": "Lise hackerlarının yüz yüze bir topluluğunu oluşturun, size yardımcı olmak için buradayız."
+      }
+    },
+    "images": {
+      "mapAlt": "Dünyanın dört bir yanındaki Hack Kulüplerinin haritası",
+      "spacexAlt": "LA'daki SpaceX genel merkezinde Hack Clubberlar",
+      "mahacksAlt": "MA Hacks, Hack Clubber tarafından düzenlenen hackathon",
+      "amaAlt": "Sal Khan ile AMA",
+      "flagshipAlt": "Flagship'te Hack Clubberlar, 2019"
+    },
+    "common": {
+      "clubs": "Hack Kulüpleri",
+      "hackathons": "lise hackathonları",
+      "slack": "Slack"
+    }
+  }
+    

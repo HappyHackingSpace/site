@@ -1,0 +1,104 @@
+{
+  
+    "meta": {
+      "title": "A Home for High School Hackers",
+      "description": "Hack Club is a global nonprofit network of high school makers & student-led coding clubs where young people build the agency, the network, & the technical talent to think big & do big things in the world."
+    },
+    "header": {
+      "welcome": "Welcome to Happy Hacking Space",
+      "weAre": "We are",
+      "hackers": "hackers",
+      "fromAroundWorld": "from in and around the Mesopotamia who hack together",
+      "joinUs": "Join us",
+      "hackersAtAMA": "Hackers at AMA with HHS"
+     
+    },
+    "joyOfCode": {
+      "title": "Discover the",
+      "subtitle": "joy of hacking",
+      "together": ", together.",
+      "description": "Every day, hackers of Happy Hacking Space gather online and in-person to hack, craft,and explore, together. Whether you're a beginner programmer or have years of experience, there's a place for you at Happy Hacking Space. Read about our",
+      "hackerEthic": "hacker ethic",
+      "steps": {
+        "connect": {
+          "title": "Connect with other coders",
+          "description": "Have a coding question? Looking for project feedback? You'll find hundreds of fabulous people to talk to in our ",
+          "community" : "Community",
+          "activeAtAllHours": " , active at all hours."
+          
+        },
+        "build": {
+          "title": "Build open source learning tools",
+          "description": "We build large open source projects together",
+          "prs": "100 PRs a year ",
+          "likeThisWebsite": "like this website, a game engine, daily streak system, and more."
+        },
+        "gather": {
+          "title": "Gather IRL with other makers",
+          "description": "Meet other Hack Clubbers in your community to build together at one of the 400+ Hack Clubs and high school hackathons.",
+          "and": "and"
+        }
+      }
+    },
+    "connect": {
+      "title": "Connect with builders from around the world",
+      "subtitle": "We gather both online and in-person to share our love of code and make things together!"
+    },
+    "announcement": {
+      "copy": "This summer is yours for the making!",
+      "caption": "Get free Flipper Zeros, Framework Laptops, 3D Printers, and more. Join Summer of Making! Jun 16 - Aug 31."
+    },
+    "console": {
+      "haiku": "White sheets of paper\nWaiting to be printed on\nA blank console waits"
+    },
+    "easter": {
+      "konamiAlert": "Hey, you typed the Konami Code!",
+      "paperWelcome": "Welcome, intrepid hacker! We'd love to have you in our community. Get your invite at hack.af/slack. Under \"Why do you want to join the Hack Club Slack?\" add a 🦄 and we'll ship you some exclusive stickers!"
+    },
+    "footer": {
+      "linkStyle": "a{color: #338eda}"
+    },
+    "special": {
+      "genZVideo": "Special Gen Z mode activated with videos"
+    },
+    "openSource": {
+      "title": "We build open source games and tools together",
+      "subtitle": "In collaboration with engineers on the Hack Club team, Hack Clubbers build learning tools for each other. Get involved with these projects by building something with our tools or contribute to the tools themselves.",
+      "liveFromGithub": "Live from GitHub"
+    },
+    "irlCommunity": {
+      "title": "Find your IRL community.",
+      "subtitle": "Thousands of Hack Clubbers organize and participate in hackathons and after school coding clubs."
+    },
+    "recap": {
+      "eyebrow": "We've got a lot going on - Let's recap",
+      "title": "Find your second home at Hack Club"
+    },
+    "cards": {
+      "joinSlack": {
+        "title": "Join Our Slack",
+        "description": "Connect with other technical teenagers on Slack and hack on things together."
+      },
+      "exploreTools": {
+        "title": "Explore Our Open Source Tools", 
+        "description": "We're currently building a game engine, daily streak system, graphing game, and more!"
+      },
+      "startClub": {
+        "title": "Start A Club",
+        "description": "Build an in-person community of high school hackers, and we're here to help."
+      }
+    },
+    "images": {
+      "mapAlt": "Map of Hack Clubs around the world",
+      "spacexAlt": "Hack Clubbers at SpaceX HQ in LA", 
+      "mahacksAlt": "MA Hacks, Hack Clubber organized hackathon",
+      "amaAlt": "AMA with Sal Khan",
+      "flagshipAlt": "Hack Clubbers at Flagship, 2019"
+    },
+    "common": {
+      "clubs": "Hack Clubs",
+      "hackathons": "high school hackathons",
+      "slack": "Slack"
+    }
+  
+}
