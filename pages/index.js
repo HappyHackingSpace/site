@@ -20,9 +20,9 @@ import Footer from '../components/footer'
 import Stage from '../components/stage'
 import Carousel from '../components/index/carousel'
 import Pizza from '../components/index/cards/pizza'
-import Sprig from '../components/index/cards/sprig'
+import Sprig from '../components/index/cards/vulnerable-target'
 import Sinerider from '../components/index/cards/sinerider'
-import SprigConsole from '../components/index/cards/sprig-console'
+import SprigConsole from '../components/index/cards/awesome-hackathon'
 import Clubs from '../components/index/cards/clubs'
 import Workshops from '../components/index/cards/workshops'
 import HCB from '../components/index/cards/hcb'
@@ -38,8 +38,8 @@ import Icon from '../components/icon'
 import GitHub from '../components/index/github'
 import Photo from '../components/photo'
 import Comma from '../components/comma'
-import Haxidraw from '../components/index/cards/haxidraw'
-import Onboard from '../components/index/cards/onboard'
+import Haxidraw from '../components/index/cards/githubmon'
+import Onboard from '../components/index/cards/communityHub'
 import Som from '../components/index/cards/som'
 import Athena from '../components/index/cards/athena'
 import Highway from '../components/index/cards/highway'
@@ -844,7 +844,7 @@ function Page({
             >
               { }
             </Box>
-            <Box
+            {/* <Box
               py={[4, 5, '82px']}
               sx={{
                 width: '90vw',
@@ -852,8 +852,8 @@ function Page({
                 margin: 'auto',
                 position: 'relative'
               }}
-            >
-              <Box>
+            > */}
+              {/* <Box>
                 <Text
                   variant="title"
                   as="h2"
@@ -890,17 +890,17 @@ function Page({
                   Thousands of Happy Hackers organize and participate in
                   hackathons and after school coding clubs.
                 </Text>
-              </Box>
-              <Clubs />
-              <Hackathons
+              </Box> */}
+              {/* <Clubs /> */}
+              {/* <Hackathons
                 delay={400}
                 data={hackathonsData}
                 stars={stars.hackathons.stargazerCount}
-              />
+              /> */}
 
               {/* <Events events={events} /> */}
-              <HCB data={bankData} />
-            </Box>
+              {/* <HCB data={bankData} /> */}
+            {/* </Box> */}
           </Box>
         </Box>
         <Box py={[4, 5, '82px']}>
