@@ -20,11 +20,14 @@ export default function Haxidraw({ stars }) {
       github_link="https://github.com/HappyHackingSpace/githubmon"
       color="#54738d"
       sx={{
-        backgroundSize: 'cover',
+        position: 'relative',
+        overflow: 'hidden',
         backgroundColor: '#95C9E5',
-        backgroundImage: `url(/home/gitmon.png)`
+        backgroundImage: `url(/home/gitmon.png)`,
+        backgroundSize: 'cover',
+        minHeight: ['300px', '400px', '450px']
       }}
-      position={[null, 'bottom', 'bottom']}
+      position={[null, 'top', 'top']}
       highlight="dark"
       filter="brightness(0.8)"
       stars={repoStars}
@@ -32,57 +35,47 @@ export default function Haxidraw({ stars }) {
       {/* <Text variant="title" as="h3" sx={{ fontSize: ['36px', 4, 5] }}>
         Blot
       </Text> */}
-      <Grid columns={[1, 2]}>
-        <Box sx={{ mt: [3, 4, 5] }}>
+      <Flex sx={{
+        flexDirection: 'column',
+        alignItems: 'center',
+        textAlign: 'center',
+        mt: [3, 4, 5],
+      
+      }}>
+        <Box sx={{ mt: [2, 3, 4], maxWidth: '40rem', width: '100%' }}>
           <Text
             as="p"
             variant="subtitle"
-            sx={{ 
-              zIndex: 2, 
-              position: 'relative', 
+            sx={{
+              zIndex: 2,
+              position: 'relative',
               color: '#54738d',
               backgroundColor: 'rgba(255, 255, 255, 0.4)',
-              padding: '1px',
-              borderRadius: '5px'
+              padding: '8px',
+              borderRadius: '5px',
+              textAlign: 'center'
             }}
           >
-           GitMon is an open source GitHub analytics and monitoring platform, designed 
-to be a fun and developer-friendly introduction to repository insights 
-and performance tracking.
+            GitMon is an open source GitHub analytics and monitoring platform, designed
+            to be a fun and developer-friendly introduction to repository insights
+            and performance tracking.
           </Text>
         </Box>
-        <Box>
-          <Flex sx={{ flexDirection: 'column', mt: [4, 5, 6] }}>
+        <Box sx={{ mt: [1, 2, 3] }}>
+          <Flex sx={{ flexDirection: 'column', alignItems: 'center' }}>
             <Buttons
               id="51"
               icon="align-left"
               link="https://github.com/HappyHackingSpace/githubmon"
               primary="rgba(255, 255, 255, 0.9)"
-              sx={{ color: 'black', ml: [4, 5, 6] }}
+              sx={{ color: 'black' }}
             >
-              Learn more
+             Dress warmly!
             </Buttons>
-            {/* <Buttons
-              id="52"
-              icon="code"
-              link="https://blot.hackclub.dev/editor"
-              primary="rgba(255, 255, 255, 0.9)"
-              sx={{ color: 'black' }}
-            >
-              Create something in the editor
-            </Buttons> */}
-            {/* <Buttons
-              id="54"
-              icon="slack"
-              link="/slack"
-              overrideColor="rgba(255, 255, 255, 0.7)"
-              sx={{ color: 'black' }}
-            >
-              Share your creations and chat on Slack
-            </Buttons> */}
+            {/* Additional buttons removed for clarity */}
           </Flex>
         </Box>
-      </Grid>
+      </Flex>
     </CardModel>
   )
 }

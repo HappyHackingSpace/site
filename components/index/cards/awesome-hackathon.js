@@ -22,15 +22,17 @@ export default function SprigConsole({ stars, consoleCount }) {
         github_link="https://github.com/HappyHackingSpace/awesome-hackathon"
         stars={repoStars}
         color="white"
+        position={[null, 'top', 'top']}
         sx={{
           position: 'relative',
           overflow: 'hidden',
           backgroundColor: '#1A3C14',
-          height: 'auto',
-          aspectRatio: '5600/1350'
+          backgroundSize: 'cover',
+          minHeight: ['300px', '400px', '450px']
         }}
         highlight="#427A43"
       >
+        {/* Desktop video - hidden on mobile */}
         <video
           autoPlay
           loop
@@ -42,13 +44,38 @@ export default function SprigConsole({ stars, consoleCount }) {
             left: 0,
             width: '100%',
             height: '100%',
-            objectFit: 'contain',
-            zIndex: 0
+            objectFit: 'cover',
+            zIndex: 0,
           }}
+          // sx={{
+          //   display: ['none', 'none', 'block', 'block']
+          // }}
         >
           <source src="/home/awesome.mp4" type="video/mp4" />
         </video>
-        <Box sx={{ position: 'relative', zIndex: 1 }}>
+        
+        {/* Mobile video - visible only on mobile */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0
+          }}
+          sx={{
+            display: ['block', 'block', 'none', 'none']
+          }}
+        >
+          <source src="/home/awesomePhone.mp4" type="video/mp4" />
+        </video>
+        <Box sx={{ position: 'relative', zIndex: 1 , mt: [3, 4, 5] }}>
         {/* <Image
           src="https://sprig.hackclub.com/pcb.svg"
           sx={{
@@ -92,42 +119,29 @@ export default function SprigConsole({ stars, consoleCount }) {
         >
           Join the other {consoleCount} teenagers with Sprigs!
         </Text> */}
-        <Grid
-          columns={[1, 1, '1.2fr 1fr', '1.2fr 1fr']}
-          sx={{ zIndex: 2, position: 'relative' }}
-        >
-          <Box sx={{ mt: [2, 3, 4], px: [2, 3, 4]  }}>
-            {/* <Image
-              src="https://cloud-b8z9l7ihq-hack-club-bot.vercel.app/0sprig-light-top-min.png"
-              sx={{
-                width: ['120%', '', ''],
-                maxWidth: ['120%', '', ''],
-                ml: ['-10%', '', ''],
-                mt: ['-10px', '-30px', '', ''],
-                mb: ['-15px', '-30px', '', ''],
-                display: [null, null, 'none', 'none']
-              }}
-              alt="Sprig console"
-            /> */}
-            <Text as="p" variant="subtitle" mt={[1, 3, 4]} sx={{ 
-              color: 'black',
-             
+        <Box sx={{ zIndex: 2, position: 'relative', mt: [4, 5, 6] }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', px: [2,3,4], py: [3,4] }}>
+            <Text as="h6" variant="subtitle" sx={{
+              color: 'white',
+              textAlign: 'center',
+              maxWidth: '40rem',
+              fontSize: [1, 2, 3],
+              lineHeight: 1.4
             }}>
               Tools and resources to help you build, design, and win hackathons! 🏆
             </Text>
-
+            <Box sx={{ mt: [3, 3, 4] }}>
+              <Buttons
+                id="6"
+                link="/events"
+                primary="#FFB900"
+                sx={{}}
+              >
+                Discover events
+              </Buttons>
+            </Box>
           </Box>
-            <Buttons
-              id="6"
-              
-              link="/events"
-              primary="#000000ff"
-              sx={{ mt: [3, 3, 4] }}
-            >
-              Discover events
-            </Buttons>
-       
-        </Grid>
+        </Box>
         </Box>
       </CardModel>
       {/* <Tilt>
