@@ -131,7 +131,7 @@ const CardModel = ({
                 zIndex: 2
               }}
             >
-              <Link href={github_link}>
+               <Link href={github_link} target="_blank" rel="noopener noreferrer">
                 <Icon
                   glyph="github"
                   size={42}
