@@ -104,37 +104,48 @@ const CardModel = ({
             )}
           </Flex>
         ) : (
-          <Flex
-            sx={{
-              position: 'absolute',
-              right: 2,
-              top: 2,
-              alignItems: 'center',
-              zIndex: 2
-              // flexDirection: ['column', 'row', 'row']
-            }}
-          >
+          <>
             {stars ? (
-              <Text as="h2" sx={{ fontSize: ['20px', '24px', '28px'] }}>
-                ⭐️ <Comma>{stars}</Comma>
-              </Text>
+              <Flex
+                sx={{
+                  position: 'absolute',
+                  left: 2,
+                  top: 2,
+                  alignItems: 'center',
+                  zIndex: 2
+                }}
+              >
+                <Text as="h2" sx={{ fontSize: ['20px', '24px', '28px'] }}>
+                  ⭐️ <Comma>{stars}</Comma>
+                </Text>
+              </Flex>
             ) : (
               <></>
             )}
-            <Link href={github_link} sx={{ ml: 2 }}>
-              <Icon
-                glyph="github"
-                size={42}
-                sx={{
-                  color: color,
-                  transition: '0.4s',
-                  '&:hover': {
-                    color: highlight || color
-                  }
-                }}
-              />
-            </Link>
-          </Flex>
+            <Flex
+              sx={{
+                position: 'absolute',
+                right: 2,
+                top: 2,
+                alignItems: 'center',
+                zIndex: 2
+              }}
+            >
+               <Link href={github_link} target="_blank" rel="noopener noreferrer">
+                <Icon
+                  glyph="github"
+                  size={42}
+                  sx={{
+                    color: color,
+                    transition: '0.4s',
+                    '&:hover': {
+                      color: highlight || color
+                    }
+                  }}
+                />
+              </Link>
+            </Flex>
+          </>
         )}
       </Box>
     )}

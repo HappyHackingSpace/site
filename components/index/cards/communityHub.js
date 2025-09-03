@@ -30,13 +30,15 @@ export default function Onboard({ stars }) {
         position: 'relative',
         overflow: 'hidden',
         backgroundColor: 'rgba(0,0,0)',
-     
+        minHeight: ['300px', '400px', '450px']
       }}
       github_link="https://github.com/HappyHackingSpace/CommunityHub"
       color="white"
       highlight="#FEF1DC"
       stars={repoStars}
+      position={[null, 'top', 'top']}
     >
+      {/* Desktop video - hidden on mobile */}
       <video
         autoPlay
         loop
@@ -51,70 +53,97 @@ export default function Onboard({ stars }) {
           objectFit: 'cover',
           zIndex: 0
         }}
+        sx={{
+          display: ['none', 'none', 'block', 'block']
+        }}
       >
         <source src="/home/Communityhub1.mp4" type="video/mp4" />
       </video>
-      <Box sx={{ position: 'relative', zIndex: 1 }}>
-      {/* <Text
-        variant="title"
-        as="h3"
-        sx={{
-          fontSize: ['36px', 4, 5],
-          maxWidth: 'copyPlus',
-          textShadow: '0 0 30px rgba(42, 252, 88, 0.6)',
-          color: '#87ffa1',
-          mt: ['38px', 0, 0],
-          position: 'relative'
-        }}
-      >
-        OnBoard
-      </Text> */}
-      <Grid columns={[1, 2] }>
-        <Box>
-          {/* <Text
-            as="p"
-            variant="subheadline"
-            sx={{
-              px: 2,
-              py: 1,
-              width: 'fit-content',
-              borderRadius: 'extra',
-              border: 'rgba(255,255,255,0.2) dashed 1px',
-              zIndex: 2,
-              color: 'white',
-              position: ['absolute', 'relative', 'relative'],
-              top: ['24px', 0, '5px']
-            }}
-          >
-            {projects} projects built
-          </Text> */}
-          <Text as="p" variant="subtitle" sx={{ mt: [3, 4, 5], color: 'white' }}>
-            Circuit boards are magical. You design one, we'll print it.
-            Completely for free! Get a $100 grant to fuel the creation of your
-            dream project with OnBoard.
-          </Text>
-        </Box>
-        <Flex
-          sx={{ flexDirection: 'column', mt: [4, 5, 5],  ml: [0, 2, 3], placeSelf: 'start' }}
+      
+      /* Mobile video - visible only on mobile */
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0
+          }}
+          sx={{
+            display: ['block', 'block', 'none', 'none']
+          }}
         >
-          <Buttons
-            id="59"
-            icon="emoji"
-            link="https://github.com/hackclub/OnBoard/blob/main/README.md"
-            primary="#FEF1DC"
-            color="black"
-          >
-            Be a member
-          </Buttons>
-          {/* <Buttons icon="docs" link="https://jams.hackclub.com/tag/pcb" id="60">
-            Learn how to design a PCB
-          </Buttons>
-          <Buttons icon="friend" link="/slack?event=onboard" id="61">
-            See what other hackers have built
-          </Buttons> */}
-        </Flex>
-      </Grid>
-      </Box>
-    </CardModel>
-  )
+          <source src="/home/CommunityhubPhone.mp4" type="video/mp4" />
+        </video>
+        
+        <Box sx={{ position: 'relative', zIndex: 1 }}>
+          <Grid columns={[1, 2]} sx={{ display: 'flex', flexDirection: ['column', 'row'], alignItems: 'center', justifyContent: 'center', gap: [3, 7] }}>
+            {/* Sol Kolon - Community */}
+            <Box sx={{ textAlign: 'center', maxWidth: '400px' }}>
+              <Text as="p" variant="subtitle" sx={{ 
+                color: 'white',
+                // backgroundColor: 'rgba(0, 0, 0)',
+                padding: '12px',
+                borderRadius: '8px',
+                mt: [4, 5, 6],
+                zIndex: 2, 
+                position: 'relative'
+              }}>
+                A vibrant community hub where developers, designers, and tech enthusiasts come together 
+                to collaborate, share knowledge, and build amazing projects together.
+              </Text>
+              
+              <Flex sx={{ flexDirection: 'column', mt: [3, 4, 5], alignItems: 'center', justifyContent: 'center' }}>
+                <Buttons
+                  id="59"
+                  icon="users"
+                  link="https://github.com/HappyHackingSpace/CommunityHub"
+                  primary="#FEF1DC"
+                  color="black"
+                >
+                  Join community
+                </Buttons>
+              </Flex>
+            </Box>
+       
+            <Box sx={{ 
+              textAlign: 'center',
+              maxWidth: '400px',
+              display: ['none', 'block']  
+            }}>
+              <Text as="p" variant="subtitle" sx={{ 
+                color: 'white',
+                // backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                padding: '12px',
+                borderRadius: '8px',
+                mt: [4, 5, 6],
+                zIndex: 2, 
+                position: 'relative'
+              }}>
+                Join our development processes! Contribute to our open source projects, 
+                learn new technologies and work together with experienced developers.
+              </Text>
+              
+              <Flex sx={{ flexDirection: 'column', mt: [3, 4, 5], alignItems: 'center', justifyContent: 'center' }}>
+                <Buttons
+                  id="60"
+                  icon="github"
+                  link="https://github.com/HappyHackingSpace"
+                  primary="#333333"
+                  color="white"
+                >
+                  Go to GitHub
+                </Buttons>
+              </Flex>
+            </Box>
+          </Grid>
+        </Box>
+          </CardModel>
+        )
 }
