@@ -136,6 +136,9 @@ const Navigation = props => (
     {/* <NextLink href="/clubs" passHref>
       <Link>Clubs</Link>
     </NextLink> */}
+    <NextLink href="/philanthropy" passHref>
+      <Link>Philanthropy</Link>
+    </NextLink>
     <NextLink href="/philosophy" passHref>
       <Link>Philosophy</Link>
     </NextLink>
