@@ -1569,6 +1569,60 @@ const Philanthropy = ({ posts = [] }) => {
               Download as PDF
             </Button>
           </Fade>
+          
+          <Fade>
+            <Box
+              sx={{
+                width: '100%',
+                maxWidth: '1200px',
+                margin: '4rem auto',
+                padding: '2rem',
+                textAlign: 'center'
+              }}
+            >
+              <Heading
+                as="h2"
+                sx={{ 
+                  fontSize: [32, 40], 
+                  mb: 3,
+                  color: 'primary'
+                }}
+              >
+                Financial Transparency
+              </Heading>
+              <Text sx={{ 
+                mb: 4, 
+                fontSize: [2, 3],
+                color: 'muted'
+              }}>
+                View our real-time income and expenses data
+              </Text>
+              
+              <Box
+                sx={{
+                  width: '100%',
+                  height: ['400px', '600px', '800px'],
+                  border: '1px solid #ccc',
+                  borderRadius: '8px',
+                  overflow: 'hidden',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
+                }}
+              >
+                <iframe
+                  src="https://airtable.com/embed/appKfmTrC8b23hJNQ/shrUCpuTfSraCfmvu?viewControls=on"
+                  frameBorder="0"
+                  style={{ 
+                    width: '100%', 
+                    height: '100%',
+                    background: 'transparent'
+                  }}
+                  allowFullScreen
+                  title="Financial Dashboard"
+                />
+              </Box>
+            </Box>
+          </Fade>
+          
           <Fade>
             <Text
               as="p"
