@@ -8,6 +8,22 @@ import Flag from './flag'
 import ScrollLock from 'react-scrolllock'
 import NextLink from 'next/link'
 
+// Styled component for navigation links (preserves existing styles)
+const NavLinkText = styled.span`
+  display: block;
+  color: ${props => props.scrolled ? '#374151' : 'white'};
+  margin-right: ${theme.space[3]}px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: ${props => props.scrolled ? '#6b7280' : '#d1d5db'};
+  }
+`
+
+
+
+
 const rgbaBgColor = (props, opacity) =>
   `rgba(
     ${props.bgColor[0]},
@@ -121,8 +137,6 @@ const NavBar = styled(Box, {
   display: none;
   ${layout};
   a {
-    margin-left: ${theme.space[1]}px;
-    padding: ${theme.space[3]}px;
     text-decoration: none;
     @media (min-width: 56em) {
       color: ${props => theme.colors[props.color] || props.color};
@@ -133,25 +147,29 @@ const NavBar = styled(Box, {
 const Navigation = props => (
   // REMINDER: This should be no more than 7 links :)
   <NavBar role="navigation" {...props}>
-    {/* <NextLink href="/clubs" passHref>
-      <Link>Clubs</Link>
+    {/* <NextLink href="/clubs">
+      <NavLinkText color={props.color} scrolled={props.scrolled}>Clubs</NavLinkText>
     </NextLink> */}
-    <NextLink href="/philanthropy" passHref>
-      <Link>Philanthropy</Link>
+    <NextLink href="/philanthropy">
+      <NavLinkText color={props.color} scrolled={props.scrolled}>Philanthropy</NavLinkText>
     </NextLink>
-    <NextLink href="/philosophy" passHref>
-      <Link>Philosophy</Link>
+    <NextLink href="/philosophy">
+      <NavLinkText color={props.color} scrolled={props.scrolled}>Philosophy</NavLinkText>
     </NextLink>
-    <NextLink href="/events" passHref>
-      <Link>Events</Link>
+    <NextLink href="/events">
+      <NavLinkText color={props.color} scrolled={props.scrolled}>Events</NavLinkText>
     </NextLink>
-    <NextLink href="/team" passHref>
-      <Link>Our Team & Board</Link>
+    <NextLink href="/team">
+      <NavLinkText color={props.color} scrolled={props.scrolled}>Our Team & Board</NavLinkText>
     </NextLink>
-    {/* <Link href="/slack">Community</Link>
-    <Link href="https://scrapbook.hackclub.com/">Scrapbook</Link>
-    <NextLink href="https://toolbox.hackclub.com/" passHref>
-      <Link>Toolbox</Link>
+    {/* <NextLink href="/slack">
+      <NavLinkText>Community</NavLinkText>
+    </NextLink>
+    <NextLink href="https://scrapbook.hackclub.com/">
+      <NavLinkText>Scrapbook</NavLinkText>
+    </NextLink>
+    <NextLink href="https://toolbox.hackclub.com/">
+      <NavLinkText>Toolbox</NavLinkText>
     </NextLink> */}
   </NavBar>
 )
@@ -230,6 +248,7 @@ function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
           aria-hidden={!!mobile}
           color={baseColor}
           dark={dark}
+          scrolled={scrolled}
         />
         <ToggleContainer color={toggleColor} onClick={handleToggleMenu}>
           <Icon glyph={toggled ? 'view-close' : 'menu'} />
@@ -242,6 +261,7 @@ function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
         toggled={toggled}
         color={baseColor}
         dark={dark}
+        scrolled={scrolled}
       />
       {toggled && <ScrollLock />}
     </Root>

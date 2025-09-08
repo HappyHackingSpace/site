@@ -36,7 +36,7 @@ const BGImg = ({
       '~ *': { position: 'relative' }
     }}
   >
-    <Image layout="responsive" alt={alt} {...props} />
+    <Image fill alt={alt} {...props} />
   </Box>
 )
 

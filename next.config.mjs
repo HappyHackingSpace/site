@@ -389,5 +389,9 @@ const withMDXConfig = withMDX({ extension: /\.mdx?$/ })
 const withAnimeJS = withTM(['animejs'])
 
 export default million.next(withAnimeJS(withMDXConfig(nextConfig)), {
-  auto: true
+  auto: true,
+  experimental: {
+    instrumentationHook: false,
+  },
+
 })

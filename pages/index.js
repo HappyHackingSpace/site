@@ -9,7 +9,7 @@ import {
   Link,
   Text
 } from 'theme-ui'
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Meta from '@hackclub/meta'
@@ -19,14 +19,14 @@ import ForceTheme from '../components/force-theme'
 import Footer from '../components/footer'
 import Stage from '../components/stage'
 import Carousel from '../components/index/carousel'
-import Pizza from '../components/index/cards/pizza'
+// import Pizza from '../components/index/cards/pizza'
 import Sprig from '../components/index/cards/vulnerable-target'
 import Sinerider from '../components/index/cards/sinerider'
 import SprigConsole from '../components/index/cards/awesome-hackathon'
-import Clubs from '../components/index/cards/clubs'
-import Workshops from '../components/index/cards/workshops'
-import HCB from '../components/index/cards/hcb'
-import Hackathons from '../components/index/cards/hackathons'
+// import Clubs from '../components/index/cards/clubs'
+// import Workshops from '../components/index/cards/workshops'
+// import HCB from '../components/index/cards/hcb'
+// import Hackathons from '../components/index/cards/hackathons'
 import OuternetImgFile from '../public/home/outernet-110.jpg'
 import Announcement from '../components/announcement'
 import Konami from 'react-konami-code'
@@ -690,7 +690,7 @@ function Page({
             {/* <Athena /> */}
             {/* <Highway /> */}
             {/* <Shipwrecked /> */}
-            <Slack slackKey={slackKey} data={slackData} events={events} />
+            {/* <Slack slackKey={slackKey} data={slackData} events={events} /> */}
             {/* <Pizza /> */}
           </Box>
         </Box>
@@ -813,7 +813,7 @@ function Page({
               <Box as="section" id="sprig">
                 <SprigConsole
                   delay={300}
-                  stars={stars.sprig.stargazerCount}
+                  stars={stars.sprig.stargazerCount}  
                   consoleCount={consoleCount}
                 />
               </Box>

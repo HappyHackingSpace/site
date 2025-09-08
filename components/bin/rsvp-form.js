@@ -1,7 +1,6 @@
 import { Checkbox, Input, Label, Text, Box } from 'theme-ui'
 import useForm from '../../lib/use-form'
 import Submit from '../submit'
-import { Slide } from 'react-reveal'
 
 export default function RsvpForm() {
   const { status, formProps, useField } = useForm('/api/bin/rsvp', null, {
@@ -34,7 +33,6 @@ export default function RsvpForm() {
           sheet.
         </Label>
         <Box sx={{ display: useField('stickers', 'checkbox').checked ? 'block' : 'none' }}>
-          <Slide left delay={20}>
             <Label mt={2}>
               Address (line 1)
               <Input
@@ -51,7 +49,6 @@ export default function RsvpForm() {
                 sx={{ border: '1px solid', borderColor: 'muted' }}
               />
             </Label>
-          </Slide>
         </Box>
         <Submit
           status={status}

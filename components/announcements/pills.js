@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Badge,
   BaseStyles,
   Box,
@@ -8,7 +7,8 @@ import {
   Flex,
   Grid,
   Heading,
-  Text
+  Text,
+  Image
 } from 'theme-ui'
 
 export function PillHolder({ children }) {
@@ -49,7 +49,16 @@ export function AuthorPill({ tag, image, firstName }) {
         alignItems: 'center'
       }}
     >
-      <Avatar src={image} alt={firstName} size={36} mr={2} />
+      <Image 
+        src={image} 
+        alt={firstName} 
+        sx={{ 
+          width: 36, 
+          height: 36, 
+          borderRadius: '50%',
+          mr: 2 
+        }} 
+      />
       {tag}
     </Badge>
   )

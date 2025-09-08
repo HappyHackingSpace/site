@@ -11,7 +11,6 @@ import { Link, Text, Button, Card } from 'theme-ui'
 import Icon from '@hackclub/icons'
 import Apply from '../../components/hackathons/grant/apply'
 
-import Zoom from 'react-reveal/Zoom'
 /** @jsxImportSource theme-ui */
 
 const styles = `
@@ -22,36 +21,34 @@ const styles = `
 
 const Requirement = ({ title, children, checkmark, background, size }) => {
   return (
-    <Zoom>
-      <Card
-        variant="interactive"
-        sx={{
-          backgroundColor: 'elevated',
-          backgroundImage: `url('${background}')`,
-          backgroundSize: '40px 40px',
-          backgroundRepeat: 'repeat',
-          backgroundPosition: '10% 10%',
-          color: 'snow',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'start',
-          height: '100%'
-        }}
-      >
-        <Flex sx={{ alignItems: 'center' }}>
-          <Box mr={3} sx={{ lineHeight: 0, flexShrink: 0 }}>
-            <Icon glyph={checkmark} color="#ec3750" size={size} />
-          </Box>
-          <Text variant="heading" sx={{ fontSize: [2, 3, 3], lineHeight: 1.5 }}>
-            {title}
-          </Text>
-        </Flex>
-
-        <Text pl={48} mt={2} sx={{ fontSize: [1, 2, 2] }}>
-          {children}
+    <Card
+      variant="interactive"
+      sx={{
+        backgroundColor: 'elevated',
+        backgroundImage: `url('${background}')`,
+        backgroundSize: '40px 40px',
+        backgroundRepeat: 'repeat',
+        backgroundPosition: '10% 10%',
+        color: 'snow',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'start',
+        height: '100%'
+      }}
+    >
+      <Flex sx={{ alignItems: 'center' }}>
+        <Box mr={3} sx={{ lineHeight: 0, flexShrink: 0 }}>
+          <Icon glyph={checkmark} color="#ec3750" size={size} />
+        </Box>
+        <Text variant="heading" sx={{ fontSize: [2, 3, 3], lineHeight: 1.5 }}>
+          {title}
         </Text>
-      </Card>
-    </Zoom>
+      </Flex>
+
+      <Text pl={48} mt={2} sx={{ fontSize: [1, 2, 2] }}>
+        {children}
+      </Text>
+    </Card>
   )
 }
 
@@ -390,51 +387,49 @@ const HackathonGrant = () => {
           </Heading>
         </Container>
       </Box>
-      <Zoom>
-        <Card
-          as="a"
-          variant="interactive"
-          href="mailto:hcb@hackclub.com"
+      <Card
+        as="a"
+        variant="interactive"
+        href="mailto:hcb@hackclub.com"
+        sx={{
+          mx: 'auto',
+          maxWidth: '52rem',
+          width: '90%',
+          textAlign: 'left',
+          textDecoration: 'none',
+          lineHeight: 'caption',
+          display: 'flex',
+          alignItems: 'center',
+          fontSize: [1, 2, 2],
+          mb: [3, 4],
+          p: '16px !important',
+          svg: { flexShrink: 'none' }
+        }}
+      >
+        <Icon
+          glyph="emoji"
+          color="#ec3750"
           sx={{
-            mx: 'auto',
-            maxWidth: '52rem',
-            width: '90%',
-            textAlign: 'left',
-            textDecoration: 'none',
-            lineHeight: 'caption',
-            display: 'flex',
-            alignItems: 'center',
-            fontSize: [1, 2, 2],
-            mb: [3, 4],
-            p: '16px !important',
-            svg: { flexShrink: 'none' }
+            mr: [2, 3],
+            ml: 2,
+            display: ['none', 'block'],
+            width: 56,
+            height: 'auto'
+          }}
+        />
+        <Text
+          as="p"
+          sx={{
+            flex: '1 1 auto',
+            strong: { display: ['inline', 'block'], pl: 3 }
           }}
         >
-          <Icon
-            glyph="emoji"
-            color="#ec3750"
-            sx={{
-              mr: [2, 3],
-              ml: 2,
-              display: ['none', 'block'],
-              width: 56,
-              height: 'auto'
-            }}
-          />
-          <Text
-            as="p"
-            sx={{
-              flex: '1 1 auto',
-              strong: { display: ['inline', 'block'], pl: 3 }
-            }}
-          >
-            <strong>Questions?</strong>
-            <Text as="span" variant="caption" color="secondary" sx={{ pl: 3 }}>
-              Reach out to <Link>hcb@hackclub.com</Link>
-            </Text>
+          <strong>Questions?</strong>
+          <Text as="span" variant="caption" color="secondary" sx={{ pl: 3 }}>
+            Reach out to <Link>hcb@hackclub.com</Link>
           </Text>
-        </Card>
-      </Zoom>
+        </Text>
+      </Card>
       <Footer dark key="footer" />
     </>
   )
