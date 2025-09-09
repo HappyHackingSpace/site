@@ -28,16 +28,14 @@ export default function SprigConsole({ stars, consoleCount }) {
           overflow: 'hidden',
           backgroundColor: '#1A3C14',
           backgroundSize: 'cover',
-          minHeight: ['300px', '400px', '450px']
+          maxHeight: ['150px', '200px', '275px']
         }}
         highlight="#427A43"
       >
-        {/* Desktop video - hidden on mobile */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        {/* Desktop GIF - hidden on mobile */}
+        <Image
+          src="/home/awesome.gif"
+          alt="Awesome Hackathon Demo"
           style={{
             position: 'absolute',
             top: 0,
@@ -50,9 +48,7 @@ export default function SprigConsole({ stars, consoleCount }) {
           // sx={{
           //   display: ['none', 'none', 'block', 'block']
           // }}
-        >
-          <source src="/home/awesome.mp4" type="video/mp4" />
-        </video>
+        />
         
         {/* Mobile video - visible only on mobile */}
         <video

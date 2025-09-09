@@ -189,15 +189,13 @@ export default function Sprig({ stars }) {
         backgroundColor: '#0C0C16',
         position: 'relative',
         overflow: 'hidden',
-        minHeight: ['300px', '400px', '450px']
+        minHeight: ['235px', '330px', '360px']
       }}
     >
-      {/* Desktop video - hidden on mobile */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
+      {/* Desktop GIF - hidden on mobile */}
+      <Image
+        src="/home/vulnerable-target.gif"
+        alt="Vulnerable Target Demo"
         style={{
           position: 'absolute',
           top: 0,
@@ -210,9 +208,7 @@ export default function Sprig({ stars }) {
         sx={{
           display: ['none', 'none', 'block', 'block']
         }}
-      >
-        <source src="/home/vulnerable-target.mp4" type="video/mp4" />
-      </video>
+      />
       
       {/* Mobile video - visible only on mobile */}
       <video
@@ -237,8 +233,8 @@ export default function Sprig({ stars }) {
       </video>
       <Box sx={{ position: 'relative', zIndex: 1 }}>
 
-<Grid columns={[1, 1]} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>        
-  <Box sx={{ mt: [3, 4, 5], textAlign: 'center', maxWidth: '500px' }}>
+<Grid columns={[1, 1]} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', height: '100%' }}>        
+  <Box sx={{ mt: [2, 3, 4], textAlign: 'flex-start', maxWidth: '500px', px: [3, 3, 3] }}>
           <Text
             as="p"
             variant="subtitle"
@@ -247,26 +243,18 @@ export default function Sprig({ stars }) {
               position: 'relative',
               color: 'white',
               backgroundColor: 'rgba(0, 0, 0, 0.1)',
-              padding: '12px',
+              padding: ['8px', '10px', '12px'],
               borderRadius: '8px',
-              mt: [4, 5, 6]
+              mt: [1, 2, 2],
+              fontSize: ['14px', '16px', '18px'],
+              lineHeight: ['1.3', '1.4', '1.5']
             }}
           >
             A comprehensive collection of intentionally vulnerable applications and systems 
             for security testing, penetration testing practice, and cybersecurity education.
           </Text>
           
-          <Flex sx={{ flexDirection: 'column', mt: [3, 4, 5], alignItems: 'center', justifyContent: 'center' }}>
-            <Buttons
-              id="6"
-              icon="external-link"
-              link="https://vulnerabletarget.com/"
-              primary="#DC2626"
-              sx={{ color: 'white' }}
-            >
-              Discover vulnerable targets
-            </Buttons>
-          </Flex>
+          
         </Box>
       </Grid>
       </Box>
