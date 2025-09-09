@@ -13,7 +13,8 @@ import {
   Flex,
   Checkbox
 } from 'theme-ui'
-import { Zoom } from 'react-reveal'
+// import { Zoom } from 'react-reveal'
+const Zoom = ({ children, ...props }) => <div {...props}>{children}</div>
 
 const Loading = () => (
   <Box

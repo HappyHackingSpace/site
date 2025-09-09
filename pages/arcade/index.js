@@ -14,11 +14,12 @@ import Ticker from 'react-ticker'
 import PageVisibility from 'react-page-visibility'
 import ArcadeFooter from '../../components/arcade/footer'
 import Balancer from 'react-wrap-balancer'
-import { Fade } from 'react-reveal'
+// import { Fade } from 'react-reveal'
+const Fade = ({ children, ...props }) => <div {...props}>{children}</div>
 import Join from '../../components/arcade/join'
 import Announcement from '../../components/announcement'
 import Link from 'next/link'
-import { shopParts } from '../api/arcade/shop'
+// import { shopParts } from '../api/arcade/shop'
 /** @jsxImportSource theme-ui */
 
 const styled = `
@@ -1906,31 +1907,11 @@ export async function getStaticProps() {
     .readdirSync(stickersDir)
     .filter(sticker => sticker !== 'hero.jpg')
 
-  const items = await shopParts()
+  // Disabled shop functionality - using empty data
+  const items = []
 
-  const carousel = items
-    .map(record => ({
-      hours: record['Cost Hours'] || 0,
-      imageURL: record['Image URL'] || '',
-      enabledCarousel: record['Enabled Carousel'] || false
-    }))
-    .filter(item => item.enabledCarousel)
-    .filter(item => item.imageURL !== '')
-
-  const highlightedItems = items
-    .filter(item => item['Enabled Highlight'])
-    .sort((_a, _b) => Math.random() - 0.5 > 0)
-    .map(record => ({
-      // id: record['ID'],
-      'Image URL': record['Image URL'] || null,
-      Name: record['Name'] || null,
-      'Small Name': record['Small Name'] || null,
-      'Full Name': record['Full Name'] || null,
-      'Cost Hours': record['Cost Hours'] || null,
-      Description: record['Description'] || null,
-      'Fulfillment Description': record['Fulfillment Description'] || null,
-      'Extra tags': record['Extra tags'] || []
-    }))
+  const carousel = []
+  const highlightedItems = []
 
   return {
     props: {

@@ -8,7 +8,8 @@ import {
   Badge,
   Link
 } from 'theme-ui'
-import { Zoom } from 'react-reveal'
+// import { Zoom } from 'react-reveal'
+const Zoom = ({ children, ...props }) => <div {...props}>{children}</div>
 import Icon from '@hackclub/icons'
 
 function BreakdownBox({

@@ -15,7 +15,6 @@ import {
 } from 'theme-ui'
 import Photo from '../../components/photo'
 import NextImage from 'next/image'
-import Marquee from 'react-marquee-slider'
 import Photo1 from '../../public/winter/1.jpeg'
 import Photo2 from '../../public/winter/2.png'
 import Photo3 from '../../public/winter/3.jpeg'
@@ -48,6 +47,37 @@ import Photo30 from '../../public/winter/30.jpeg'
 import Photo31 from '../../public/winter/31.png'
 
 /** @jsxImportSource theme-ui */
+
+// Custom Marquee component to replace react-marquee-slider
+const Marquee = ({ velocity = 12, children }) => {
+  return (
+    <Box
+      sx={{
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+        width: '100%'
+      }}
+    >
+      <Box
+        sx={{
+          display: 'inline-block',
+          paddingLeft: '100%',
+          animation: `scroll-left ${100 - velocity}s linear infinite`,
+          '@keyframes scroll-left': {
+            '0%': {
+              transform: 'translate3d(100%, 0, 0)'
+            },
+            '100%': {
+              transform: 'translate3d(-100%, 0, 0)'
+            }
+          }
+        }}
+      >
+        {children}
+      </Box>
+    </Box>
+  )
+}
 
 const Header = styled(Box)`
   background: url('/pattern.svg');

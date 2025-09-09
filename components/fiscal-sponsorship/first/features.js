@@ -3,7 +3,7 @@ import Icon from '../../icon'
 import Masonry from 'react-masonry-css'
 import NextImage from 'next/image'
 
-import Fade from 'react-reveal/Fade'
+// import Fade from 'react-reveal/Fade'
 
 export default function Features() {
   return (
@@ -323,7 +323,7 @@ export default function Features() {
 
 function Module({ icon, name, body, iconColor }) {
   return (
-    <Fade bottom>
+    <div>
       <Card
         variant="primary"
         sx={{
@@ -364,13 +364,13 @@ function Module({ icon, name, body, iconColor }) {
           </Text>
         </Box>
       </Card>
-    </Fade>
+    </div>
   )
 }
 
 function ModuleDetails({ children }) {
   return (
-    <Fade bottom>
+    <div>
       <Box
         sx={{
           bg: 'none',
@@ -383,7 +383,7 @@ function ModuleDetails({ children }) {
       >
         {children}
       </Box>
-    </Fade>
+    </div>
   )
 }
 
