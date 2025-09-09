@@ -42,7 +42,10 @@ export default function Carousel({ cards }) {
                 onMouseOut={() => setSpeed(6)}
               >
                 {cards.map((card, idx) => (
-                  <CarouselCards key={idx} {...card} />
+                  <CarouselCards key={`first-${idx}`} {...card} />
+                ))}
+                {cards.map((card, idx) => (
+                  <CarouselCards key={`second-${idx}`} {...card} />
                 ))}
               </Box>
             )}
