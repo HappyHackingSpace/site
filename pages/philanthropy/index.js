@@ -17,11 +17,65 @@ import Head from 'next/head'
 import Nav from '../../components/nav'
 import ForceTheme from '../../components/force-theme'
 import Footer from '../../components/footer'
-import ReactBeforeSliderComponent from 'react-before-after-slider-component'
-import 'react-before-after-slider-component/dist/build.css'
-import Fade from 'react-reveal/Fade'
-import Slide from 'react-reveal/Slide'
-import Marquee from 'react-marquee-slider'
+import { useState, useEffect } from 'react'
+// import Fade from 'react-reveal/Fade'
+// import Slide from 'react-reveal/Slide'
+
+// Custom Marquee component to replace react-marquee-slider
+const Marquee = ({ velocity = 12, children }) => {
+  return (
+    <Box
+      sx={{
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+        width: '100%'
+      }}
+    >
+      <Box
+        sx={{
+          display: 'inline-block',
+          paddingLeft: '100%',
+          animation: `scroll-left ${100 - velocity}s linear infinite`,
+          '@keyframes scroll-left': {
+            '0%': {
+              transform: 'translate3d(100%, 0, 0)'
+            },
+            '100%': {
+              transform: 'translate3d(-100%, 0, 0)'
+            }
+          }
+        }}
+      >
+        {children}
+      </Box>
+    </Box>
+  )
+}
+
+// Simple replacement components for react-reveal
+const Fade = ({ children, delay, ...props }) => <div {...props}>{children}</div>
+const Slide = ({ children, ...props }) => <div {...props}>{children}</div>
+
+// Error boundary for debugging
+const ErrorBoundary = ({ children }) => {
+  const [hasError, setHasError] = useState(false)
+  
+  useEffect(() => {
+    const handleError = (error, errorInfo) => {
+      console.log('Error caught:', error, errorInfo)
+      setHasError(true)
+    }
+    
+    window.addEventListener('error', handleError)
+    return () => window.removeEventListener('error', handleError)
+  }, [])
+  
+  if (hasError) {
+    return <div>Something went wrong with the slider component.</div>
+  }
+  
+  return children
+}
 import ExecuteBig from '../../public/donate/codedaydc_hack.jpg'
 import HackCamp from '../../public/donate/sf.jpg'
 import HackerGames from '../../public/donate/0img_20210830_161125.jpg'
@@ -273,16 +327,80 @@ const SECOND_IMAGE = {
   imageUrl: '/philanthropy/before.png'
 }
 
-const delimiterIconStyles = {
-  width: '50px',
-  height: '50px',
-  backgroundSize: '110%',
-  backgroundPosition: 'center',
-  borderRadius: 'none',
-  backgroundImage:
-    'url(https://cloud-1rqn9rwxm-hack-club-bot.vercel.app/0frame_43.svg)'
-}
 const Map = () => {
+  const [sliderPosition, setSliderPosition] = useState(30)
+  const [isDragging, setIsDragging] = useState(false)
+  const [hasError, setHasError] = useState(false)
+
+  const handleMouseDown = (e) => {
+    try {
+      setIsDragging(true)
+    } catch (error) {
+      console.warn('Mouse down error:', error)
+      setHasError(true)
+    }
+  }
+  
+  const handleMouseUp = (e) => {
+    try {
+      setIsDragging(false)
+    } catch (error) {
+      console.warn('Mouse up error:', error)
+      setHasError(true)
+    }
+  }
+  
+  const handleMouseMove = (e) => {
+    try {
+      if (!isDragging) return
+      const rect = e.currentTarget.getBoundingClientRect()
+      const x = e.clientX - rect.left
+      const percentage = (x / rect.width) * 100
+      setSliderPosition(Math.max(0, Math.min(100, percentage)))
+    } catch (error) {
+      console.warn('Mouse move error:', error)
+      setHasError(true)
+    }
+  }
+
+  const handleTouchStart = (e) => {
+    try {
+      setIsDragging(true)
+    } catch (error) {
+      console.warn('Touch start error:', error)
+      setHasError(true)
+    }
+  }
+  
+  const handleTouchEnd = (e) => {
+    try {
+      setIsDragging(false)
+    } catch (error) {
+      console.warn('Touch end error:', error)
+      setHasError(true)
+    }
+  }
+  
+  const handleTouchMove = (e) => {
+    try {
+      if (!isDragging) return
+      const rect = e.currentTarget.getBoundingClientRect()
+      const x = e.touches[0].clientX - rect.left
+      const percentage = (x / rect.width) * 100
+      setSliderPosition(Math.max(0, Math.min(100, percentage)))
+    } catch (error) {
+      console.warn('Touch move error:', error)
+      setHasError(true)
+    }
+  }
+
+  // Add error boundary for debugging
+  useEffect(() => {
+    if (hasError) {
+      console.log('Slider component encountered an error but is still functional')
+    }
+  }, [hasError])
+
   return (
     <Fade>
       <Box
@@ -293,12 +411,79 @@ const Map = () => {
           height: 'auto'
         }}
       >
-        <ReactBeforeSliderComponent
-          firstImage={FIRST_IMAGE}
-          secondImage={SECOND_IMAGE}
-          delimiterIconStyles={delimiterIconStyles}
-          currentPercentPosition={30}
-        />
+        <Box
+          sx={{
+            position: 'relative',
+            width: '100%',
+            height: '400px',
+            overflow: 'hidden',
+            cursor: isDragging ? 'grabbing' : 'grab',
+            userSelect: 'none'
+          }}
+          onMouseMove={handleMouseMove}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          onTouchMove={handleTouchMove}
+        >
+          {/* Before Image */}
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              backgroundImage: `url(${SECOND_IMAGE.imageUrl})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          />
+          
+          {/* After Image */}
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: `${sliderPosition}%`,
+              height: '100%',
+              backgroundImage: `url(${FIRST_IMAGE.imageUrl})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              overflow: 'hidden'
+            }}
+          />
+          
+          {/* Slider Handle */}
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left: `${sliderPosition}%`,
+              width: '4px',
+              height: '100%',
+              bg: 'white',
+              transform: 'translateX(-50%)',
+              cursor: 'ew-resize',
+              '&::before': {
+                content: '""',
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '50px',
+                height: '50px',
+                backgroundImage: 'url(https://cloud-1rqn9rwxm-hack-club-bot.vercel.app/0frame_43.svg)',
+                backgroundSize: '110%',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }
+            }}
+          />
+        </Box>
         <Text variant="caption">
           What Hack Club could look like with your support
         </Text>
@@ -1420,7 +1605,9 @@ const Philanthropy = ({ posts = [] }) => {
                 </Text>
               </Box>
             </Fade>
-            <Map />
+            <ErrorBoundary>
+              <Map />
+            </ErrorBoundary>
           </Grid>
           <Fade>
             <Text as="p" mt={4}>

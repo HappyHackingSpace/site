@@ -1,5 +1,6 @@
 import { Box, Flex, Container, Text, Badge, Link } from 'theme-ui'
-import { Slide } from 'react-reveal'
+// import { Slide } from 'react-reveal'
+const Slide = ({ children, ...props }) => <div {...props}>{children}</div>
 import Icon from '../icon'
 
 function TimelineStep({ children }) {

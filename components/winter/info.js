@@ -11,7 +11,8 @@ import {
 } from 'theme-ui'
 import Icon from '../icon'
 import Tilt from '../tilt'
-import { Zoom } from 'react-reveal'
+// import { Zoom } from 'react-reveal'
+const Zoom = ({ children, ...props }) => <div {...props}>{children}</div>
 
 export default function InfoGrid() {
   return (

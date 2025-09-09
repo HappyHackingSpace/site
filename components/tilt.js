@@ -9,20 +9,30 @@ const Tilt = ({ options = {}, children, ...props }) => {
   const { matches: enabled } = useMedia('(hover: hover)')
 
   useEffect(() => {
-    if (enabled) {
-      VanillaTilt.init(root.current, {
-        max: 7.5,
-        scale: 1.05,
-        speed: 400,
-        glare: true,
-        'max-glare': 0.25,
-        gyroscope: false,
-        ...options
-      })
+    if (enabled && root.current) {
+      try {
+        VanillaTilt.init(root.current, {
+          max: 7.5,
+          scale: 1.05,
+          speed: 400,
+          glare: true,
+          'max-glare': 0.25,
+          gyroscope: false,
+          ...options
+        })
+      } catch (error) {
+        console.warn('VanillaTilt initialization failed:', error)
+      }
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    return () => root.current?.vanillaTilt?.destroy()
+    return () => {
+      try {
+        root.current?.vanillaTilt?.destroy()
+      } catch (error) {
+        console.warn('VanillaTilt destruction failed:', error)
+      }
+    }
   }, [options, enabled])
 
   return React.cloneElement(children, { ref: root })

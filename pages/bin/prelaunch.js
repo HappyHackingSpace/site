@@ -27,11 +27,14 @@ import { TypeAnimation } from 'react-type-animation'
 const RsvpCount = () => {
   const targetRSVPs = 500
   const [rsvpCount, setRsvpCount] = useState(0)
-  useEffect(async () => {
-    // const url = 'https://api2.hackclub.com/v0.1/The Bin/rsvp'  <- switch to this once we have api2 back up and running
-    const url = '/api/bin/rsvp'
-    const results = await fetch(url).then(r => r.json())
-    setRsvpCount(results)
+  useEffect(() => {
+    const fetchRsvpCount = async () => {
+      // const url = 'https://api2.hackclub.com/v0.1/The Bin/rsvp'  <- switch to this once we have api2 back up and running
+      const url = '/api/bin/rsvp'
+      const results = await fetch(url).then(r => r.json())
+      setRsvpCount(results)
+    }
+    fetchRsvpCount()
   }, [])
 
   if (rsvpCount < targetRSVPs) {
@@ -47,6 +50,22 @@ const stickerImages = [
   'https://cloud-i547pyt1f-hack-club-bot.vercel.app/0idea.png'
 ]
 
+
+const Electronic = ({ imageUrl, name, description }) => {
+  return (
+    <Card sx={{ display: 'inline-flex', textAlign: 'center', my: 'auto' }}>
+      <Flex
+        sx={{ mx: 'auto', flexDirection: 'column', display: 'inline-flex' }}
+      >
+        <Image src={imageUrl} width="100" />
+        <Heading as="span" variant="headline">
+          {name}
+        </Heading>
+        <Text sx={{ whiteSpace: 'nowrap' }}>{description}</Text>
+      </Flex>
+    </Card>
+  )
+}
 
 const PartPicker = () => {
   const parts = [
@@ -90,29 +109,16 @@ const PartPicker = () => {
 const OnboardCount = () => {
   const [onboardCount, setOnboardCount] = useState(200)
 
-  useEffect(async () => {
-    const url = '/api/onboard/p/count'
-    const results = await fetch(url).then(r => r.json())
-    setOnboardCount(results.count)
+  useEffect(() => {
+    const fetchOnboardCount = async () => {
+      const url = '/api/onboard/p/count'
+      const results = await fetch(url).then(r => r.json())
+      setOnboardCount(results.count)
+    }
+    fetchOnboardCount()
   }, [])
 
   return <Text>{onboardCount}</Text>
-}
-
-const Electronic = ({ imageUrl, name, description }) => {
-  return (
-    <Card sx={{ display: 'inline-flex', textAlign: 'center', my: 'auto' }}>
-      <Flex
-        sx={{ mx: 'auto', flexDirection: 'column', display: 'inline-flex' }}
-      >
-        <Image src={imageUrl} width="100" />
-        <Heading as="span" variant="headline">
-          {name}
-        </Heading>
-        <Text sx={{ whiteSpace: 'nowrap' }}>{description}</Text>
-      </Flex>
-    </Card>
-  )
 }
 
 const spin = keyframes({

@@ -128,17 +128,23 @@ function Page({
 
   // Spotlight effect
   const spotlightRef = useRef()
+  const spotlightContainerRef = useRef()
   useEffect(() => {
     const handler = event => {
-      var rect = document.getElementById('spotlight').getBoundingClientRect()
+      const spotlightElement = spotlightContainerRef.current
+      if (!spotlightElement) return
+      
+      var rect = spotlightElement.getBoundingClientRect()
       var x = event.clientX - rect.left //x position within the element.
       var y = event.clientY - rect.top //y position within the element.
 
-      spotlightRef.current.style.background = `radial-gradient(
+      if (spotlightRef.current) {
+        spotlightRef.current.style.background = `radial-gradient(
 				circle at ${x}px ${y}px,
 				rgba(132, 146, 166, 0) 10px,
 				rgba(249, 250, 252, 0.9) 80px
 			)`
+      }
     }
     window.addEventListener('mousemove', handler)
     return () => window.removeEventListener('mousemove', handler)
@@ -625,6 +631,7 @@ function Page({
         <Carousel cards={carouselCards} />
         <Box
           id="spotlight"
+          ref={spotlightContainerRef}
           as="section"
           sx={{
             backgroundImage: `

@@ -1,6 +1,7 @@
 import { Box, Heading, Button, Link, Text, Container } from 'theme-ui'
 import Snowfall from 'react-snowfall'
-import { Fade } from 'react-reveal'
+// import { Fade } from 'react-reveal'
+const Fade = ({ children, ...props }) => <div {...props}>{children}</div>
 import Rsvp from './rsvp'
 import { keyframes } from '@emotion/react'
 

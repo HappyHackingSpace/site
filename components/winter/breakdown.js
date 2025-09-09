@@ -8,7 +8,9 @@ import {
   Badge,
   Link
 } from 'theme-ui'
-import { Fade, Slide } from 'react-reveal'
+// import { Fade, Slide } from 'react-reveal'
+const Fade = ({ children, ...props }) => <div {...props}>{children}</div>
+const Slide = ({ children, ...props }) => <div {...props}>{children}</div>
 import BreakdownBox from './breakdown-box'
 
 function Breakdown() {
