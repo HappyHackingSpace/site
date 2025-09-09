@@ -33,7 +33,7 @@ const scrolled = props =>
     }
   `
 
-const Base = styled('a')`
+const Base = styled('div')`
  
   background-position: top left;
   background-size: contain;
@@ -60,24 +60,32 @@ const Base = styled('a')`
 
 const Flag = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 0);
     };
+    
+    // Set initial scroll state after mount
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const logoSrc = scrolled
+  // Always use the default (non-scrolled) state during SSR and initial render
+  const effectiveScrolled = mounted ? scrolled : false;
+  
+  const logoSrc = effectiveScrolled
     ? '/branding/hhs-black-wo-black.avif' // sticky: siyah logo
     : '/branding/hhs-white-wo-white.avif'; // en üstte: beyaz logo
 
   return (
     <Link href="/" passHref>
       <Base
-        as="a"
-        scrolled={scrolled}
+        scrolled={effectiveScrolled}
         style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
         <img src={logoSrc} alt="Happy Hacking Space Flag" style={{ width: '60%', height: 'auto' }} />

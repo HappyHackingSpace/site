@@ -17,7 +17,6 @@ import { useEffect, useState, useRef } from 'react'
 import Footer from '../../components/footer'
 import { keyframes } from '@emotion/react'
 import RsvpForm from '../../components/bin/rsvp-form'
-import { Fade } from 'react-reveal'
 import ForceTheme from '../../components/force-theme'
 import JSConfetti from 'js-confetti'
 import Sparkles from '../../components/sparkles'
@@ -229,24 +228,7 @@ export default function Bin() {
               <Text sx={{ fontWeight: 'bold' }}>
               Build{' '}
               <em>
-
-                <TypeAnimation
-                cursor={false}
-                sequence={[
-                  // Same substring at the start will only be typed out once, initially
-                  'a laser guided nerf gun',
-                  1000, // wait 1s before replacing "Mice" with "Hamsters"
-                  'a clap activated lamp',
-                  1000,
-                  'a temperature activated Febreze can',
-                  1000,
-                  'a flame actuated speaker',
-                  1000,
-                  'a light dependant door',
-                  1000
-                ]}
-                repeat={Infinity}
-                />
+                a custom electronics project
               </em>
                 {' '}
                 with parts you pick out.
@@ -257,7 +239,6 @@ export default function Bin() {
               </Text>
             </Box>
             <Box as="section" sx={{ textAlign: 'center' }}>
-              <Fade up delay={100}>
                 <Card sx={{ p: 3, mt: 4, mx: 'auto', maxWidth: '50ch' }}>
                   <Text as="p" sx={{ mb: 1, mt: 0, textWrap: 'pretty', fontSize: 2 }}>
                     Running for only 2 months.
@@ -270,7 +251,6 @@ export default function Bin() {
                   </Text>
                   <RsvpForm />
                 </Card>
-              </Fade>
             </Box>
           </Container>
         </Box>

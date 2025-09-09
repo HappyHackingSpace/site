@@ -3,7 +3,21 @@ import styled from '@emotion/styled'
 import { Box, Container, Image, Grid, Heading, Link, Text } from 'theme-ui'
 import NextLink from 'next/link'
 import theme from '@hackclub/theme'
-import Icon from './icon'
+import Icon from './icon'   
+
+
+// Styled component for footer links (not an anchor tag)
+const FooterLinkText = styled.span`
+  display: block;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: ${theme.space[2]}px;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+`
 
 const Base = styled(Box, { shouldForwardProp: prop => prop !== 'dark' })`
   background: ${props =>
@@ -82,36 +96,36 @@ const Footer = ({
           <Heading as="h2" variant="subheadline" mb={3}>
             Happy Hacking Space
           </Heading>
-          <NextLink href="/philosophy" passHref>
-            <Link>Philosophy</Link>
+          <NextLink href="/philosophy">
+            <FooterLinkText>Philosophy</FooterLinkText>
           </NextLink>
-          <NextLink href="/team" passHref>
-            <Link>Our Team & Board</Link>
+          <NextLink href="/team">
+            <FooterLinkText>Our Team & Board</FooterLinkText>
           </NextLink>
-          <NextLink href="/jobs" passHref>
-            <Link>Jobs</Link>
+          <NextLink href="/jobs">
+            <FooterLinkText>Jobs</FooterLinkText>
           </NextLink>
-          <NextLink href="/brand" passHref>
-            <Link>Branding</Link>
+          <NextLink href="/brand">
+            <FooterLinkText>Branding</FooterLinkText>
           </NextLink>
-          {/* <NextLink href="/press" passHref>
-            <Link>Press Inquiries</Link>
+          {/* <NextLink href="/press">
+            <FooterLinkText>Press Inquiries</FooterLinkText>
           </NextLink> */}
-          {/* <NextLink href="/philanthropy" passHref>
-            <Link>Donate</Link>
+          {/* <NextLink href="/philanthropy">
+            <FooterLinkText>Donate</FooterLinkText>
           </NextLink> */}
         </Box>
-        {/* <Box>
+        <Box>
           <Heading as="h2" variant="subheadline" mb={3}>
             Resources
           </Heading>
-          <Link href="https://hackclub.com/pizza">Manifesto</Link>
+          {/* <Link href="https://hackclub.com/pizza">Manifesto</Link> */}
           <Link href="https://events.hackclub.com/">Community Events</Link>
-          <Link href="https://jams.hackclub.com/">Jams</Link>
+          {/* <Link href="https://jams.hackclub.com/">Jams</Link>
           <Link href="https://toolbox.hackclub.com/">Toolbox</Link>
-          <Link href="https://directory.hackclub.com/">Clubs Directory</Link>
+          <Link href="https://directory.hackclub.com/">Clubs Directory</Link> */}
           <Link href="https://hackclub.com/conduct/">Code of Conduct</Link>
-        </Box> */}
+        </Box>
         <Box sx={{ gridColumn: ['span 2', 'span 1'] }}>
           <Logo aria-label="Happy Hacking Space logo" width={128} height={45} dark={dark} />
           <Grid
