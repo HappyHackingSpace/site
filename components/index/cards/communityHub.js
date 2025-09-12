@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Box, Flex, Grid, Text } from 'theme-ui'
+import { Box, Flex, Grid, Image, Text } from 'theme-ui'
 import CardModel from './card-model'
 import Buttons from './button'
 
@@ -30,7 +30,7 @@ export default function Onboard({ stars }) {
         position: 'relative',
         overflow: 'hidden',
         backgroundColor: 'rgba(0,0,0)',
-        minHeight: ['300px', '400px', '450px']
+        maxHeight: ['225px', '300px', '340px']
       }}
       github_link="https://github.com/HappyHackingSpace/CommunityHub"
       color="white"
@@ -38,12 +38,10 @@ export default function Onboard({ stars }) {
       stars={repoStars}
       position={[null, 'top', 'top']}
     >
-      {/* Desktop video - hidden on mobile */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
+      {/* Desktop GIF - hidden on mobile */}
+      <Image
+        src="/home/Communityhub1.gif"
+        alt="Community Hub Demo"
         style={{
           position: 'absolute',
           top: 0,
@@ -56,9 +54,7 @@ export default function Onboard({ stars }) {
         sx={{
           display: ['none', 'none', 'block', 'block']
         }}
-      >
-        <source src="/home/Communityhub1.mp4" type="video/mp4" />
-      </video>
+      />
       
       /* Mobile video - visible only on mobile */
         <video

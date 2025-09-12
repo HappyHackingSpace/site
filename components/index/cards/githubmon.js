@@ -25,7 +25,7 @@ export default function Haxidraw({ stars }) {
         backgroundColor: '#95C9E5',
         backgroundImage: `url(/home/gitmon.png)`,
         backgroundSize: 'cover',
-        minHeight: ['300px', '400px', '450px']
+        maxHeight: ['150px', '200px', '275px']
       }}
       position={[null, 'top', 'top']}
       highlight="dark"

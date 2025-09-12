@@ -105,23 +105,6 @@ const CardModel = ({
           </Flex>
         ) : (
           <>
-            {stars ? (
-              <Flex
-                sx={{
-                  position: 'absolute',
-                  left: 2,
-                  top: 2,
-                  alignItems: 'center',
-                  zIndex: 2
-                }}
-              >
-                <Text as="h2" sx={{ fontSize: ['20px', '24px', '28px'] }}>
-                  ⭐️ <Comma>{stars}</Comma>
-                </Text>
-              </Flex>
-            ) : (
-              <></>
-            )}
             <Flex
               sx={{
                 position: 'absolute',
@@ -131,6 +114,13 @@ const CardModel = ({
                 zIndex: 2
               }}
             >
+              {stars ? (
+                <Text as="h2" sx={{ fontSize: ['16px', '20px', '24px'], mr: 2 }}>
+                  ⭐️ <Comma>{stars}</Comma>
+                </Text>
+              ) : (
+                <></>
+              )}
                <Link href={github_link} target="_blank" rel="noopener noreferrer">
                 <Icon
                   glyph="github"
