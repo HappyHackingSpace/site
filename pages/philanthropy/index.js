@@ -586,7 +586,7 @@ const Philanthropy = ({ posts = [] }) => {
                     color: 'white'
                   }}
                 >
-                  Invest in the future.
+                  Invest in the future of Mesopotamia.
                 </Heading>
                 <Box
                   sx={{
@@ -595,29 +595,21 @@ const Philanthropy = ({ posts = [] }) => {
                     color: 'white'
                   }}
                 >
-                  Contribute today to empower the next generation.
+                  Contribute today to empower the next generation of Mesopotamians.
                 </Box>
                 <Button
                   variant="ctaLg"
                   my={3}
                   sx={{ width: ['100%', 'auto'] }}
                   as="a"
-                  href="https://hcb.hackclub.com/donations/start/hq?utm_source=site&utm_medium=internal&utm_campaign=philanthropy_page&utm_content=hero_button"
+                  href="https://airtable.com/appKfmTrC8b23hJNQ/shrUCpuTfSraCfmvu"
                 >
                   Donate
                   <Text sx={{ display: ['none', 'inline-block'], ml: 2 }}>
-                    to Hack Club
+                    to Happy Hacking Space
                   </Text>
                 </Button>
-                <Text
-                  sx={{ mt: 1, display: 'block', opacity: 0.8 }}
-                  fontSize={2}
-                  color="white"
-                >
-                  Your contribution is tax-deductible.
-                  <br />
-                  Hack Club is a 501(c)(3) nonprofit with the EIN 81-2908499.
-                </Text>
+                
               </Container>
             </Box>
           </Box>

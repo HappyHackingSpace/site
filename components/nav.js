@@ -147,20 +147,14 @@ const NavBar = styled(Box, {
 const Navigation = props => (
   // REMINDER: This should be no more than 7 links :)
   <NavBar role="navigation" {...props}>
-    {/* <NextLink href="/clubs">
-      <NavLinkText color={props.color} scrolled={props.scrolled}>Clubs</NavLinkText>
-    </NextLink> */}
-    <NextLink href="/philanthropy">
-      <NavLinkText color={props.color} scrolled={props.scrolled}>Philanthropy</NavLinkText>
-    </NextLink>
     <NextLink href="/philosophy">
       <NavLinkText color={props.color} scrolled={props.scrolled}>Philosophy</NavLinkText>
     </NextLink>
+    <NextLink href="https://join.happyhacking.space">
+      <NavLinkText color={props.color} scrolled={props.scrolled}>Community</NavLinkText>
+    </NextLink>
     <NextLink href="/events">
       <NavLinkText color={props.color} scrolled={props.scrolled}>Events</NavLinkText>
-    </NextLink>
-    <NextLink href="/team">
-      <NavLinkText color={props.color} scrolled={props.scrolled}>Our Team & Board</NavLinkText>
     </NextLink>
     {/* <NextLink href="/slack">
       <NavLinkText>Community</NavLinkText>
@@ -171,6 +165,9 @@ const Navigation = props => (
     <NextLink href="https://toolbox.hackclub.com/">
       <NavLinkText>Toolbox</NavLinkText>
     </NextLink> */}
+    <NextLink href="/philanthropy">
+      <NavLinkText color={props.color} scrolled={props.scrolled}>Donors</NavLinkText>
+    </NextLink>
   </NavBar>
 )
 

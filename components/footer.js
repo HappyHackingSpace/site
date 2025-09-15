@@ -111,9 +111,9 @@ const Footer = ({
           {/* <NextLink href="/press">
             <FooterLinkText>Press Inquiries</FooterLinkText>
           </NextLink> */}
-          {/* <NextLink href="/philanthropy">
+          <NextLink href="/philanthropy">
             <FooterLinkText>Donate</FooterLinkText>
-          </NextLink> */}
+          </NextLink>
         </Box>
         <Box>
           <Heading as="h2" variant="subheadline" mb={3}>
