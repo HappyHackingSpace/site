@@ -1052,56 +1052,94 @@ const Philanthropy = ({ posts = [] }) => {
               As the largest network of technical teenagers, we are featured in
               the news:
             </Text>
-            <Grid gap={[0, 0, 4]} columns={['1fr 1fr', '1fr 0.5fr 1fr 1fr']}>
-              <Link
-                href="https://www.businessinsider.com/zach-lattas-hacker-club-got-him-on-forbes-30-under-30-2016-1"
-                target="_blank"
-                sx={{ display: 'flex', alignItems: 'center' }}
-              >
-                <Image
-                  src="/philanthropy/insider-logo.svg"
-                  width={530}
-                  height={150}
-                  alt="insider logo"
-                />
-              </Link>
-              <Link
-                href="https://www.wsj.com/articles/teen-hackers-try-to-convince-parents-they-are-up-to-good-11569922200"
-                target="_blank"
-                sx={{ display: 'flex', alignItems: 'center' }}
-              >
-                <Image
-                  src="/philanthropy/wsj-logo.svg"
-                  width={270}
-                  height={100}
-                  alt="wsj logo"
-                />
-              </Link>
-              <Link
-                href="https://www.forbes.com/sites/fastforward/2021/06/29/from-journalism-to-a-tech-nonprofit-this-coos-big-pivot-to-empower-the-next-generation-of-coders/"
-                target="_blank"
-                sx={{ display: 'flex', alignItems: 'center' }}
-              >
-                <Image
-                  src="/philanthropy/forbes-logo.svg"
-                  width={500}
-                  height={100}
-                  alt="forbes logo"
-                />
-              </Link>
-              <Link
-                href="https://www.philanthropy.com/article/nonprofits-need-to-embrace-transparency-even-if-the-supreme-court-rules-to-protect-donor-privacy"
-                target="_blank"
-                sx={{ display: 'flex', alignItems: 'center' }}
-              >
-                <Image
-                  src="/philanthropy/cop.png"
-                  width={750}
-                  height={250}
-                  alt="cop logo"
-                />
-              </Link>
-            </Grid>
+         
+<Flex
+  sx={{
+    gap: [2, 3, 4],
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexWrap: 'nowrap',
+    overflowX: 'auto'
+  }}
+>
+  <Link
+    href="https://www.businessinsider.com/..."
+    target="_blank"
+    sx={{
+      flex: '0 0 auto',
+    
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}
+  >
+    <Image
+      src="/philanthropy/insider-logo.svg"
+      alt="insider logo"
+      width={140}
+      height={40}
+      style={{ width: '100%', height: 'auto' }}
+    />
+  </Link>
+
+  <Link
+    href="https://www.wsj.com/..."
+    target="_blank"
+    sx={{
+      flex: '0 0 auto',
+      width: ['70px', '100px', '120px'],
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}
+  >
+    <Image
+      src="/philanthropy/wsj-logo.svg"
+      alt="wsj logo"
+      width={120}
+      height={40}
+      style={{ width: '100%', height: 'auto' }}
+    />
+  </Link>
+
+  <Link
+    href="https://www.forbes.com/..."
+    target="_blank"
+    sx={{
+      flex: '0 0 auto',
+      width: ['80px', '130px', '160px'],
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}
+  >
+    <Image
+      src="/philanthropy/forbes-logo.svg"
+      alt="forbes logo"
+      width={160}
+      height={40}
+      style={{ width: '100%', height: 'auto' }}
+    />
+  </Link>
+
+  <Link
+    href="https://www.philanthropy.com/..."
+    target="_blank"
+    sx={{
+      flex: '0 0 auto',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}
+  >
+    <Image
+      src="/philanthropy/cop.png"
+      alt="cop logo"
+      width={350}
+      height={150}
+    />
+  </Link>
+</Flex>
           </Fade>
           <Line />
           <Fade>
