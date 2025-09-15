@@ -1239,20 +1239,20 @@ export async function getStaticProps() {
 
   // HCB: get total raised
   let bankData = []
-  let initialBankData = await fetch('https://hcb.hackclub.com/stats')
-  try {
-    const bd = await initialBankData.json()
-    let raised = bd.raised / 100
+  // let initialBankData = await fetch('https://hcb.hackclub.com/stats')
+  // try {
+  //   const bd = await initialBankData.json()
+  //   let raised = bd.raised / 100
 
-    bankData.push(
-      `💰 ${raised.toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD'
-      })} raised`
-    )
-  } catch {
-    bankData.push('error')
-  }
+  //   bankData.push(
+  //     `💰 ${raised.toLocaleString('en-US', {
+  //       style: 'currency',
+  //       currency: 'USD'
+  //     })} raised`
+  //   )
+  // } catch {
+  //   bankData.push('error')
+  // }
 
   // Slack: get total raised
   const { Slack: Slacky } = require('./api/slack')
