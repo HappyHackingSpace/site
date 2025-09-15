@@ -1058,8 +1058,8 @@ const Philanthropy = ({ posts = [] }) => {
     gap: [2, 3, 4],
     justifyContent: 'space-between',
     alignItems: 'center',
-    flexWrap: 'nowrap',
-    overflowX: 'auto'
+    flexWrap: ['wrap', 'nowrap', 'nowrap'], // mobile: wrap (2x2), larger: single row
+    overflowX: ['auto', 'hidden', 'hidden']
   }}
 >
   <Link
