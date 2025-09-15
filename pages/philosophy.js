@@ -4,7 +4,6 @@ import { Box, Heading, Container, Text, Button, Link } from 'theme-ui'
 import Nav from '../components/nav'
 import styled from '@emotion/styled'
 import Footer from '../components/footer'
-import NextLink from 'next/link'
 
 const Header = styled(Box)`
   color: white;
@@ -270,11 +269,15 @@ export default function Philosophy() {
           >
             Start a club
           </Button> */}
-          <NextLink href="https://join.happyhacking.space" passHref>
-            <Button sx={{ bg: 'white', color: 'red' }} as="a">
+            <Button
+              sx={{ bg: 'white', color: 'red' }}
+              as="a"
+              href="https://join.happyhacking.space"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Join our community
             </Button>
-          </NextLink>
         </Box>
       </Box>
       <Footer light />
