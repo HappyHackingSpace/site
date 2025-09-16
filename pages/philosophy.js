@@ -7,6 +7,7 @@ import Footer from '../components/footer'
 
 const Header = styled(Box)`
   color: white;
+  height: 18rem; 
   background-image: linear-gradient(
     32deg,
     rgb(207, 45, 228) 0%,
@@ -17,6 +18,9 @@ const Header = styled(Box)`
   > div {
     position: relative;
   }
+  @media screen and (min-width: 48em) {
+    height: 36rem;  /* Desktop için büyük */
+  }
 `
 
 const Seal = styled(Box)`
@@ -25,14 +29,15 @@ const Seal = styled(Box)`
   color: black;
   mix-blend-mode: screen;
   text-align: center;
-  width: 16rem;
+  width: 17rem;
   height: 16rem;
   position: absolute;
   margin-top: -1rem;
+  left: 0;  
   transform: rotate(4deg);
   @media screen and (min-width: 32em) {
     transform: rotate(3deg);
-    margin-top: -4rem;
+    margin-top: -3rem;
   }
 `
 
@@ -70,11 +75,11 @@ const Ultraline = styled(Heading)`
   }
 `
 
-Ultraline.defaultProps = { sx: { fontSize: [48, 54, 72, 96] } }
+
 
 const Row = styled(Container)`
   px: 3;
-  py: [4, 5];
+  py: [3, 4];
   color: 'black';
   display: grid;
   text-align: left;
@@ -119,11 +124,11 @@ export default function Philosophy() {
             px={3}
             align="left"
           >
-            <Ultraline>We're</Ultraline>
-            <Ultraline>at our best</Ultraline>
-            <Ultraline>when we're</Ultraline>
-            <Ultraline>hacking.</Ultraline>
-            <Seal pt={[2, 4]}>
+            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>We're</Ultraline>
+            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>at our best</Ultraline>
+            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>when we're</Ultraline>
+            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>hacking.</Ultraline>
+            <Seal pt={[3, 4]} sx={{ display: ['none', 'none', 'none', 'block']}}>
               <Heading
                 fontSize={[1, 2]}
                 sx={{
@@ -131,6 +136,7 @@ export default function Philosophy() {
                   marginBlockStart: '0em',
                   fontSize: ['16px', '18px'],
                   textTransform: 'uppercase'
+                  
                 }}
                 caps
               >
@@ -166,7 +172,7 @@ export default function Philosophy() {
         <Row>
           <Heading
             as="h2"
-            sx={{ fontSize: [36, 48] }}
+            sx={{ fontSize: [36, 48] , py: 3}}
             color="rgb(207, 45, 228);"
           >
             Make, from anywhere.
@@ -180,12 +186,12 @@ export default function Philosophy() {
         <Row>
           <Heading
             as="h2"
-            sx={{ fontSize: [36, 48] }}
+            sx={{ fontSize: [36, 48], pb: 3 }}
             color="rgb(115, 45, 228);"
           >
             Hack, hack, hack.
           </Heading>
-          <Box sx={{ fontSize: [3, 3] }}>
+          <Box sx={{ fontSize: [3, 3] , pb: 3}}>
             <strong>
               The goal of Happy Hacking Space is to help you become a hacker.
             </strong>{' '}
@@ -196,10 +202,10 @@ export default function Philosophy() {
           </Box>
         </Row>
         <Row>
-          <Heading as="h2" sx={{ fontSize: [36, 48] }} color="rgb(45, 66, 228)">
+          <Heading as="h2" sx={{ fontSize: [36, 48], pb: 3 }} color="rgb(45, 66, 228)">
             Start building.
           </Heading>
-          <Box sx={{ fontSize: [3, 3] }}>
+          <Box sx={{ fontSize: [3, 3] , pb: 3}}>
             Most coding classes teach you programming concepts instead of how to
             write real code—it’s like trying to learn carpentry without any
             wood. So at Happy Hacking Space, you learn to code entirely through building
@@ -210,12 +216,12 @@ export default function Philosophy() {
         <Row>
           <Heading
             as="h2"
-            sx={{ fontSize: [36, 48] }}
+            sx={{ fontSize: [36, 48] , pb: 3 }}
             color="rgb(41, 143, 206)"
           >
             Learn as you build.
           </Heading>
-          <Box sx={{ fontSize: [3, 3] }}>
+          <Box sx={{ fontSize: [3, 3] , pb: 3}}>
             Just as the best carpenters didn’t learn in the classroom, neither
             did the best programmers. Through our{' '}
             <Link href="/workshops">workshops</Link>, you’ll be walked through
@@ -227,12 +233,12 @@ export default function Philosophy() {
         <Row>
           <Heading
             as="h2"
-            sx={{ fontSize: [36, 48] }}
+            sx={{ fontSize: [36, 48], pb: 3 }}
             color="rgb(36, 181, 165)"
           >
             Be part of a community.
           </Heading>
-          <Box sx={{ fontSize: [3, 3] }}>
+          <Box sx={{ fontSize: [3, 3], pb: 3 }}>
             Happy Hacking Space gives you a community of thousands of other
             makers to talk to. We’re artists, writers, engineers,
             tinkerers, campers, filmmakers, volunteers. We make things. We help
@@ -249,7 +255,8 @@ export default function Philosophy() {
             borderRadius: 8,
             color: 'white',
             textAlign: 'center',
-            p: 4
+            p: 4,
+            pt: 3
           }}
         >
           <Heading as="h1" sx={{ fontSize: 5, mb: 2 }}>
