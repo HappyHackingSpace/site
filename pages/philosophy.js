@@ -172,12 +172,12 @@ export default function Philosophy() {
         <Row>
           <Heading
             as="h2"
-            sx={{ fontSize: [36, 48] , py: 3}}
+            sx={{ fontSize: [36, 48] , py: 4}}
             color="rgb(207, 45, 228);"
           >
             Make, from anywhere.
           </Heading>
-          <Box sx={{ fontSize: [3, 3] }}>
+          <Box sx={{ fontSize: [3, 3] , py: 4}}>
             There’s never been a better time for making: anywhere in the world,
             anyone with a laptop and an internet connection can learn to make an
             app. Building things has never been so globally democratized.
@@ -186,12 +186,12 @@ export default function Philosophy() {
         <Row>
           <Heading
             as="h2"
-            sx={{ fontSize: [36, 48], pb: 3 }}
+            sx={{ fontSize: [36, 48], py: 4 }}
             color="rgb(115, 45, 228);"
           >
             Hack, hack, hack.
           </Heading>
-          <Box sx={{ fontSize: [3, 3] , pb: 3}}>
+          <Box sx={{ fontSize: [3, 3] , py: 4}}>
             <strong>
               The goal of Happy Hacking Space is to help you become a hacker.
             </strong>{' '}
@@ -202,10 +202,10 @@ export default function Philosophy() {
           </Box>
         </Row>
         <Row>
-          <Heading as="h2" sx={{ fontSize: [36, 48], pb: 3 }} color="rgb(45, 66, 228)">
+          <Heading as="h2" sx={{ fontSize: [36, 48], py: 4 }} color="rgb(45, 66, 228)">
             Start building.
           </Heading>
-          <Box sx={{ fontSize: [3, 3] , pb: 3}}>
+          <Box sx={{ fontSize: [3, 3] , py: 4}}>
             Most coding classes teach you programming concepts instead of how to
             write real code—it’s like trying to learn carpentry without any
             wood. So at Happy Hacking Space, you learn to code entirely through building
@@ -216,12 +216,12 @@ export default function Philosophy() {
         <Row>
           <Heading
             as="h2"
-            sx={{ fontSize: [36, 48] , pb: 3 }}
+            sx={{ fontSize: [36, 48] , py: 4}}
             color="rgb(41, 143, 206)"
           >
             Learn as you build.
           </Heading>
-          <Box sx={{ fontSize: [3, 3] , pb: 3}}>
+          <Box sx={{ fontSize: [3, 3] , py: 4}}>
             Just as the best carpenters didn’t learn in the classroom, neither
             did the best programmers. Through our{' '}
             <Link href="/workshops">workshops</Link>, you’ll be walked through
@@ -233,12 +233,12 @@ export default function Philosophy() {
         <Row>
           <Heading
             as="h2"
-            sx={{ fontSize: [36, 48], pb: 3 }}
+            sx={{ fontSize: [36, 48], py: 4 }}
             color="rgb(36, 181, 165)"
           >
             Be part of a community.
           </Heading>
-          <Box sx={{ fontSize: [3, 3], pb: 3 }}>
+          <Box sx={{ fontSize: [3, 3], py: 4 }}>
             Happy Hacking Space gives you a community of thousands of other
             makers to talk to. We’re artists, writers, engineers,
             tinkerers, campers, filmmakers, volunteers. We make things. We help
