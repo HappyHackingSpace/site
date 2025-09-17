@@ -42,7 +42,7 @@ import GoldenTrain from '../../public/home/golden-train.png'
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts'
 
 // Custom Marquee component to replace react-marquee-slider
-const Marquee = ({ velocity = 12, children }) => {
+const Marquee = ({ velocity = 100, children }) => {
   return (
     <Box
       sx={{
@@ -55,7 +55,7 @@ const Marquee = ({ velocity = 12, children }) => {
       <Box
         sx={{
           display: 'inline-flex',
-          animation: `marquee ${80 - velocity}s linear infinite`,
+          animation: `marquee ${100 - velocity}s linear infinite`,
           '@keyframes marquee': {
             '0%': {
               transform: 'translateX(0%)'
