@@ -21,61 +21,8 @@ import { useState, useEffect } from 'react'
 // import Fade from 'react-reveal/Fade'
 // import Slide from 'react-reveal/Slide'
 
-// Custom Marquee component to replace react-marquee-slider
-const Marquee = ({ velocity = 12, children }) => {
-  return (
-    <Box
-      sx={{
-        overflow: 'hidden',
-        whiteSpace: 'nowrap',
-        width: '100%'
-      }}
-    >
-      <Box
-        sx={{
-          display: 'inline-block',
-          paddingLeft: '100%',
-          animation: `scroll-left ${100 - velocity}s linear infinite`,
-          '@keyframes scroll-left': {
-            '0%': {
-              transform: 'translate3d(100%, 0, 0)'
-            },
-            '100%': {
-              transform: 'translate3d(-100%, 0, 0)'
-            }
-          }
-        }}
-      >
-        {children}
-      </Box>
-    </Box>
-  )
-}
 
-// Simple replacement components for react-reveal
-const Fade = ({ children, delay, ...props }) => <div {...props}>{children}</div>
-const Slide = ({ children, ...props }) => <div {...props}>{children}</div>
 
-// Error boundary for debugging
-const ErrorBoundary = ({ children }) => {
-  const [hasError, setHasError] = useState(false)
-
-  useEffect(() => {
-    const handleError = (error, errorInfo) => {
-      console.log('Error caught:', error, errorInfo)
-      setHasError(true)
-    }
-
-    window.addEventListener('error', handleError)
-    return () => window.removeEventListener('error', handleError)
-  }, [])
-
-  if (hasError) {
-    return <div>Something went wrong with the slider component.</div>
-  }
-
-  return children
-}
 import ExecuteBig from '../../public/donate/codedaydc_hack.jpg'
 import HackCamp from '../../public/donate/sf.jpg'
 import HackerGames from '../../public/donate/0img_20210830_161125.jpg'
@@ -94,41 +41,105 @@ import GoldenTrain from '../../public/home/golden-train.png'
 
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts'
 
+// Custom Marquee component to replace react-marquee-slider
+const Marquee = ({ velocity = 12, children }) => {
+  return (
+    <Box
+      sx={{
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+        width: '100%',
+        position: 'relative'
+      }}
+    >
+      <Box
+        sx={{
+          display: 'inline-flex',
+          animation: `marquee ${80 - velocity}s linear infinite`,
+          '@keyframes marquee': {
+            '0%': {
+              transform: 'translateX(0%)'
+            },
+            '100%': {
+              transform: 'translateX(-100%)'
+            }
+          }
+        }}
+      >
+      
+        {children}
+     
+        {children}
+      </Box>
+    </Box>
+  )
+}
+
+// Simple replacement components for react-reveal
+const Fade = ({ children, delay, ...props }) => <div {...props}>{children}</div>
+const Slide = ({ children, ...props }) => <div {...props}>{children}</div>
+
+
 const Header = styled(Box)`
   background: url('/pattern.svg');
 `
 
 const PhotoRow = ({ photos }) => (
   <Box sx={{ height: '160px', overflow: 'hidden' }}>
+    {/* Mobil ve tablet görünüm */}
     <Box sx={{ display: ['block', 'block', 'block', 'block', 'none'] }}>
       <Marquee velocity={12}>
         {photos.map((photo, index) => (
-          <Image
-            placeholder="blur"
-            src={photo}
-            objectFit="cover"
-            className="next-image"
-            height="200px"
-            width="300px"
-            alt="Hack Club students"
-            key={'image-' + index}
-          />
+          <Box
+            key={`mobile-${index}`}
+            sx={{
+              display: 'inline-block',
+              marginRight: '10px',
+              flexShrink: 0
+            }}
+          >
+            <Image
+              placeholder="blur"
+              src={photo}
+              className="next-image"
+              height={200}
+              width={300}
+              alt="Hack Club students"
+              style={{ 
+                objectFit: 'cover',
+                display: 'block'
+              }}
+            />
+          </Box>
         ))}
       </Marquee>
     </Box>
+    
+    {/* Desktop görünüm */}
     <Box sx={{ display: ['none', 'none', 'none', 'none', 'block'] }}>
-      <Marquee velocity={12}>
+      <Marquee velocity={8}>
         {photos.map((photo, index) => (
-          <Image
-            placeholder="blur"
-            src={photo}
-            objectFit="cover"
-            className="next-image"
-            height="200px"
-            width="600px"
-            key={'image-' + index}
-            alt="Hack Club students"
-          />
+          <Box
+            key={`desktop-${index}`}
+            sx={{
+              display: 'inline-block',
+              marginRight: '10px',
+              flexShrink: 0
+            }}
+          >
+            <Image
+              placeholder="blur"
+              src={photo}
+              className="next-image"
+              height={200}
+              width={600}
+              alt="Hack Club students"
+              style={{ 
+                objectFit: 'cover',
+                display: 'block'
+              }}
+            />
+          </Box>
         ))}
       </Marquee>
     </Box>
