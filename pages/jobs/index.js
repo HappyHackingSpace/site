@@ -105,7 +105,7 @@ const Page = ({ jobs }) => (
             src={volleyballPic}
             alt="Happy Hackers during a volleyball game"
             layout="fill"
-            objectFit="cover"
+            style={{ objectFit: 'cover' }}
           />
         </Box>
         <Container>

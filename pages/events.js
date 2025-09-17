@@ -215,7 +215,7 @@ const Page = ({ jobs }) => (
             src={CultureHackPic}
             alt="Happy Hackers at The Cultural Heritage and Digitalization Hackathon"
             layout="fill"
-            objectFit="cover"
+            style={{ objectFit: 'cover' }}
           />
         </Box>
         <Container>

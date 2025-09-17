@@ -116,12 +116,12 @@ const PhotoRow = ({ photos }) => (
           <NextImage
             placeholder="blur"
             src={photo}
-            objectFit="cover"
             className="next-image"
             height="200px"
             width="300px"
             alt="Hack Club students"
             key={'image-' + index}
+            style={{ objectFit: 'cover' }}
           />
         ))}
       </Marquee>
@@ -132,12 +132,12 @@ const PhotoRow = ({ photos }) => (
           <NextImage
             placeholder="blur"
             src={photo}
-            objectFit="cover"
             className="next-image"
             height="200px"
             width="600px"
             key={'image-' + index}
             alt="Hack Club students"
+            style={{ objectFit: 'cover' }}
           />
         ))}
       </Marquee>
