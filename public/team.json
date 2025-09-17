@@ -83,6 +83,7 @@
     "website": "",
     "avatar": "/team/meltem.jpg"
   },
+  
   {
     "name": "Mahsum Akbaş",
     "department": "HQ",
@@ -94,5 +95,31 @@
     "email": "",
     "website": "",
     "avatar": "/team/mahsum.jpg"
+  }
+ ,
+  {
+    "name": "Müslime Kayar",
+    "department": "HQ",
+    "role": "Intern",
+    "acknowledged": false,
+    "bio": "",
+    "bioHHS": "",
+    "slackId": "",
+    "email": "",
+    "website": "",
+    "avatar": "/team/ben.jpg"
+  }
+ ,
+  {
+    "name": "Miwa",
+    "department": "HQ",
+    "role": "Intern",
+    "acknowledged": false,
+    "bio": "",
+    "bioHHS": "",
+    "slackId": "",
+    "email": "",
+    "website": "",
+    "avatar": "/team/linus.jpg"
   }
 ]
