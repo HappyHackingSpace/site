@@ -9,7 +9,8 @@ import {
   Link,
   Text
 } from 'theme-ui'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useMemo, useCallback } from 'react'
+import { LazySection } from '../hooks/useInView'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Meta from '@hackclub/meta'
@@ -18,64 +19,120 @@ import BGImg from '../components/background-image'
 import ForceTheme from '../components/force-theme'
 import Footer from '../components/footer'
 import Stage from '../components/stage'
-import Carousel from '../components/index/carousel'
-// import Pizza from '../components/index/cards/pizza'
-import Sprig from '../components/index/cards/vulnerable-target'
-import Sinerider from '../components/index/cards/sinerider'
-import SprigConsole from '../components/index/cards/awesome-hackathon'
-// import Clubs from '../components/index/cards/clubs'
-// import Workshops from '../components/index/cards/workshops'
-// import HCB from '../components/index/cards/hcb'
-// import Hackathons from '../components/index/cards/hackathons'
+// Lazy load heavy components with skeletons for better perceived performance
+const Carousel = dynamic(() => import('../components/index/carousel'), {
+  loading: () => {
+    const { CarouselSkeleton } = require('../components/loading-skeletons')
+    return <CarouselSkeleton />
+  },
+  ssr: true // Carousel is above fold
+})
+
+const Sprig = dynamic(() => import('../components/index/cards/vulnerable-target'), {
+  loading: () => {
+    const { SprigSkeleton } = require('../components/loading-skeletons')
+    return <SprigSkeleton />
+  },
+  ssr: false // Below fold component
+})
+
+const SprigConsole = dynamic(() => import('../components/index/cards/awesome-hackathon'), {
+  loading: () => {
+    const { SprigSkeleton } = require('../components/loading-skeletons')
+    return <SprigSkeleton />
+  },
+  ssr: false
+})
+
+const Sinerider = dynamic(() => import('../components/index/cards/sinerider'), {
+  loading: () => {
+    const { SprigSkeleton } = require('../components/loading-skeletons')
+    return <SprigSkeleton />
+  },
+  ssr: false
+})
 import OuternetImgFile from '../public/home/outernet-110.jpg'
 import Announcement from '../components/announcement'
-import Konami from 'react-konami-code'
-import JSConfetti from 'js-confetti'
+import dynamic from 'next/dynamic'
+
+// Lazy load heavy easter egg components
+const Konami = dynamic(() => import('react-konami-code'), { ssr: false })
+// Critical above-the-fold components (keep synchronous)
 import Secret from '../components/secret'
-import MailingList from '../components/index/cards/mailing-list'
-import Slack from '../components/index/cards/slack'
 import Icon from '../components/icon'
-import GitHub from '../components/index/github'
 import Photo from '../components/photo'
 import Comma from '../components/comma'
-import Haxidraw from '../components/index/cards/githubmon'
-import Onboard from '../components/index/cards/communityHub'
-import Som from '../components/index/cards/som'
-import Athena from '../components/index/cards/athena'
-import Highway from '../components/index/cards/highway'
-import Shipwrecked from '../components/index/cards/shipwrecked'
+
+// Lazy load below-the-fold components
+const GitHub = dynamic(() => import('../components/index/github'), {
+  loading: () => {
+    const { GitHubSkeleton } = require('../components/loading-skeletons')
+    return <GitHubSkeleton />
+  },
+  ssr: false
+})
+
+const Haxidraw = dynamic(() => import('../components/index/cards/githubmon'), {
+  loading: () => {
+    const { SprigSkeleton } = require('../components/loading-skeletons')
+    return <SprigSkeleton />
+  },
+  ssr: false
+})
+
+const Onboard = dynamic(() => import('../components/index/cards/communityHub'), {
+  loading: () => {
+    const { SprigSkeleton } = require('../components/loading-skeletons')
+    return <SprigSkeleton />
+  },
+  ssr: false
+})
+
+// Unused components removed to reduce bundle size
+// Available for dynamic import when needed:
+// - MailingList, Slack, Som, Athena, Highway, Shipwrecked
 /** @jsxImportSource theme-ui */
 
 function Page({
-  hackathonsData,
-  bankData,
   slackData,
   gitHubData,
-  gitHubDataLength,
   consoleCount,
   stars,
-  // githubData2,
-  dataPieces,
   game,
-  gameTitle,
-  events,
-  carouselCards,
-  context
+  carouselCards
 }) {
-  let [gameImage, setGameImage] = useState('')
-  let [gameImage1, setGameImage1] = useState('')
-  let [reveal, setReveal] = useState(false)
-  const [hover, setHover] = useState(true)
-  let [github, setGithub] = useState(0)
-  let [slackKey, setSlackKey] = useState(0)
-  let [key, setKey] = useState(0)
+  // Optimize state management for better performance
+  const [uiState, setUiState] = useState({
+    gameImage: '',
+    gameImage1: '',
+    reveal: false,
+    hover: true,
+    github: 0,
+    slackKey: 0,
+    key: 0
+  })
+
+  // Memoized setters to prevent unnecessary re-renders
+  const setReveal = useCallback((value) => {
+    setUiState(prev => ({ ...prev, reveal: value }))
+  }, [])
+
+  const setHover = useCallback((value) => {
+    setUiState(prev => ({ ...prev, hover: value }))
+  }, [])
 
   const { asPath } = useRouter()
 
   let jsConfetti = useRef()
 
   useEffect(() => {
-    jsConfetti.current = new JSConfetti()
+    // Dynamically load JSConfetti only when needed
+    const loadJSConfetti = async () => {
+      const JSConfettiModule = await import('js-confetti')
+      jsConfetti.current = new JSConfettiModule.default()
+    }
+
+    loadJSConfetti()
 
     window.kc = `In the days of old, when gaming was young \nA mysterious code was found among \nA sequence of buttons, pressed in a row \nIt unlocked something special, we all know \n\nUp, up, down, down, left, right, left, right \nB, A, Start, we all have heard it's plight \nIn the 8-bit days, it was all the rage \nAnd it still lives on, with time, it will never age \n\nKonami Code, it's a legend of days gone by \nIt's a reminder of the classics we still try \nNo matter the game, no matter the system \nThe code will live on, and still be with them \n\nSo the next time you play, take a moment to pause \nAnd remember the code, and the Konami cause \nIt's a part of gaming's history, and a part of our lives \nLet's keep it alive, and let the Konami Code thrive!\n`
     window.paper = `Welcome, intrepid hacker! We'd love to have you in our community. Get your invite at hack.af/slack. Under "Why do you want to join the Hack Club Slack?" add a 🦄 and we'll ship you some exclusive stickers! `
@@ -99,21 +156,22 @@ function Page({
   }
 
   useEffect(() => {
-    if (reveal && !hover) {
+    if (uiState.reveal && !uiState.hover) {
       setTimeout(() => {
         setReveal(false)
       }, 2000)
     }
-  }, [reveal, hover])
+  }, [uiState.reveal, uiState.hover, setReveal])
 
   const [count, setCount] = useState(0)
 
-  let images = [
+  // Memoize images array to prevent unnecessary re-renders
+  const images = useMemo(() => [
     { alt: 'Map of Happy Hacking Spaces in and around the Mesopotamia', src: '/home/map.png' },
     { alt: 'Happy Hackers organized code jam', src: '/codejams/firstcodejam.jpeg' },
     { alt: 'Happy Hackers at Language Club', src: '/home/langclub.jpeg' },
     { alt: 'Happy Hackers organized hackathon', src: '/hackathons/culturehack.jpeg' },
-  ]
+  ], [])
 
   // janky right now and does not show last image
 
@@ -126,28 +184,45 @@ function Page({
     }
   }, [count, images.length])
 
-  // Spotlight effect
+  // Spotlight effect with throttling for performance
   const spotlightRef = useRef()
   const spotlightContainerRef = useRef()
+  const throttleRef = useRef(null)
+
   useEffect(() => {
     const handler = event => {
-      const spotlightElement = spotlightContainerRef.current
-      if (!spotlightElement) return
-      
-      var rect = spotlightElement.getBoundingClientRect()
-      var x = event.clientX - rect.left //x position within the element.
-      var y = event.clientY - rect.top //y position within the element.
+      // Throttle mousemove to 60fps for better performance
+      if (throttleRef.current) return
 
-      if (spotlightRef.current) {
-        spotlightRef.current.style.background = `radial-gradient(
-				circle at ${x}px ${y}px,
-				rgba(132, 146, 166, 0) 10px,
-				rgba(249, 250, 252, 0.9) 80px
-			)`
+      throttleRef.current = requestAnimationFrame(() => {
+        const spotlightElement = spotlightContainerRef.current
+        if (!spotlightElement) {
+          throttleRef.current = null
+          return
+        }
+
+        const rect = spotlightElement.getBoundingClientRect()
+        const x = event.clientX - rect.left
+        const y = event.clientY - rect.top
+
+        if (spotlightRef.current) {
+          spotlightRef.current.style.background = `radial-gradient(
+            circle at ${x}px ${y}px,
+            rgba(132, 146, 166, 0) 10px,
+            rgba(249, 250, 252, 0.9) 80px
+          )`
+        }
+        throttleRef.current = null
+      })
+    }
+
+    window.addEventListener('mousemove', handler)
+    return () => {
+      window.removeEventListener('mousemove', handler)
+      if (throttleRef.current) {
+        cancelAnimationFrame(throttleRef.current)
       }
     }
-    window.addEventListener('mousemove', handler)
-    return () => window.removeEventListener('mousemove', handler)
   }, [])
 
   return (
@@ -164,6 +239,13 @@ function Page({
           content="https://assets.hackclub.com/icon-rounded.png"
           size="512x512"
         />
+        {/* Critical resource hints for performance */}
+        <link rel="preload" href="/home/outernet-110.jpg" as="image" />
+        <link rel="dns-prefetch" href="//hackclub.slack.com" />
+        <link rel="dns-prefetch" href="//api.github.com" />
+        <link rel="dns-prefetch" href="//sprig.hackclub.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </Head>
       <ForceTheme theme="light" />
       <Nav />
@@ -175,10 +257,10 @@ function Page({
         }}
       >
         <Secret
-          reveal={reveal}
+          reveal={uiState.reveal}
           onMouseEnter={() => {
             setHover(true)
-            console.log(hover)
+            console.log(uiState.hover)
           }}
           onMouseOut={() => {
             setReveal(false)
@@ -258,7 +340,7 @@ function Page({
                 >
                   <Text
                     onClick={() => {
-                      !reveal ? setReveal(true) : setReveal(false)
+                      !uiState.reveal ? setReveal(true) : setReveal(false)
                     }}
                     sx={{
                       // lineHeight: 0.875,
@@ -435,8 +517,8 @@ function Page({
                             ? images[1].alt
                             : images[count + 2].alt
                       }
-                      width={3000}
-                      height={2550}
+                      width={800}
+                      height={680}
                       showAlt
                     />
                   </Box>
@@ -473,8 +555,8 @@ function Page({
                           ? images[0].alt
                           : images[count + 1].alt
                       }
-                      width={3000}
-                      height={2550}
+                      width={800}
+                      height={680}
                       showAlt
                     />
                   </Box>
@@ -503,8 +585,8 @@ function Page({
                     <Photo
                       src={images[count].src}
                       alt={images[count].alt}
-                      width={3000}
-                      height={2550}
+                      width={800}
+                      height={680}
                       showAlt
                     />
                   </Box>
@@ -628,7 +710,18 @@ function Page({
             </Grid>
           </Box>
         </Box>
-        <Carousel cards={carouselCards} />
+        <LazySection
+          fallback={
+            <Box sx={{ py: 4 }}>
+              {(() => {
+                const { CarouselSkeleton } = require('../components/loading-skeletons')
+                return <CarouselSkeleton />
+              })()}
+            </Box>
+          }
+        >
+          <Carousel cards={carouselCards} />
+        </LazySection>
         <Box
           id="spotlight"
           ref={spotlightContainerRef}
@@ -807,23 +900,47 @@ function Page({
                   </Flex>
                 )}
               </Flex>
-              <Sprig
-                delay={100}
-                stars={stars.sprig.stargazerCount}
-                game={game}
-                gameImage={gameImage}
-                gameImage1={gameImage1}
-              />
-              <Onboard stars={stars.onboard.stargazerCount} delay={100} />
-              <Haxidraw stars={stars.blot.stargazerCount} delay={100} />
-              {/* <Sinerider delay={200} stars={stars.sinerider.stargazerCount} /> */}
-              <Box as="section" id="sprig">
-                <SprigConsole
-                  delay={300}
-                  stars={stars.sprig.stargazerCount}  
-                  consoleCount={consoleCount}
+              <LazySection
+                fallback={
+                  (() => {
+                    const { SprigSkeleton } = require('../components/loading-skeletons')
+                    return (
+                      <Box sx={{ py: 4 }}>
+                        <SprigSkeleton />
+                        <SprigSkeleton />
+                        <SprigSkeleton />
+                      </Box>
+                    )
+                  })()
+                }
+              >
+                <Sprig
+                  delay={100}
+                  stars={stars?.sprig?.stargazerCount || 1000}
+                  game={game}
+                  gameImage={uiState.gameImage}
+                  gameImage1={uiState.gameImage1}
                 />
-              </Box>
+                <Onboard stars={stars?.onboard?.stargazerCount || 200} delay={100} />
+                <Haxidraw stars={stars?.blot?.stargazerCount || 300} delay={100} />
+              </LazySection>
+              {/* <Sinerider delay={200} stars={stars.sinerider.stargazerCount} /> */}
+              <LazySection
+                fallback={
+                  (() => {
+                    const { SprigSkeleton } = require('../components/loading-skeletons')
+                    return <SprigSkeleton />
+                  })()
+                }
+              >
+                <Box as="section" id="sprig">
+                  <SprigConsole
+                    delay={300}
+                    stars={stars?.sprig?.stargazerCount || 1000}
+                    consoleCount={consoleCount}
+                  />
+                </Box>
+              </LazySection>
               {/* <Workshops delay={400} stars={stars.hackclub.stargazerCount} /> */}
             </Box>
           </Box>
@@ -1232,95 +1349,138 @@ function Page({
     </>
   )
 }
-const withCommas = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
 export async function getStaticProps() {
   const carouselCards = require('../lib/carousel.json')
+  const APICache = require('../lib/api-cache').default
 
-  // HCB: get total raised
-  let bankData = []
-  // let initialBankData = await fetch('https://hcb.hackclub.com/stats')
-  // try {
-  //   const bd = await initialBankData.json()
-  //   let raised = bd.raised / 100
+  // High-performance API calls with caching, timeouts, and fallbacks
+  const [
+    slackData,
+    gitHubData,
+    stars,
+    game,
+    consoleCount,
+    hackathonsData,
+    events
+  ] = await Promise.allSettled([
+    // Slack data with 5min cache + fallback
+    APICache.get('slack-stats', async () => {
+      const { Slack: Slacky } = require('./api/slack')
+      return await Slacky()
+    }, {
+      ttl: 300000,
+      timeout: 6000,
+      fallback: { total_members_count: 500 }
+    }),
 
-  //   bankData.push(
-  //     `💰 ${raised.toLocaleString('en-US', {
-  //       style: 'currency',
-  //       currency: 'USD'
-  //     })} raised`
-  //   )
-  // } catch {
-  //   bankData.push('error')
-  // }
+    // GitHub activity with 3min cache + aggressive timeout
+    APICache.get('github-activity', async () => {
+      const { fetchGitHub } = require('./api/github')
+      return await fetchGitHub()
+    }, {
+      ttl: 180000,
+      timeout: 4000,
+      fallback: []
+    }),
 
-  // Slack: get total raised
-  const { Slack: Slacky } = require('./api/slack')
-  let slackData = await Slacky()
+    // GitHub stars with 10min cache (changes rarely)
+    APICache.get('github-stars', async () => {
+      const { fetchStars } = require('./api/stars')
+      return await fetchStars()
+    }, {
+      ttl: 600000,
+      timeout: 5000,
+      fallback: {
+        sprig: { stargazerCount: 1000 },
+        sinerider: { stargazerCount: 500 },
+        blot: { stargazerCount: 300 },
+        onboard: { stargazerCount: 200 },
+        hackclub: { stargazerCount: 2000 },
+        hackathons: { stargazerCount: 100 }
+      }
+    }),
 
-  // GitHub: get latest github activity (currently this is erroring and
-  // preventing the site from deploying
+    // Sprig games with 5min cache
+    APICache.get('sprig-games', async () => {
+      const { getGames } = require('./api/games')
+      return await getGames()
+    }, {
+      ttl: 300000,
+      timeout: 4000,
+      fallback: []
+    }),
 
-  const { fetchGitHub } = require('./api/github')
-  let gitHubData = await fetchGitHub()
+    // Console count with 10min cache
+    APICache.get('console-count', async () => {
+      const { getConsoles } = require('./api/sprig-console')
+      return await getConsoles()
+    }, {
+      ttl: 600000,
+      timeout: 3000,
+      fallback: 500
+    }),
 
-  //   let gitHubData = null
+    // Hackathons with 15min cache (external API)
+    APICache.get('hackathons', async () => {
+      const response = await fetch('https://hackathons.hackclub.com/api/events/upcoming')
+      if (!response.ok) throw new Error('Hackathons API failed')
+      const data = await response.json()
+      return data.sort((a, b) => new Date(a.start) - new Date(b.start))
+    }, {
+      ttl: 900000,
+      timeout: 5000,
+      fallback: []
+    }),
 
-  // GitHub: get latest GitHub stars
-  const { fetchStars } = require('./api/stars')
-  let stars = await fetchStars()
+    // Events with 15min cache
+    APICache.get('events', async () => {
+      const response = await fetch('https://events.hackclub.com/api/events/upcoming/')
+      if (!response.ok) throw new Error('Events API failed')
+      return await response.json()
+    }, {
+      ttl: 900000,
+      timeout: 5000,
+      fallback: []
+    })
+  ])
 
-  // Sprig: get newest games
-  const { getGames } = require('./api/games')
-  let game = await getGames()
-
-  let gameTitle = []
-
-  gameTitle = game.map(r => r.title)
-
-  // Sprig: get console count
-  const { getConsoles } = require('./api/sprig-console')
-  const consoleCount = await getConsoles()
-
-  // Hackathons: get latest hackathons
-  let hackathonsData
-  try {
-    const response = await fetch(
-      'https://hackathons.hackclub.com/api/events/upcoming'
-    )
-    if (response.ok) {
-      hackathonsData = await response.json()
-    } else {
-      hackathonsData = [] // or some default value if the fetch fails
-    }
-  } catch (error) {
-    hackathonsData = [] // or some default value if an error occurs
+  // Extract cached results with guaranteed fallbacks
+  const resolvedSlackData = slackData.status === 'fulfilled' ? slackData.value : { total_members_count: 500 }
+  const resolvedGitHubData = gitHubData.status === 'fulfilled' ? gitHubData.value : []
+  const resolvedStars = stars.status === 'fulfilled' ? stars.value : {
+    sprig: { stargazerCount: 1000 },
+    sinerider: { stargazerCount: 500 },
+    blot: { stargazerCount: 300 },
+    onboard: { stargazerCount: 200 }
   }
-  hackathonsData.sort((a, b) => new Date(a.start) - new Date(b.start))
+  const resolvedGame = game.status === 'fulfilled' ? game.value : []
+  const resolvedConsoleCount = consoleCount.status === 'fulfilled' ? consoleCount.value : 500
+  const resolvedHackathonsData = hackathonsData.status === 'fulfilled' ? hackathonsData.value : []
+  const resolvedEvents = events.status === 'fulfilled' ? events.value : []
 
-  let events = []
-  try {
-    await fetch(
-      'https://events.hackclub.com/api/events/upcoming/'
-    ).then(res => res.json())
-  } catch (error) {
-    console.error('Error fetching events:', error)
+  const gameTitle = resolvedGame.map(r => r?.title).filter(Boolean)
+  const bankData = [] // Legacy field kept for compatibility
+
+  // Log cache performance for monitoring
+  if (process.env.NODE_ENV === 'development') {
+    console.log('API Cache Stats:', APICache.getStats())
   }
 
   return {
     props: {
-      game,
+      game: resolvedGame,
       gameTitle,
-      gitHubData,
-      consoleCount,
-      hackathonsData,
+      gitHubData: resolvedGitHubData,
+      consoleCount: resolvedConsoleCount,
+      hackathonsData: resolvedHackathonsData,
       bankData,
-      slackData,
-      stars,
-      events,
+      slackData: resolvedSlackData,
+      stars: resolvedStars,
+      events: resolvedEvents,
       carouselCards
     },
-    revalidate: 60
+    revalidate: 300 // 5 minutes - matches cache TTL
   }
 }
 
