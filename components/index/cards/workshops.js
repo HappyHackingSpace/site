@@ -15,7 +15,7 @@ const WorkshopCard = ({
   ...props
 }) => (
   <Card
-    href={`https://workshops.hackclub.com/${slug}`}
+    href={`https://workshops.happyhacking.space/${slug}`}
     as="a"
     variant="interactive"
     target="_blank"
@@ -67,7 +67,7 @@ export default function Workshops({ data, stars }) {
           'linear-gradient(32deg, rgba(51, 142, 218, 0.9) 0%, rgba(51, 214, 166, 0.9) 100%)',
         height: 'fit-content'
       }}
-      github_link="https://github.com/hackclub/workshops"
+      github_link="https://github.com/happyhackingspace/workshops"
       stars={stars}
       highlight="blue"
     >
@@ -82,7 +82,7 @@ export default function Workshops({ data, stars }) {
           </Text>
           <Buttons
             id="14"
-            link="https://workshops.hackclub.com"
+            link="https://workshops.happyhacking.space"
             icon="code"
             primary="white"
             sx={{ color: 'blue', mt: [3, 3, 4] }}
@@ -92,7 +92,7 @@ export default function Workshops({ data, stars }) {
           <Buttons
             // content="click to learn more about how to submit a workshop"
             id="13"
-            link="https://workshops.hackclub.com/submit-a-workshop/"
+            link="https://workshops.happyhacking.space/submit-a-workshop/"
             icon="event-add"
           >
             Build A Workshop

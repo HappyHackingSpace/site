@@ -59,21 +59,21 @@ const Slide = ({ children, ...props }) => <div {...props}>{children}</div>
 // Error boundary for debugging
 const ErrorBoundary = ({ children }) => {
   const [hasError, setHasError] = useState(false)
-  
+
   useEffect(() => {
     const handleError = (error, errorInfo) => {
       console.log('Error caught:', error, errorInfo)
       setHasError(true)
     }
-    
+
     window.addEventListener('error', handleError)
     return () => window.removeEventListener('error', handleError)
   }, [])
-  
+
   if (hasError) {
     return <div>Something went wrong with the slider component.</div>
   }
-  
+
   return children
 }
 import ExecuteBig from '../../public/donate/codedaydc_hack.jpg'
@@ -340,7 +340,7 @@ const Map = () => {
       setHasError(true)
     }
   }
-  
+
   const handleMouseUp = (e) => {
     try {
       setIsDragging(false)
@@ -349,7 +349,7 @@ const Map = () => {
       setHasError(true)
     }
   }
-  
+
   const handleMouseMove = (e) => {
     try {
       if (!isDragging) return
@@ -371,7 +371,7 @@ const Map = () => {
       setHasError(true)
     }
   }
-  
+
   const handleTouchEnd = (e) => {
     try {
       setIsDragging(false)
@@ -380,7 +380,7 @@ const Map = () => {
       setHasError(true)
     }
   }
-  
+
   const handleTouchMove = (e) => {
     try {
       if (!isDragging) return
@@ -441,7 +441,7 @@ const Map = () => {
               backgroundPosition: 'center'
             }}
           />
-          
+
           {/* After Image */}
           <Box
             sx={{
@@ -456,7 +456,7 @@ const Map = () => {
               overflow: 'hidden'
             }}
           />
-          
+
           {/* Slider Handle */}
           <Box
             sx={{
@@ -609,7 +609,7 @@ const Philanthropy = ({ posts = [] }) => {
                     to Happy Hacking Space
                   </Text>
                 </Button>
-                
+
               </Container>
             </Box>
           </Box>
@@ -654,7 +654,7 @@ const Philanthropy = ({ posts = [] }) => {
             }
           }}
         >
-          <Fade delay={60}>
+          {/* <Fade delay={60}>
             <Box
               sx={{
                 mt: 4,
@@ -668,7 +668,7 @@ const Philanthropy = ({ posts = [] }) => {
               <Text as="p">—Tom Preston-Werner, GitHub Co-founder</Text>
             </Box>
           </Fade>
-          <Line />
+          <Line /> */}
           <Fade>
             <Text as="h1" mb={2} mt={4}>
               In the next ten years, Hack Club will discover, foster and inspire
@@ -757,11 +757,10 @@ const Philanthropy = ({ posts = [] }) => {
             <Grid gap={[4, 2, 2]} columns={[1, '1r 1fr', '1fr 1fr']} mt={2}>
               <Box>
                 <Text as="h3">Reach out to</Text>
-                <Text as="p">Christina Asquith</Text>
-                <Text as="p">Co-founder, COO, and Board Member</Text>
+                <Text as="p">Team Happy Hacking Space</Text>
                 <Text
                   as="a"
-                  href="mailto:christina@hackclub.com"
+                  href="mailto:team@happyhacking.space"
                   sx={{
                     ':link': {
                       color: 'inherit',
@@ -769,20 +768,19 @@ const Philanthropy = ({ posts = [] }) => {
                     }
                   }}
                 >
-                  christina@hackclub.com
+                  team@happyhacking.space
                 </Text>
               </Box>
               <Box>
-                <Text as="h3">Send physical checks</Text>
-                <Text as="p">The Hack Foundation</Text>
+                <Text as="h3">Send physical gifts</Text>
+                <Text as="p">Happy Hacking Space</Text>
                 <Text as="p">
-                  8605 Santa Monica Blvd #86294, West Hollywood, CA, 90069
+                  Talaytepe Mah. 4009/1 Sk. Corner Ofis, A Blok Dis Kapi No: 4A, Ic Kapi No:4 Kayapinar/Diyarbakir
                 </Text>
-                <Text as="p">EIN: 81-2908499</Text>
                 <Box mt={[2, 3]}>
                   <Text
                     as="a"
-                    href="https://hcb.hackclub.com/donations/start/hq?utm_source=site&utm_medium=internal&utm_campaign=philanthropy_page&utm_content=body_link"
+                    href="https://airtable.com/appKfmTrC8b23hJNQ/shrUCpuTfSraCfmvu"
                     target="_blank"
                     sx={{
                       color: '#ec3750',
@@ -791,16 +789,16 @@ const Philanthropy = ({ posts = [] }) => {
                       fontSize: '1.2em'
                     }}
                   >
-                    Donate online to Hack Club &#9654;
+                    Donate online to Happy Hacking Space &#9654;
                   </Text>
                 </Box>
                 <Text>
-                  We also accept crypto, stocks, and other forms of support.
+                  We don't accept monetary donations right now.
                 </Text>
               </Box>
             </Grid>
           </Fade>
-          <Line />
+          {/* <Line />
           <Fade delay={100}>
             <Flex sx={{ justifyContent: 'space-between' }} mt={[3, 4]}>
               <Box>
@@ -861,8 +859,8 @@ const Philanthropy = ({ posts = [] }) => {
               Starting in 2021, Hack Club has engaged with an external auditing
               firm and has audited financials through the current fiscal year.
             </span>
-          </Fade>
-          <Line />
+          </Fade> */}
+          {/* <Line />
           <Fade delay={100}>
             <Flex sx={{ justifyContent: 'space-between' }} mt={[3, 4]}>
               <Box>
@@ -921,7 +919,7 @@ const Philanthropy = ({ posts = [] }) => {
             <span>
             Explore Hack Club's annual reports from 2022 onward, showcasing each year's impact and key milestones.
             </span>
-          </Fade>
+          </Fade> */}
           {/* <Fade delay={300}>
             <Text
               as="a"
@@ -938,7 +936,7 @@ const Philanthropy = ({ posts = [] }) => {
             </Text>
           </Fade> */}
         </Container>
-        <Box
+        {/* <Box
           sx={{
             width: '100vw',
             backgroundColor: 'snow',
@@ -1025,7 +1023,7 @@ const Philanthropy = ({ posts = [] }) => {
               </Text>
             </Fade>
           </Container>
-        </Box>
+        </Box> */}
         <Container
           sx={{
             width: 'container',
@@ -1039,101 +1037,101 @@ const Philanthropy = ({ posts = [] }) => {
             }
           }}
         >
-          <Fade>
+          {/* <Fade>
             <Text as="h1" my={4}>
               As the largest network of technical teenagers, we are featured in
               the news:
             </Text>
-         
-<Flex
-  sx={{
-    gap: [2, 3, 4],
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexWrap: ['wrap', 'nowrap', 'nowrap'], // mobile: wrap (2x2), larger: single row
-    overflowX: ['auto', 'hidden', 'hidden']
-  }}
->
-  <Link
-    href="https://www.businessinsider.com/..."
-    target="_blank"
-    sx={{
-      flex: '0 0 auto',
-    
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }}
-  >
-    <Image
-      src="/philanthropy/insider-logo.svg"
-      alt="insider logo"
-      width={140}
-      height={40}
-      style={{ width: '100%', height: 'auto' }}
-    />
-  </Link>
 
-  <Link
-    href="https://www.wsj.com/..."
-    target="_blank"
-    sx={{
-      flex: '0 0 auto',
-      width: ['70px', '100px', '120px'],
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }}
-  >
-    <Image
-      src="/philanthropy/wsj-logo.svg"
-      alt="wsj logo"
-      width={120}
-      height={40}
-      style={{ width: '100%', height: 'auto' }}
-    />
-  </Link>
+            <Flex
+              sx={{
+                gap: [2, 3, 4],
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexWrap: ['wrap', 'nowrap', 'nowrap'], // mobile: wrap (2x2), larger: single row
+                overflowX: ['auto', 'hidden', 'hidden']
+              }}
+            >
+              <Link
+                href="https://www.businessinsider.com/..."
+                target="_blank"
+                sx={{
+                  flex: '0 0 auto',
 
-  <Link
-    href="https://www.forbes.com/..."
-    target="_blank"
-    sx={{
-      flex: '0 0 auto',
-      width: ['80px', '130px', '160px'],
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }}
-  >
-    <Image
-      src="/philanthropy/forbes-logo.svg"
-      alt="forbes logo"
-      width={160}
-      height={40}
-      style={{ width: '100%', height: 'auto' }}
-    />
-  </Link>
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                <Image
+                  src="/philanthropy/insider-logo.svg"
+                  alt="insider logo"
+                  width={140}
+                  height={40}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </Link>
 
-  <Link
-    href="https://www.philanthropy.com/..."
-    target="_blank"
-    sx={{
-      flex: '0 0 auto',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }}
-  >
-    <Image
-      src="/philanthropy/cop.png"
-      alt="cop logo"
-      width={350}
-      height={150}
-    />
-  </Link>
-</Flex>
-          </Fade>
-          <Line />
+              <Link
+                href="https://www.wsj.com/..."
+                target="_blank"
+                sx={{
+                  flex: '0 0 auto',
+                  width: ['70px', '100px', '120px'],
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                <Image
+                  src="/philanthropy/wsj-logo.svg"
+                  alt="wsj logo"
+                  width={120}
+                  height={40}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </Link>
+
+              <Link
+                href="https://www.forbes.com/..."
+                target="_blank"
+                sx={{
+                  flex: '0 0 auto',
+                  width: ['80px', '130px', '160px'],
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                <Image
+                  src="/philanthropy/forbes-logo.svg"
+                  alt="forbes logo"
+                  width={160}
+                  height={40}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </Link>
+
+              <Link
+                href="https://www.philanthropy.com/..."
+                target="_blank"
+                sx={{
+                  flex: '0 0 auto',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                <Image
+                  src="/philanthropy/cop.png"
+                  alt="cop logo"
+                  width={350}
+                  height={150}
+                />
+              </Link>
+            </Flex>
+          </Fade> */}
+          {/* <Line />
           <Fade>
             <Text as="h1" sx={{ marginBottom: '20px' }}>
               Board of Directors
@@ -1292,7 +1290,7 @@ const Philanthropy = ({ posts = [] }) => {
                 </Text>
               </Box>
             </Fade>
-          </Grid>
+          </Grid> */}
           <Line />
           <Box>
             <Fade>
@@ -1300,7 +1298,29 @@ const Philanthropy = ({ posts = [] }) => {
                 Join our community of generous donors
               </Text>
             </Fade>
-            <Grid gap={2} columns={[2, 4, 4]} mt={2}>
+            <Box
+              sx={{
+                width: '100%',
+                height: ['400px', '600px', '800px'],
+                border: '1px solid #ccc',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
+              }}
+            >
+              <iframe
+                src="https://airtable.com/embed/appKfmTrC8b23hJNQ/shrUCpuTfSraCfmvu?viewControls=on"
+                frameBorder="0"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  background: 'transparent'
+                }}
+                allowFullScreen
+                title="Financial Dashboard"
+              />
+            </Box>
+            {/* <Grid gap={2} columns={[2, 4, 4]} mt={2}>
               <Box>
                 <Fade delay={50}>
                   <Text as="h3" sx={{ marginBottom: '8px' }}>
@@ -1440,20 +1460,20 @@ const Philanthropy = ({ posts = [] }) => {
                   </Text>
                 </Fade>
               </Box>
-            </Grid>
-            <Fade delay={800}>
+            </Grid> */}
+            {/* <Fade delay={800}>
               <br />
               <Text sx={{ color: 'muted', fontSize: '90%' }}>
                 * The numbers in bracket indicates # of gifts since 2018
               </Text>
-            </Fade>
+            </Fade> */}
           </Box>
-          <Fade>
+          {/* <Fade>
             <Text as="h2" mt={4} mb={2}>
               A few others who support Hack Club
             </Text>
-          </Fade>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }} mb={5}>
+          </Fade> */}
+          {/* <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }} mb={5}>
             <Fade delay={30}>
               <Pill
                 logo="https://cloud-kwnsazl2x-hack-club-bot.vercel.app/0figma.png"
@@ -1535,14 +1555,14 @@ const Philanthropy = ({ posts = [] }) => {
                 and many more...
               </Text>
             </Fade>
-          </Box>
-          <Fade>
+          </Box> */}
+          {/* <Fade>
             <Text as="h2" my={3}>
               Only through their support are we able to empower students like
               Obrey and Maggie
             </Text>
-          </Fade>
-          <Grid gap={3} columns={[1, 1, 1, 2]} mt={2} mb={4}>
+          </Fade> */}
+          {/* <Grid gap={3} columns={[1, 1, 1, 2]} mt={2} mb={4}>
             <Fade delay={100}>
               <Q>
                 <Heading mb={3} sx={{ fontWeight: 'normal', fontSize: '18px' }}>
@@ -1608,246 +1628,186 @@ const Philanthropy = ({ posts = [] }) => {
                 </Flex>
               </Q>
             </Fade>
-          </Grid>
-          <Line />
-          <Fade>
-            <Text as="h1" sx={{ textAlign: 'center' }} mb={[4, 5]}>
-              Hack Club invites the 21st century’s leading thinkers, builders
-              and disrupters to join our small, core network of donors with a
-              gift.
-            </Text>
-          </Fade>
-          <Grid columns={['1fr', '1fr', '1fr', '0.8fr 1.2fr']}>
+          </Grid> */}
+          {/* <Line />
             <Fade>
-              <Box>
-                <Text as="p">
-                  We envision thousands of diverse Hack Club leaders in towns
-                  and cities across America and the world, connected online, and
-                  self-organizing events and hackathons–driven by a can-do
-                  culture and a rigorous dedication to building real things in
-                  the real world.
-                </Text>
-                <br />
-                <Text as="p">
-                  Founded in 2014, Hack Club grew 700 percent during the
-                  COVID-19 pandemic, and Hack Club’s team of engineers can’t
-                  keep up with demand.
-                </Text>
-              </Box>
-            </Fade>
-            <ErrorBoundary>
-              <Map />
-            </ErrorBoundary>
-          </Grid>
-          <Fade>
-            <Text as="p" mt={4}>
-              Your gift will:
-            </Text>
-          </Fade>
-          <ul>
-            <Fade>
-              <li>
-                Increase support to serve thousands more teenagers, with a
-                strong focus on serving those who face additional barriers to
-                contributing their talents to the world
-              </li>
-            </Fade>
-            <Fade delay={30}>
-              <li>
-                Create hundreds more Hack Clubs in high schools and communities
-                across the country and world
-              </li>
-            </Fade>
-            <Fade delay={60}>
-              <li>
-                Inspire a problem-solving mindset and a hacker identity, where
-                teenagers are empowered to build what they want to see in the
-                world
-              </li>
-            </Fade>
-            <Fade delay={90}>
-              <li>
-                Make Hack Club the best place to be a teenager on the internet,
-                incentivizing a shift among teenagers from consumers to creators
-                of technology
-              </li>
-            </Fade>
-            <Fade delay={120}>
-              <li>
-                Launch special projects, in which Hack Clubbers collaborate with
-                SpaceX, Vercel, Cloudflare, Replit, Dogecoin and others
-              </li>
-            </Fade>
-            <Fade delay={150}>
-              <li>
-                Popularize transparent accounting, open source building, and
-                high-integrity leadership
-              </li>
-            </Fade>
-            <Fade delay={180}>
-              <li>Grow the team, mostly engineers</li>
-            </Fade>
-            <Fade delay={210}>
-              <li>
-                Host dozens of in-person events, including our summer adventure
-              </li>
-            </Fade>
-            <Fade delay={240}>
-              <li>
-                Extend mini-grants of hardware and internet access to hundreds
-                of teenagers
-              </li>
-            </Fade>
-            <Fade delay={270}>
-              <li>
-                Bring computer science and engineering skills to thousands more
-                teenagers
-              </li>
-            </Fade>
-          </ul>
-          <Box my={4}>
-            <Fade delay={350}>
-              <Text as="h2" sx={{ mb: 0, pb: 0, mt: 2 }}>
-                Thank you for your consideration!
+              <Text as="h1" sx={{ textAlign: 'center' }} mb={[4, 5]}>
+                Hack Club invites the 21st century’s leading thinkers, builders
+                and disrupters to join our small, core network of donors with a
+                gift.
               </Text>
             </Fade>
-            <Fade delay={380}>
-              <Text as="h2" sx={{ mt: 0 }}>
-                Sincerely,
-              </Text>
-            </Fade>
-            <Flex mb={4}>
-              <Fade delay={410}>
-                <Box sx={{ marginRight: 3 }}>
-                  <Image
-                    src="/philanthropy/christina-s.png"
-                    width={250}
-                    height={100}
-                    alt="christina"
-                  />
-                  <Text as="p">Christina Asquith, Co-founder and COO</Text>
-                </Box>
-              </Fade>
-              <Fade delay={440}>
+            <Grid columns={['1fr', '1fr', '1fr', '0.8fr 1.2fr']}>
+              <Fade>
                 <Box>
-                  <Image
-                    src="/philanthropy/zach-s.png"
-                    width={150}
-                    height={100}
-                    alt="zach"
-                  />
-                  <Text as="p">Zach Latta, Founder and Executive Director</Text>
+                  <Text as="p">
+                    We envision thousands of diverse Hack Club leaders in towns
+                    and cities across America and the world, connected online, and
+                    self-organizing events and hackathons–driven by a can-do
+                    culture and a rigorous dedication to building real things in
+                    the real world.
+                  </Text>
+                  <br />
+                  <Text as="p">
+                    Founded in 2014, Hack Club grew 700 percent during the
+                    COVID-19 pandemic, and Hack Club’s team of engineers can’t
+                    keep up with demand.
+                  </Text>
                 </Box>
               </Fade>
-            </Flex>
-          </Box>
-          <Fade delay={200}>
-            <Grid
-              gap={4}
-              columns={[1, '2fr 1fr', '2fr 1fr']}
-              my={4}
-              sx={{ color: 'muted' }}
-            >
-              <Box>
-                <Text as="h3">The Hack Foundation</Text>
-                <Text as="p" sx={{ width: '70%' }}>
-                  Address: The Hack Foundation at 8605 Santa Monica Blvd #86294,
-                  West Hollywood, CA, 90069
-                </Text>
-                <Text as="p">EIN: 81-2908499</Text>
-              </Box>
-              <Box>
-                <Text as="h3">Reach out to</Text>
-                <Text as="p">Christina Asquith</Text>
-                <Text as="p">Co-founder, COO, and Board Member</Text>
-                <Text
-                  as="a"
-                  href="mailto:christina@hackclub.com"
-                  sx={{
-                    ':link': {
-                      color: 'inherit',
-                      textDecoration: 'none'
-                    }
-                  }}
-                >
-                  christina@hackclub.com
-                </Text>
-              </Box>
+              <ErrorBoundary>
+                <Map />
+              </ErrorBoundary>
             </Grid>
-          </Fade>
-          <Fade>
-            <Button
-              as="a"
-              href="/philanthropy/hackclub_philanthropy.pdf"
-              download="HackClub"
-              mb={4}
-              sx={{ fontSize: '1em !important' }}
-            >
-              Download as PDF
-            </Button>
-          </Fade>
-          
-          <Fade>
-            <Box
-              sx={{
-                width: '100%',
-                maxWidth: '1200px',
-                margin: '4rem auto',
-                padding: '2rem',
-                textAlign: 'center'
-              }}
-            >
-              <Heading
-                as="h2"
-                sx={{ 
-                  fontSize: [32, 40], 
-                  mb: 3,
-                  color: 'primary'
-                }}
-              >
-                Financial Transparency
-              </Heading>
-              <Text sx={{ 
-                mb: 4, 
-                fontSize: [2, 3],
-                color: 'muted'
-              }}>
-                View our real-time income and expenses data
+            <Fade>
+              <Text as="p" mt={4}>
+                Your gift will:
               </Text>
-              
-              <Box
-                sx={{
-                  width: '100%',
-                  height: ['400px', '600px', '800px'],
-                  border: '1px solid #ccc',
-                  borderRadius: '8px',
-                  overflow: 'hidden',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
-                }}
-              >
-                <iframe
-                  src="https://airtable.com/embed/appKfmTrC8b23hJNQ/shrUCpuTfSraCfmvu?viewControls=on"
-                  frameBorder="0"
-                  style={{ 
-                    width: '100%', 
-                    height: '100%',
-                    background: 'transparent'
-                  }}
-                  allowFullScreen
-                  title="Financial Dashboard"
-                />
-              </Box>
+            </Fade>
+            <ul>
+              <Fade>
+                <li>
+                  Increase support to serve thousands more teenagers, with a
+                  strong focus on serving those who face additional barriers to
+                  contributing their talents to the world
+                </li>
+              </Fade>
+              <Fade delay={30}>
+                <li>
+                  Create hundreds more Hack Clubs in high schools and communities
+                  across the country and world
+                </li>
+              </Fade>
+              <Fade delay={60}>
+                <li>
+                  Inspire a problem-solving mindset and a hacker identity, where
+                  teenagers are empowered to build what they want to see in the
+                  world
+                </li>
+              </Fade>
+              <Fade delay={90}>
+                <li>
+                  Make Hack Club the best place to be a teenager on the internet,
+                  incentivizing a shift among teenagers from consumers to creators
+                  of technology
+                </li>
+              </Fade>
+              <Fade delay={120}>
+                <li>
+                  Launch special projects, in which Hack Clubbers collaborate with
+                  SpaceX, Vercel, Cloudflare, Replit, Dogecoin and others
+                </li>
+              </Fade>
+              <Fade delay={150}>
+                <li>
+                  Popularize transparent accounting, open source building, and
+                  high-integrity leadership
+                </li>
+              </Fade>
+              <Fade delay={180}>
+                <li>Grow the team, mostly engineers</li>
+              </Fade>
+              <Fade delay={210}>
+                <li>
+                  Host dozens of in-person events, including our summer adventure
+                </li>
+              </Fade>
+              <Fade delay={240}>
+                <li>
+                  Extend mini-grants of hardware and internet access to hundreds
+                  of teenagers
+                </li>
+              </Fade>
+              <Fade delay={270}>
+                <li>
+                  Bring computer science and engineering skills to thousands more
+                  teenagers
+                </li>
+              </Fade>
+            </ul>
+            <Box my={4}>
+              <Fade delay={350}>
+                <Text as="h2" sx={{ mb: 0, pb: 0, mt: 2 }}>
+                  Thank you for your consideration!
+                </Text>
+              </Fade>
+              <Fade delay={380}>
+                <Text as="h2" sx={{ mt: 0 }}>
+                  Sincerely,
+                </Text>
+              </Fade>
+              <Flex mb={4}>
+                <Fade delay={410}>
+                  <Box sx={{ marginRight: 3 }}>
+                    <Image
+                      src="/philanthropy/christina-s.png"
+                      width={250}
+                      height={100}
+                      alt="christina"
+                    />
+                    <Text as="p">Christina Asquith, Co-founder and COO</Text>
+                  </Box>
+                </Fade>
+                <Fade delay={440}>
+                  <Box>
+                    <Image
+                      src="/philanthropy/zach-s.png"
+                      width={150}
+                      height={100}
+                      alt="zach"
+                    />
+                    <Text as="p">Zach Latta, Founder and Executive Director</Text>
+                  </Box>
+                </Fade>
+              </Flex>
             </Box>
-          </Fade>
-          
-          <Fade>
-            <Text
-              as="p"
-              sx={{ fontSize: '90% !important', color: 'muted', pb: 2 }}
-            >
-              Site by Belle, 17, Hack Clubber
-            </Text>
-          </Fade>
+            <Fade delay={200}>
+              <Grid
+                gap={4}
+                columns={[1, '2fr 1fr', '2fr 1fr']}
+                my={4}
+                sx={{ color: 'muted' }}
+              >
+                <Box>
+                  <Text as="h3">The Hack Foundation</Text>
+                  <Text as="p" sx={{ width: '70%' }}>
+                    Address: The Hack Foundation at 8605 Santa Monica Blvd #86294,
+                    West Hollywood, CA, 90069
+                  </Text>
+                  <Text as="p">EIN: 81-2908499</Text>
+                </Box>
+                <Box>
+                  <Text as="h3">Reach out to</Text>
+                  <Text as="p">Christina Asquith</Text>
+                  <Text as="p">Co-founder, COO, and Board Member</Text>
+                  <Text
+                    as="a"
+                    href="mailto:christina@hackclub.com"
+                    sx={{
+                      ':link': {
+                        color: 'inherit',
+                        textDecoration: 'none'
+                      }
+                    }}
+                  >
+                    christina@hackclub.com
+                  </Text>
+                </Box>
+              </Grid>
+            </Fade>
+            <Fade>
+              <Button
+                as="a"
+                href="/philanthropy/hackclub_philanthropy.pdf"
+                download="HackClub"
+                mb={4}
+                sx={{ fontSize: '1em !important' }}
+              >
+                Download as PDF
+              </Button>
+            </Fade> */}
+
+
         </Container>
         <Footer />
       </Box>

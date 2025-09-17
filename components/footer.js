@@ -119,12 +119,12 @@ const Footer = ({
           <Heading as="h2" variant="subheadline" mb={3}>
             Resources
           </Heading>
-          {/* <Link href="https://hackclub.com/pizza">Manifesto</Link> */}
-          <Link href="https://events.hackclub.com/">Community Events</Link>
-          {/* <Link href="https://jams.hackclub.com/">Jams</Link>
-          <Link href="https://toolbox.hackclub.com/">Toolbox</Link>
-          <Link href="https://directory.hackclub.com/">Clubs Directory</Link> */}
-          <Link href="https://hackclub.com/conduct/">Code of Conduct</Link>
+          {/* <Link href="https://happyhacking.space/pizza">Manifesto</Link> */}
+          <Link href="https://events.happyhacking.space/">Community Events</Link>
+          {/* <Link href="https://jams.happyhacking.space/">Jams</Link>
+          <Link href="https://toolbox.happyhacking.space/">Toolbox</Link>
+          <Link href="https://directory.happyhacking.space/">Clubs Directory</Link> */}
+          <Link href="https://happyhacking.space/conduct/">Code of Conduct</Link>
         </Box>
         <Box sx={{ gridColumn: ['span 2', 'span 1'] }}>
           <Logo aria-label="Happy Hacking Space logo" width={128} height={45} dark={dark} />

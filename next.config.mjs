@@ -16,14 +16,14 @@ const nextConfig = withBundleAnalyzer({
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   images: {
     domains: [
-      'hackclub.com',
+      'happyhacking.space',
       'dl.airtable.com',
       'emoji.slack-edge.com',
       'cdn.glitch.com',
-      'scrapbook.hackclub.com',
-      'assets.hackclub.com',
+      'scrapbook.happyhacking.space',
+      'assets.happyhacking.space',
       'v5.airtableusercontent.com',
-      'hcb.hackclub.com',
+      'hcb.happyhacking.space',
       "hc-cdn.hel1.your-objectstorage.com"
     ],
     remotePatterns: [
@@ -56,7 +56,7 @@ const nextConfig = withBundleAnalyzer({
       { source: '/grant/', destination: '/hackathons/grant', permanent: false },
       {
         source: '/sprig/',
-        destination: 'https://sprig.hackclub.com',
+        destination: 'https://sprig.happyhacking.space',
         permanent: true
       },
       { source: '/start/', destination: '/', permanent: false },
@@ -80,7 +80,7 @@ const nextConfig = withBundleAnalyzer({
       { source: '/slack_invite/', destination: '/slack/', permanent: true },
       {
         source: '/slack/',
-        destination: 'https://summer.hackclub.com',
+        destination: 'https://summer.happyhacking.space',
         permanent: false
       },
       {
@@ -134,22 +134,22 @@ const nextConfig = withBundleAnalyzer({
       },
       {
         source: '/finder/',
-        destination: 'https://finder.hackclub.com',
+        destination: 'https://finder.happyhacking.space',
         permanent: true
       },
       {
         source: '/camp/',
-        destination: 'https://camp.hackclub.com',
+        destination: 'https://camp.happyhacking.space',
         permanent: true
       },
       {
         source: '/apply/',
-        destination: 'https://apply.hackclub.com',
+        destination: 'https://apply.happyhacking.space',
         permanent: true
       },
       {
         source: '/icons/',
-        destination: 'https://icons.hackclub.com',
+        destination: 'https://icons.happyhacking.space',
         permanent: true
       },
       {
@@ -161,23 +161,23 @@ const nextConfig = withBundleAnalyzer({
       {
         source: '/admin/',
         destination:
-          'https://5c8804a629a378000833619c--hackclub.netlify.com/admin/',
+          'https://5c8804a629a378000833619c--happyhackingspace.netlify.com/admin/',
         permanent: false
       },
       {
         source: '/checkup/',
         destination:
-          'https://5c8804a629a378000833619c--hackclub.netlify.com/checkup/',
+          'https://5c8804a629a378000833619c--happyhackingspace.netlify.com/checkup/',
         permanent: false
       },
       {
         source: '/workshops/',
-        destination: 'https://workshops.hackclub.com/',
+        destination: 'https://workshops.happyhacking.space/',
         permanent: false
       },
       {
         source: '/workshops/([a-z_]+)/',
-        destination: 'https://workshops.hackclub.com/$1/',
+        destination: 'https://workshops.happyhacking.space/$1/',
         permanent: true
       },
       {
@@ -197,12 +197,12 @@ const nextConfig = withBundleAnalyzer({
       },
       {
         source: '/daysofservice/',
-        destination: 'https://daysofservice.hackclub.com',
+        destination: 'https://daysofservice.happyhacking.space',
         permanent: true
       },
       {
         source: '/blot/',
-        destination: 'https://blot.hackclub.com',
+        destination: 'https://blot.happyhacking.space',
         permanent: false
       },
       {
@@ -212,18 +212,18 @@ const nextConfig = withBundleAnalyzer({
       },
       {
         source: '/github',
-        destination: 'https://github.com/hackclub',
+        destination: 'https://github.com/happyhackingspace',
         permanent: true
 
       },
       {
         source: '/nest',
-        destination: 'https://hackclub.app',
+        destination: 'https://happyhacking.space',
         permanent: true
       },
       {
         source: '/security',
-        destination: 'https://security.hackclub.com',
+        destination: 'https://security.happyhacking.space',
         permanent: true
       }
     ]
@@ -252,11 +252,11 @@ const nextConfig = withBundleAnalyzer({
       },
       {
         source: '/workshops/_next/:path*',
-        destination: 'https://workshops.hackclub.com/_next/:path*'
+        destination: 'https://workshops.happyhacking.space/_next/:path*'
       },
       {
         source: '/summer/_next/:path*',
-        destination: 'https://summer.hackclub.com/_next/:path*'
+        destination: 'https://summer.happyhacking.space/_next/:path*'
       },
       {
         source: '/sponsorship/',
@@ -280,31 +280,31 @@ const nextConfig = withBundleAnalyzer({
       },
       {
         source: '/banner/',
-        destination: 'https://workshops.hackclub.com/banner/'
+        destination: 'https://workshops.happyhacking.space/banner/'
       },
       {
         source: '/conduct/',
-        destination: 'https://workshops.hackclub.com/conduct/'
+        destination: 'https://workshops.happyhacking.space/conduct/'
       },
       {
         source: '/workshop-bounty/',
-        destination: 'https://workshops.hackclub.com/workshop-bounty/'
+        destination: 'https://workshops.happyhacking.space/workshop-bounty/'
       },
       {
         source: '/vip-newsletters/',
-        destination: 'https://workshops.hackclub.com/vip-newsletters/'
+        destination: 'https://workshops.happyhacking.space/vip-newsletters/'
       },
       {
         source: '/vip-newsletters/(.*)',
-        destination: 'https://workshops.hackclub.com/vip-newsletters/$1'
+        destination: 'https://workshops.happyhacking.space/vip-newsletters/$1'
       },
       {
         source: '/newsletter/',
-        destination: 'https://workshops.hackclub.com/newsletter/'
+        destination: 'https://workshops.happyhacking.space/newsletter/'
       },
       {
         source: '/newsletter/(.*)',
-        destination: 'https://workshops.hackclub.com/newsletter/$1'
+        destination: 'https://workshops.happyhacking.space/newsletter/$1'
       },
       {
         source: '/transparency/may-2020/',
@@ -312,19 +312,19 @@ const nextConfig = withBundleAnalyzer({
       },
       {
         source: '/map/',
-        destination: 'https://map.hackclub.dev/'
+        destination: 'https://map.happyhacking.space/'
       },
       {
         source: '/map/(.*)',
-        destination: 'https://map.hackclub.dev/$1'
+        destination: 'https://map.happyhacking.space/$1'
       },
       {
         source: '/how-to-organize-a-hackathon',
-        destination: 'https://expandables.hackclub.dev/organizing.html'
+        destination: 'https://expandables.happyhacking.space/organizing.html'
       },
       {
         source: '/how-to-organize-a-hackathon/style.css',
-        destination: 'https://expandables.hackclub.dev/style.css'
+        destination: 'https://expandables.happyhacking.space/style.css'
       },
       {
         source: '/bin/',

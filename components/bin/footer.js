@@ -25,35 +25,35 @@ const Footer = () => {
                 <p>Hack Club is a registered 501(c)3 nonprofit organization that supports a network
                     of 20k+ technical high schoolers. We believe you learn best by building so we're removing barriers
                     to hardware access so any teenager can explore. In the past few years, we
-                    <a href="https://onboard.hackclub.com" target="_blank">
+                    <a href="https://onboard.happyhacking.space" target="_blank">
                         fabricated custom PCBs designed by
                         <span>253</span> teenagers
                     </a>,
-                    <a href="https://github.com/hackclub/the-hacker-zephyr" target="_blank">
+                    <a href="https://github.com/happyhackingspace/the-hacker-zephyr" target="_blank">
                         hosted the world's longest hackathon on land
                     </a>, and
-                    <a href="https://hackclub.com/winter" target="_blank">gave away $75k of
+                    <a href="https://happyhacking.space/winter" target="_blank">gave away $75k of
                         hardware</a>.
                 </p>
             </div>
             <article className={styles.footer_links}>
                 <div className={styles.footer_links_column}>
                     <h2>Hack&nbsp;Club</h2>
-                    <a href="https://hackclub.com/philosophy/">Philosophy</a>
-                    <a href="https://hackclub.com/team/">Our Team &amp; Board</a>
-                    <a href="https://hackclub.com/jobs/">Jobs</a>
-                    <a href="https://hackclub.com/brand/">Branding</a>
-                    <a href="https://hackclub.com/press/">Press Inquiries</a>
-                    <a href="https://hackclub.com/philanthropy/">Donate</a>
+                    <a href="https://happyhacking.space/philosophy/">Philosophy</a>
+                    <a href="https://happyhacking.space/team/">Our Team &amp; Board</a>
+                    <a href="https://happyhacking.space/jobs/">Jobs</a>
+                    <a href="https://happyhacking.space/brand/">Branding</a>
+                    <a href="https://happyhacking.space/press/">Press Inquiries</a>
+                    <a href="https://happyhacking.space/philanthropy/">Donate</a>
                 </div>
                 <div className={styles.footer_links_column}>
                     <h2>Resources</h2>
-                    <a href="https://hackclub.com/pizza">Clubs Pizza Grant</a>
+                    <a href="https://happyhacking.space/pizza">Clubs Pizza Grant</a>
                     <a href="https://events.hackclub.com/">Community Events</a>
-                    <a href="https://jams.hackclub.com/">Jams</a>
-                    <a href="https://toolbox.hackclub.com/">Toolbox</a>
-                    <a href="https://directory.hackclub.com/">Clubs Directory</a>
-                    <a href="https://hackclub.com/conduct/">Code of Conduct</a>
+                    <a href="https://jams.happyhacking.space/">Jams</a>
+                    <a href="https://toolbox.happyhacking.space/">Toolbox</a>
+                    <a href="https://directory.happyhacking.space/">Clubs Directory</a>
+                    <a href="https://happyhacking.space/conduct/">Code of Conduct</a>
                 </div>
                 <div className={styles.footer_links_column}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="128" height="45" fill="#8492A6" viewBox="0 0 256 90"
@@ -76,7 +76,7 @@ const Footer = () => {
                                 </path>
                             </svg>
                         </a>
-                        <a target="_blank" rel="noopener me" href="https://twitter.com/hackclub"
+                        <a target="_blank" rel="noopener me" href="https://twitter.com/happyhackings"
                             title="Hack Club on Twitter">
                             <svg fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round"
                                 strokeMiterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="twitter"
@@ -89,7 +89,7 @@ const Footer = () => {
                                 </g>
                             </svg>
                         </a>
-                        <a target="_blank" rel="noopener me" href="https://github.com/hackclub"
+                        <a target="_blank" rel="noopener me" href="https://github.com/happyhackingspace"
                             title="Hack Club on GitHub">
                             <svg fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round"
                                 strokeMiterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="github"
@@ -102,7 +102,7 @@ const Footer = () => {
                                 </g>
                             </svg>
                         </a>
-                        <a target="_blank" rel="noopener me" href="https://figma.com/@hackclub"
+                        <a target="_blank" rel="noopener me" href="https://figma.com/@happyhackingspace"
                             title="Hack Club on Figma">
                             <svg fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round"
                                 strokeMiterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="figma-fill"
@@ -118,7 +118,7 @@ const Footer = () => {
                                 </g>
                             </svg>
                         </a>
-                        <a target="_blank" rel="noopener me" href="https://social.dino.icu/@hackclub"
+                        <a target="_blank" rel="noopener me" href="https://social.dino.icu/@happyhackingspace"
                             title="Hack Club on Mastodon">
                             <svg fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round"
                                 strokeMiterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="mastodon"
@@ -131,7 +131,7 @@ const Footer = () => {
                                 </g>
                             </svg>
                         </a>
-                        <a target="_blank" rel="noopener me" href="https://www.youtube.com/c/HackClubHQ"
+                        <a target="_blank" rel="noopener me" href="https://www.youtube.com/c/HappyHackingSpace"
                             title="Hack Club on YouTube">
                             <svg fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round"
                                 strokeMiterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="youtube"
@@ -144,7 +144,7 @@ const Footer = () => {
                                 </g>
                             </svg>
                         </a>
-                        <a target="_blank" rel="noopener me" href="https://www.instagram.com/starthackclub"
+                        <a target="_blank" rel="noopener me" href="https://www.instagram.com/happyhackingspace"
                             title="Hack Club on Instagram">
                             <svg fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round"
                                 strokeMiterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="instagram"
@@ -160,7 +160,7 @@ const Footer = () => {
                                 </g>
                             </svg>
                         </a>
-                        <a target="_blank" rel="noopener me" href="mailto:team@hackclub.com"
+                        <a target="_blank" rel="noopener me" href="mailto:team@happyhacking.space"
                             title="Hack Club on email-fill">
                             <svg fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round"
                                 strokeMiterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="email-fill"
@@ -180,7 +180,7 @@ const Footer = () => {
                     </span>
                 </div>
             </article>
-            <p className={styles.footer_cr_info}>© 2024 Hack&nbsp;Club. 501(c)(3) nonprofit (EIN: 81-2908499)</p>
+            <p className={styles.footer_cr_info}>© 2025 Happy Hacking Space. </p>
         </div>
     </footer>
   )
