@@ -1,24 +1,43 @@
 <p align="center"><img width="192" alt="Hack Club logo" src="https://assets.hackclub.com/flag-standalone.svg"></p>
+
+b## Running the Project with Docker (Node.js)
+
+1. **Requirements**
+    - [Docker Desktop](https://www.docker.com/products/docker-desktop) must be installed.
+
+2. **Start with Docker Compose**
+    ```sh
+    docker-compose up --build
+    ```
+
+3. **View the Project**
+    - Open your browser and go to [http://localhost:3000](http://localhost:3000)
+
+4. **To Stop the Project**
+    ```sh
+    docker-compose down
+    ```
+
+> When you edit your code on your computer, changes are automatically reflected inside the container.
+
+Powered by Node.js, Next.js, MDX, Theme UI, & Hack Club Theme.
+
+Code under MIT License, assets may not be re-used or re-distributed.
+
+Powered by Next.js, MDX, Theme UI, & Hack Club Theme.
+
+Code under MIT License, assets may not be re-used or re-distributed.
+
 <h1 align="center"><a href="https://hackclub.com/">Hack Club's Site (v3)</a></h1>
 <p align="center"><i>The source code for hackclub.com</i></p>
 
-Hack Club's new website. This codebase is what runs on [hackclub.com](https://hackclub.com). For new developers getting started, run the following in your terminal:
+Powered by [Next.js], [MDX], [Theme UI], & [Hack Club Theme].
 
-Download the code to your computer:
+Code under MIT License, assets may not be re-used or re-distributed.
 
-    $ git clone https://github.com/hackclub/site && cd site
+Hack Club, 2025. MIT License.
 
-Install dependencies:
-
-    $ yarn
-
-Start running the website on your computer:
-
-    $ yarn dev
-
-And then open up your web browser and go to [localhost:3000](http://localhost:3000).
-
-Please note: There are a number of redirects and rewrites essential to the website's functionality, which you can see in [next.config.mjs](./next.config.mjs).
+<h1 align="center"><a href="https://hackclub.com/">Hack Club's Site (v3)</a></h1>
 
 Powered by [Next.js] with [MDX], [Theme UI], & [Hack Club Theme].
 
