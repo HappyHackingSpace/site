@@ -227,20 +227,21 @@ function Page({
 
   return (
     <>
-      <Meta
+      {/* <Meta
         as={Head}
         title="A Home for Hackers"
         description="Happy Hacking Space is a nonprofit network of hackers in Mesopotamia where people build the agency, the network, & the technical talent to think big & do big things in the world."
         image="https://cloud-lgl7kg862-hack-club-bot.vercel.app/0start__1_.png"
-      />
+      /> */}
       <Head>
         <meta
-          property="og:logo"
+          property="og:logo"  
           content="https://assets.hackclub.com/icon-rounded.png"
           size="512x512"
         />
         {/* Critical resource hints for performance */}
         <link rel="preload" href="/home/outernet-110.jpg" as="image" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/branding/hhs-white-wo-white.ico" />
         <link rel="dns-prefetch" href="//hackclub.slack.com" />
         <link rel="dns-prefetch" href="//api.github.com" />
         <link rel="dns-prefetch" href="//sprig.hackclub.com" />
