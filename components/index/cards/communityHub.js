@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Box, Flex, Grid, Image, Text } from 'theme-ui'
+import { Box, Flex, Image, Text } from 'theme-ui'
 import CardModel from './card-model'
 import Buttons from './button'
 
@@ -30,7 +30,7 @@ export default function Onboard({ stars }) {
         position: 'relative',
         overflow: 'hidden',
         backgroundColor: 'rgba(0,0,0)',
-        maxHeight: ['300px', '300px', '340px']
+        height: ['235px', '330px', '360px']
       }}
       github_link="https://github.com/HappyHackingSpace/CommunityHub"
       color="white"
@@ -79,66 +79,41 @@ export default function Onboard({ stars }) {
         </video>
         
         <Box sx={{ position: 'relative', zIndex: 1 }}>
-          <Grid columns={[1, 2]} sx={{ display: 'flex', flexDirection: ['column', 'row'], alignItems: 'center', justifyContent: 'center', gap: [3, 7] }}>
-            {/* Sol Kolon - Community */}
-            <Box sx={{ textAlign: 'center', maxWidth: '400px' }}>
-              <Text as="p" variant="subtitle" sx={{ 
+          <Flex sx={{
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '100%',
+            textAlign: 'center'
+          }}>
+            <Box sx={{ maxWidth: '500px', px: [3, 3, 4] }}>
+              <Text as="p" variant="subtitle" sx={{
                 color: 'white',
-                // backgroundColor: 'rgba(0, 0, 0)',
-                padding: '4px',
-                borderRadius: '8px',
-                mt: [1, 5, 6],
-                zIndex: 2, 
-                position: 'relative'
-              }}>
-                A vibrant community hub where developers, designers, and tech enthusiasts come together 
-                to collaborate, share knowledge, and build amazing projects together.
-              </Text>
-              
-              {/* <Flex sx={{ flexDirection: 'column', mt: [3, 4, 5], alignItems: 'center', justifyContent: 'center' }}>
-                <Buttons
-                  id="59"
-                  icon="users"
-                  link="https://github.com/HappyHackingSpace/CommunityHub"
-                  primary="#FEF1DC"
-                  color="black"
-                >
-                  Join community
-                </Buttons>
-              </Flex> */}
-            </Box>
-       
-            <Box sx={{ 
-              textAlign: 'center',
-              maxWidth: '400px',
-              display: ['none', 'block']  
-            }}>
-              <Text as="p" variant="subtitle" sx={{ 
-                color: 'white',
-                // backgroundColor: 'rgba(0, 0, 0, 0.6)',
                 padding: '12px',
                 borderRadius: '8px',
-                mt: [4, 5, 6],
-                zIndex: 2, 
-                position: 'relative'
+                mt: [1, 3, 5],
+                zIndex: 2,
+                position: 'relative',
+                display: ['none', 'none', 'block']
               }}>
-                Join our development processes! Contribute to our open source projects, 
-                learn new technologies and work together with experienced developers.
+                Join our development processes! Contribute to our open source projects, learn new technologies and work together with experienced developers.
               </Text>
+
+              <Text as="p" variant="subtitle" sx={{
+                color: 'white',
+                padding: '12px',
+                borderRadius: '8px',
+                mt: [1, 3, 5],
+                zIndex: 2,
+                position: 'relative',
+                display: ['block', 'block', 'none']
+              }}>
+                Contribute to open source projects and learn with experienced developers.
+              </Text>
+
               
-              <Flex sx={{ flexDirection: 'column', mt: [3, 4, 5], alignItems: 'center', justifyContent: 'center' }}>
-                <Buttons
-                  id="60"
-                  icon="github"
-                  link="https://github.com/HappyHackingSpace"
-                  primary="#333333"
-                  color="white"
-                >
-                  Go to GitHub
-                </Buttons>
-              </Flex>
             </Box>
-          </Grid>
+          </Flex>
         </Box>
           </CardModel>
         )

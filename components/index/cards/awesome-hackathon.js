@@ -71,7 +71,7 @@ export default function SprigConsole({ stars, consoleCount }) {
         >
           <source src="/home/awesomePhone.mp4" type="video/mp4" />
         </video>
-        <Box sx={{ position: 'relative', zIndex: 1 , mt: [3, 4, 5] }}>
+        <Box sx={{ position: 'relative', zIndex: 1 , mt: [3, 4, 4] }}>
         {/* <Image
           src="https://sprig.hackclub.com/pcb.svg"
           sx={{
@@ -115,7 +115,7 @@ export default function SprigConsole({ stars, consoleCount }) {
         >
           Join the other {consoleCount} teenagers with Sprigs!
         </Text> */}
-        <Box sx={{ zIndex: 2, position: 'relative', mt: [4, 5, 6] }}>
+        <Box sx={{ zIndex: 2, position: 'relative', mt: [4, 5, 1] }}>
           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', px: [2,3,4], py: [3,4] }}>
             <Text as="h6" variant="subtitle" sx={{
               color: 'white',
@@ -126,7 +126,7 @@ export default function SprigConsole({ stars, consoleCount }) {
             }}>
               Tools and resources to help you build, design, and win hackathons! 🏆
             </Text>
-            <Box sx={{ mt: [3, 3, 4] }}>
+            <Box sx={{ mt: [3, 3, 3] }}>
               <Buttons
                 id="6"
                 link="/events"
