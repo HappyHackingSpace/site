@@ -23,9 +23,9 @@ export default function Haxidraw({ stars }) {
         position: 'relative',
         overflow: 'hidden',
         backgroundColor: '#95C9E5',
-        backgroundImage: `url(/home/gitmon.png)`,
+        backgroundImage: `url(/home/gitmonPhone.png)`,
         backgroundSize: 'cover',
-        maxHeight: ['150px', '200px', '275px']
+        maxHeight: ['300px', '200px', '275px']
       }}
       position={[null, 'top', 'top']}
       highlight="dark"

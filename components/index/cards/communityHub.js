@@ -30,7 +30,7 @@ export default function Onboard({ stars }) {
         position: 'relative',
         overflow: 'hidden',
         backgroundColor: 'rgba(0,0,0)',
-        maxHeight: ['225px', '300px', '340px']
+        maxHeight: ['300px', '300px', '340px']
       }}
       github_link="https://github.com/HappyHackingSpace/CommunityHub"
       color="white"
@@ -68,7 +68,7 @@ export default function Onboard({ stars }) {
             left: 0,
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
+            objectFit: 'fill',
             zIndex: 0
           }}
           sx={{
@@ -85,9 +85,9 @@ export default function Onboard({ stars }) {
               <Text as="p" variant="subtitle" sx={{ 
                 color: 'white',
                 // backgroundColor: 'rgba(0, 0, 0)',
-                padding: '12px',
+                padding: '4px',
                 borderRadius: '8px',
-                mt: [4, 5, 6],
+                mt: [1, 5, 6],
                 zIndex: 2, 
                 position: 'relative'
               }}>
@@ -95,7 +95,7 @@ export default function Onboard({ stars }) {
                 to collaborate, share knowledge, and build amazing projects together.
               </Text>
               
-              <Flex sx={{ flexDirection: 'column', mt: [3, 4, 5], alignItems: 'center', justifyContent: 'center' }}>
+              {/* <Flex sx={{ flexDirection: 'column', mt: [3, 4, 5], alignItems: 'center', justifyContent: 'center' }}>
                 <Buttons
                   id="59"
                   icon="users"
@@ -105,7 +105,7 @@ export default function Onboard({ stars }) {
                 >
                   Join community
                 </Buttons>
-              </Flex>
+              </Flex> */}
             </Box>
        
             <Box sx={{ 

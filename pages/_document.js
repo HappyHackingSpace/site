@@ -4,8 +4,8 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 const org = {
   '@context': 'http://schema.org',
   '@type': 'Organization',
-  name: 'Hack Club',
-  url: 'https://hackclub.com/',
+  name: 'Happy Hacking Space',
+  url: 'https://happyhacking.space/',
   logo: 'https://hackclub.com/social.png',
   sameAs: [
     'https://twitter.com/hackclub',
@@ -35,6 +35,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta name="format-detection" content="telephone=no" />
+          <link rel="icon" type="image/x-icon" href="/branding/hhs-white-wo-white.ico" />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(org) }}

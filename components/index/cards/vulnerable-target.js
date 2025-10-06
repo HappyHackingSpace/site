@@ -189,7 +189,7 @@ export default function Sprig({ stars }) {
         backgroundColor: '#0C0C16',
         position: 'relative',
         overflow: 'hidden',
-        minHeight: ['235px', '330px', '360px']
+        minHeight: ['300px', '330px', '360px']
       }}
     >
       {/* Desktop GIF - hidden on mobile */}
@@ -222,7 +222,7 @@ export default function Sprig({ stars }) {
           left: 0,
           width: '100%',
           height: '100%',
-          objectFit: 'cover',
+          objectFit: 'fill',
           zIndex: 0
         }}
         sx={{
@@ -234,7 +234,7 @@ export default function Sprig({ stars }) {
       <Box sx={{ position: 'relative', zIndex: 1 }}>
 
 <Grid columns={[1, 1]} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', height: '100%' }}>        
-  <Box sx={{ mt: [2, 3, 4], textAlign: 'flex-start', maxWidth: '500px', px: [3, 3, 3] }}>
+  <Box sx={{ mt: [5, 3, 4], textAlign: 'flex-start', maxWidth: '500px', px: [3, 3, 3] }}>
           <Text
             as="p"
             variant="subtitle"

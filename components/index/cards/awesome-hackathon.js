@@ -28,7 +28,7 @@ export default function SprigConsole({ stars, consoleCount }) {
           overflow: 'hidden',
           backgroundColor: '#1A3C14',
           backgroundSize: 'cover',
-          maxHeight: ['150px', '200px', '275px']
+          maxHeight: ['300px', '200px', '275px']
         }}
         highlight="#427A43"
       >
