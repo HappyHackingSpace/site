@@ -210,27 +210,24 @@ function Page({
     // return () => clearTimeout(timer)
   }, [])
 
-  // Async API loading - GitHub Stars (DISABLED - using fallback data)
+  // Async API loading - GitHub Stars (ACTIVE - fetching real star counts)
   useEffect(() => {
-    // const loadStars = async () => {
-    //   try {
-    //     const response = await fetch('/api/stars')
-    //     if (response.ok) {
-    //       const data = await response.json()
-    //       setApiData(prev => ({ ...prev, stars: data }))
-    //     }
-    //   } catch (error) {
-    //     console.warn('Stars API failed, using fallback:', error)
-    //   } finally {
-    //     setLoadingStates(prev => ({ ...prev, stars: false }))
-    //   }
-    // }
-    // const timer = setTimeout(loadStars, 800)
-    
-    // Just use fallback data and mark as loaded
-    setLoadingStates(prev => ({ ...prev, stars: false }))
-    
-    // return () => clearTimeout(timer)
+    const loadStars = async () => {
+      try {
+        const response = await fetch('/api/stars')
+        if (response.ok) {
+          const data = await response.json()
+          setApiData(prev => ({ ...prev, stars: data }))
+        }
+      } catch (error) {
+        console.warn('Stars API failed, using fallback:', error)
+      } finally {
+        setLoadingStates(prev => ({ ...prev, stars: false }))
+      }
+    }
+
+    const timer = setTimeout(loadStars, 800)
+    return () => clearTimeout(timer)
   }, [])
 
   // Async API loading - Sprig Games (DISABLED - using fallback data)
