@@ -39,6 +39,24 @@ import WindyCity from '../../public/donate/6screenshot_2021-10-03_at_3.29.29_pm.
 import ZephyrFun from '../../public/donate/0screenshot_2021-10-03_at_3.59.34_pm.png'
 import GoldenTrain from '../../public/home/golden-train.png'
 
+// Import HHS images
+import HHS from '../../public/philanthropy/hhs.jpeg'
+import HHS1 from '../../public/philanthropy/hhs1.jpeg'
+import HHS2 from '../../public/philanthropy/hhs2.JPG'
+import HHS4 from '../../public/philanthropy/hhs4.jpeg'
+import HHS5 from '../../public/philanthropy/hhs5.jpeg'
+import HHS6 from '../../public/philanthropy/hhs6.jpeg'
+import HHS7 from '../../public/philanthropy/hhs7.jpg'
+import HHS8 from '../../public/philanthropy/hhs8.jpg'
+import HHS9 from '../../public/philanthropy/hhs9.jpg'
+import HHS10 from '../../public/philanthropy/hhs10.jpg'
+import HHS11 from '../../public/philanthropy/hhs11.jpg'
+import HHS12 from '../../public/philanthropy/hhs12.jpeg'
+import HHS13 from '../../public/philanthropy/hhs13.jpeg'
+import HHS14 from '../../public/philanthropy/hhs14.jpeg'
+import HHS15 from '../../public/philanthropy/hhs15.jpeg'
+import HHS16 from '../../public/philanthropy/hhs16.jpeg'
+
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts'
 
 // Custom Marquee component to replace react-marquee-slider
@@ -55,7 +73,7 @@ const Marquee = ({ velocity = 100, children }) => {
       <Box
         sx={{
           display: 'inline-flex',
-          animation: `marquee ${100 - velocity}s linear infinite`,
+          animation: `marquee ${180 - velocity}s linear infinite`,
           '@keyframes marquee': {
             '0%': {
               transform: 'translateX(0%)'
@@ -66,9 +84,7 @@ const Marquee = ({ velocity = 100, children }) => {
           }
         }}
       >
-      
         {children}
-     
         {children}
       </Box>
     </Box>
@@ -88,23 +104,21 @@ const PhotoRow = ({ photos }) => (
   <Box sx={{ height: '160px', overflow: 'hidden' }}>
     {/* Mobil ve tablet görünüm */}
     <Box sx={{ display: ['block', 'block', 'block', 'block', 'none'] }}>
-      <Marquee velocity={12}>
+      <Marquee velocity={15}>
         {photos.map((photo, index) => (
           <Box
             key={`mobile-${index}`}
             sx={{
               display: 'inline-block',
-              marginRight: '10px',
               flexShrink: 0
             }}
           >
             <Image
-              placeholder="blur"
               src={photo}
               className="next-image"
               height={200}
               width={300}
-              alt="Hack Club students"
+              alt="Happy Hacking Space students"
               style={{ 
                 objectFit: 'cover',
                 display: 'block'
@@ -117,23 +131,21 @@ const PhotoRow = ({ photos }) => (
     
     {/* Desktop görünüm */}
     <Box sx={{ display: ['none', 'none', 'none', 'none', 'block'] }}>
-      <Marquee velocity={8}>
+      <Marquee velocity={20}>
         {photos.map((photo, index) => (
           <Box
             key={`desktop-${index}`}
             sx={{
               display: 'inline-block',
-              marginRight: '10px',
               flexShrink: 0
             }}
           >
             <Image
-              placeholder="blur"
               src={photo}
               className="next-image"
               height={200}
               width={600}
-              alt="Hack Club students"
+              alt="Happy Hacking Space students"
               style={{ 
                 objectFit: 'cover',
                 display: 'block'
@@ -250,13 +262,12 @@ const Line = () => {
         sx={{
           borderBottom: '1px solid #e0e6ed',
           width: '100%',
-          my: [4, 5]
+          mb: [4, 5]
         }}
       ></Box>
     </Fade>
   )
 }
-
 const Quote = ({ children }) => {
   return (
     <Text
@@ -311,7 +322,7 @@ const HackClubber = ({ photo, quote, info }) => {
         height: '300px',
         backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url(/philanthropy/${photo})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'top center',
+        backgroundPosition: 'center',
         position: 'relative'
       }}
     >
@@ -635,23 +646,24 @@ const Philanthropy = ({ posts = [] }) => {
           >
             <PhotoRow
               photos={[
-                ExecuteBig,
-                HackCamp,
-                HackerGames,
-                LaptopDonations,
-                Kerala
+                HHS,
+                HHS1,
+                HHS2,
+                HHS4,
+                HHS5,
+                HHS6
               ]}
             />
             <PhotoRow
-              photos={[HackPenn, ElonAMA, SpaceX, GoldenTrain, Flagship]}
+              photos={[HHS7, HHS8, HHS9, HHS10, HHS11]}
             />
             <PhotoRow
               photos={[
-                HackCamp2020,
-                InnovationCircuit,
-                WindyCity,
-                MAHacks,
-                ZephyrFun
+                HHS12,
+                HHS13,
+                HHS14,
+                HHS15,
+                HHS16
               ]}
             />
           </Box>
@@ -725,37 +737,37 @@ const Philanthropy = ({ posts = [] }) => {
           <Grid gap={2} columns={[1, 2, 3, 5]} mt={4}>
             <Fade delay={30}>
               <HackClubber
-                photo="arianna.png"
+                photo="../../team/ahsen.jpeg"
                 quote="Always inspiring interesting new projects"
-                info="Arianna, 16, Kentucky"
+                info="Ahsen, Diyarbakir"
               />
             </Fade>
             <Fade delay={60}>
               <HackClubber
-                photo="jason.png"
+                photo="../../team/muslime.jpeg"
                 quote="I’ve met some of the best people"
-                info="Jason, 16, Texas"
+                info="Muslime, Diyarbakir"
               />
             </Fade>
             <Fade delay={90}>
               <HackClubber
-                photo="sam.png"
-                quote="In Hack Club I’ve found a home"
-                info="Sam, 17, Singapore"
+                photo="../../team/amed.jpeg"
+                quote="In Happy Hacking Space I’ve found a home"
+                info="Amed, Diyarbakir"
               />
             </Fade>
             <Fade delay={120}>
-              <HackClubber
-                photo="abby.png"
+              <HackClubber 
+                photo="../../team/arjin.jpeg"
                 quote="Helped build me a strong coding foundation"
-                info="Abby, 15, Los Angeles"
+                info="Arjin, Diyarbakir"               
               />
             </Fade>
             <Fade delay={150}>
               <HackClubber
-                photo="adriano.png"
+                photo="../../team/miwa.jpeg"
                 quote="Totally different from the coding classes at school"
-                info="Adriano, 19, Brazil"
+                info="Miwa, Diyarbakir"
               />
             </Fade>
           </Grid>

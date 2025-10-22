@@ -45,7 +45,10 @@ const Photo = React.forwardRef(function Photo(
         alt={alt}
         width={width}
         height={height}
-        layout="responsive"
+        style={{
+          width: '100%',
+          height: 'auto',
+        }}
         loading={loading || 'lazy'}
       />
       {showCaption && (
