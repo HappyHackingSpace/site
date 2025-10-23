@@ -11,7 +11,7 @@ import {
   Link as A,
   Text
 } from 'theme-ui'
-import theme from '@hackclub/theme'
+import theme from '@happyhackingspace/theme'
 import Meta from '@happyhackingspace/meta'
 import Icon from '@hackclub/icons'
 import Head from 'next/head'
@@ -325,7 +325,7 @@ export const getStaticProps = () => {
   const fs = require('fs')
   
   const css = fs.readFileSync(
-    './node_modules/@hackclub/theme/fonts/reg-ital-bold.css',
+    './node_modules/@happyhackingspace/theme/fonts/reg-ital-bold.css',
     'utf8'
   )
   return { props: { css } }

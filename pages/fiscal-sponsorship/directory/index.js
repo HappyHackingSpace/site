@@ -22,7 +22,7 @@ import fuzzysort from 'fuzzysort'
 import { useEffect, useState } from 'react'
 /** @jsxImportSource theme-ui */
 import { kebabCase, intersection, find } from 'lodash'
-import theme from '@hackclub/theme'
+import theme from '@happyhackingspace/theme'
 import Tooltip from '../../../components/fiscal-sponsorship/tooltip'
 const GeoPattern = require('geopattern')
 import { useRouter } from 'next/router'

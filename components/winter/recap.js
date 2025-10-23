@@ -1,5 +1,5 @@
 import { Box, Button, Container, Heading, Grid, Card, Text } from 'theme-ui'
-import theme from '@hackclub/theme'
+import theme from '@happyhackingspace/theme'
 // import { Slide, Zoom } from 'react-reveal'
 const Slide = ({ children, ...props }) => <div {...props}>{children}</div>
 const Zoom = ({ children, ...props }) => <div {...props}>{children}</div>

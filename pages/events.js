@@ -20,7 +20,7 @@ import Icon from '../components/icon'
 import Image from 'next/image'
 import CultureHackPic from '../public/hackathons/culturedigitalizationhackathon.jpg'
 import { compact } from 'lodash'
-import theme from '@hackclub/theme'
+import theme from '@happyhackingspace/theme'
 
 const events = [
   {
