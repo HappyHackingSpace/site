@@ -1,4 +1,4 @@
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import Head from 'next/head'
 import Link from 'next/link'
 import { Balancer } from 'react-wrap-balancer'

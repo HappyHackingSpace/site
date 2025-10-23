@@ -1,4 +1,4 @@
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import Head from 'next/head'
 
 const SprigMeta = () => {

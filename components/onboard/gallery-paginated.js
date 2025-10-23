@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import PaginationButtons from './pagination-buttons'
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import Head from 'next/head'
 import { Box, Button, Flex, Grid, Heading, Text } from 'theme-ui'
 import Item from './item'

@@ -1,6 +1,6 @@
 import { Box, Button, Container, Heading, Text } from 'theme-ui'
 import theme from '@hackclub/theme'
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import Icon from '@hackclub/icons'
 import Head from 'next/head'
 import Nav from '../../components/nav'

@@ -12,7 +12,7 @@ import {
 } from 'theme-ui'
 import styled from '@emotion/styled'
 import Image from 'next/image'
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import Head from 'next/head'
 import Nav from '../../components/nav'
 import ForceTheme from '../../components/force-theme'

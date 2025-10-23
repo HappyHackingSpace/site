@@ -1,6 +1,6 @@
 import { Box, Link, Heading, Image, Text } from 'theme-ui'
 
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import Countdown from 'react-countdown'
 import { useState } from 'react'
 import Head from 'next/head'

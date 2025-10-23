@@ -9,7 +9,7 @@ import {
   Text,
   Link
 } from 'theme-ui'
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import Icon from '@hackclub/icons'
 import Head from 'next/head'
 import Nav from '../components/nav'

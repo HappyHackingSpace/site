@@ -1,6 +1,6 @@
 import { Avatar, Badge, Box, Container, Flex, Heading } from 'theme-ui'
 import Head from 'next/head'
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import Nav from './nav'
 import Footer from './footer'
 import ForceTheme from './force-theme'

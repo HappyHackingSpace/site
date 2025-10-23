@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import Balancer from 'react-wrap-balancer'
 import Head from 'next/head'
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import Nav from '../../components/nav'
 import Footer from '../../components/footer'
 import FadeIn from '../../components/fade-in'

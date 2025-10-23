@@ -1,5 +1,5 @@
 import { Card, Box, Flex, Grid, Heading, Image, Text } from 'theme-ui'
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import Head from 'next/head'
 import Nav from '../components/nav'
 import BGImg from '../components/background-image'
