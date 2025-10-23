@@ -1,4 +1,4 @@
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import Head from 'next/head'
 import { Box, Container, Heading, Text } from 'theme-ui'
 import { useRef } from 'react'

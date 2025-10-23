@@ -1,6 +1,6 @@
 import { Box, Button, Image, Grid, Text, Link } from 'theme-ui'
 import Head from 'next/head'
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import React, { useEffect, useState } from 'react'
 import tt from 'tinytime'
 import Particle from '../../components/particles'

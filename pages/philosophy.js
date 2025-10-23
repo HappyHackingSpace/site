@@ -1,4 +1,4 @@
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import Head from 'next/head'
 import { Box, Heading, Container, Text, Button, Link } from 'theme-ui'
 import Nav from '../components/nav'

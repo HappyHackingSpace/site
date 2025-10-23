@@ -55,7 +55,7 @@ export default function Slack({ data, slackKey, events }) {
       }}
     >
       <Image
-        src="/home/zoom_cyber_meetup1.png"
+        src="/home/hacker-team.png"
         sx={{
           objectFit: 'cover',
           position: 'absolute',

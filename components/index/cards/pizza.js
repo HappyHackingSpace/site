@@ -67,14 +67,14 @@ export default function Pizza() {
             }}
           >
             <Image
-              alt="Group of teenage hackers enjoying GitHub Hack Club Pizza Grant"
+              alt="Group of Happy Hacking Space"
               sx={{
                 borderRadius: '16px',
                 border: '1px solid #EC3750',
                 aspectRatio: '16/9',
-                objectFit: 'cover'
+                objectFit: 'fit',
               }}
-              src="https://cloud-8tc8qa1ew-hack-club-bot.vercel.app/0img_8975.jpg"
+              src="/home/hacker-team.png"
             />
             <Text
               sx={{
@@ -87,7 +87,7 @@ export default function Pizza() {
                 position: 'absolute'
               }}
             >
-              Newton South HS Hack Club in Boston
+             From Happy Hacking Space Academy
             </Text>
           </Flex>
         </Box>

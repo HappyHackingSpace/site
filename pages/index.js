@@ -13,12 +13,19 @@ import { useEffect, useRef, useState, useMemo, useCallback } from 'react'
 import { LazySection } from '../hooks/useInView'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import Nav from '../components/nav'
 import BGImg from '../components/background-image'
 import ForceTheme from '../components/force-theme'
 import Footer from '../components/footer'
 import Stage from '../components/stage'
+// import Som from '../components/index/cards/som'
+// import Athena from '../components/index/cards/athena'
+// import Highway from '../components/index/cards/highway' 
+// import Shipwrecked from '../components/index/cards/shipwrecked'
+// import Pizza from '../components/index/cards/pizza'
+import Slack from '../components/index/cards/slack'
+
 // Lazy load heavy components with skeletons for better perceived performance
 const Carousel = dynamic(() => import('../components/index/carousel'), {
   loading: () => {
@@ -94,14 +101,35 @@ const Onboard = dynamic(() => import('../components/index/cards/communityHub'), 
 /** @jsxImportSource theme-ui */
 
 function Page({
-  slackData,
-  gitHubData,
-  consoleCount,
-  stars,
-  game,
-  carouselCards
+  carouselCards,
+  events: initialEvents
 }) {
-  // Optimize state management for better performance
+  // Client-side API data states for async loading
+  const [apiData, setApiData] = useState({
+    slackData: { total_members_count: 500 }, // fallback
+    gitHubData: [],
+    consoleCount: 500,
+    stars: {
+      sprig: { stargazerCount: 1000 },
+      sinerider: { stargazerCount: 500 },
+      blot: { stargazerCount: 300 },
+      onboard: { stargazerCount: 200 }
+    },
+    game: [],
+    events: initialEvents || [],
+    hackathonsData: []
+  })
+
+  const [loadingStates, setLoadingStates] = useState({
+    slack: true,
+    github: true,
+    stars: true,
+    games: true,
+    console: true,
+    hackathons: true
+  })
+
+  // Optimize UI state management for better performance
   const [uiState, setUiState] = useState({
     gameImage: '',
     gameImage1: '',
@@ -138,6 +166,116 @@ function Page({
     window.paper = `Welcome, intrepid hacker! We'd love to have you in our community. Get your invite at hack.af/slack. Under "Why do you want to join the Hack Club Slack?" add a 🦄 and we'll ship you some exclusive stickers! `
   }, [])
 
+  // Async API loading - GitHub data (loads after initial page render)
+  useEffect(() => {
+    const loadGitHubData = async () => {
+      try {
+        const response = await fetch('/api/github')
+        if (response.ok) {
+          const data = await response.json()
+          setApiData(prev => ({ ...prev, gitHubData: data }))
+        }
+      } catch (error) {
+        console.warn('GitHub API failed, using fallback:', error)
+      } finally {
+        setLoadingStates(prev => ({ ...prev, github: false }))
+      }
+    }
+
+    // Delay GitHub API call to prioritize critical content
+    const timer = setTimeout(loadGitHubData, 500)
+    return () => clearTimeout(timer)
+  }, [])
+
+  // Async API loading - Slack data (DISABLED - using fallback data)
+  useEffect(() => {
+    // const loadSlackData = async () => {
+    //   try {
+    //     const response = await fetch('/api/slack')
+    //     if (response.ok) {
+    //       const data = await response.json()
+    //       setApiData(prev => ({ ...prev, slackData: data }))
+    //     }
+    //   } catch (error) {
+    //     console.warn('Slack API failed, using fallback:', error)
+    //   } finally {
+    //     setLoadingStates(prev => ({ ...prev, slack: false }))
+    //   }
+    // }
+    // const timer = setTimeout(loadSlackData, 300)
+    
+    // Just use fallback data and mark as loaded
+    setLoadingStates(prev => ({ ...prev, slack: false }))
+    
+    // return () => clearTimeout(timer)
+  }, [])
+
+  // Async API loading - GitHub Stars (ACTIVE - fetching real star counts)
+  useEffect(() => {
+    const loadStars = async () => {
+      try {
+        const response = await fetch('/api/stars')
+        if (response.ok) {
+          const data = await response.json()
+          setApiData(prev => ({ ...prev, stars: data }))
+        }
+      } catch (error) {
+        console.warn('Stars API failed, using fallback:', error)
+      } finally {
+        setLoadingStates(prev => ({ ...prev, stars: false }))
+      }
+    }
+
+    const timer = setTimeout(loadStars, 800)
+    return () => clearTimeout(timer)
+  }, [])
+
+  // Async API loading - Sprig Games (DISABLED - using fallback data)
+  useEffect(() => {
+    // const loadGames = async () => {
+    //   try {
+    //     const response = await fetch('/api/games')
+    //     if (response.ok) {
+    //       const data = await response.json()
+    //       setApiData(prev => ({ ...prev, game: data }))
+    //     }
+    //   } catch (error) {
+    //     console.warn('Games API failed, using fallback:', error)
+    //   } finally {
+    //     setLoadingStates(prev => ({ ...prev, games: false }))
+    //   }
+    // }
+    // const timer = setTimeout(loadGames, 1000)
+    
+    // Just use fallback data and mark as loaded
+    setLoadingStates(prev => ({ ...prev, games: false }))
+    
+    // return () => clearTimeout(timer)
+  }, [])
+
+  // Async API loading - Console Count (DISABLED - using fallback data)
+  useEffect(() => {
+    // const loadConsoleCount = async () => {
+    //   try {
+    //     const response = await fetch('/api/sprig-console')
+    //     if (response.ok) {
+    //       const data = await response.json()
+    //       setApiData(prev => ({ ...prev, consoleCount: data }))
+    //     }
+    //   } catch (error) {
+    //     console.warn('Console API failed, using fallback:', error)
+    //   } finally {
+    //     setLoadingStates(prev => ({ ...prev, console: false }))
+    //   }
+    // }
+    // const timer = setTimeout(loadConsoleCount, 1200)
+    
+    // Just use fallback data and mark as loaded
+    setLoadingStates(prev => ({ ...prev, console: false }))
+    
+    // return () => clearTimeout(timer)
+  }, [])
+
   const easterEgg = () => {
     alert('Hey, you typed the Konami Code!')
 
@@ -167,7 +305,7 @@ function Page({
 
   // Memoize images array to prevent unnecessary re-renders
   const images = useMemo(() => [
-    { alt: 'Map of Happy Hacking Spaces in and around the Mesopotamia', src: '/home/map.png' },
+    { alt: 'Map of Happy Hacking Spaces in and around the Mesopotamia', src: '/diyarmap.png' },
     { alt: 'Happy Hackers organized code jam', src: '/codejams/firstcodejam.jpeg' },
     { alt: 'Happy Hackers at Language Club', src: '/home/langclub.jpeg' },
     { alt: 'Happy Hackers organized hackathon', src: '/hackathons/culturehack.jpeg' },
@@ -330,7 +468,7 @@ function Page({
                   width: '100%'
                 }}
               >
-                We are <Comma>{slackData.total_members_count}</Comma>{' '}
+                We are <Comma>{apiData.slackData.total_members_count}</Comma>{' '}
                 <Text
                   sx={{
                     color: 'transparent',
@@ -791,7 +929,12 @@ function Page({
             {/* <Athena /> */}
             {/* <Highway /> */}
             {/* <Shipwrecked /> */}
-            {/* <Slack slackKey={slackKey} data={slackData} events={events} /> */}
+            <Slack 
+              slackKey={uiState.slackKey} 
+              data={apiData.slackData} 
+              events={apiData.events}
+              loading={loadingStates.slack}
+            />
             {/* <Pizza /> */}
           </Box>
         </Box>
@@ -808,7 +951,7 @@ function Page({
               <Flex
                 sx={{
                   flexDirection: ['column', 'column', 'column', 'row'],
-                  justifyContent: gitHubData ? 'center' : 'flex-start',
+                  justifyContent: apiData.gitHubData.length > 0 ? 'center' : 'flex-start',
                   alignItems: [
                     'flex-start',
                     'flex-start',
@@ -856,7 +999,7 @@ function Page({
                     tools or contribute to the tools themselves.
                   </Text>
                 </Box>
-                {gitHubData && (
+                {apiData.gitHubData.length > 0 && (
                   <Flex
                     sx={{
                       flexDirection: ['row', null, null, 'column'],
@@ -881,7 +1024,7 @@ function Page({
                     >
                       Live from GitHub
                     </Text>
-                    {gitHubData
+                    {apiData.gitHubData
                       .filter(data => !data.user.endsWith('[bot]'))
                       .slice(0, 4)
                       .map((data, key) => {
@@ -917,13 +1060,22 @@ function Page({
               >
                 <Sprig
                   delay={100}
-                  stars={stars?.sprig?.stargazerCount || 1000}
-                  game={game}
+                  stars={apiData.stars?.sprig?.stargazerCount || 1000}
+                  game={apiData.game}
                   gameImage={uiState.gameImage}
                   gameImage1={uiState.gameImage1}
+                  loading={loadingStates.games}
                 />
-                <Onboard stars={stars?.onboard?.stargazerCount || 200} delay={100} />
-                <Haxidraw stars={stars?.blot?.stargazerCount || 300} delay={100} />
+                <Onboard 
+                  stars={apiData.stars?.onboard?.stargazerCount || 200} 
+                  delay={100} 
+                  loading={loadingStates.stars}
+                />
+                <Haxidraw 
+                  stars={apiData.stars?.blot?.stargazerCount || 300} 
+                  delay={100}
+                  loading={loadingStates.stars}
+                />
               </LazySection>
               {/* <Sinerider delay={200} stars={stars.sinerider.stargazerCount} /> */}
               <LazySection
@@ -937,8 +1089,8 @@ function Page({
                 <Box as="section" id="sprig">
                   <SprigConsole
                     delay={300}
-                    stars={stars?.sprig?.stargazerCount || 1000}
-                    consoleCount={consoleCount}
+                    stars={apiData.stars?.sprig?.stargazerCount || 1000}
+                    consoleCount={apiData.consoleCount}
                   />
                 </Box>
               </LazySection>
@@ -1352,136 +1504,28 @@ function Page({
 }
 
 export async function getStaticProps() {
+  // Only load critical static data at build time
   const carouselCards = require('../lib/carousel.json')
-  const APICache = require('../lib/api-cache').default
-
-  // High-performance API calls with caching, timeouts, and fallbacks
-  const [
-    slackData,
-    gitHubData,
-    stars,
-    game,
-    consoleCount,
-    hackathonsData,
-    events
-  ] = await Promise.allSettled([
-    // Slack data with 5min cache + fallback
-    APICache.get('slack-stats', async () => {
-      const { Slack: Slacky } = require('./api/slack')
-      return await Slacky()
-    }, {
-      ttl: 300000,
-      timeout: 6000,
-      fallback: { total_members_count: 500 }
-    }),
-
-    // GitHub activity with 3min cache + aggressive timeout
-    APICache.get('github-activity', async () => {
-      const { fetchGitHub } = require('./api/github')
-      return await fetchGitHub()
-    }, {
-      ttl: 180000,
-      timeout: 4000,
-      fallback: []
-    }),
-
-    // GitHub stars with 10min cache (changes rarely)
-    APICache.get('github-stars', async () => {
-      const { fetchStars } = require('./api/stars')
-      return await fetchStars()
-    }, {
-      ttl: 600000,
-      timeout: 5000,
-      fallback: {
-        sprig: { stargazerCount: 1000 },
-        sinerider: { stargazerCount: 500 },
-        blot: { stargazerCount: 300 },
-        onboard: { stargazerCount: 200 },
-        hackclub: { stargazerCount: 2000 },
-        hackathons: { stargazerCount: 100 }
-      }
-    }),
-
-    // Sprig games with 5min cache
-    APICache.get('sprig-games', async () => {
-      const { getGames } = require('./api/games')
-      return await getGames()
-    }, {
-      ttl: 300000,
-      timeout: 4000,
-      fallback: []
-    }),
-
-    // Console count with 10min cache
-    APICache.get('console-count', async () => {
-      const { getConsoles } = require('./api/sprig-console')
-      return await getConsoles()
-    }, {
-      ttl: 600000,
-      timeout: 3000,
-      fallback: 500
-    }),
-
-    // Hackathons with 15min cache (external API)
-    APICache.get('hackathons', async () => {
-      const response = await fetch('https://hackathons.hackclub.com/api/events/upcoming')
-      if (!response.ok) throw new Error('Hackathons API failed')
-      const data = await response.json()
-      return data.sort((a, b) => new Date(a.start) - new Date(b.start))
-    }, {
-      ttl: 900000,
-      timeout: 5000,
-      fallback: []
-    }),
-
-    // Events with 15min cache
-    APICache.get('events', async () => {
-      const response = await fetch('https://events.hackclub.com/api/events/upcoming/')
-      if (!response.ok) throw new Error('Events API failed')
-      return await response.json()
-    }, {
-      ttl: 900000,
-      timeout: 5000,
-      fallback: []
+  
+  // Load basic events data for initial page render (optional)
+  let events = []
+  try {
+    const response = await fetch('https://events.hackclub.com/api/events/upcoming/', {
+      timeout: 3000 // Fast timeout
     })
-  ])
-
-  // Extract cached results with guaranteed fallbacks
-  const resolvedSlackData = slackData.status === 'fulfilled' ? slackData.value : { total_members_count: 500 }
-  const resolvedGitHubData = gitHubData.status === 'fulfilled' ? gitHubData.value : []
-  const resolvedStars = stars.status === 'fulfilled' ? stars.value : {
-    sprig: { stargazerCount: 1000 },
-    sinerider: { stargazerCount: 500 },
-    blot: { stargazerCount: 300 },
-    onboard: { stargazerCount: 200 }
-  }
-  const resolvedGame = game.status === 'fulfilled' ? game.value : []
-  const resolvedConsoleCount = consoleCount.status === 'fulfilled' ? consoleCount.value : 500
-  const resolvedHackathonsData = hackathonsData.status === 'fulfilled' ? hackathonsData.value : []
-  const resolvedEvents = events.status === 'fulfilled' ? events.value : []
-
-  const gameTitle = resolvedGame.map(r => r?.title).filter(Boolean)
-  const bankData = [] // Legacy field kept for compatibility
-
-  // Log cache performance for monitoring
-  if (process.env.NODE_ENV === 'development') {
-    console.log('API Cache Stats:', APICache.getStats())
+    if (response.ok) {
+      events = await response.json()
+    }
+  } catch (error) {
+    console.log('Events API timeout/failed during build, using empty fallback')
   }
 
   return {
     props: {
-      game: resolvedGame,
-      gameTitle,
-      gitHubData: resolvedGitHubData,
-      consoleCount: resolvedConsoleCount,
-      hackathonsData: resolvedHackathonsData,
-      bankData,
-      slackData: resolvedSlackData,
-      stars: resolvedStars,
-      events: resolvedEvents,
-      carouselCards
+      carouselCards,
+      events // Optional events data for initial render
     },
-    revalidate: 300 // 5 minutes - matches cache TTL
+    revalidate: 60 // Revalidate every minute for fresh static content
   }
 }
 

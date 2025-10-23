@@ -12,7 +12,7 @@ import {
   Checkbox
 } from 'theme-ui'
 import Head from 'next/head'
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import ForceTheme from '../components/force-theme'
 import Footer from '../components/footer'
 import Nav from '../components/nav'

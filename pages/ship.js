@@ -13,7 +13,7 @@ import {
 } from 'theme-ui'
 import NextLink from 'next/link'
 import Head from 'next/head'
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import Nav from '../components/nav'
 import SlideUp from '../components/slide-up'
 import Why from '../components/ship/why.mdx'

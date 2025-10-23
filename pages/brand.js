@@ -12,7 +12,7 @@ import {
   Text
 } from 'theme-ui'
 import theme from '@hackclub/theme'
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import Icon from '@hackclub/icons'
 import Head from 'next/head'
 import ForceTheme from '../components/force-theme'

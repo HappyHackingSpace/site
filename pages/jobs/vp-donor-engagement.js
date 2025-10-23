@@ -1,7 +1,7 @@
 import { BaseStyles, Box, Container, Heading, Text } from 'theme-ui'
 import Head from 'next/head'
 import Nav from '../../components/nav'
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import JobDescription from '../../components/jobs/vp-donor-engagement/jd.mdx'
 import ForceTheme from '../../components/force-theme'
 

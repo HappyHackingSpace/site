@@ -5,7 +5,7 @@ import {
   DatePill
 } from '../components/announcements/pills'
 import Head from 'next/head'
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import Nav from '../components/nav'
 import ForceTheme from '../components/force-theme'
 import Footer from '../components/footer'

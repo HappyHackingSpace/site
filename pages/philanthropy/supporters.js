@@ -15,7 +15,7 @@ import {
 import Photo from '../../components/photo'
 import Image from 'next/image'
 import Head from 'next/head'
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import ForceTheme from '../../components/force-theme'
 import Nav from '../../components/nav'
 import Sponsors from '../../components/donate/sponsors'

@@ -14,19 +14,48 @@ const nextConfig = withBundleAnalyzer({
   },
   trailingSlash: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  compiler: {
+    // Enable the new JSX transform to fix warnings
+    reactRemoveProperties: process.env.NODE_ENV === 'production'
+  },
   images: {
-    domains: [
-      'happyhacking.space',
-      'dl.airtable.com',
-      'emoji.slack-edge.com',
-      'cdn.glitch.com',
-      'scrapbook.happyhacking.space',
-      'assets.happyhacking.space',
-      'v5.airtableusercontent.com',
-      'hcb.happyhacking.space',
-      "hc-cdn.hel1.your-objectstorage.com"
-    ],
     remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'happyhacking.space'
+      },
+      {
+        protocol: 'https',
+        hostname: 'dl.airtable.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'emoji.slack-edge.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.glitch.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'scrapbook.happyhacking.space'
+      },
+      {
+        protocol: 'https',
+        hostname: 'assets.happyhacking.space'
+      },
+      {
+        protocol: 'https',
+        hostname: 'v5.airtableusercontent.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'hcb.happyhacking.space'
+      },
+      {
+        protocol: 'https',
+        hostname: 'hc-cdn.hel1.your-objectstorage.com'
+      },
       {
         protocol: 'https',
         hostname: 'cloud-*-hack-club-bot.vercel.app'

@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import Analytics from '../components/analytics.js'
 
-import Meta from '@hackclub/meta'
+import Meta from '@happyhackingspace/meta'
 import '@hackclub/theme/fonts/reg-bold.css'
 import theme from '../lib/theme'
 import { ThemeProvider } from 'theme-ui'
