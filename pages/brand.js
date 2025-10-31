@@ -113,6 +113,16 @@ const Page = ({ css }) => (
       description="Download Hack Club HQ’s logos and preview our brand fonts & colors."
       image="https://workshop-cards.hackclub.com/Branding.png?theme=dark&fontSize=350px&brand=HQ"
     />
+    <Head>
+      <style>{`
+        header nav a span {
+          color: black !important;
+        }
+        header nav a:hover span {
+          color: ${theme.colors.secondary} !important;
+        }
+      `}</style>
+    </Head>
     <ForceTheme theme="light" />
     <Nav color="text" />
     <Box
@@ -127,7 +137,7 @@ const Page = ({ css }) => (
     >
       <Container variant="copy">
         <Heading as="h1" variant="title" sx={{ color: "primary", mt: [2, 4] }}>
-          Hack Club Brand
+        Happy Hacking Space Brand
         </Heading>
         <Heading as="h2" variant="subtitle" sx={{ mt: 3, color: "text" }}>
           Download HQ’s logos and preview our brand colors & font.
