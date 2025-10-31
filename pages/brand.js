@@ -224,15 +224,15 @@ const Page = ({ css }) => (
         <tbody>
           <HTML
             file="flag-orpheus-top"
-            html={`<a href="https://hackclub.com/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club"/></a>`}
+            html={`<a href="https://happyhacking.space/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.happyhacking.space/flag-orpheus-top.svg" alt="Hack Club"/></a>`}
           />
           <HTML
             file="flag-orpheus-left"
-            html={`<a href="https://hackclub.com/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.hackclub.com/flag-orpheus-left.svg" alt="Hack Club"/></a>`}
+            html={`<a href="https://happyhacking.space/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.happyhacking.space/flag-orpheus-left.svg" alt="Hack Club"/></a>`}
           />
           <HTML
             file={`banners/${new Date().getFullYear()}`}
-            html={`<a href="https://hackclub.com/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.hackclub.com/banners/${new Date().getFullYear()}.svg" alt="Hack Club"/></a>`}
+            html={`<a href="https://happyhacking.space/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.happyhacking.space/banners/${new Date().getFullYear()}.svg" alt="Hack Club"/></a>`}
           />
         </tbody>
       </Box>
