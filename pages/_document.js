@@ -35,7 +35,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta name="format-detection" content="telephone=no" />
-          <link rel="icon" type="image/x-icon" href="/branding/hhs-white-wo-white.ico" />
+          <link rel="icon" type="image/png" href="https://assets.happyhacking.space/favicons/favicon-32x32.png" />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(org) }}

@@ -35,10 +35,8 @@ const Base = styled(Box, { shouldForwardProp: prop => prop !== 'dark' })`
 
 const Logo = ({ dark, ...props }) => (
   <Image
-    src={dark ? "/branding/hhs-white-wo-white.avif" : "/branding/hhs-black-wo-black.avif"}
+    src="https://assets.happyhacking.space/flag-standalone.svg"
     alt="Happy Hacking Space logo"
-    width={128}
-    height={45}
     {...props}
   />
 )
