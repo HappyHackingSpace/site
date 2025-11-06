@@ -371,20 +371,18 @@ function Page({
         description="Happy Hacking Space is a nonprofit network of hackers in Mesopotamia where people build the agency, the network, & the technical talent to think big & do big things in the world."
         image="https://cloud-lgl7kg862-hack-club-bot.vercel.app/0start__1_.png"
       /> */}
+     <Meta
+        as={Head}
+        title="A Home for Hackers"
+        description="Happy Hacking Space is a global nonprofit network of high school makers & student-led coding clubs where young people build the agency, the network, & the technical talent to think big & do big things in the world."
+        image="https://cloud-lgl7kg862-hack-club-bot.vercel.app/0start__1_.png"
+      />
       <Head>
         <meta
-          property="og:logo"  
-          content="https://assets.hackclub.com/icon-rounded.png"
+          property="og:logo"
+          content="https://assets.happyhacking.space/flag-standalone.svg"
           size="512x512"
         />
-        {/* Critical resource hints for performance */}
-        <link rel="preload" href="/home/outernet-110.jpg" as="image" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/branding/hhs-white-wo-white.ico" />
-        <link rel="dns-prefetch" href="//hackclub.slack.com" />
-        <link rel="dns-prefetch" href="//api.github.com" />
-        <link rel="dns-prefetch" href="//sprig.hackclub.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </Head>
       <ForceTheme theme="light" />
       <Nav />

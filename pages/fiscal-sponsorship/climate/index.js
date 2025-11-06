@@ -23,7 +23,7 @@ import { useEffect, useState } from 'react'
 /** @jsxImportSource theme-ui */
 import NextLink from 'next/link'
 import { kebabCase, intersection } from 'lodash'
-import theme from '@hackclub/theme'
+import theme from '@happyhackingspace/theme'
 import Tooltip from '../../../components/fiscal-sponsorship/tooltip'
 
 const styles = `

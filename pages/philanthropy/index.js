@@ -737,35 +737,35 @@ const Philanthropy = ({ posts = [] }) => {
           <Grid gap={2} columns={[1, 2, 3, 5]} mt={4}>
             <Fade delay={30}>
               <HackClubber
-                photo="../../team/ahsen.jpeg"
+                photo="../../team/ahsen.jpg"
                 quote="Always inspiring interesting new projects"
                 info="Ahsen, Diyarbakir"
               />
             </Fade>
             <Fade delay={60}>
               <HackClubber
-                photo="../../team/muslime.jpeg"
+                photo="../../team/muslime.jpg"
                 quote="I’ve met some of the best people"
                 info="Muslime, Diyarbakir"
               />
             </Fade>
             <Fade delay={90}>
               <HackClubber
-                photo="../../team/amed.jpeg"
+                photo="../../team/amed.jpg"
                 quote="In Happy Hacking Space I’ve found a home"
                 info="Amed, Diyarbakir"
               />
             </Fade>
             <Fade delay={120}>
               <HackClubber 
-                photo="../../team/arjin.jpeg"
+                photo="../../team/arjin.jpg"
                 quote="Helped build me a strong coding foundation"
                 info="Arjin, Diyarbakir"               
               />
             </Fade>
             <Fade delay={150}>
               <HackClubber
-                photo="../../team/miwa.jpeg"
+                photo="../../team/miwa.jpg"
                 quote="Totally different from the coding classes at school"
                 info="Miwa, Diyarbakir"
               />

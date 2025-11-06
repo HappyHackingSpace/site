@@ -1,6 +1,6 @@
 import { Box, Input, Label, Button, Select, Text, Grid } from 'theme-ui'
 import { useEffect, useRef, useState } from 'react'
-import theme from '@hackclub/theme'
+import theme from '@happyhackingspace/theme'
 import Icon from '../../icon'
 import { keyframes } from '@emotion/react'
 import debounce from 'lodash/debounce'

@@ -40,12 +40,13 @@ const Base = styled('div')`
   cursor: pointer;
   flex-shrink: 0;
   width: 112px;
-  height: 48px;
+  height: 64px;
+  margin-top: 12px;
   transition: ${3 / 16}s cubic-bezier(0.375, 0, 0.675, 1) transform;
   transform-origin: top left;
   @media (min-width: ${theme.breakpoints[1]}) {
-    width: 172px;
-    height: 64px;
+    width: 112px;
+    height: 74px;
   }
   &:hover,
   &:focus {
@@ -78,9 +79,7 @@ const Flag = () => {
   // Always use the default (non-scrolled) state during SSR and initial render
   const effectiveScrolled = mounted ? scrolled : false;
   
-  const logoSrc = effectiveScrolled
-    ? '/branding/hhs-black-wo-black.avif' // sticky: siyah logo
-    : '/branding/hhs-white-wo-white.avif'; // en üstte: beyaz logo
+  const logoSrc = 'https://assets.happyhacking.space/flag-standalone.svg'
 
   return (
     <Link href="/" passHref>
@@ -88,7 +87,7 @@ const Flag = () => {
         scrolled={effectiveScrolled}
         style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
-        <img src={logoSrc} alt="Happy Hacking Space Flag" style={{ width: '60%', height: 'auto' }} />
+        <img src={logoSrc} alt="Happy Hacking Space Flag" />
       </Base>
     </Link>
   );
