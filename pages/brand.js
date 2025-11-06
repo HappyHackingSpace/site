@@ -168,17 +168,11 @@ const Page = ({ css }) => (
       <Heading variant="headline">Logos</Heading>
       <Grid columns={[null, 2, 3]} gap={3}>
         {[
-          "flag-orpheus-top",
-          "flag-orpheus-left",
+        
           "flag-standalone",
-          "flag-orpheus-top-bw",
-          "flag-orpheus-left-bw",
           "flag-standalone-bw",
-          "flag-standalone-wtransparent",
-          "icon-rounded",
-          "icon-square",
-          "icon-progress-rounded",
-          "icon-progress-square",
+        
+        
         ].map((key) => (
           <Logo name={key} key={key} />
         ))}
@@ -232,17 +226,17 @@ const Page = ({ css }) => (
           </tr>
         </Box>
         <tbody>
-          <HTML
+          {/* <HTML
             file="flag-orpheus-top"
             html={`<a href="https://happyhacking.space/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.happyhacking.space/flag-orpheus-top.svg" alt="Hack Club"/></a>`}
+          /> */}
+          <HTML
+            file="flag-standalone-bw"
+            html={`<a href="https://happyhacking.space/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.happyhacking.space/flag-standalone-bw.svg" alt="Happy Hacking Space"/></a>`}
           />
           <HTML
-            file="flag-orpheus-left"
-            html={`<a href="https://happyhacking.space/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.happyhacking.space/flag-orpheus-left.svg" alt="Hack Club"/></a>`}
-          />
-          <HTML
-            file={`banners/${new Date().getFullYear()}`}
-            html={`<a href="https://happyhacking.space/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.happyhacking.space/banners/${new Date().getFullYear()}.svg" alt="Hack Club"/></a>`}
+            file={"flag-standalone"}
+            html={`<a href="https://happyhacking.space/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.happyhacking.space/flag-standalone.svg" alt="Happy Hacking Space"/></a>`}
           />
         </tbody>
       </Box>

@@ -1154,6 +1154,13 @@
   resolved "https://registry.npmjs.org/@hapi/hoek/-/hoek-9.3.0.tgz"
   integrity sha512-/c6rf4UJlmHlC9b5BaNvzAcFv7HZ2QHaV0D4/HNlBdvFnvQq8RI4kYdhyPCl7Xj+oWvTWQ8ujhqS53LIgAe6KQ==
 
+"@happyhackingspace/banner@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/@happyhackingspace/banner/-/banner-0.0.1.tgz"
+  integrity sha512-TaWlJ8fT4wPvaOMVCtR0v/beUVTVTRcT1CjdDZS6aQyciF0B7v91uC8z+cmOqF+QWhYfw0Mb/BXdiaq6XO9dhQ==
+  dependencies:
+    prop-types "^15.8.1"
+
 "@happyhackingspace/meta@^0.0.2":
   version "0.0.2"
   resolved "https://registry.npmjs.org/@happyhackingspace/meta/-/meta-0.0.2.tgz"

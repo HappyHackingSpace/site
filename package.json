@@ -20,6 +20,7 @@
     "@github/time-elements": "^4.0.0",
     "@hackclub/icons": "^0.0.15",
     "@hackclub/markdown": "^0.0.43",
+    "@happyhackingspace/banner": "^0.0.1",
     "@happyhackingspace/meta": "^0.0.2",
     "@happyhackingspace/theme": "^0.0.2",
     "@mdx-js/loader": "^1.6.22",
