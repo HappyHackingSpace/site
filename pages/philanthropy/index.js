@@ -738,14 +738,14 @@ const Philanthropy = ({ posts = [] }) => {
             <Fade delay={30}>
               <HackClubber
                 photo="../../team/ahsen.jpg"
-                quote="Always inspiring interesting new projects"
+                quote="Always hunting for the next vulnerability."
                 info="Ahsen, Diyarbakir"
               />
             </Fade>
             <Fade delay={60}>
               <HackClubber
                 photo="../../team/muslime.jpg"
-                quote="I’ve met some of the best people"
+                quote="Some wonderful minds along the way."
                 info="Muslime, Diyarbakir"
               />
             </Fade>
