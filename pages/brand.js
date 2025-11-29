@@ -179,10 +179,11 @@ const Page = ({ css }) => (
       </Grid>
       <Button
         as="a"
-        href="https://assets.happyhacking.space/2020_branding.zip"
+        href="/downloads/hhs-branding.zip"
         variant="outline"
         mt={3}
         mb={[4, 5]}
+        download
       >
         Download all →
       </Button>
