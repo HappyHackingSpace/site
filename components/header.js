@@ -29,7 +29,7 @@ const Header = ({
     }
   }
   return [
-    // Nav kısmını şimdilik kaldırıyoruz çünkü site nav'ı farklı yapıda
+ 
     // hideNav ? null : (
     //   <Nav {...props} key="nav" homepage={navBg} material={!!bgImg} />
     // ),
@@ -95,15 +95,18 @@ const Header = ({
           as="h1"
           variant="title"
           sx={{ color: 'primary', '@media print': { fontSize: 5 } }}
-          children={title}
-        />
+        >
+          {title}
+        </Heading>
+        
         {desc && (
           <Heading
             as="h2"
             variant="subtitle"
             sx={{ mt: 3, color: 'text' }}
-            children={desc}
-          />
+            >
+              {desc}
+            </Heading>
         )}
         {children}
       </Container>
