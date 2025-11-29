@@ -179,10 +179,11 @@ const Page = ({ css }) => (
       </Grid>
       <Button
         as="a"
-        href="https://assets.happyhacking.space/2020_branding.zip"
+        href="/downloads/hhs-branding.zip"
         variant="outline"
         mt={3}
         mb={[4, 5]}
+        download
       >
         Download all →
       </Button>
@@ -226,10 +227,10 @@ const Page = ({ css }) => (
           </tr>
         </Box>
         <tbody>
-          {/* <HTML
+          <HTML
             file="flag-orpheus-top"
             html={`<a href="https://happyhacking.space/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.happyhacking.space/flag-orpheus-top.svg" alt="Hack Club"/></a>`}
-          /> */}
+          />
           <HTML
             file="flag-standalone-bw"
             html={`<a href="https://happyhacking.space/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.happyhacking.space/flag-standalone-bw.svg" alt="Happy Hacking Space"/></a>`}
@@ -242,7 +243,7 @@ const Page = ({ css }) => (
       </Box>
       <Button
         as="a"
-        href="https://hackclub.com/banner"
+        href="/banner"
         variant="outline"
         mt={3}
         mb={[4, 5]}

@@ -122,7 +122,9 @@ const Footer = ({
           {/* <Link href="https://jams.happyhacking.space/">Jams</Link>
           <Link href="https://toolbox.happyhacking.space/">Toolbox</Link>
           <Link href="https://directory.happyhacking.space/">Clubs Directory</Link> */}
-          <Link href="https://happyhacking.space/conduct/">Code of Conduct</Link>
+          <NextLink href="/conduct">
+            <FooterLinkText>Code of Conduct</FooterLinkText>
+          </NextLink>
         </Box>
         <Box sx={{ gridColumn: ['span 2', 'span 1'] }}>
           <Logo aria-label="Happy Hacking Space logo" width={128} height={45} dark={dark} />
