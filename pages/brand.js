@@ -318,7 +318,7 @@ const Page = ({ css }) => (
       >
         Explore Hack Club Theme →
       </Button>
-      <Button
+      {/* <Button
         as="a"
         href="https://github.com/hackclub/theme-starter"
         mb={3}
@@ -326,15 +326,15 @@ const Page = ({ css }) => (
         variant="outline"
       >
         Theme Starter on GitHub →
-      </Button>
-      <Button
+      </Button> */}
+      {/* <Button
         as="a"
         href="https://github.com/hackclub/css"
         sx={{ mb: 3 }}
         variant="outline"
       >
         CSS Theme on GitHub →
-      </Button>
+      </Button> */}
     </Container>
     <Footer />
   </>
