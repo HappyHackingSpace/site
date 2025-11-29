@@ -5,7 +5,8 @@ import React from 'react'
 
 // Local Banner component to avoid package issues
 const Banner = ({ year = new Date().getFullYear(), style, ...props }) => (
-  <a href="https://happyhacking.space/" target="_blank" {...props}>
+  <a href="https://happyhacking.space/" target="_blank"
+    rel="noopener noreferrer" {...props}>
     <img
       style={{
         width: '230px',
