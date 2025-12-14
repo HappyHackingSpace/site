@@ -736,21 +736,21 @@ const Philanthropy = ({ posts = [] }) => {
             <Fade delay={30}>
               <HappyHacker
                 photo="../../team/ahsen.jpg"
-                quote="Always hunting for the next vulnerability."
+                quote="Pushing me to push the boundaries."
                 info="Ahsen, Diyarbakir"
               />
             </Fade>
             <Fade delay={60}>
               <HappyHacker
                 photo="../../team/muslime.jpeg"
-                quote="Some wonderful minds along the way."
+                quote="I've met some of the best minds here!"
                 info="Muslime, Diyarbakir"
               />
             </Fade>
             <Fade delay={90}>
               <HappyHacker
                 photo="../../team/kerem.jpeg"
-                quote="Perfect for develop something"
+                quote="Perfect space for building the next thing."
                 info="Kerem, Diyarbakir"
 
               />
@@ -765,7 +765,7 @@ const Philanthropy = ({ posts = [] }) => {
             <Fade delay={150}>
               <HappyHacker
                 photo="../../team/miwa.jpg"
-                quote="Having fun while coding is the best thing ever."
+                quote="Helped me build my a strong foundation in coding."
                 info="Miwa, Diyarbakir"
               />
             </Fade>
