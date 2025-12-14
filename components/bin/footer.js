@@ -131,7 +131,7 @@ const Footer = () => {
                                 </g>
                             </svg>
                         </a>
-                        <a target="_blank" rel="noopener me" href="https://www.youtube.com/c/HappyHackingSpace"
+                        <a target="_blank" rel="noopener me" href="https://www.youtube.com/@HappyHackingSpace"
                             title="Hack Club on YouTube">
                             <svg fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round"
                                 strokeMiterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="youtube"

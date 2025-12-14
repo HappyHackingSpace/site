@@ -57,7 +57,7 @@ const Page = ({ upcoming, past }) => (
           Happy Hacking Space community is invited to ask questions & chat with
           the guest live. No vetting questions. No endorsements. Conversations
           are streamed live publicly on{' '}
-          <Link href="https://www.youtube.com/c/HappyHackingSpace">YouTube</Link>.
+          <Link href="https://www.youtube.com/@HappyHackingSpace">YouTube</Link>.
         </Text>
         <Button
           variant="lg"
@@ -71,7 +71,7 @@ const Page = ({ upcoming, past }) => (
         <Button
           variant="outlineLg"
           as="a"
-          href="https://www.youtube.com/c/HappyHackingSpace"
+          href="https://www.youtube.com/@HappyHackingSpace"
           target="_blank"
           sx={{ mt: [3, 4], mx: [1, 2], color: 'white', bg: 'rgba(0,0,0,0.5)' }}
         >
