@@ -108,7 +108,7 @@ export default function Slack({ data, slackKey, events }) {
             </Link>{' '}
             with them.{' '}
           </Text>
-          <Event events={events} />
+          {/* <Event events={events} /> */}
           <Buttons id="13" link="https://join.happyhacking.space" icon="welcome" primary="purple">
             Join our community
           </Buttons>
