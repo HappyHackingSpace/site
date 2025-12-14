@@ -374,7 +374,7 @@ function Page({
      <Meta
         as={Head}
         title="A Home for Hackers"
-        description="Happy Hacking Space is a global nonprofit network of high school makers & student-led coding clubs where young people build the agency, the network, & the technical talent to think big & do big things in the world."
+        description="Happy Hacking Space is a nonprofit network of hackers, crafters, explorers where people build the agency, the network, & the technical talent to think big & do big things in the world."
         image="https://cloud-lgl7kg862-hack-club-bot.vercel.app/0start__1_.png"
       />
       <Head>
@@ -427,7 +427,7 @@ function Page({
             width="90vw"
             copy="This summer is yours for the making!"
             caption="Get free Flipper Zeros, Framework Laptops, 3D Printers, and more. Join Summer of Making! Jun 16 - Aug 31."
-            href="https://summer.hackclub.com/"
+            href="https://summer.happyhacking.space/"
             imgSrc="https://hc-cdn.hel1.your-objectstorage.com/s/v3/779a5d748938b66ae93a566cc9699e636b01d462_summerlogo.png"
           /> */}
           <Box
@@ -867,7 +867,7 @@ function Page({
           sx={{
             backgroundImage: `
               linear-gradient(rgba(249, 250, 252, 0.7), rgba(249, 250, 252, 0.7)),
-              url('https://icons.hackclub.com/api/icons/0x8492a6/glyph:rep.svg')
+              url('https://icons.happyhacking.space/api/icons/0x8492a6/glyph:rep.svg')
             `,
             backgroundSize: '40px 40px',
             backgroundRepeat: 'repeat',
@@ -1093,19 +1093,19 @@ function Page({
                   />
                 </Box>
               </LazySection>
-              {/* <Workshops delay={400} stars={stars.hackclub.stargazerCount} /> */}
+              {/* <Workshops delay={400} stars={stars.happyhackingspace.stargazerCount} /> */}
             </Box>
           </Box>
           <Box
             sx={{
               position: 'relative',
               background: 'snow',
-              backgroundImage: `url('https://icons.hackclub.com/api/icons/0xF4F7FB/glyph:rep.svg')`,
+              backgroundImage: `url('https://icons.happyhacking.space/api/icons/0xF4F7FB/glyph:rep.svg')`,
               backgroundSize: '40px 40px',
               backgroundRepeat: 'repeat',
               backgroundPosition: '10% 10%'
               // '&:hover': {
-              //   backgroundImage: `url('https://icons.hackclub.com/api/icons/0x000000/glyph:rep.svg')`
+              //   backgroundImage: `url('https://icons.happyhacking.space/api/icons/0x000000/glyph:rep.svg')`
               // }
             }}
           >
@@ -1509,7 +1509,7 @@ export async function getStaticProps() {
   // Load basic events data for initial page render (optional)
   let events = []
   try {
-    const response = await fetch('https://events.hackclub.com/api/events/upcoming/', {
+    const response = await fetch('https://events.happyhacking.space/api/events/upcoming/', {
       timeout: 3000 // Fast timeout
     })
     if (response.ok) {
