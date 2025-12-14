@@ -466,7 +466,8 @@ function Page({
                   width: '100%'
                 }}
               >
-                We are <Comma>{apiData.slackData.total_members_count}</Comma>{' '}
+                We are 
+                {/* <Comma>{apiData.slackData.total_members_count}</Comma>{' '} */}
                 <Text
                   sx={{
                     color: 'transparent',
@@ -1335,7 +1336,7 @@ function Page({
                   icon="github"
                   color="white"
                   name="Explore Our Open Source Tools"
-                  desc="We're currently building a game engine, daily streak system, graphing game, and more!"
+                  desc="We're currently building tools for security, ai, games, and more!"
                   sx={{
                     p: {
                       fontSize: [1, '16px', '20px']
@@ -1388,8 +1389,8 @@ function Page({
                 <Stage
                   icon="clubs"
                   color="white"
-                  name="Start A Club"
-                  desc="Build an in-person community of high school hackers, and we're here to help."
+                  name="Represent HHS"
+                  desc="Build an in-person community of hackers around you, and we're here to help."
                   sx={{
                     p: {
                       fontSize: ['18px', '20px', '22px']

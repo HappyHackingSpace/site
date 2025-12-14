@@ -313,7 +313,7 @@ const Pill = ({ logo, name }) => {
   )
 }
 
-const HackClubber = ({ photo, quote, info }) => {
+const HappyHacker = ({ photo, quote, info }) => {
   return (
     <Box
       sx={{
@@ -694,37 +694,35 @@ const Philanthropy = ({ posts = [] }) => {
           <Line /> */}
           <Fade>
             <Text as="h1" mb={2} mt={4}>
-              In the next ten years, Hack Club will discover, foster and inspire
-              thousands more teenagers to use technical skills to solve
+              In the next ten years, Happy Hacking Space will discover, foster and inspire
+              thousands more to use technical skills to solve
               problems.
             </Text>
           </Fade>
           <br />
           <Fade>
             <Text as="p">
-              Led by young engineers, with early backing from the 21st century’s
-              most iconic creators, Hack Club already reaches tens of thousands
-              of teenagers, and represents the largest network of technical
-              teens in the world. Each day, new projects are shipped, new lines
+              Led by hackers, crafters, explorers, Happy Hacking Space already reaches thousands, 
+              and represents the largest technical network in the Mesopotamia. Each day, new projects are shipped, new lines
               of code are written, and new friendships are forged through
               collaborative, problem-solving technical projects happening at
-              Hack Club.
+              Happy Hacking Space.
             </Text>
           </Fade>
           <br />
           <Fade>
             <Text as="p">
-              Hack Club is always free for teenagers and with your support, Hack
-              Club can grow to hundreds of thousands of teen hackers, bringing
+              Happy Hacking Space is always free for hackers and with your support, Happy Hacking Space
+               can grow to hundreds of thousands of hackers, bringing
               free computer science education, a hacker mindset, and an equal
-              shot at success to every teenager, regardless of where they’re
+              shot at success to every hacker, regardless of where they’re
               from, how they identify, or what their parents do.
             </Text>
           </Fade>
           <Fade>
             <br />
             <Text as="p">
-              Over time, Hack Clubbers will reshape societies as entrepreneurs,
+              Over time, Happy Hackers will reshape societies as entrepreneurs,
               environmentalists, political leaders, activists and policy makers.
               We help shape the values of these future leaders, modeling and
               incentivizing them to be curious, humble, kind, optimistic problem
@@ -736,14 +734,14 @@ const Philanthropy = ({ posts = [] }) => {
           </Fade>
           <Grid gap={2} columns={[1, 2, 3, 5]} mt={4}>
             <Fade delay={30}>
-              <HackClubber
+              <HappyHacker
                 photo="../../team/ahsen.jpg"
                 quote="Always hunting for the next vulnerability."
                 info="Ahsen, Diyarbakir"
               />
             </Fade>
             <Fade delay={60}>
-              <HackClubber
+              <HappyHacker
                 photo="../../team/muslime.jpg"
                 quote="Some wonderful minds along the way."
                 info="Muslime, Diyarbakir"
@@ -754,17 +752,18 @@ const Philanthropy = ({ posts = [] }) => {
                 photo="../../team/kerem.jpeg"
                 quote="Perfect for develop something"
                 info="Kerem, Diyarbakir"
+
               />
             </Fade>
             <Fade delay={120}>
-              <HackClubber 
+              <HappyHacker 
                 photo="../../team/arjin.jpg"
                 quote="A great beacon for the lost."
                 info="Arjin, Diyarbakir"               
               />
             </Fade>
             <Fade delay={150}>
-              <HackClubber
+              <HappyHacker
                 photo="../../team/miwa.jpg"
                 quote="Having fun while coding is the best thing ever."
                 info="Miwa, Diyarbakir"

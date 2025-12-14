@@ -94,7 +94,7 @@ export default function Slack({ data, slackKey, events }) {
             Coding doesn’t have to be a solitary activity. At Happy Hacking Space,
             we make remarkable things together, and in our community you’ll find 
             awesome people to hang out with too. Code together, find your programming 
-            community, dream up something wild, or just #lounge.
+            community, dream up something wild, or just hang out.
           </Text>
           <Text as="p" variant="subtitle">
             Occasionally we invite someone we really want to speak to and host an{' '}
