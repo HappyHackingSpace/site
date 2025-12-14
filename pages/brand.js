@@ -73,13 +73,19 @@ export const Logo = ({ name }) => (
 
 const HTML = ({ file, html }) => (
   <tr>
-    <td>
+    <td style={{ width: "30%" }}>
       <img
         src={`https://assets.happyhacking.space/${file}.svg`}
         alt={startCase(file)}
+        style={{ 
+          maxWidth: "256px", 
+          width: "100%", 
+          height: "auto",
+          display: "block"
+        }}
       />
     </td>
-    <td>
+    <td style={{ width: "70%" }}>
       <Text as="pre" variant="styles.pre">
         {html}
       </Text>
@@ -168,10 +174,8 @@ const Page = ({ css }) => (
       <Heading variant="headline">Logos</Heading>
       <Grid columns={[null, 2, 3]} gap={3}>
         {[
-        
           "flag-standalone",
           "flag-standalone-bw",
-        
         
         ].map((key) => (
           <Logo name={key} key={key} />
@@ -211,26 +215,26 @@ const Page = ({ css }) => (
       <Box
         as="table"
         sx={{
-          display: "block",
+          width: "100%",
           overflowX: "auto",
-          whiteSpace: "nowrap",
-          maxWidth: "100%",
-          "td:first-of-type": { pr: 3 },
+
+          "td:first-of-type": { pr: 3},
+          "td:first-of-type img": { maxWidth: "256px !important" },
           img: { maxWidth: 128 * 1.5 },
           pre: { whiteSpace: "initial" },
         }}
       >
-        <Box as="thead" sx={{ display: "none" }}>
+        <Box as="thead">
           <tr>
             <th>Preview</th>
             <th>HTML code</th>
           </tr>
         </Box>
         <tbody>
-          <HTML
+          {/* <HTML
             file="flag-orpheus-top"
             html={`<a href="https://happyhacking.space/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.happyhacking.space/flag-orpheus-top.svg" alt="Hack Club"/></a>`}
-          />
+          /> */}
           <HTML
             file="flag-standalone-bw"
             html={`<a href="https://happyhacking.space/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.happyhacking.space/flag-standalone-bw.svg" alt="Happy Hacking Space"/></a>`}
@@ -318,7 +322,7 @@ const Page = ({ css }) => (
       >
         Explore Hack Club Theme →
       </Button>
-      <Button
+      {/* <Button
         as="a"
         href="https://github.com/hackclub/theme-starter"
         mb={3}
@@ -326,15 +330,15 @@ const Page = ({ css }) => (
         variant="outline"
       >
         Theme Starter on GitHub →
-      </Button>
-      <Button
+      </Button> */}
+      {/* <Button
         as="a"
         href="https://github.com/hackclub/css"
         sx={{ mb: 3 }}
         variant="outline"
       >
         CSS Theme on GitHub →
-      </Button>
+      </Button> */}
     </Container>
     <Footer />
   </>

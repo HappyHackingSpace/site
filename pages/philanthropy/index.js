@@ -736,35 +736,36 @@ const Philanthropy = ({ posts = [] }) => {
             <Fade delay={30}>
               <HappyHacker
                 photo="../../team/ahsen.jpg"
-                quote="Always inspiring interesting new projects"
+                quote="Always hunting for the next vulnerability."
                 info="Ahsen, Diyarbakir"
               />
             </Fade>
             <Fade delay={60}>
               <HappyHacker
                 photo="../../team/muslime.jpg"
-                quote="I’ve met some of the best people"
+                quote="Some wonderful minds along the way."
                 info="Muslime, Diyarbakir"
               />
             </Fade>
             <Fade delay={90}>
-              <HappyHacker
-                photo="../../team/amed.jpg"
-                quote="In Happy Hacking Space I’ve found a home"
-                info="Amed, Diyarbakir"
+              <HackClubber
+                photo="../../team/kerem.jpeg"
+                quote="Perfect for develop something"
+                info="Kerem, Diyarbakir"
+
               />
             </Fade>
             <Fade delay={120}>
               <HappyHacker 
                 photo="../../team/arjin.jpg"
-                quote="Helped build me a strong coding foundation"
+                quote="A great beacon for the lost."
                 info="Arjin, Diyarbakir"               
               />
             </Fade>
             <Fade delay={150}>
               <HappyHacker
                 photo="../../team/miwa.jpg"
-                quote="Totally different from the coding classes at school"
+                quote="Having fun while coding is the best thing ever."
                 info="Miwa, Diyarbakir"
               />
             </Fade>
