@@ -120,7 +120,7 @@ export default function Team({ team }) {
                   <Bio
                     img="/team/omar.jpg"
                     name="Omar Kurt"  
-                    teamRole="Co-founder & CISO"
+                    teamRole="Co-founder & Ninja"
                     text=""
                     pronouns="he/him"
                     email="omar"

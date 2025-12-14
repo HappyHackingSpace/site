@@ -3,7 +3,7 @@
     "name": "Hazar Diyar Bakır",
     "department": "HQ",
     "role": "Game Club & Media Lead",
-    "acknowledged": false,
+    "acknowledged": true,
     "bio": "",
     "bioHHS": "",
     "slackId": "",
@@ -14,7 +14,7 @@
   {
     "name": "Arjin Albay",
     "department": "HQ",
-    "role": "Open Source Project Manager",
+    "role": "Open Source Lead",
     "acknowledged": false,
     "bio": "",
     "bioHHS": "",
@@ -26,7 +26,7 @@
   {
     "name": "Recep Güneş",
     "department": "HQ",
-    "role": "Open Source LeadManager",
+    "role": "Open Source Lead",
     "acknowledged": false,
     "bio": "",
     "bioHHS": "",
@@ -38,7 +38,7 @@
   {
     "name": "Baran Yalçın",
     "department": "HQ",
-    "role": "R&D - Development Lead",
+    "role": "Garage Lead",
     "acknowledged": false,
     "bio": "",
     "bioHHS": "",
@@ -50,7 +50,7 @@
   {
     "name": "Muhammed Şen",
     "department": "HQ",
-    "role": "R&D - Innovation & Research Lead",
+    "role": "R&D - Garage & Writers Club Lead",
     "acknowledged": false,
     "bio": "",
     "bioHHS": "",
@@ -62,7 +62,7 @@
   {
     "name": "Şuayb Savcı",
     "department": "HQ",
-    "role": "R&D - Assistant",
+    "role": "High School Division Lead",
     "acknowledged": false,
     "bio": "",
     "bioHHS": "",
