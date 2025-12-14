@@ -164,13 +164,13 @@ const Page = () => (
             mb: [3, 4]
           }}
         >
-          Happy Hacking Space is a nonprofit network of high school computer science&nbsp;clubs and
-          makers around the world. <strong>Applications are now open.</strong>
+          Happy Hacking Space is a nonprofit network of hackers, crafters, explorers
+           around the Mesopotamia. <strong>Applications are now open.</strong>
         </Text>
         <Button
           as="a"
           variant="ctaLg"
-          href="https://apply.hackclub.com"
+          href="https://apply.happyhacking.space"
           target="_blank"
           rel="noopener"
         >
