@@ -12,4 +12,4 @@ bun.lockb
 .yarn
 .yarnrc.yml
 .env*.local
-public/team/
+

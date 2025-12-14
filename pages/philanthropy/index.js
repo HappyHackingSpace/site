@@ -742,7 +742,7 @@ const Philanthropy = ({ posts = [] }) => {
             </Fade>
             <Fade delay={60}>
               <HappyHacker
-                photo="../../team/muslime.jpg"
+                photo="../../team/muslime.jpeg"
                 quote="Some wonderful minds along the way."
                 info="Muslime, Diyarbakir"
               />
