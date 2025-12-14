@@ -84,7 +84,7 @@ export default function Team({ team }) {
           <Container>
             <Flex
               sx={{
-                bg: 'rgb(51 142 218 / 40%)',
+                bg: 'rgb(236 55 80 / 40%)',
                 p: 3,
                 borderRadius: '20px',
                 mb: 3,
@@ -194,7 +194,42 @@ export default function Team({ team }) {
               <Box>
                 <Box
                   sx={{
-                    bg: 'rgb(236 55 80 / 40%)',
+                    bg: 'rgb(61 72 88 / 40%)',
+                    p: 3,
+                    borderRadius: '20px'
+                  }}
+                >
+                  <Text
+                    variant="headline"
+                    mt={2}
+                    mb={3}
+                    as="h3"
+                    sx={{ textAlign: 'center', fontSize: 4 }}
+                  >
+                    HHS Campus Division
+                  </Text>
+                  <Grid columns={[1, null, 2]} gap={2}>
+                    {team.current
+                      ?.filter(member => member.department === 'HHSCD')
+                      .map(member => (
+                        <Bio
+                          img={member.avatar}
+                          name={member.name}
+                          teamRole={member.role}
+                          text={member.bio}
+                          pronouns={member.pronouns}
+                          email={member.email}
+                          href={member.website}
+                          key={member.name}
+                        />
+                      ))}
+                  </Grid>
+                </Box>
+              </Box>
+              <Box>
+                <Box
+                  sx={{
+                    bg: 'rgb(51 142 218 / 40%)',
                     p: 3,
                     borderRadius: '20px'
                   }}

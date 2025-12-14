@@ -133,5 +133,17 @@
     "email": "",
     "website": "",
     "avatar": "/team/nuhat-orgel.jpg"
+  },
+  {
+    "name": "Gulsum",
+    "department": "HHSCD",
+    "role": "HHS Dicle - President",
+    "acknowledged": false,
+    "bio": "",
+    "bioHHS": "",
+    "slackId": "",
+    "email": "",
+    "website": "",
+    "avatar": "/team/gulsum.jpg"
   }
 ]
