@@ -206,11 +206,11 @@ export default function Team({ team }) {
                     as="h3"
                     sx={{ textAlign: 'center', fontSize: 4 }}
                   >
-                    HHSB Team
+                    HHS High School Division
                   </Text>
                   <Grid columns={[1, null, 2]} gap={2}>
                     {team.current
-                      ?.filter(member => member.department === 'HHSB')
+                      ?.filter(member => member.department === 'HHSHD')
                       .map(member => (
                         <Bio
                           img={member.avatar}

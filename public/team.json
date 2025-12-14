@@ -61,7 +61,7 @@
   },
   {
     "name": "Şuayb Savcı",
-    "department": "HQ",
+    "department": "HHSHD",
     "role": "High School Division Lead",
     "acknowledged": false,
     "bio": "",
@@ -74,7 +74,7 @@
   {
     "name": "Meltem Bakır",
     "department": "HQ",
-    "role": "HHS Academy - English Club Lead",
+    "role": "HHS Academy - English Club Lead & HHS Relations",
     "acknowledged": false,
     "bio": "",
     "bioHHS": "",
@@ -121,5 +121,17 @@
     "email": "",
     "website": "",
     "avatar": "/team/miwa.jpeg"
+  },
+  {
+    "name": "Nuhat Örgel",
+    "department": "HQ",
+    "role": "HHS Academy - Book Club Lead",
+    "acknowledged": false,
+    "bio": "",
+    "bioHHS": "",
+    "slackId": "",
+    "email": "",
+    "website": "",
+    "avatar": "/team/nuhat-orgel.jpg"
   }
 ]
