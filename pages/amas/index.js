@@ -54,24 +54,24 @@ const Page = ({ upcoming, past }) => (
         </Heading>
         <Text as="p" variant="subtitle" sx={{ a: { color: 'inherit' } }}>
           We call someone we’ve always wanted to talk to—and the entire
-          Hack&nbsp;Club Slack community is invited to ask questions & chat with
+          Happy Hacking Space community is invited to ask questions & chat with
           the guest live. No vetting questions. No endorsements. Conversations
           are streamed live publicly on{' '}
-          <Link href="https://www.youtube.com/c/HackClubHQ">YouTube</Link>.
+          <Link href="https://www.youtube.com/c/HappyHackingSpace">YouTube</Link>.
         </Text>
         <Button
           variant="lg"
           as="a"
-          href="/slack"
+          href="https://join.happyhacking.space"
           target="_blank"
           sx={{ mt: [3, 4], mx: [1, 2], color: 'black', bg: 'white' }}
         >
-          Join Slack
+          Join Community
         </Button>
         <Button
           variant="outlineLg"
           as="a"
-          href="https://www.youtube.com/watch?v=O1J1pwGPQXY"
+          href="https://www.youtube.com/c/HappyHackingSpace"
           target="_blank"
           sx={{ mt: [3, 4], mx: [1, 2], color: 'white', bg: 'rgba(0,0,0,0.5)' }}
         >
@@ -136,7 +136,7 @@ const Page = ({ upcoming, past }) => (
         </>
       )}
       <Link
-        href="https://events.hackclub.com/"
+        href="https://events.happyhacking.space"
         sx={{ display: 'block', px: 3, fontSize: [2, 3] }}
       >
         See all upcoming events »
@@ -204,7 +204,7 @@ export const getStaticProps = async () => {
   let past = []
   const d = dt => new Date(new Date(dt).toISOString().substring(0, 10))
   const today = d(new Date())
-  await fetch('https://events.hackclub.com/api/amas')
+  await fetch('https://events.happyhacking.space/api/amas')
     .then(r => r.json())
     .then(events => {
       upcoming = filter(events, e => d(e.start) >= today)
