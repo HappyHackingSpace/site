@@ -185,7 +185,7 @@ const Page = ({ jobs }) => (
                 gridColumn: '1 / -1'
               }}
             >
-              Please be aware that all positions are currently volunteer based roles. Apply <a href="https://airtable.com/app5eKIfSXPFULKX8/pag0z4PqwOVHdr0ak/form">here</a>. 
+              Please be aware that all positions are currently volunteer based roles. Apply <a target="_blank" rel="noopener noreferrer"href="https://airtable.com/app5eKIfSXPFULKX8/pag0z4PqwOVHdr0ak/form">here</a>. 
             </Text>
         </Grid>
       </Container>
