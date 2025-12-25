@@ -12,6 +12,30 @@
     "avatar": "/team/hazar.jpg"
   },
   {
+    "name": "Rohat Filitoğlu",
+    "department": "HQ",
+    "role": "Sport Club Lead",
+    "acknowledged": true,
+    "bio": "",
+    "bioHHS": "",
+    "slackId": "",
+    "email": "",
+    "website": "",
+    "avatar": "/team/rohat.jpg"
+  },
+   {
+    "name": "Ozan Tekin",
+    "department": "HQ",
+    "role": "Book Club Lead",
+    "acknowledged": true,
+    "bio": "",
+    "bioHHS": "",
+    "slackId": "",
+    "email": "",
+    "website": "",
+    "avatar": "/team/ozan-tekin.jpeg"
+  },
+  {
     "name": "Arjin Albay",
     "department": "HQ",
     "role": "Open Source Lead",
@@ -132,10 +156,22 @@
     "slackId": "",
     "email": "",
     "website": "",
-    "avatar": "/team/nuhat-orgel.jpg"
+    "avatar": "/team/nuhat-orgel.jpeg"
   },
   {
-    "name": "Gulsum",
+    "name": "Ela Yalavuz",
+    "department": "HQ",
+    "role": "Book Club Lead, HHS Dicle - President",
+    "acknowledged": false,
+    "bio": "",
+    "bioHHS": "",
+    "slackId": "",
+    "email": "",
+    "website": "",
+    "avatar": "/team/ela-yalavuz.jpeg"
+  },
+  {
+    "name": "Ümmügülsüm Yavuz",
     "department": "HHSCD",
     "role": "HHS Dicle - President",
     "acknowledged": false,
@@ -144,6 +180,29 @@
     "slackId": "",
     "email": "",
     "website": "",
-    "avatar": "/team/gulsum.jpg"
+    "avatar": "/team/gulsum.jpeg"
+  }, {
+    "name": "İbrahim Sahin",
+    "department": "HHSCD",
+    "role": "HHS Dicle - Bookkeeper",
+    "acknowledged": false,
+    "bio": "",
+    "bioHHS": "",
+    "slackId": "",
+    "email": "",
+    "website": "",
+    "avatar": "/team/ibrahim-sahin.jpeg"
+  },
+  {
+    "name": "Esma Cam",
+    "department": "HHSCD",
+    "role": "HHS Dicle - Secretary General",
+    "acknowledged": false,
+    "bio": "",
+    "bioHHS": "",
+    "slackId": "",
+    "email": "",
+    "website": "",
+    "avatar": "/team/esma-cam.jpeg"
   }
 ]
