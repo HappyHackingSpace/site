@@ -4,27 +4,27 @@ import Content from '../components/content'
 import React from 'react'
 
 // Local Banner component to avoid package issues
-const Banner = ({ year = new Date().getFullYear(), style, ...props }) => (
-  <a href="https://happyhacking.space/" target="_blank"
-    rel="noopener noreferrer" {...props}>
-    <img
-      style={{
-        width: '230px',
-        position: 'absolute',
-        top: '10px',
-        left: 0,
-        border: 0,
-        zIndex: '999',
-        ...style
-      }}
-      src={`https://assets.happyhacking.space/flag-standalone.svg`}
-      alt="Happy Hacking Space"
-    />
-  </a>
-)
+// const Banner = ({ year = new Date().getFullYear(), style, ...props }) => (
+//   <a href="https://happyhacking.space/" target="_blank"
+//     rel="noopener noreferrer" {...props}>
+//     <img
+//       style={{
+//         width: '230px',
+//         position: 'absolute',
+//         top: '10px',
+//         left: 0,
+//         border: 0,
+//         zIndex: '999',
+//         ...style
+//       }}
+//       src={`https://assets.happyhacking.space/flag-standalone.svg`}
+//       alt="Happy Hacking Space"
+//     />
+//   </a>
+// )
 const Page = ({ html }) => (
   <>
-    <Banner />
+    {/* <Banner /> */}
     <Header
       title="@happyhackingspace/banner"
       desc="React component for adding a Happy Hacking Space banner to your site"
