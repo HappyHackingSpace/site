@@ -5,7 +5,7 @@ export default function Secret({ reveal, ...props }) {
   const [img, setImage] = useState('')
 
   useEffect(() => {
-    setImage('https://github.com/hackclub/dinosaurs/raw/main/club_dinosaur.png')
+    setImage('https://images.unsplash.com/vector-1751647610756-1b841dbb4f6a?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
   }, [])
 
   return (
@@ -123,7 +123,7 @@ export default function Secret({ reveal, ...props }) {
             src={img}
             width="30%"
             sx={{ margin: 'auto' }}
-            alt="a secret dino!"
+            alt="a secret fox!"
           />
           <Text>print kc</Text>
         </Box>
