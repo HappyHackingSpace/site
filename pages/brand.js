@@ -148,7 +148,7 @@ const Page = ({ css }) => (
         <Heading as="h2" variant="subtitle" sx={{ mt: 3, color: "text" }}>
           Download HQ’s logos and preview our brand colors & font.
         </Heading>
-        <p>
+        {/* <p>
           Hack Club must always be written as Hack Club, not hackclub / Hackclub
           / HackClub / hackClub
         </p>
@@ -161,7 +161,7 @@ const Page = ({ css }) => (
           sticker: All sticker designs must have the text Hack Club somewhere on
           the design. It can be subtle, but "Hack Club" must appear somewhere on
           the design
-        </p>
+        </p> */}
       </Container>
     </Box>
     <Container
@@ -311,12 +311,14 @@ const Page = ({ css }) => (
       </Button> */}
       <Heading variant="headline">UI components</Heading>
       <Text as="p" variant="subtitle" sx={{ mb: 3 }}>
-        Want to make a Hack Club themed site? Use our pre-made CSS and UI
+        Want to make a Happy Hacking Space themed site? Use our pre-made CSS and UI
         components to hackify your site.
       </Text>
       <Button
         as="a"
-        href="https://theme.hackclub.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://theme.happyhacking.space/"
         sx={{ mr: 3, mb: 3 }}
         variant="outline"
       >
