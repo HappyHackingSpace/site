@@ -39,14 +39,21 @@ const Base = styled('div')`
   background-size: contain;
   cursor: pointer;
   flex-shrink: 0;
-  width: 112px;
-  height: 64px;
+  width: 140px;
+  height: 80px;
   margin-top: 12px;
   transition: ${3 / 16}s cubic-bezier(0.375, 0, 0.675, 1) transform;
   transform-origin: top left;
   @media (min-width: ${theme.breakpoints[1]}) {
-    width: 112px;
-    height: 74px;
+    width: 150px;
+    height: 90px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
   }
   &:hover,
   &:focus {
