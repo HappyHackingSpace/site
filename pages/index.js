@@ -25,7 +25,7 @@ import Stage from '../components/stage'
 // import Shipwrecked from '../components/index/cards/shipwrecked'
 // import Pizza from '../components/index/cards/pizza'
 import Slack from '../components/index/cards/slack'
-
+import MailingList from '../components/index/cards/mailing-list'
 // Lazy load heavy components with skeletons for better perceived performance
 const Carousel = dynamic(() => import('../components/index/carousel'), {
   loading: () => {
@@ -1475,7 +1475,7 @@ function Page({
               </Box>
             </>
           )}
-        {/* <MailingList /> */}
+        <MailingList />
       </Box>
       <Footer
         dark

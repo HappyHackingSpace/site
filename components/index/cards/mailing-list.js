@@ -5,8 +5,7 @@ import { format, parse } from 'date-fns'
 import BGImg from '../../background-image'
 import background from '../../../public/home/footer.png'
 import MailCard from '../../mail-card'
-
-const markdownToHtml = require('@hackclub/markdown')
+import markdownToHtml from '@happyhackingspace/markdown'
 
 const Loading = () => (
   <Box
@@ -141,7 +140,9 @@ const MailingList = () => {
                 as="p"
               >
                 We&apos;ll send you an email no more than once a month, when we
-                work on something cool for you. Check out our{' '}
+                work on something cool for you. 
+                <br />
+                {/* Check out our{' '}
                 <Link
                   href="https://workshops.hackclub.com/leader-newsletters/"
                   target="_blank"
@@ -149,7 +150,7 @@ const MailingList = () => {
                 >
                   previous issues
                 </Link>
-                .
+                . */}
               </Text>
             </Box>
             <Grid
@@ -235,8 +236,6 @@ const MailingList = () => {
         </Flex>
       </Card>
       <BGImg
-        width={2544}
-        height={2048}
         gradient="linear-gradient(rgba(0,0,0,0.125), rgba(0,0,0,0.25))"
         src={background}
         placeholder="blur"
