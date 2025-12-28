@@ -18,9 +18,7 @@ const App = ({ Component, pageProps }) => (
       />
     </Meta> */}
     <Head>
-      {/* Favicons live in the public/ folder and are served from the web root. Use /branding/... not /public/branding/... */}
       <link rel="icon" href="/branding/hhs-black-wo-black.ico" type="image/x-icon" />
-      {/* Optional modern favicon format (AVIF). Browsers that support it will use this. */}
       <link rel="icon" href="/branding/hhs-black-wo-black.avif" type="image/avif" />
     </Head>
     <BalancerProvider>

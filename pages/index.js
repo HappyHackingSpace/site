@@ -19,6 +19,7 @@ import BGImg from '../components/background-image'
 import ForceTheme from '../components/force-theme'
 import Footer from '../components/footer'
 import Stage from '../components/stage'
+import Snowfall from '../components/snowfall'
 // import Som from '../components/index/cards/som'
 // import Athena from '../components/index/cards/athena'
 // import Highway from '../components/index/cards/highway' 
@@ -384,6 +385,7 @@ function Page({
           size="512x512"
         />
       </Head>
+      <Snowfall />
       <ForceTheme theme="light" />
       <Nav />
       <Box
@@ -410,6 +412,7 @@ function Page({
           as="header"
           sx={{
             bg: 'dark',
+            minHeight: '85vh',
             pt: [5, 6],
             pb: [2, 3],
             textAlign: 'left',
