@@ -210,7 +210,7 @@ const MailingList = () => {
               </Button>
             </Grid>
           </Flex>
-          <Box
+          {/* <Box
             sx={{
               display: 'grid',
               gridGap: 4,
@@ -232,7 +232,7 @@ const MailingList = () => {
                 />
               ))
               .reverse()}
-          </Box>
+          </Box> */}
         </Flex>
       </Card>
       <BGImg
