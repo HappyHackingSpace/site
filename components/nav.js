@@ -7,22 +7,20 @@ import Icon from './icon'
 import Flag from './flag'
 import ScrollLock from 'react-scrolllock'
 import NextLink from 'next/link'
+import DoorStatus from './door-status'
 
 // Styled component for navigation links (preserves existing styles)
 const NavLinkText = styled.span`
   display: block;
-  color: ${props => props.scrolled ? '#374151' : 'white'};
+  color: ${props => props.scrolled ? '#374151' : props.color || 'white'};
   margin-right: ${theme.space[3]}px;
   cursor: pointer;
   transition: color 0.2s ease;
-  
+
   &:hover {
     color: ${props => props.scrolled ? '#6b7280' : '#d1d5db'};
   }
 `
-
-
-
 
 const rgbaBgColor = (props, opacity) =>
   `rgba(
@@ -144,32 +142,26 @@ const NavBar = styled(Box, {
   }
 `
 
-const Navigation = props => (
-  // REMINDER: This should be no more than 7 links :)
-  <NavBar role="navigation" {...props}>
-    <NextLink href="/philosophy">
-      <NavLinkText color={props.color} scrolled={props.scrolled}>Philosophy</NavLinkText>
-    </NextLink>
-    <NextLink href="https://join.happyhacking.space">
-      <NavLinkText color={props.color} scrolled={props.scrolled}>Community</NavLinkText>
-    </NextLink>
-    <NextLink href="/events">
-      <NavLinkText color={props.color} scrolled={props.scrolled}>Events</NavLinkText>
-    </NextLink>
-    {/* <NextLink href="/slack">
-      <NavLinkText>Community</NavLinkText>
-    </NextLink>
-    <NextLink href="https://scrapbook.hackclub.com/">
-      <NavLinkText>Scrapbook</NavLinkText>
-    </NextLink>
-    <NextLink href="https://toolbox.hackclub.com/">
-      <NavLinkText>Toolbox</NavLinkText>
-    </NextLink> */}
-    <NextLink href="/philanthropy">
-      <NavLinkText color={props.color} scrolled={props.scrolled}>Donors</NavLinkText>
-    </NextLink>
-  </NavBar>
-)
+const doorShake = keyframes`
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+`
+
+const DoorIcon = styled.span`
+  display: flex;
+  align-items: center;
+  font-size: 36px;
+  margin-right: ${theme.space[3]}px;
+  cursor: pointer;
+  animation: ${doorShake} 2s ease-in-out infinite;
+  align-self: center;
+  /* Remove height/line-height for better vertical alignment */
+  &:hover {
+    animation: ${doorShake} 0.5s ease-in-out infinite;
+  }
+`
 
 const ToggleContainer = styled(Flex)`
   align-items: center;
@@ -188,6 +180,7 @@ function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
   const [scrolled, setScrolled] = useState(false)
   const [toggled, setToggled] = useState(false)
   const [mobile, setMobile] = useState(false)
+  const [showDoorStatus, setShowDoorStatus] = useState(false)
 
   const onScroll = () => {
     const newState = window.scrollY >= 16
@@ -204,16 +197,18 @@ function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
       if (!unfixed) {
         window.addEventListener('scroll', onScroll)
       }
-
+      const checkMobile = () => setMobile(window.innerWidth < 900)
+      checkMobile()
+      window.addEventListener('resize', checkMobile)
       const mobileQuery = window.matchMedia('(max-width: 48em)')
       mobileQuery.addEventListener('change', () => {
         setMobile(true)
         setToggled(false)
       })
     }
-
     return () => {
       window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', () => {})
     }
   }, [unfixed])
 
@@ -239,13 +234,20 @@ function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
       as="header"
     >
       <Content>
-        <Flag  />
+        <Flag />
+        {/* Only show door icon in header if mobile */}
+        {mobile && (
+          <Box onClick={() => setShowDoorStatus(true)} sx={{ cursor: 'pointer', display: 'flex', alignItems: 'center', ml: 2, mr: 2 }}>
+            <DoorIcon>🚪</DoorIcon>
+          </Box>
+        )}
         <Navigation
           as="nav"
           aria-hidden={!!mobile}
           color={baseColor}
           dark={dark}
           scrolled={scrolled}
+          showDoor={!mobile}
         />
         <ToggleContainer color={toggleColor} onClick={handleToggleMenu}>
           <Icon glyph={toggled ? 'view-close' : 'menu'} />
@@ -259,14 +261,54 @@ function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
         color={baseColor}
         dark={dark}
         scrolled={scrolled}
+        showDoor={!mobile}
       />
       {toggled && <ScrollLock />}
+      {showDoorStatus && <DoorStatus onClose={() => setShowDoorStatus(false)} />}
     </Root>
   )
 }
 
 Header.defaultProps = {
   color: 'white'
+}
+
+// Update Navigation to use showDoor prop
+const Navigation = props => {
+  const [showDoorStatus, setShowDoorStatus] = useState(false)
+  return (
+    <NavBar role="navigation" {...props}>
+      {props.showDoor && (
+        <Box onClick={() => setShowDoorStatus(true)} sx={{ cursor: 'pointer', display: 'flex', alignItems: 'center', mr: 2 }}>
+          <DoorIcon>🚪</DoorIcon>
+        </Box>
+      )}
+      {showDoorStatus && <DoorStatus onClose={() => setShowDoorStatus(false)} />}
+      <NextLink href="/philosophy">
+        <NavLinkText color={props.color} scrolled={props.scrolled}>Philosophy</NavLinkText>
+      </NextLink>
+      <NextLink href="https://join.happyhacking.space" passHref legacyBehavior>
+        <a target="_blank" rel="noopener noreferrer">
+          <NavLinkText color={props.color} scrolled={props.scrolled}>Community</NavLinkText>
+        </a>
+      </NextLink>
+      <NextLink href="/events">
+        <NavLinkText color={props.color} scrolled={props.scrolled}>Events</NavLinkText>
+      </NextLink>
+      <NextLink href="/philanthropy">
+        <NavLinkText color={props.color} scrolled={props.scrolled}>Donors</NavLinkText>
+      </NextLink>
+      {/* <NextLink href="/slack">
+      <NavLinkText>Community</NavLinkText>
+    </NextLink>
+    <NextLink href="https://scrapbook.hackclub.com/">
+      <NavLinkText>Scrapbook</NavLinkText>
+    </NextLink>
+    <NextLink href="https://toolbox.hackclub.com/">
+      <NavLinkText>Toolbox</NavLinkText>
+    </NextLink> */}
+    </NavBar>
+  )
 }
 
 export default Header
