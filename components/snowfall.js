@@ -7,36 +7,42 @@ const Snowfall = () => {
     const container = containerRef.current
     if (!container) return
 
+    // Detect mobile device
+    const isMobile = window.innerWidth < 600
+    // Lower snowflake count and frequency on mobile
+    const snowflakeInterval = isMobile ? 120 : 50 // ms
+    const initialCount = isMobile ? 6 : 12
+
     const createSnowflake = () => {
       const snowflake = document.createElement('div')
       snowflake.innerHTML = '❄️'
       snowflake.style.position = 'fixed'
-      snowflake.style.fontSize = `${Math.random() * 20 + 10}px`
+      snowflake.style.fontSize = `${Math.random() * 16 + 8}px`
       snowflake.style.left = `${Math.random() * 100}vw`
       snowflake.style.top = '-20px'
       snowflake.style.opacity = Math.random() * 0.6 + 0.4
       snowflake.style.pointerEvents = 'none'
       snowflake.style.userSelect = 'none'
       snowflake.style.zIndex = 9999
-      
-      const duration = Math.random() * 3 + 5
-      const drift = (Math.random() - 0.5) * 100
-      
+
+      const duration = Math.random() * 2.5 + 4.5
+      const drift = (Math.random() - 0.5) * 80
+
       snowflake.style.animation = `snowfall ${duration}s linear`
       snowflake.style.setProperty('--drift', `${drift}px`)
-      
+
       container.appendChild(snowflake)
-      
+
       setTimeout(() => {
         snowflake.remove()
       }, duration * 1000)
     }
 
-    const interval = setInterval(createSnowflake, 50)
-    
+    const interval = setInterval(createSnowflake, snowflakeInterval)
+
     // Create initial snowflakes
-    for (let i = 0; i < 50; i++) {
-      setTimeout(createSnowflake, i * 20)
+    for (let i = 0; i < initialCount; i++) {
+      setTimeout(createSnowflake, i * snowflakeInterval)
     }
 
     return () => {
