@@ -439,7 +439,7 @@ function Page({
               maxWidth: [null, 'layout'],
               position: 'relative',
               mx: 'auto',
-              py: [4, 4, 4],
+              py: [4, 4, 6],
               textShadow: 'text'
             }}
           >
