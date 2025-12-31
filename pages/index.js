@@ -387,7 +387,7 @@ function Page({
       </Head>
       <Snowfall />
       <ForceTheme theme="light" />
-      <Nav />
+      <Nav forceBurgerWhite />
       <Box
         as="main"
         sx={{

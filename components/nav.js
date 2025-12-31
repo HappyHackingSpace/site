@@ -12,13 +12,13 @@ import DoorStatus from './door-status'
 // Styled component for navigation links (preserves existing styles)
 const NavLinkText = styled.span`
   display: block;
-  color: ${props => props.scrolled ? '#374151' : props.color || 'white'};
+  color: ${props => props.isMobile ? theme.colors['slate'] : (props.scrolled ? '#374151' : props.color || 'white')};
   margin-right: ${theme.space[3]}px;
   cursor: pointer;
   transition: color 0.2s ease;
 
   &:hover {
-    color: ${props => props.scrolled ? '#6b7280' : '#d1d5db'};
+    color: ${props => props.isMobile ? theme.colors['black'] : (props.scrolled ? '#6b7280' : '#d1d5db')};
   }
 `
 
@@ -103,7 +103,7 @@ const layout = props =>
           animation: ${slide} 0.25s ease-in;
         }
         a {
-          color: ${theme.colors[props.dark ? 'white' : 'black']} !important;
+          color: ${theme.colors['slate']} !important;
           margin: 0 auto;
           height: 64px;
           font-weight: bold;
@@ -221,7 +221,10 @@ function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
     ? color || 'snow'
     : toggled || (color === 'white' && scrolled)
       ? 'slate'
-      : color
+      : color;
+  const burgerIconColor = mobile
+    ? (props.forceBurgerWhite ? 'white' : (dark || (bgColor && bgColor[0] < 100) ? 'white' : 'slate'))
+    : toggleColor;
 
   return (
     <Root
@@ -250,7 +253,7 @@ function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
           showDoor={!mobile}
         />
         <ToggleContainer color={toggleColor} onClick={handleToggleMenu}>
-          <Icon glyph={toggled ? 'view-close' : 'menu'} />
+          <Icon glyph={toggled ? 'view-close' : 'menu'} color={burgerIconColor} />
         </ToggleContainer>
       </Content>
       <Navigation
@@ -285,27 +288,27 @@ const Navigation = props => {
       )}
       {showDoorStatus && <DoorStatus onClose={() => setShowDoorStatus(false)} />}
       <NextLink href="/philosophy">
-        <NavLinkText color={props.color} scrolled={props.scrolled}>Philosophy</NavLinkText>
+        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Philosophy</NavLinkText>
       </NextLink>
       <NextLink href="https://join.happyhacking.space" passHref legacyBehavior>
         <a target="_blank" rel="noopener noreferrer">
-          <NavLinkText color={props.color} scrolled={props.scrolled}>Community</NavLinkText>
+          <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Community</NavLinkText>
         </a>
       </NextLink>
       <NextLink href="/events">
-        <NavLinkText color={props.color} scrolled={props.scrolled}>Events</NavLinkText>
+        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Events</NavLinkText>
       </NextLink>
       <NextLink href="/philanthropy">
-        <NavLinkText color={props.color} scrolled={props.scrolled}>Donors</NavLinkText>
+        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Donors</NavLinkText>
       </NextLink>
       {/* <NextLink href="/slack">
-      <NavLinkText>Community</NavLinkText>
+      <NavLinkText isMobile={props.isMobile}>Community</NavLinkText>
     </NextLink>
     <NextLink href="https://scrapbook.hackclub.com/">
-      <NavLinkText>Scrapbook</NavLinkText>
+      <NavLinkText isMobile={props.isMobile}>Scrapbook</NavLinkText>
     </NextLink>
     <NextLink href="https://toolbox.hackclub.com/">
-      <NavLinkText>Toolbox</NavLinkText>
+      <NavLinkText isMobile={props.isMobile}>Toolbox</NavLinkText>
     </NextLink> */}
     </NavBar>
   )
