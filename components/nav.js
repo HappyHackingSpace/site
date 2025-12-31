@@ -104,11 +104,11 @@ const layout = props =>
         }
         a {
           color: ${theme.colors['slate']} !important;
-          margin: 0 auto;
+          margin: 0 auto 0 1.5rem;
           height: 64px;
           font-weight: bold;
           font-size: ${theme.fontSizes[2]}px;
-          width: 100vw;
+          width: calc(100vw - 1.5rem);
           &:not(:last-child) {
             border-bottom: 1px solid rgba(48, 48, 48, 0.125);
           }
