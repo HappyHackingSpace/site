@@ -7,11 +7,9 @@ const Snowfall = () => {
     const container = containerRef.current
     if (!container) return
 
-    // Detect mobile device
     const isMobile = window.innerWidth < 600
-    // Lower snowflake count and frequency on mobile
-    const snowflakeInterval = isMobile ? 120 : 50 // ms
-    const initialCount = isMobile ? 6 : 12
+    const snowflakeInterval = isMobile ? 240 : 100 
+    const initialCount = isMobile ? 3 : 6 
 
     const createSnowflake = () => {
       const snowflake = document.createElement('div')
