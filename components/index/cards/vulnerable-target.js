@@ -172,7 +172,7 @@ export default function Sprig({ stars }) {
   const [repoStars, setRepoStars] = useState(stars || 0)
 
   useEffect(() => {
-    fetch('https://api.github.com/repos/HappyHackingSpace/vulnerable-target')
+    fetch('https://api.github.com/repos/HappyHackingSpace/vt')
       .then(response => response.json())
       .then(data => setRepoStars(data.stargazers_count))
       .catch(error => console.error('Error fetching stars:', error))
@@ -180,7 +180,7 @@ export default function Sprig({ stars }) {
 
   return (
     <CardModel
-      github_link="https://github.com/HappyHackingSpace/vulnerable-target"
+      github_link="https://github.com/HappyHackingSpace/vt"
       color="white"
       stars={repoStars}
       highlight="#DC2626"
