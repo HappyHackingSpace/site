@@ -5,7 +5,6 @@ import { format, parse } from 'date-fns'
 import BGImg from '../../background-image'
 import background from '../../../public/home/footer.png'
 import MailCard from '../../mail-card'
-import markdownToHtml from '@happyhackingspace/markdown'
 
 const Loading = () => (
   <Box
@@ -75,14 +74,12 @@ const MailingList = () => {
         .then(responses =>
           Promise.all(responses.map(response => response.text()))
         )
-        .then(markdown =>
-          Promise.all(markdown.map(markdown => markdownToHtml(markdown)))
-        )
-        .then(html =>
-          html.map(html =>
-            html.replace(/<[^>]*>/g, '').replace(/The Hackening/g, '')
+        .then(markdownArray => {
+          // Since markdownToHtml import is causing issues, just strip HTML manually
+          return markdownArray.map(markdown => 
+            markdown.replace(/<[^>]*>/g, '').replace(/The Hackening/g, '')
           )
-        ), // Chucks out all html tags + 'The Hackening'
+        }),
 
       fetch(
         'https://api.github.com/repos/hackclub/leaders-newsletter/contents/updates'
