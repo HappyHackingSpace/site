@@ -6,7 +6,6 @@ import theme from '@happyhackingspace/theme'
 import Icon from './icon'   
 
 
-// Styled component for footer links (not an anchor tag)
 const FooterLinkText = styled.span`
   display: block;
   color: inherit;
@@ -127,7 +126,11 @@ const Footer = ({
           </NextLink>
         </Box>
         <Box sx={{ gridColumn: ['span 2', 'span 1'] }}>
-          <Logo aria-label="Happy Hacking Space logo" width={128} height={45} dark={dark} />
+          <NextLink href="/" passHref legacyBehavior>
+            <a style={{ display: 'inline-block' }} aria-label="Go to homepage">
+              <Logo aria-label="Happy Hacking Space logo" width={128} height={45} dark={dark} />
+            </a>
+          </NextLink>
           <Grid
             columns={[8, 4]}
             gap={2}
