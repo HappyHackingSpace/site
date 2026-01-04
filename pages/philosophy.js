@@ -1,9 +1,10 @@
 import Meta from '@happyhackingspace/meta'
 import Head from 'next/head'
-import { Box, Heading, Container, Text, Button, Link } from 'theme-ui'
+import { Box, Heading, Container, Text, Button, Link, Flex } from 'theme-ui'
 import Nav from '../components/nav'
 import styled from '@emotion/styled'
 import Footer from '../components/footer'
+import { useEffect, useMemo, useState } from 'react'
 
 const Header = styled(Box)`
   color: white;
@@ -75,8 +76,6 @@ const Ultraline = styled(Heading)`
   }
 `
 
-
-
 const Row = styled(Container)`
   px: 3;
   py: [3, 4];
@@ -106,16 +105,113 @@ const Super = styled(Text)`
 `
 
 export default function Philosophy() {
+  const [lang, setLang] = useState('en')
+
+  useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem('hhs_lang')
+      if (saved === 'tr' || saved === 'en') setLang(saved)
+    } catch (e) {}
+  }, [])
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem('hhs_lang', lang)
+    } catch (e) {}
+  }, [lang])
+
+  const copy = useMemo(
+    () => ({
+      en: {
+        metaTitle: 'Philosophy',
+        metaDescription:
+          'Read about Happy Hacking Space, a network of hackers. We want to make building apps and websites accessible to everyone.',
+        hero: ["We're", 'at our best', "when we're", 'hacking.'],
+        sealTop: 'Happy Hacking Space',
+        sealBottom: 'Philosophy',
+        section1TitlePrefix: 'Coding is a ',
+        section1Super: 'superpower.',
+        section1Body:
+          'Learning to code is uniquely like gaining a superpower: it converts you from a consumer to a creator. Suddenly, computers become a tool for creating.',
+        section2Title: 'Make, from anywhere.',
+        section2Body:
+          'There’s never been a better time for making: anywhere in the world, anyone with a laptop and an internet connection can learn to make an app. Building things has never been so globally democratized.',
+        section3Title: 'Hack, hack, hack.',
+        section3BodyStrong:
+          'The goal of Happy Hacking Space is to help you become a hacker.',
+        section3BodyRest:
+          ' We want a space at every place where people are making interesting things with code, every week. Schools or institutions don’t provide that, so we’re creating it in every place to make building things accessible to everyone.',
+        section4Title: 'Start building.',
+        section4Body:
+          'Most coding classes teach you programming concepts instead of how to write real code—it’s like trying to learn carpentry without any wood. So at Happy Hacking Space, you learn to code entirely through building things. You start with no experience and build and ship a project every meeting.',
+        section5Title: 'Learn as you build.',
+        section5BodyBeforeLink:
+          'Just as the best carpenters didn’t learn in the classroom, neither did the best programmers. Through our ',
+        section5LinkText: 'workshops',
+        section5BodyAfterLink:
+          ', you’ll be walked through building projects. Starting out, you won’t understand how the code works, but you’ll build understanding as you go. You’ll get stuck along the way, but we’re here to help.',
+        section6Title: 'Be part of a community.',
+        section6Body:
+          'Happy Hacking Space gives you a community of thousands of other makers to talk to. We’re artists, writers, engineers, tinkerers, campers, filmmakers, volunteers. We make things. We help one another. We have fun. Join us.',
+        ctaTitle: 'Join the movement!',
+        ctaButton: 'Join our community',
+        langLabel: 'Language',
+        tr: 'TR',
+        en: 'EN'
+      },
+      tr: {
+        metaTitle: 'Felsefe',
+        metaDescription:
+          'Happy Hacking Space’in ne olduğunu ve neyi amaçladığını oku. Uygulama ve web sitesi üretmeyi herkes için erişilebilir kılmak istiyoruz.',
+        hero: ['Biz', 'en iyi halimizde', 'biz olduğumuzda', 'hack’leriz.'],
+        sealTop: 'Happy Hacking Space',
+        sealBottom: 'Felsefe',
+        section1TitlePrefix: 'Kodlama bir ',
+        section1Super: 'süper güç.',
+        section1Body:
+          'Kod yazmayı öğrenmek, adeta bir süper güç kazanmak gibidir: seni tüketiciden yaratıcıya dönüştürür. Birdenbire bilgisayarlar, üretmek için bir araca dönüşür.',
+        section2Title: 'Her yerden üret.',
+        section2Body:
+          'Üretmek için hiç bu kadar iyi bir zaman olmamıştı: dünyanın neresinde olursan ol, bir dizüstü bilgisayar ve internet bağlantısı olan herkes bir uygulama yapmayı öğrenebilir. Bir şey inşa etmek artık küresel ölçekte daha erişilebilir.',
+        section3Title: 'Hack, hack, hack.',
+        section3BodyStrong:
+          'Happy Hacking Space’in hedefi, senin bir hacker olmanı sağlamak.',
+        section3BodyRest:
+          ' Her hafta, kodla ilginç şeyler üreten insanların buluştuğu bir alan istiyoruz. Okullar ya da kurumlar bunu çoğu zaman sağlamıyor; biz de her yerde bunu kurmaya çalışıyoruz—üretmeyi herkes için erişilebilir kılmak için.',
+        section4Title: 'Üretmeye başla.',
+        section4Body:
+          'Çoğu kodlama dersi gerçek kod yazmaktan çok kavram öğretir—tahta olmadan marangozluk öğrenmeye benzer. Happy Hacking Space’te ise kod yazmayı tamamen bir şeyler inşa ederek öğrenirsin. Hiç deneyimin olmadan başlarsın ve her buluşmada bir proje yapıp yayınlarsın.',
+        section5Title: 'Yaparken öğren.',
+        section5BodyBeforeLink:
+          'En iyi marangozlar sınıfta öğrenmediği gibi, en iyi programcılar da öyle. ',
+        section5LinkText: 'atölyelerimiz',
+        section5BodyAfterLink:
+          ' ile projeler yaparken adım adım yönlendirilirsin. Başta kodun nasıl çalıştığını tam anlamayabilirsin ama ilerledikçe oturur. Takıldığın yerde de biz buradayız.',
+        section6Title: 'Bir topluluğun parçası ol.',
+        section6Body:
+          'Happy Hacking Space, konuşabileceğin binlerce üreticiden oluşan bir topluluk sunar. Sanatçılar, yazarlar, mühendisler, tamirciler, kampçılar, filmciler, gönüllüler… Üretiriz. Birbirimize yardım ederiz. Eğleniriz. Katıl.',
+        ctaTitle: 'Harekete katıl!',
+        ctaButton: 'Topluluğa katıl',
+        langLabel: 'Dil',
+        tr: 'TR',
+        en: 'EN'
+      }
+    }),
+    []
+  )
+
+  const t = (key) => copy[lang]?.[key] ?? copy.en[key] ?? key
+
   return (
     <Box sx={{ bg: 'white', color: 'black', minHeight: '100vh' }}>
       <Nav />
-      {/* TODO: Update description and iamge */}
       <Meta
         as={Head}
-        title="Philosophy"
-        description="Read about Happy Hacking Space, a network of hackers. We want to make building apps and websites accessible to everyone."
+        title={t('metaTitle')}
+        description={t('metaDescription')}
         image="https://cloud-cz9a6kt0a-hack-club-bot.vercel.app/0social-photo_2.jpg"
       />
+
       <Box>
         <Header>
           <Container
@@ -124,11 +220,58 @@ export default function Philosophy() {
             px={3}
             align="left"
           >
-            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>We're</Ultraline>
-            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>at our best</Ultraline>
-            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>when we're</Ultraline>
-            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>hacking.</Ultraline>
-            <Seal pt={[3, 4]} sx={{ display: ['none', 'none', 'none', 'block']}}>
+            {/* Language Toggle */}
+            <Flex sx={{ justifyContent: 'flex-end', mb: 3 }}>
+              <Flex
+                sx={{
+                  alignItems: 'center',
+                  gap: 2,
+                  bg: 'rgba(255,255,255,0.12)',
+                  borderRadius: 9999,
+                  px: 2,
+                  py: 1
+                }}
+              >
+                <Text sx={{ color: 'white', fontSize: 1, opacity: 0.9 }}>
+                  {t('langLabel')}:
+                </Text>
+                <Button
+                  onClick={() => setLang('tr')}
+                  sx={{
+                    bg: lang === 'tr' ? 'white' : 'transparent',
+                    color: lang === 'tr' ? 'black' : 'white',
+                    borderRadius: 9999,
+                    px: 2,
+                    py: 1,
+                    fontSize: 1,
+                    cursor: 'pointer'
+                  }}
+                >
+                  {t('tr')}
+                </Button>
+                <Button
+                  onClick={() => setLang('en')}
+                  sx={{
+                    bg: lang === 'en' ? 'white' : 'transparent',
+                    color: lang === 'en' ? 'black' : 'white',
+                    borderRadius: 9999,
+                    px: 2,
+                    py: 1,
+                    fontSize: 1,
+                    cursor: 'pointer'
+                  }}
+                >
+                  {t('en')}
+                </Button>
+              </Flex>
+            </Flex>
+
+            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>{t('hero')[0]}</Ultraline>
+            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>{t('hero')[1]}</Ultraline>
+            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>{t('hero')[2]}</Ultraline>
+            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>{t('hero')[3]}</Ultraline>
+
+            <Seal pt={[3, 4]} sx={{ display: ['none', 'none', 'none', 'block'] }}>
               <Heading
                 fontSize={[1, 2]}
                 sx={{
@@ -136,11 +279,10 @@ export default function Philosophy() {
                   marginBlockStart: '0em',
                   fontSize: ['16px', '18px'],
                   textTransform: 'uppercase'
-                  
                 }}
                 caps
               >
-                Happy Hacking Space
+                {t('sealTop')}
               </Heading>
               <Heading
                 fontSize={[3, 4]}
@@ -150,104 +292,65 @@ export default function Philosophy() {
                   textTransform: 'uppercase'
                 }}
               >
-                Philosophy
+                {t('sealBottom')}
               </Heading>
             </Seal>
           </Container>
         </Header>
+
         <Row py={4} mt={[0, 4]}>
-          <Heading
-            as="h2"
-            sx={{ fontSize: [36, 48] }}
-            color="rgb(228, 45, 66);"
-          >
-            Coding is a <Super>superpower.</Super>
+          <Heading as="h2" sx={{ fontSize: [36, 48] }} color="rgb(228, 45, 66);">
+            {t('section1TitlePrefix')}
+            <Super>{t('section1Super')}</Super>
           </Heading>
-          <Box sx={{ fontSize: [3, 3] }}>
-            Learning to code is uniquely like gaining a superpower: it converts
-            you from a consumer to a creator. Suddenly, computers become a tool
-            for creating.
-          </Box>
+          <Box sx={{ fontSize: [3, 3] }}>{t('section1Body')}</Box>
         </Row>
+
         <Row>
-          <Heading
-            as="h2"
-            sx={{ fontSize: [36, 48] , py: 4}}
-            color="rgb(207, 45, 228);"
-          >
-            Make, from anywhere.
+          <Heading as="h2" sx={{ fontSize: [36, 48], py: 4 }} color="rgb(207, 45, 228);">
+            {t('section2Title')}
           </Heading>
-          <Box sx={{ fontSize: [3, 3] , py: 4}}>
-            There’s never been a better time for making: anywhere in the world,
-            anyone with a laptop and an internet connection can learn to make an
-            app. Building things has never been so globally democratized.
-          </Box>
+          <Box sx={{ fontSize: [3, 3], py: 4 }}>{t('section2Body')}</Box>
         </Row>
+
         <Row>
-          <Heading
-            as="h2"
-            sx={{ fontSize: [36, 48], py: 4 }}
-            color="rgb(115, 45, 228);"
-          >
-            Hack, hack, hack.
-          </Heading>
-          <Box sx={{ fontSize: [3, 3] , py: 4}}>
-            <strong>
-              The goal of Happy Hacking Space is to help you become a hacker.
-            </strong>{' '}
-            We want a space at every place where people are making interesting
-            things with code, every week. Schools or institutions don’t provide that, so we’re
-            creating it in every place to make building things accessible to
-            everyone.
-          </Box>
-        </Row>
-        <Row>
-          <Heading as="h2" sx={{ fontSize: [36, 48], py: 4 }} color="rgb(45, 66, 228)">
-            Start building.
-          </Heading>
-          <Box sx={{ fontSize: [3, 3] , py: 4}}>
-            Most coding classes teach you programming concepts instead of how to
-            write real code—it’s like trying to learn carpentry without any
-            wood. So at Happy Hacking Space, you learn to code entirely through building
-            things. You start with no experience and build and ship a project
-            every meeting.
-          </Box>
-        </Row>
-        <Row>
-          <Heading
-            as="h2"
-            sx={{ fontSize: [36, 48] , py: 4}}
-            color="rgb(41, 143, 206)"
-          >
-            Learn as you build.
-          </Heading>
-          <Box sx={{ fontSize: [3, 3] , py: 4}}>
-            Just as the best carpenters didn’t learn in the classroom, neither
-            did the best programmers. Through our{' '}
-            <Link href="/workshops">workshops</Link>, you’ll be walked through
-            building projects. Starting out, you won’t understand how the code
-            works, but you’ll build understanding as you go. You’ll get stuck
-            along the way, but we’re here to help.
-          </Box>
-        </Row>
-        <Row>
-          <Heading
-            as="h2"
-            sx={{ fontSize: [36, 48], py: 4 }}
-            color="rgb(36, 181, 165)"
-          >
-            Be part of a community.
+          <Heading as="h2" sx={{ fontSize: [36, 48], py: 4 }} color="rgb(115, 45, 228);">
+            {t('section3Title')}
           </Heading>
           <Box sx={{ fontSize: [3, 3], py: 4 }}>
-            Happy Hacking Space gives you a community of thousands of other
-            makers to talk to. We’re artists, writers, engineers,
-            tinkerers, campers, filmmakers, volunteers. We make things. We help
-            one another. We have fun. Join us.
+            <strong>{t('section3BodyStrong')}</strong>
+            {t('section3BodyRest')}
           </Box>
         </Row>
+
+        <Row>
+          <Heading as="h2" sx={{ fontSize: [36, 48], py: 4 }} color="rgb(45, 66, 228)">
+            {t('section4Title')}
+          </Heading>
+          <Box sx={{ fontSize: [3, 3], py: 4 }}>{t('section4Body')}</Box>
+        </Row>
+
+        <Row>
+          <Heading as="h2" sx={{ fontSize: [36, 48], py: 4 }} color="rgb(41, 143, 206)">
+            {t('section5Title')}
+          </Heading>
+          <Box sx={{ fontSize: [3, 3], py: 4 }}>
+            {t('section5BodyBeforeLink')}
+            <Link href="/workshops">{t('section5LinkText')}</Link>
+            {t('section5BodyAfterLink')}
+          </Box>
+        </Row>
+
+        <Row>
+          <Heading as="h2" sx={{ fontSize: [36, 48], py: 4 }} color="rgb(36, 181, 165)">
+            {t('section6Title')}
+          </Heading>
+          <Box sx={{ fontSize: [3, 3], py: 4 }}>{t('section6Body')}</Box>
+        </Row>
+
         <Box
           sx={{
-            backgroundImage: t => t.util.gx('orange', 'red'),
+            backgroundImage: (t) => t.util.gx('orange', 'red'),
             margin: 'auto',
             width: '600px',
             maxWidth: '90%',
@@ -260,33 +363,21 @@ export default function Philosophy() {
           }}
         >
           <Heading as="h1" sx={{ fontSize: 5, mb: 2 }}>
-            Join the movement!
+            {t('ctaTitle')}
           </Heading>
-          {/* <Button
-            mr={[0, 3]}
-            mb={[3, 0]}
-            sx={{
-              bg: 'white',
-              color: 'red',
-              display: ['block', 'inline-block'],
-              mx: 'auto'
-            }}
+
+          <Button
+            sx={{ bg: 'white', color: 'red' }}
             as="a"
-            href="https://apply.hackclub.com"
+            href="https://join.happyhacking.space"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Start a club
-          </Button> */}
-            <Button
-              sx={{ bg: 'white', color: 'red' }}
-              as="a"
-              href="https://join.happyhacking.space"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Join our community
-            </Button>
+            {t('ctaButton')}
+          </Button>
         </Box>
       </Box>
+
       <Footer light />
     </Box>
   )
