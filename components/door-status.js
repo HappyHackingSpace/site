@@ -3,7 +3,6 @@ import styled from '@emotion/styled'
 import { keyframes } from '@emotion/react'
 import { Box, Text } from 'theme-ui'
 
-// Keyframe animations
 const slideIn = keyframes`
   from {
     transform: translateY(-100%);
@@ -158,26 +157,22 @@ const DoorStatus = ({ onClose }) => {
   const [doorIsActuallyOpen, setDoorIsActuallyOpen] = useState(false)
 
   useEffect(() => {
-    // Fetch door status
     const fetchDoorStatus = async () => {
       try {
         const response = await fetch(
           'https://raw.githubusercontent.com/HappyHackingSpace/.github/refs/heads/main/scripts/.door_status_cache/last_status.json'
         )
         const data = await response.json()
-        // locked: false means door is OPEN, locked: true means door is CLOSED
+       
         const doorIsOpen = data.locked === false
         setDoorIsActuallyOpen(doorIsOpen)
-        // Start knocking animation
         setIsKnocking(true)
-        // After knock animation (800ms), show CLOSED if kapali, nothing if acik
         setTimeout(() => {
           setIsKnocking(false)
           if (!doorIsOpen) {
             setStatusText('CLOSED')
             setLoading(false)
           } else {
-            // If open, wait for door animation, then show OPEN
             setIsOpen(true)
             setTimeout(() => {
               setStatusText('OPEN')
@@ -185,21 +180,19 @@ const DoorStatus = ({ onClose }) => {
             }, 500)
           }
         }, 800)
-      } catch (error) {
-        console.error('Failed to fetch door status:', error)
-        // Default to closed on error
-        setIsKnocking(true)
-        setTimeout(() => {
-          setIsKnocking(false)
-          setStatusText('CLOSED')
-          setLoading(false)
-        }, 800)
+      }  catch (error) {
+  console.error('Failed to fetch door status:', error)
+  setIsKnocking(true)
+  setTimeout(() => {
+    setIsKnocking(false)
+    setStatusText('İSTEK BAŞARISIZ')
+    setLoading(false)
+  }, 800)
       }
     }
 
     fetchDoorStatus()
 
-    // Auto close after 4 seconds
     const autoCloseTimer = setTimeout(() => {
       handleClose()
     }, 4000)
