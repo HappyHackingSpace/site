@@ -147,6 +147,18 @@
     "avatar": "/team/miwa.jpeg"
   },
   {
+    "name": "Ahsen T.",
+    "department": "HQ",
+    "role": "Open Source Security Lead",
+    "acknowledged": false,
+    "bio": "",
+    "bioHHS": "",
+    "slackId": "",
+    "email": "",
+    "website": "",
+    "avatar": "/team/ahsen.jpg"
+  },
+  {
     "name": "Nuhat Örgel",
     "department": "HQ",
     "role": "HHS Academy - Book Club Lead",
