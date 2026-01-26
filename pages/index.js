@@ -422,7 +422,7 @@ function Page({
         >
           <BGImg
             src={OuternetImgFile}
-            alt="Hack Clubbers gather in the great outdoors of Cabot, VT, for an experience unlike any other: Outernet. 📸 Photo by Matt Gleich, Hack Clubber in NH!"
+            alt="Happy Hackers at Diyarbakir Outdoor Meeting"
             priority
             gradient="linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.45))"
           />
@@ -448,6 +448,7 @@ function Page({
               sx={{
                 color: 'sunken',
                 pb: 2,
+                pt: [2, 3, 5],
                 position: 'relative',
                 display: 'block'
               }}
@@ -535,7 +536,7 @@ function Page({
               display: 'flex',
               justifyContent: ['flex-start', 'flex-start', 'flex-end'],
               marginRight: 2,
-              mt: [4, 3, 1]
+              mt: [5, 4, 6]
             }}
           >
             <Badge
