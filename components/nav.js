@@ -290,7 +290,7 @@ const Navigation = props => {
       <NextLink href="/philosophy">
         <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Philosophy</NavLinkText>
       </NextLink>
-      <NextLink href="https://join.happyhacking.space" passHref legacyBehavior>
+      <NextLink href="https://discord.happyhacking.space" passHref legacyBehavior>
         <a target="_blank" rel="noopener noreferrer">
           <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Community</NavLinkText>
         </a>
@@ -300,6 +300,9 @@ const Navigation = props => {
       </NextLink>
       <NextLink href="/philanthropy">
         <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Donors</NavLinkText>
+      </NextLink>
+      <NextLink href="/contact">
+        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Contact</NavLinkText>
       </NextLink>
       {/* <NextLink href="/slack">
       <NavLinkText isMobile={props.isMobile}>Community</NavLinkText>

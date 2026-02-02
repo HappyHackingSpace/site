@@ -111,6 +111,9 @@ const Footer = ({
           <NextLink href="/philanthropy">
             <FooterLinkText>Donate</FooterLinkText>
           </NextLink>
+          <NextLink href="/contact">
+            <FooterLinkText>Contact</FooterLinkText>
+          </NextLink>
         </Box>
         <Box>
           <Heading as="h2" variant="subheadline" mb={3}>
@@ -151,7 +154,7 @@ const Footer = ({
             }}
           >
             <Service
-              href="https://join.happyhacking.space"
+              href="https://discord.happyhacking.space"
               icon="welcome"
               name="Community"
               target="_blank"

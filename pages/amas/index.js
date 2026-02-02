@@ -62,7 +62,7 @@ const Page = ({ upcoming, past }) => (
         <Button
           variant="lg"
           as="a"
-          href="https://join.happyhacking.space"
+          href="https://discord.happyhacking.space"
           target="_blank"
           sx={{ mt: [3, 4], mx: [1, 2], color: 'black', bg: 'white' }}
         >

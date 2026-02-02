@@ -68,7 +68,7 @@ If there's a Happy Hacking Space or Happy Hacking Space community-led project (p
 
 Every week, [thousands of people](https://plausible.io/happyhacking.space) visit happyhacking.space. What story to you want to tell?
 
-_Have questions? Join us @ https://join.happyhacking.space and to learn more about the style guide at Happy Hacking Space check [this](https://happyhacking.space/brand/) out_
+_Have questions? Join us @ https://discord.happyhacking.space and to learn more about the style guide at Happy Hacking Space check [this](https://happyhacking.space/brand/) out_
 
 ---
 

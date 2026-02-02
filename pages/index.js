@@ -510,7 +510,7 @@ function Page({
               <Button
                 variant="ctaLg"
                 as="a"
-                href="https://join.happyhacking.space"
+                href="https://discord.happyhacking.space"
                 mt={[3, 0, 0]}
                 mr={3}
                 sx={{ transformOrigin: 'center left' }}
@@ -541,7 +541,7 @@ function Page({
           >
             <Badge
               as="a"
-              href="https://join.happyhacking.space"
+              href="https://discord.happyhacking.space"
               target="_blank"
               rel="noopener"
               variant="pill"
@@ -776,7 +776,7 @@ function Page({
                     </strong>
                     Have a coding question? Looking for project feedback? You'll
                     find hundreds of fabulous people to talk to in our {' '}
-                    <Link href="https://join.happyhacking.space" target="_blank" rel="noopener">
+                    <Link href="https://discord.happyhacking.space" target="_blank" rel="noopener">
                       Community{' '}
                     </Link>
                     , active at all hours.
@@ -1246,7 +1246,7 @@ function Page({
             >
               <Card
                 as="a"
-                href="https://join.happyhacking.space"
+                href="https://discord.happyhacking.space"
                 target="_blank"
                 rel="noopener"
                 variant="interactive"
