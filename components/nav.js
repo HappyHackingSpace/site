@@ -7,9 +7,8 @@ import Icon from './icon'
 import Flag from './flag'
 import ScrollLock from 'react-scrolllock'
 import NextLink from 'next/link'
-import DoorStatus from './door-status'
 
-// Styled component for navigation links (preserves existing styles)
+
 const NavLinkText = styled.span`
   display: block;
   color: ${props => props.isMobile ? theme.colors['slate'] : (props.scrolled ? '#374151' : props.color || 'white')};
@@ -47,8 +46,8 @@ const fixed = props =>
     border-bottom: 1px solid rgba(48, 48, 48, 0.125);
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
       background-color: ${props.transparent
-        ? 'transparent'
-        : rgbaBgColor(props, 0.75)};
+      ? 'transparent'
+      : rgbaBgColor(props, 0.75)};
       -webkit-backdrop-filter: saturate(180%) blur(20px);
       backdrop-filter: saturate(180%) blur(20px);
       /* {bg}; to support dark mode later */
@@ -180,7 +179,6 @@ function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
   const [scrolled, setScrolled] = useState(false)
   const [toggled, setToggled] = useState(false)
   const [mobile, setMobile] = useState(false)
-  const [showDoorStatus, setShowDoorStatus] = useState(false)
 
   const onScroll = () => {
     const newState = window.scrollY >= 16
@@ -208,7 +206,7 @@ function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
     }
     return () => {
       window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', () => {})
+      window.removeEventListener('resize', () => { })
     }
   }, [unfixed])
 
@@ -238,12 +236,7 @@ function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
     >
       <Content>
         <Flag />
-        {/* Only show door icon in header if mobile */}
-        {mobile && (
-          <Box onClick={() => setShowDoorStatus(true)} sx={{ cursor: 'pointer', display: 'flex', alignItems: 'center', ml: 2, mr: 2 }}>
-            <DoorIcon>🚪</DoorIcon>
-          </Box>
-        )}
+
         <Navigation
           as="nav"
           aria-hidden={!!mobile}
@@ -267,7 +260,6 @@ function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
         showDoor={!mobile}
       />
       {toggled && <ScrollLock />}
-      {showDoorStatus && <DoorStatus onClose={() => setShowDoorStatus(false)} />}
     </Root>
   )
 }
@@ -278,15 +270,9 @@ Header.defaultProps = {
 
 // Update Navigation to use showDoor prop
 const Navigation = props => {
-  const [showDoorStatus, setShowDoorStatus] = useState(false)
   return (
     <NavBar role="navigation" {...props}>
-      {props.showDoor && (
-        <Box onClick={() => setShowDoorStatus(true)} sx={{ cursor: 'pointer', display: 'flex', alignItems: 'center', mr: 2 }}>
-          <DoorIcon>🚪</DoorIcon>
-        </Box>
-      )}
-      {showDoorStatus && <DoorStatus onClose={() => setShowDoorStatus(false)} />}
+
       <NextLink href="/philosophy">
         <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Philosophy</NavLinkText>
       </NextLink>
