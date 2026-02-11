@@ -49,7 +49,7 @@ const Row = styled(Box)`
     display: grid;
     grid-gap: 18px;
     grid-template-columns: ${({ reverse }) =>
-      reverse ? '3fr 2fr' : '2fr 3fr'};
+    reverse ? '3fr 2fr' : '2fr 3fr'};
   }
 `
 
@@ -72,9 +72,9 @@ const contentContainer = {
 }
 const content = { maxWidth: 48, mx: 0, color: 'black' }
 
-const title = 'Donate'
+const title = 'Support Happy Hacking Space'
 const desc =
-  'Contribute today to empower the next generation and help start a coding club at every high school.'
+  'Contribute today to empower the next generation of hackers in Mesopotamia.'
 
 const DonorGrid = styled(Box)`
   display: grid;
@@ -132,7 +132,6 @@ export default function Donate({ sprig }) {
         as={Head}
         title={title}
         description={desc}
-        image="https://cloud-cz9a6kt0a-hack-club-bot.vercel.app/0social-photo_2.jpg"
       />
       <Nav color="muted" />
       <ForceTheme theme="light" />
@@ -175,19 +174,18 @@ export default function Donate({ sprig }) {
                   color: 'white'
                 }}
               >
-                Contribute today to empower the next generation. Help start a
-                Hack Club at every high school.
+                Contribute today to empower the next generation in Mesopotamia.
               </Box>
               <Button
                 variant="ctaLg"
                 my={3}
                 sx={{ width: ['100%', 'auto'] }}
                 as="a"
-                href="https://hcb.hackclub.com/donations/start/hq"
+                href="https://airtable.com/appKfmTrC8b23hJNQ/shrUCpuTfSraCfmvu"
               >
                 Donate
                 <Text sx={{ display: ['none', 'inline-block'], ml: 2 }}>
-                  to Hack Club
+                  to Happy Hacking Space
                 </Text>
               </Button>
               <Text
@@ -195,9 +193,7 @@ export default function Donate({ sprig }) {
                 fontSize={2}
                 color="white"
               >
-                Your contribution is tax-deductible.
-                <br />
-                Hack Club is a 501(c)(3) nonprofit with the EIN 81-2908499.
+                Your contribution empowers Mesopotamian youth.
               </Text>
             </Container>
           </Box>
@@ -243,7 +239,7 @@ export default function Donate({ sprig }) {
             textAlign: 'center'
           }}
         >
-          Learn more about Hack Club
+          Learn more about Happy Hacking Space
         </Button>
       </Container>
       <Footer />

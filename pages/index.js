@@ -204,10 +204,10 @@ function Page({
     //   }
     // }
     // const timer = setTimeout(loadSlackData, 300)
-    
+
     // Just use fallback data and mark as loaded
     setLoadingStates(prev => ({ ...prev, slack: false }))
-    
+
     // return () => clearTimeout(timer)
   }, [])
 
@@ -247,10 +247,10 @@ function Page({
     //   }
     // }
     // const timer = setTimeout(loadGames, 1000)
-    
+
     // Just use fallback data and mark as loaded
     setLoadingStates(prev => ({ ...prev, games: false }))
-    
+
     // return () => clearTimeout(timer)
   }, [])
 
@@ -270,10 +270,10 @@ function Page({
     //   }
     // }
     // const timer = setTimeout(loadConsoleCount, 1200)
-    
+
     // Just use fallback data and mark as loaded
     setLoadingStates(prev => ({ ...prev, console: false }))
-    
+
     // return () => clearTimeout(timer)
   }, [])
 
@@ -372,7 +372,7 @@ function Page({
         description="Happy Hacking Space is a nonprofit network of hackers in Mesopotamia where people build the agency, the network, & the technical talent to think big & do big things in the world."
         image="https://cloud-lgl7kg862-hack-club-bot.vercel.app/0start__1_.png"
       /> */}
-     <Meta
+      <Meta
         as={Head}
         title="A Home for Hackers"
         description="Happy Hacking Space is a nonprofit network of hackers, crafters, explorers where people build the agency, the network, & the technical talent to think big & do big things in the world."
@@ -428,10 +428,9 @@ function Page({
           />
           {/* <Announcement
             width="90vw"
-            copy="This summer is yours for the making!"
-            caption="Get free Flipper Zeros, Framework Laptops, 3D Printers, and more. Join Summer of Making! Jun 16 - Aug 31."
-            href="https://summer.happyhacking.space/"
-            imgSrc="https://hc-cdn.hel1.your-objectstorage.com/s/v3/779a5d748938b66ae93a566cc9699e636b01d462_summerlogo.png"
+            copy="Happy Hacking Space has a physical space!"
+            caption={`Hacker Space is ${openorclosed ? 'Open' : 'Closed'}!`}
+            imgSrc=""
           /> */}
           <Box
             sx={{
@@ -470,7 +469,7 @@ function Page({
                   width: '100%'
                 }}
               >
-                We are 
+                We are
                 {/* <Comma>{apiData.slackData.total_members_count}</Comma>{' '} */}
                 <Text
                   sx={{
@@ -932,9 +931,9 @@ function Page({
             {/* <Athena /> */}
             {/* <Highway /> */}
             {/* <Shipwrecked /> */}
-            <Slack 
-              slackKey={uiState.slackKey} 
-              data={apiData.slackData} 
+            <Slack
+              slackKey={uiState.slackKey}
+              data={apiData.slackData}
               events={apiData.events}
               loading={loadingStates.slack}
             />
@@ -1069,13 +1068,13 @@ function Page({
                   gameImage1={uiState.gameImage1}
                   loading={loadingStates.games}
                 />
-                <Onboard 
-                  stars={apiData.stars?.onboard?.stargazerCount || 200} 
-                  delay={100} 
+                <Onboard
+                  stars={apiData.stars?.onboard?.stargazerCount || 200}
+                  delay={100}
                   loading={loadingStates.stars}
                 />
-                <Haxidraw 
-                  stars={apiData.stars?.blot?.stargazerCount || 300} 
+                <Haxidraw
+                  stars={apiData.stars?.blot?.stargazerCount || 300}
                   delay={100}
                   loading={loadingStates.stars}
                 />
@@ -1133,7 +1132,7 @@ function Page({
                 position: 'relative'
               }}
             > */}
-              {/* <Box>
+            {/* <Box>
                 <Text
                   variant="title"
                   as="h2"
@@ -1171,15 +1170,15 @@ function Page({
                   hackathons and after school coding clubs.
                 </Text>
               </Box> */}
-              {/* <Clubs /> */}
-              {/* <Hackathons
+            {/* <Clubs /> */}
+            {/* <Hackathons
                 delay={400}
                 data={hackathonsData}
                 stars={stars.hackathons.stargazerCount}
               /> */}
 
-              {/* <Events events={events} /> */}
-              {/* <HCB data={bankData} /> */}
+            {/* <Events events={events} /> */}
+            {/* <HCB data={bankData} /> */}
             {/* </Box> */}
           </Box>
         </Box>
@@ -1509,7 +1508,7 @@ function Page({
 export async function getStaticProps() {
   // Only load critical static data at build time
   const carouselCards = require('../lib/carousel.json')
-  
+
   // Load basic events data for initial page render (optional)
   let events = []
   try {

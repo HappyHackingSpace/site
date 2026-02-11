@@ -119,7 +119,7 @@ const PhotoRow = ({ photos }) => (
               height={200}
               width={300}
               alt="Happy Hacking Space students"
-              style={{ 
+              style={{
                 objectFit: 'cover',
                 display: 'block'
               }}
@@ -128,7 +128,7 @@ const PhotoRow = ({ photos }) => (
         ))}
       </Marquee>
     </Box>
-    
+
     {/* Desktop görünüm */}
     <Box sx={{ display: ['none', 'none', 'none', 'none', 'block'] }}>
       <Marquee velocity={20}>
@@ -146,7 +146,7 @@ const PhotoRow = ({ photos }) => (
               height={200}
               width={600}
               alt="Happy Hacking Space students"
-              style={{ 
+              style={{
                 objectFit: 'cover',
                 display: 'block'
               }}
@@ -507,7 +507,7 @@ const Map = () => {
           />
         </Box>
         <Text variant="caption">
-          What Hack Club could look like with your support
+          What Happy Hacking Space could look like with your support
         </Text>
       </Box>
     </Fade>
@@ -520,8 +520,7 @@ const Philanthropy = ({ posts = [] }) => {
       <Meta
         as={Head}
         title="Philanthropy"
-        description="Support Hack Club"
-        image="https://workshop-cards.hackclub.com/Philanthropy.png?theme=light&md=1&fontSize=250px&caption=&images="
+        description="Support Happy Hacking Space"
       />
       <ForceTheme theme="light" />
       <Nav color="white" />
@@ -563,17 +562,15 @@ const Philanthropy = ({ posts = [] }) => {
               >
                 Donate
                 <Text sx={{ display: ['none', 'inline-block'], ml: 2 }}>
-                  to Hack Club
+                  to Happy Hacking Space
                 </Text>
               </Button>
-              <Text
+<Text
                 sx={{ mt: 1, display: 'block', opacity: 0.8 }}
                 fontSize={2}
                 color="white"
               >
-                Your contribution is tax-deductible.
-                <br />
-                Hack Club is a 501(c)(3) nonprofit with the EIN 81-2908499.
+                Your contribution empowers Mesopotamian youth.
               </Text>
             </Fade>
           </Box>
@@ -702,7 +699,7 @@ const Philanthropy = ({ posts = [] }) => {
           <br />
           <Fade>
             <Text as="p">
-              Led by hackers, crafters, explorers, Happy Hacking Space already reaches thousands, 
+              Led by hackers, crafters, explorers, Happy Hacking Space already reaches thousands,
               and represents the largest technical network in the Mesopotamia. Each day, new projects are shipped, new lines
               of code are written, and new friendships are forged through
               collaborative, problem-solving technical projects happening at
@@ -713,7 +710,7 @@ const Philanthropy = ({ posts = [] }) => {
           <Fade>
             <Text as="p">
               Happy Hacking Space is always free for hackers and with your support, Happy Hacking Space
-               can grow to hundreds of thousands of hackers, bringing
+              can grow to hundreds of thousands of hackers, bringing
               free computer science education, a hacker mindset, and an equal
               shot at success to every hacker, regardless of where they’re
               from, how they identify, or what their parents do.
@@ -756,10 +753,10 @@ const Philanthropy = ({ posts = [] }) => {
               />
             </Fade>
             <Fade delay={120}>
-              <HappyHacker 
+              <HappyHacker
                 photo="../../team/arjin.jpg"
                 quote="A great beacon for the lost."
-                info="Arjin, Diyarbakir"               
+                info="Arjin, Diyarbakir"
               />
             </Fade>
             <Fade delay={150}>
