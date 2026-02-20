@@ -12,16 +12,16 @@ import { set } from 'lodash';
 export async function getStaticProps() {
   const host = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://hackclub.com';
   const res = await fetch(`${host}/api/bin/gallery/posts/`);
-  const posts = await res.json();
+  const posts = await res.json().catch(() => []);
 
-  const filteredPosts = await posts.filter(post => post.status === 'Accepted' && post.parts && !post.hide);
+  const filteredPosts = Array.isArray(posts) ? posts.filter(post => post.status === 'Accepted' && post.parts && !post.hide) : [];
 
   //Tags
 
   const resTag = await fetch(`${host}/api/bin/gallery/tags/`);
-  const tags = await resTag.json();
-  
-  const filteredTags = tags.filter(tag => !tag.hide);
+  const tags = await resTag.json().catch(() => []);
+
+  const filteredTags = Array.isArray(tags) ? tags.filter(tag => !tag.hide) : [];
   return {
     props: { posts: filteredPosts, 
              tags: filteredTags
