@@ -129,10 +129,10 @@ const Footer = ({
           </NextLink>
         </Box>
         <Box sx={{ gridColumn: ['span 2', 'span 1'] }}>
-          <NextLink href="/" passHref legacyBehavior>
-            <a style={{ display: 'inline-block' }} aria-label="Go to homepage">
-              <Logo aria-label="Happy Hacking Space logo" width={128} height={45} dark={dark} />
-            </a>
+          <NextLink href="/" style={{ display: 'inline-block' }} aria-label="Go to homepage">
+
+            <Logo aria-label="Happy Hacking Space logo" width={128} height={45} dark={dark} />
+
           </NextLink>
           <Grid
             columns={[8, 4]}

@@ -15,7 +15,6 @@ export default function Apply() {
     <>
       <Meta as={Head} title="Apply for HCB" />
       <ForceTheme theme="light" />
-
       <MultiStepProvider>
         <Grid
           columns={[null, null, 2]}
@@ -40,7 +39,9 @@ export default function Apply() {
           >
             {/* vertically align h1 to top of form */}
             <Box as="header" sx={{ mt: [null, 3], mb: 'auto' }}>
-              <Link href="/fiscal-sponsorship" passHref legacyBehavior>
+              <Link href="/fiscal-sponsorship">
+                {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */
+                }
                 <Text
                   as="a"
                   variant="subheadline"
@@ -102,5 +103,5 @@ export default function Apply() {
       </MultiStepProvider>
       <Watermark />
     </>
-  )
+  );
 }

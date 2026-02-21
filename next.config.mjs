@@ -423,7 +423,7 @@ import withMDX from '@next/mdx'
 import withTM from 'next-transpile-modules'
 
 const withMDXConfig = withMDX({ extension: /\.mdx?$/ })
-const withAnimeJS = withTM(['animejs'])
+const withAnimeJS = withTM(['animejs', '@happyhackingspace/markdown'])
 
 export default million.next(withAnimeJS(withMDXConfig(nextConfig)), {
   auto: true,

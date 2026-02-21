@@ -99,7 +99,6 @@ const Onboard = dynamic(() => import('../components/index/cards/communityHub'), 
 // Unused components removed to reduce bundle size
 // Available for dynamic import when needed:
 // - MailingList, Slack, Som, Athena, Highway, Shipwrecked
-/** @jsxImportSource theme-ui */
 
 function Page({
   carouselCards,
@@ -430,7 +429,6 @@ function Page({
             width="90vw"
             copy="Happy Hacking Space has a physical space!"
             caption={`Hacker Space is ${openorclosed ? 'Open' : 'Closed'}!`}
-            imgSrc=""
           /> */}
           <Box
             sx={{

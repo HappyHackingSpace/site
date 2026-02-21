@@ -89,7 +89,7 @@ const Flag = () => {
   const logoSrc = 'https://assets.happyhacking.space/flag-standalone.svg'
 
   return (
-    <Link href="/" passHref>
+    <Link href="/">
       <Base
         scrolled={effectiveScrolled}
         style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}

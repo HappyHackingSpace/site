@@ -28,7 +28,7 @@ export default function SlackCTA() {
           </Text>
           <br />
           <br />
-          <NextLink href="/" passHref>
+          <NextLink href="/">
             <Button bg="cyan" as="a">
               Learn more
             </Button>
@@ -36,5 +36,5 @@ export default function SlackCTA() {
         </Box>
       </Grid>
     </Box>
-  )
+  );
 }

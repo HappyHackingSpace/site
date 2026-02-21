@@ -103,7 +103,7 @@ const HackathonGrant = () => {
               <Flex
                 sx={{ justifyContent: 'center', alignItems: 'center', mb: 2 }}
               >
-                <NextLink href="https://hackclub.com" passHref>
+                <NextLink href="https://hackclub.com">
                   <Box
                     as="a"
                     width={64}
@@ -432,7 +432,7 @@ const HackathonGrant = () => {
       </Card>
       <Footer dark key="footer" />
     </>
-  )
+  );
 }
 
 export default HackathonGrant

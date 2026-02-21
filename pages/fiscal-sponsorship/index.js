@@ -298,7 +298,9 @@ export default function Page() {
               alignItems: ['start', 'center']
             }}
           >
-            <Link href="/fiscal-sponsorship/apply" passHref legacyBehavior>
+            <Link href="/fiscal-sponsorship/apply">
+              {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */
+              }
               <Button
                 as="a"
                 variant="lg"
@@ -341,7 +343,9 @@ export default function Page() {
               alignItems: 'center'
             }}
           >
-            <Link href="/fiscal-sponsorship/directory" passHref legacyBehavior>
+            <Link href="/fiscal-sponsorship/directory">
+              {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */
+              }
               <Button
                 as="a"
                 variant="lg"
@@ -361,7 +365,6 @@ export default function Page() {
         </Container>
       </Box>
       <Features />
-
       <Box id="fees" as="section" sx={{ position: 'relative', py: 5 }}>
         <Container>
           <Grid columns={[null, null, 2]} gap={[4, 5]}>
@@ -514,7 +517,9 @@ export default function Page() {
             </Heading>
             <p>
               As{' '}
-              <Link href="/" passHref legacyBehavior>
+              <Link href="/">
+                {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */
+                }
                 <UILink>Hack Club</UILink>
               </Link>{' '}
               grew, we needed a way to empower our members. We currently have
@@ -563,7 +568,6 @@ export default function Page() {
           </div>
         </Grid>
       </Container>
-
       <Box
         as="section"
         id="apply"
@@ -598,7 +602,9 @@ export default function Page() {
             gap: 3
           }}
         >
-          <Link href="/fiscal-sponsorship/apply" passHref legacyBehavior>
+          <Link href="/fiscal-sponsorship/apply">
+            {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */
+            }
             <Button
               as="a"
               variant="lg"
@@ -625,5 +631,5 @@ export default function Page() {
       <ContactBanner sx={{ justifyContent: 'center' }} />
       <Footer />
     </>
-  )
+  );
 }

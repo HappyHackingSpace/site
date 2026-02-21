@@ -68,15 +68,17 @@ const MailingList = () => {
         'https://api.github.com/repos/hackclub/leaders-newsletter/contents/updates'
       )
         .then(response => response.json())
-        .then(data => data.sort((a, b) => b.name.localeCompare(a.name))) // Makes sure we only get the latest two newsletters
+        .then(data => {
+          if (!Array.isArray(data)) return []; // Handle rate limiting gracefully
+          return data.sort((a, b) => b.name.localeCompare(a.name));
+        })
         .then(data => data.slice(0, 2))
-        .then(data => Promise.all(data.map(item => fetch(item.download_url)))) // Makes a separate fetch request for the content of each newsletter
+        .then(data => Promise.all(data.map(item => fetch(item.download_url))))
         .then(responses =>
           Promise.all(responses.map(response => response.text()))
         )
         .then(markdownArray => {
-          // Since markdownToHtml import is causing issues, just strip HTML manually
-          return markdownArray.map(markdown => 
+          return markdownArray.map(markdown =>
             markdown.replace(/<[^>]*>/g, '').replace(/The Hackening/g, '')
           )
         }),
@@ -85,9 +87,13 @@ const MailingList = () => {
         'https://api.github.com/repos/hackclub/leaders-newsletter/contents/updates'
       )
         .then(response => response.json())
-        .then(data => data.sort((a, b) => b.name.localeCompare(a.name)))
-        .then(data => data.map(item => item.name.split('.')[0])) // Grabs the name and gets rid of the file extension
+        .then(data => {
+          if (!Array.isArray(data)) return []; // Handle rate limiting gracefully
+          return data.sort((a, b) => b.name.localeCompare(a.name));
+        })
+        .then(data => data.map(item => item.name.split('.')[0]))
     ]).then(([finalHtml, names]) => setData({ finalHtml, names }))
+      .catch(err => console.error("Error fetching mailing list data:", err))
   }, [])
 
   return (
@@ -137,7 +143,7 @@ const MailingList = () => {
                 as="p"
               >
                 We&apos;ll send you an email no more than once a month, when we
-                work on something cool for you. 
+                work on something cool for you.
                 <br />
                 {/* Check out our{' '}
                 <Link

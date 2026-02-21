@@ -11,13 +11,14 @@
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
+    "jsx": "preserve",
+    "jsxImportSource": "theme-ui",
     "incremental": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve"
+    "isolatedModules": true
   },
   "include": [
     "next-env.d.ts",

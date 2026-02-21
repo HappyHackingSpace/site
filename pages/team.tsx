@@ -44,7 +44,6 @@ export default function Team({ team }) {
     <>
       <Box as="main" key="main">
         <ForceTheme theme="light" />
-        {/* @ts-expect-error -- TODO: fix this */}
         <Nav />
         <Meta
           as={Head}
@@ -119,7 +118,7 @@ export default function Team({ team }) {
                   />
                   <Bio
                     img="/team/omar.jpg"
-                    name="Omar Kurt"  
+                    name="Omar Kurt"
                     teamRole="Co-founder & Ninja"
                     text=""
                     pronouns="he/him"

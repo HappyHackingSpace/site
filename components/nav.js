@@ -9,7 +9,9 @@ import ScrollLock from 'react-scrolllock'
 import NextLink from 'next/link'
 
 
-const NavLinkText = styled.span`
+const NavLinkText = styled('span', {
+  shouldForwardProp: prop => !['isMobile', 'scrolled', 'color'].includes(prop)
+})`
   display: block;
   color: ${props => props.isMobile ? theme.colors['slate'] : (props.scrolled ? '#374151' : props.color || 'white')};
   margin-right: ${theme.space[3]}px;
@@ -55,7 +57,7 @@ const fixed = props =>
   `
 
 const Root = styled(Box, {
-  shouldForwardProp: prop => !['bgColor', 'scrolled', 'toggled'].includes(prop)
+  shouldForwardProp: prop => !['bgColor', 'scrolled', 'toggled', 'forceBurgerWhite', 'dark', 'fixed', 'transparent', 'unfixed'].includes(prop)
 })`
   position: fixed;
   top: 0;
@@ -129,7 +131,7 @@ const layout = props =>
         }
       `
 const NavBar = styled(Box, {
-  shouldForwardProp: prop => !['isMobile', 'toggled'].includes(prop)
+  shouldForwardProp: prop => !['isMobile', 'toggled', 'color', 'dark', 'scrolled', 'showDoor'].includes(prop)
 })`
   display: none;
   ${layout};
@@ -272,14 +274,13 @@ Header.defaultProps = {
 const Navigation = props => {
   return (
     <NavBar role="navigation" {...props}>
-
       <NextLink href="/philosophy">
         <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Philosophy</NavLinkText>
       </NextLink>
-      <NextLink href="https://discord.happyhacking.space" passHref legacyBehavior>
-        <a target="_blank" rel="noopener noreferrer">
-          <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Community</NavLinkText>
-        </a>
+      <NextLink href="https://discord.happyhacking.space" target="_blank" rel="noopener noreferrer">
+
+        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Community</NavLinkText>
+
       </NextLink>
       <NextLink href="/events">
         <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Events</NavLinkText>
@@ -300,7 +301,7 @@ const Navigation = props => {
       <NavLinkText isMobile={props.isMobile}>Toolbox</NavLinkText>
     </NextLink> */}
     </NavBar>
-  )
+  );
 }
 
 export default Header
