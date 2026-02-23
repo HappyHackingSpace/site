@@ -6,20 +6,19 @@ const org = {
   '@type': 'Organization',
   name: 'Happy Hacking Space',
   url: 'https://happyhacking.space/',
-  logo: 'https://hackclub.com/social.png',
+  logo: 'https://assets.happyhacking.space/flag-standalone.svg',
   sameAs: [
-    'https://twitter.com/hackclub',
-    'https://github.com/hackclub',
-    'https://www.instagram.com/starthackclub',
-    'https://www.facebook.com/Hack-Club-741805665870458',
-    'https://www.youtube.com/channel/UCQzO0jpcRkP-9eWKMpJyB0w'
+    'https://x.com/happyhackings',
+    'https://github.com/happyhackingspace',
+    'https://www.instagram.com/happyhackingspace',
+    'https://www.youtube.com/@HappyHackingSpace'
   ],
   contactPoint: [
     {
       '@type': 'ContactPoint',
-      email: 'team@hackclub.com',
+      email: 'team@happyhacking.space',
       contactType: 'customer support',
-      url: 'https://hackclub.com/'
+      url: 'https://happyhacking.space/'
     }
   ]
 }

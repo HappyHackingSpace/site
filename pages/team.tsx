@@ -397,7 +397,7 @@ export default function Team({ team }) {
           </Container>
         </Box>
       </Box>
-      <Footer light key="footer" />
+      <Footer light="true" key="footer" />
     </>
   )
 }

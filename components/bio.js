@@ -28,7 +28,7 @@ export default function Bio({ popup = true, spanTwo = false, ...props }) {
           position: 'relative'
         }}
         as={href && !text ? 'a' : 'div'}
-        href={href}
+        href={href || null}
         target="_blank"
         onClick={() => {
           if (text && popup) {
@@ -154,7 +154,7 @@ export default function Bio({ popup = true, spanTwo = false, ...props }) {
                 mb={0}
                 color="black"
                 as={'a'}
-                href={href}
+                href={href || null}
                 target="_blank"
                 sx={{ transform: 'translateX(-2px)' }}
               >
