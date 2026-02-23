@@ -329,17 +329,17 @@ export default function Team({ team }) {
             </Box>
             <br />
             <Box sx={{ fontWeight: 'bold', textAlign: 'center' }}>
-              <Link href="/acknowledged/">
+              <Link href="/acknowledged/" style={{ textDecoration: 'none' }}>
                 <Box sx={{ cursor: 'pointer' }}>
                   <Text
                     variant="title"
                     color="orange"
-                    sx={{ lineHeight: '1em', fontSize: [4, 5, 6], textAlign: 'center', textDecoration: 'underline' }}
+                    sx={{ lineHeight: '1em', fontSize: [4, 5, 6], textAlign: 'center', textDecoration: 'underline', textDecorationColor: 'orange', textUnderlineOffset: '6px' }}
                     as="h2"
                   >
                     Acknowledgements
                   </Text>
-                  <Text sx={{ color: 'muted', fontSize: 2, mt: 2 }}>
+                  <Text sx={{ color: 'muted', fontSize: 2, mt: 2, textDecoration: 'none' }}>
                     Thank you to everyone who helped shape Happy Hacking Space into what it is today...
                   </Text>
                 </Box>
