@@ -106,7 +106,7 @@ import ANNOUNCEMENTS_DATA from '../lib/announcements.json'
 
 function getActiveAnnouncements() {
   const now = new Date()
-  return ANNOUNCEMENTS_DATA.filter(a => new Date(a.expiresAt) > now)
+  return ANNOUNCEMENTS_DATA.filter(a => !a.disabled && new Date(a.expiresAt) > now)
 }
 
 function Page({
@@ -1564,7 +1564,7 @@ function Page({
 export async function getStaticProps() {
   // Only load critical static data at build time
   const carouselCards = require('../lib/carousel.json')
-  const ctaCards = require('../lib/cta.json')
+  const ctaCards = require('../lib/cta.json').filter(c => !c.disabled)
 
   // Load basic events data for initial page render (optional)
   let events = []

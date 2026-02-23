@@ -1,15 +1,16 @@
 [
   {
     "type": "static",
+    "disabled": true,
     "title": "OSINT CTF",
     "logo": "/project-icon/osint-ctf-logo.svg",
     "background": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
     "gridBackground": true,
     "stickerImage": "/project-icon/osint-sticker.svg",
     "stickerImageScale": 1,
-    "description": "Test your open-source intelligence skills in our capture the flag challenge!",
+    "description": "Test your open-source intelligence skills in our capture the flag challenge. Are you ready?",
     "descriptionColor": "white",
-    "buttonText": "COMING SOON",
+    "buttonText": "START HUNTING",
     "buttonColor": "#e94560",
     "link": "https://hhs.ninja"
   },

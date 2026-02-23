@@ -1,9 +1,10 @@
 [
   {
     "id": "hhs-osint-ctf",
+    "disabled": true,
     "expiresAt": "2026-03-31",
-    "copy": "HHS OSINT CTF is coming soon!",
-    "caption": "Test your open-source intelligence skills in our capture the flag challenge. Solve real-world OSINT puzzles and compete for prizes!",
+    "copy": "HHS OSINT CTF is live!",
+    "caption": "Test your open-source intelligence skills in our capture the flag challenge. Start hunting now!",
     "href": "https://hhs.ninja",
     "imgSrc": "/project-icon/osint-sticker.svg",
     "imgAlt": "OSINT CTF"
