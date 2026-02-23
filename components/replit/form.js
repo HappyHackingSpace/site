@@ -3,7 +3,6 @@ import { Box, Button, Card, Link, Input, Text, Flex, Image } from 'theme-ui'
 import Icon from '@hackclub/icons'
 import JSConfetti from 'js-confetti'
 import { FilloutStandardEmbed } from '@fillout/react'
-import '@fillout/react/style.css'
 
 import theme from '../../lib/theme'
 

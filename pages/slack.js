@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { Box, Container, Heading, Text } from 'theme-ui'
 import { useRef } from 'react'
 import { ScrollMenu } from 'react-horizontal-scrolling-menu'
-import 'react-horizontal-scrolling-menu/dist/styles.css'
 
 import { thousands } from '../lib/members'
 import projects from '../components/slack/projects'

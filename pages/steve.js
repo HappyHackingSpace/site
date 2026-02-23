@@ -20,7 +20,6 @@ import Tilt from '../components/tilt'
 import Ticker from 'react-ticker'
 import { useState, useEffect } from 'react'
 import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
 
 const StevePage = () => {
   const [startDate, setStartDate] = useState(null)
