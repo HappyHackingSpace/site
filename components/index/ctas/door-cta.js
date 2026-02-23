@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react'
+import dynamic from 'next/dynamic'
 import { Box, Text, Card, Button } from 'theme-ui'
 import { keyframes } from '@emotion/react'
+import usePrefersReducedMotion from '../../../lib/use-prefers-reduced-motion'
+
+const DoorScene = dynamic(() => import('./door-scene'), { ssr: false })
 
 const DOOR_STATUS_URL =
   'https://raw.githubusercontent.com/HappyHackingSpace/.github/refs/heads/main/scripts/.door_status_cache/last_status.json'
@@ -15,27 +19,29 @@ const blink = keyframes({
   '50%': { opacity: 0 }
 })
 
-const openMessages = [
-  "Hackers detected inside. Come join the fun.",
-  "The space is alive! Pull up a chair and hack away.",
-  "Door's open, Wi-Fi's hot, coffee's brewing.",
-  "We're in! Come break things (responsibly)."
-]
+function useTimeOfDay() {
+  const [isNight, setIsNight] = useState(() => {
+    const h = new Date().getHours()
+    return h >= 20 || h < 6
+  })
 
-const closedMessages = [
-  "Gone hacking. BRB.",
-  "The space is recharging. Even hackers sleep.",
-  "Door locked. Probably out capturing flags.",
-  "Offline mode. Check back soon."
-]
+  useEffect(() => {
+    const check = () => {
+      const h = new Date().getHours()
+      setIsNight(h >= 20 || h < 6)
+    }
+    const interval = setInterval(check, 60_000)
+    return () => clearInterval(interval)
+  }, [])
 
-function pickMessage(messages) {
-  const hour = new Date().getHours()
-  return messages[hour % messages.length]
+  return isNight
 }
 
+// million-ignore
 export default function DoorCTA() {
   const [isOpen, setIsOpen] = useState(null)
+  const isNight = useTimeOfDay()
+  const prefersReducedMotion = usePrefersReducedMotion()
 
   useEffect(() => {
     const fetchStatus = async () => {
@@ -53,35 +59,36 @@ export default function DoorCTA() {
   }, [])
 
   const loading = isOpen === null
-  const bg = loading
-    ? 'linear-gradient(135deg, #374151 0%, #4b5563 100%)'
-    : isOpen
-      ? 'linear-gradient(135deg, #047857 0%, #059669 50%, #10b981 100%)'
-      : 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)'
-
-  const emoji = loading ? '🔍' : isOpen ? '🔓' : '🔒'
   const title = loading
     ? 'Scanning...'
     : isOpen
-      ? 'We\'re Open!'
-      : 'Space Locked'
+      ? 'Happy Hacking!'
+      : 'Space is Closed'
   const description = loading
     ? 'Pinging the hacker space door...'
     : isOpen
-      ? pickMessage(openMessages)
-      : pickMessage(closedMessages)
+      ? 'The door is open, come join us!'
+      : 'No one is currently at the place.'
   const statusText = loading
     ? 'probing...'
     : isOpen
       ? 'OPEN'
       : 'CLOSED'
 
+  const dayBg = 'linear-gradient(180deg, #87CEEB, #98D8C8)'
+  const nightBg = 'linear-gradient(135deg, #141440, #1e2d50, #1a4070)'
+  const bg = isNight ? nightBg : dayBg
+
+  const dayOverlay =
+    'linear-gradient(180deg, transparent 20%, rgba(0,0,0,0.55) 100%)'
+  const nightOverlay =
+    'linear-gradient(180deg, transparent 30%, rgba(15,15,50,0.45) 100%)'
+  const overlay = isNight ? nightOverlay : dayOverlay
+
   return (
     <Box
       as="a"
-      href="https://door.happyhacking.space"
-      target="_blank"
-      rel="noreferrer"
+      href="/contact"
       sx={{
         position: 'relative',
         display: 'inline-block',
@@ -98,14 +105,44 @@ export default function DoorCTA() {
         }
       }}
     >
+      {/* Layer 0: CSS background gradient */}
+      <Box
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          background: bg,
+          transition: 'background 1s ease',
+          zIndex: 0
+        }}
+      />
+
+      {/* Layer 1: 3D scene */}
+      {!prefersReducedMotion && (
+        <Box sx={{ position: 'absolute', inset: 0, zIndex: 1 }}>
+          <DoorScene isOpen={isOpen} isNight={isNight} />
+        </Box>
+      )}
+
+      {/* Layer 2: Gradient overlay — transparent top, opaque bottom */}
+      <Box
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          background: overlay,
+          transition: 'background 1s ease',
+          zIndex: 2
+        }}
+      />
+
+      {/* Layer 3: UI content — pushed to bottom */}
       <Card
         sx={{
-          background: bg,
-          transition: 'background 0.5s ease',
+          background: 'transparent',
           position: 'relative',
           color: 'white',
           width: ['100%', '100%', '340px'],
           minWidth: ['100%', '100%', 'initial'],
+          minHeight: ['220px', '260px', '300px'],
           padding: [
             '16px !important',
             '20px !important',
@@ -119,7 +156,9 @@ export default function DoorCTA() {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
+          justifyContent: 'flex-end',
           alignItems: 'flex-start',
+          zIndex: 3,
           '&:hover': { cursor: 'pointer' }
         }}
       >
@@ -162,27 +201,15 @@ export default function DoorCTA() {
           <Text sx={{ ml: 1 }}>door@hhs:~$</Text>
         </Box>
 
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-          <Text
-            sx={{
-              fontSize: ['28px', '36px', '42px'],
-              lineHeight: 1,
-              transition: 'transform 0.3s ease',
-              '&:hover': { transform: 'rotate(-10deg)' }
-            }}
-          >
-            {emoji}
-          </Text>
-          <Text
-            sx={{
-              fontSize: ['22px', '26px', '30px'],
-              fontWeight: 'bold',
-              fontFamily: 'heading'
-            }}
-          >
-            {title}
-          </Text>
-        </Box>
+        <Text
+          sx={{
+            fontSize: ['22px', '26px', '30px'],
+            fontWeight: 'bold',
+            fontFamily: 'heading'
+          }}
+        >
+          {title}
+        </Text>
         <Text
           as="p"
           sx={{
