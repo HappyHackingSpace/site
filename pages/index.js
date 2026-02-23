@@ -369,13 +369,11 @@ function Page({
         as={Head}
         title="A Home for Hackers"
         description="Happy Hacking Space is a nonprofit network of hackers in Mesopotamia where people build the agency, the network, & the technical talent to think big & do big things in the world."
-        image="https://cloud-lgl7kg862-hack-club-bot.vercel.app/0start__1_.png"
       /> */}
       <Meta
         as={Head}
         title="A Home for Hackers"
         description="Happy Hacking Space is a nonprofit network of hackers, crafters, explorers where people build the agency, the network, & the technical talent to think big & do big things in the world."
-        image="https://cloud-lgl7kg862-hack-club-bot.vercel.app/0start__1_.png"
       />
       <Head>
         <meta
