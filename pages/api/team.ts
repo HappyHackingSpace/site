@@ -21,6 +21,7 @@ export async function fetchTeam() {
   const acknowledged: TeamMember[] = []
 
   for (const member of teamMembers as TeamMember[]) {
+    /*
     if (process.env.SLACK_API_TOKEN) {
       const formData = new FormData()
       formData.append('token', process.env.SLACK_API_TOKEN)
@@ -44,6 +45,7 @@ export async function fetchTeam() {
         console.warn('Not found:', member.slackId)
       }
     }
+    */
 
     if (member.acknowledged) {
       acknowledged.push(member)

@@ -172,9 +172,9 @@ export default function Team({ team }) {
                     Hacker Resources Team
                   </Text>
                   <Grid columns={[1, null, 2]} gap={2}>
-                    {team.current
-                      ?.filter(member => member.department === 'HQ')
-                      .sort((a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name))
+                    {(team.current || [])
+                      .filter(member => member.department === 'HQ')
+                      .sort((a: { name: string }, b: { name: string }) => (a.name || '').localeCompare(b.name || ''))
                       .map(member => (
                         <Bio
                           img={member.avatar}
@@ -208,8 +208,8 @@ export default function Team({ team }) {
                     HHS Campus Division
                   </Text>
                   <Grid columns={[1, null, 2]} gap={2}>
-                    {team.current
-                      ?.filter(member => member.department === 'HHSCD')
+                    {(team.current || [])
+                      .filter(member => member.department === 'HHSCD')
                       .map(member => (
                         <Bio
                           img={member.avatar}
@@ -243,8 +243,8 @@ export default function Team({ team }) {
                     HHS High School Division
                   </Text>
                   <Grid columns={[1, null, 2]} gap={2}>
-                    {team.current
-                      ?.filter(member => member.department === 'HHSHD')
+                    {(team.current || [])
+                      .filter(member => member.department === 'HHSHD')
                       .map(member => (
                         <Bio
                           img={member.avatar}
@@ -281,8 +281,8 @@ export default function Team({ team }) {
               <Grid columns={[1, null, 2]} gap={3}>
                 <CommunityTeamBox title="Moderation">
                   <Grid columns={[1, null, 2]} gap={2} m={10}>
-                    {team.current
-                      ?.filter(member => member.department === 'Moderation')
+                    {(team.current || [])
+                      .filter(member => member.department === 'Moderation')
                       .map(member => (
                         <Bio
                           img={member.avatar}
@@ -299,8 +299,8 @@ export default function Team({ team }) {
                 </CommunityTeamBox>
                 <CommunityTeamBox title="Virtual Events">
                   <Grid columns={[1, null, 2]} gap={2} m={10}>
-                    {team.current
-                      ?.filter(member => member.department === 'Events')
+                    {(team.current || [])
+                      .filter(member => member.department === 'Events')
                       .map(member => (
                         <Bio
                           img={member.avatar}
@@ -317,8 +317,8 @@ export default function Team({ team }) {
                 </CommunityTeamBox>
                 <CommunityTeamBox title="Newspaper">
                   <Grid columns={[1, null, 2]} gap={2} m={10}>
-                    {team.current
-                      ?.filter(member => member.department === 'Newspaper')
+                    {(team.current || [])
+                      .filter(member => member.department === 'Newspaper')
                       .map(member => (
                         <Bio
                           img={member.avatar}
@@ -335,8 +335,8 @@ export default function Team({ team }) {
                 </CommunityTeamBox>
                 <CommunityTeamBox title="Welcomers">
                   <Grid columns={[1, null, 2]} gap={2} m={10}>
-                    {team.current
-                      ?.filter(member => member.department === 'Welcoming')
+                    {(team.current || [])
+                      .filter(member => member.department === 'Welcoming')
                       .map(member => (
                         <Bio
                           img={member.avatar}
@@ -382,7 +382,7 @@ export default function Team({ team }) {
               </Text>
             </Box>
             <Grid columns={[1, null, 2, 4]} gap={2}>
-              {team.acknowledged?.map(member => (
+              {(team.acknowledged || []).map(member => (
                 <Bio
                   img={member.avatar}
                   name={member.name}
@@ -407,6 +407,6 @@ export const getServerSideProps = async () => {
     const team = await fetchTeam()
     return { props: { team } }
   } catch (e) {
-    return { props: { team: {} } }
+    return { props: { team: { current: [], acknowledged: [] } } }
   }
 }
