@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 200">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a2a4a"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="bellyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3a3a5c"/>
+      <stop offset="100%" style="stop-color:#2a2a4a"/>
+    </linearGradient>
+    <linearGradient id="screenGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4cc9f0"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+    <radialGradient id="eyeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="60%" style="stop-color:#e94560"/>
+      <stop offset="100%" style="stop-color:#b8001f"/>
+    </radialGradient>
+    <filter id="owlShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Shadow under owl -->
+  <ellipse cx="90" cy="192" rx="50" ry="8" fill="rgba(0,0,0,0.2)"/>
+
+  <!-- Tail feathers -->
+  <ellipse cx="70" cy="170" rx="12" ry="20" fill="#1a1a2e" transform="rotate(-15 70 170)"/>
+  <ellipse cx="110" cy="170" rx="12" ry="20" fill="#1a1a2e" transform="rotate(15 110 170)"/>
+
+  <!-- Body -->
+  <ellipse cx="90" cy="130" rx="48" ry="58" fill="url(#bodyGrad)" filter="url(#owlShadow)"/>
+
+  <!-- Belly pattern -->
+  <ellipse cx="90" cy="140" rx="32" ry="40" fill="url(#bellyGrad)"/>
+  <!-- Belly chevrons -->
+  <path d="M72 120 L90 128 L108 120" stroke="#4a4a6a" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <path d="M72 130 L90 138 L108 130" stroke="#4a4a6a" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <path d="M75 140 L90 148 L105 140" stroke="#4a4a6a" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <path d="M78 150 L90 158 L102 150" stroke="#4a4a6a" stroke-width="1.5" fill="none" opacity="0.4"/>
+
+  <!-- Head -->
+  <ellipse cx="90" cy="65" rx="42" ry="38" fill="url(#bodyGrad)"/>
+
+  <!-- Ear tufts -->
+  <polygon points="55,40 48,12 68,38" fill="#2a2a4a"/>
+  <polygon points="52,38 46,14 65,36" fill="#3a3a5c"/>
+  <polygon points="125,40 132,12 112,38" fill="#2a2a4a"/>
+  <polygon points="128,38 134,14 115,36" fill="#3a3a5c"/>
+
+  <!-- Face disc -->
+  <ellipse cx="90" cy="68" rx="34" ry="30" fill="#2a2a4a"/>
+
+  <!-- Eye sockets -->
+  <circle cx="72" cy="62" r="18" fill="#1a1a2e"/>
+  <circle cx="108" cy="62" r="18" fill="#1a1a2e"/>
+
+  <!-- Eye rings (like night vision goggles) -->
+  <circle cx="72" cy="62" r="16" fill="none" stroke="#e94560" stroke-width="2" opacity="0.6"/>
+  <circle cx="108" cy="62" r="16" fill="none" stroke="#e94560" stroke-width="2" opacity="0.6"/>
+
+  <!-- Eyes -->
+  <circle cx="72" cy="62" r="12" fill="url(#eyeGlow)"/>
+  <circle cx="108" cy="62" r="12" fill="url(#eyeGlow)"/>
+
+  <!-- Pupils -->
+  <circle cx="75" cy="60" r="5" fill="#0a0a1a"/>
+  <circle cx="111" cy="60" r="5" fill="#0a0a1a"/>
+
+  <!-- Eye shine -->
+  <circle cx="77" cy="57" r="2.5" fill="white" opacity="0.9"/>
+  <circle cx="113" cy="57" r="2.5" fill="white" opacity="0.9"/>
+  <circle cx="72" cy="64" r="1.5" fill="white" opacity="0.4"/>
+  <circle cx="108" cy="64" r="1.5" fill="white" opacity="0.4"/>
+
+  <!-- Goggle bridge -->
+  <path d="M84 62 Q90 58 96 62" stroke="#e94560" stroke-width="2.5" fill="none" opacity="0.6"/>
+
+  <!-- Beak -->
+  <path d="M84 75 L90 84 L96 75 Z" fill="#ff8c37"/>
+  <path d="M86 75 L90 80 L94 75 Z" fill="#ffb347"/>
+
+  <!-- Laptop -->
+  <rect x="52" y="148" rx="4" ry="4" width="76" height="28" fill="#2a2a4a" stroke="#3a3a5c" stroke-width="1"/>
+  <!-- Screen -->
+  <rect x="56" y="151" rx="2" ry="2" width="68" height="18" fill="url(#screenGlow)" opacity="0.8"/>
+  <!-- Code on screen -->
+  <text x="60" y="161" font-family="monospace" font-size="6" fill="#33d6a6" opacity="0.9">$ nmap -sV</text>
+  <text x="60" y="167" font-family="monospace" font-size="5" fill="#e94560" opacity="0.7">found: 3 hosts</text>
+  <!-- Keyboard dots -->
+  <rect x="58" y="172" rx="1" ry="1" width="64" height="2" fill="#3a3a5c"/>
+
+  <!-- Wings/arms on laptop -->
+  <path d="M52 135 Q35 145 45 158 Q48 155 52 152" fill="#2a2a4a"/>
+  <path d="M128 135 Q145 145 135 158 Q132 155 128 152" fill="#2a2a4a"/>
+
+  <!-- Feet -->
+  <path d="M72 180 L65 190 M72 180 L72 190 M72 180 L79 190" stroke="#ff8c37" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M108 180 L101 190 M108 180 L108 190 M108 180 L115 190" stroke="#ff8c37" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

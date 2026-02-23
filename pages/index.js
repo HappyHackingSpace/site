@@ -96,12 +96,22 @@ const Onboard = dynamic(() => import('../components/index/cards/communityHub'), 
   ssr: false
 })
 
+const CTAS = dynamic(() => import('../components/index/ctas'), { ssr: false })
+
 // Unused components removed to reduce bundle size
 // Available for dynamic import when needed:
 // - MailingList, Slack, Som, Athena, Highway, Shipwrecked
 
+import ANNOUNCEMENTS_DATA from '../lib/announcements.json'
+
+function getActiveAnnouncements() {
+  const now = new Date()
+  return ANNOUNCEMENTS_DATA.filter(a => new Date(a.expiresAt) > now)
+}
+
 function Page({
   carouselCards,
+  ctaCards,
   events: initialEvents
 }) {
   // Client-side API data states for async loading
@@ -128,6 +138,9 @@ function Page({
     console: true,
     hackathons: true
   })
+
+  // Pick a random active announcement on client to avoid hydration mismatches
+  const [announcement, setAnnouncement] = useState(null)
 
   // Optimize UI state management for better performance
   const [uiState, setUiState] = useState({
@@ -322,6 +335,15 @@ function Page({
     }
   }, [count, images.length])
 
+  // Pick a random active announcement on mount
+  useEffect(() => {
+    const active = getActiveAnnouncements()
+    if (active.length > 0) {
+      const randomIndex = Math.floor(Math.random() * active.length)
+      setAnnouncement(active[randomIndex])
+    }
+  }, [])
+
   // Spotlight effect with throttling for performance
   const spotlightRef = useRef()
   const spotlightContainerRef = useRef()
@@ -423,18 +445,24 @@ function Page({
             priority
             gradient="linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.45))"
           />
-          {/* <Announcement
-            width="90vw"
-            copy="Happy Hacking Space has a physical space!"
-            caption={`Hacker Space is ${openorclosed ? 'Open' : 'Closed'}!`}
-          /> */}
+          {announcement && (
+            <Announcement
+              width="90vw"
+              copy={announcement.copy}
+              caption={announcement.caption}
+              href={announcement.href}
+              imgSrc={announcement.imgSrc}
+              imgAlt={announcement.imgAlt}
+              sx={{ mt: [0, -1, -3] }}
+            />
+          )}
           <Box
             sx={{
               width: '90vw',
               maxWidth: [null, 'layout'],
               position: 'relative',
               mx: 'auto',
-              py: [4, 4, 6],
+              py: [4, 4, 4],
               textShadow: 'text'
             }}
           >
@@ -443,7 +471,7 @@ function Page({
               sx={{
                 color: 'sunken',
                 pb: 2,
-                pt: [2, 3, 5],
+                pt: 0,
                 position: 'relative',
                 display: 'block'
               }}
@@ -502,6 +530,8 @@ function Page({
                 <br sx={{ display: ['inline', 'none', 'none'] }} /> from in and around
                 the Mesopotamia who hack together
               </Text>
+            </Heading>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
               <Button
                 variant="ctaLg"
                 as="a"
@@ -512,26 +542,56 @@ function Page({
               >
                 Join us
               </Button>
-              {/* <Button
-                variant="ctaLg"
-                as="a"
-                href="https://shipwrecked.hack.club/3"
-                mt={3}
-                sx={{ 
-                  transformOrigin: 'left',
-                  backgroundImage: t => t.util.gx('green', 'blue'),
-                }}
-              >
-                Sign Up: Private Island Hackathon
-              </Button> */}
-            </Heading>
+              {ctaCards && ctaCards.length > 0 && (
+                <Text
+                  variant="eyebrow"
+                  as="h4"
+                  sx={{
+                    fontSize: ['16px', 2, 3],
+                    maxWidth: 'layout',
+                    marginTop: 'auto',
+                    marginBottom: 'auto',
+                    alignSelf: 'center',
+                    color: 'white',
+                    textShadow:
+                      'rgba(0, 0, 0, 1) 0 0 10px, rgba(0, 0, 0, 1) 0 0 10px, rgba(0, 0, 0, 0.5) 0 0 10px'
+                  }}
+                >
+                  Or, See what we're hacking on:
+                </Text>
+              )}
+            </Box>
+            <CTAS cards={ctaCards || []} />
+            <Button
+              sx={{
+                background: 'rgba(255, 255, 255, 0.3)',
+                color: 'white',
+                borderRadius: '100px',
+                border: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                px: 3,
+                py: 2,
+                width: 'fit-content',
+                textTransform: 'none',
+                fontWeight: 'normal',
+                fontSize: [1, '16px', '18px'],
+                backdropFilter: 'blur(2px)',
+                zIndex: 999
+              }}
+              as="a"
+              href="#spotlight"
+            >
+              <Icon glyph="rep" sx={{ color: 'inherit', mr: 2 }} size={24} />
+              View more programs
+            </Button>
           </Box>
           <Box
             sx={{
               display: 'flex',
               justifyContent: ['flex-start', 'flex-start', 'flex-end'],
               marginRight: 2,
-              mt: [5, 4, 6]
+              mt: [3, 3, 4]
             }}
           >
             <Badge
@@ -1504,6 +1564,7 @@ function Page({
 export async function getStaticProps() {
   // Only load critical static data at build time
   const carouselCards = require('../lib/carousel.json')
+  const ctaCards = require('../lib/cta.json')
 
   // Load basic events data for initial page render (optional)
   let events = []
@@ -1521,6 +1582,7 @@ export async function getStaticProps() {
   return {
     props: {
       carouselCards,
+      ctaCards,
       events // Optional events data for initial render
     },
     revalidate: 60 // Revalidate every minute for fresh static content

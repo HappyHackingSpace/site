@@ -9,6 +9,7 @@ import Icon from '../../components/icon'
 import Image from 'next/image'
 import volleyballPic from '../../public/jobs/volleyball-group-pic.jpg'
 import { compact } from 'lodash'
+import { decodeHtmlEntities } from '../../lib/helpers'
 
 const JobListing = ({
   positionName,

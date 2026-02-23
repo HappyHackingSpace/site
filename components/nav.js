@@ -126,6 +126,7 @@ const layout = props =>
         a {
           font-size: 18px;
           &:hover {
+            text-decoration: underline;
             color: ${theme.colors[hoverColor(props.color)]};
           }
         }
