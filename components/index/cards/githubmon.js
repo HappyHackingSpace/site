@@ -5,13 +5,15 @@ import Buttons from './button'
 
 /** @jsxImportSource theme-ui */
 
-export default function Haxidraw({ stars }) {
+export default function Githubmon({ stars }) {
   const [repoStars, setRepoStars] = useState(stars || 0)
 
   useEffect(() => {
     fetch('https://api.github.com/repos/HappyHackingSpace/githubmon')
       .then(response => response.json())
-      .then(data => setRepoStars(data.stargazers_count))
+      .then(data => {
+        if (data.stargazers_count != null) setRepoStars(data.stargazers_count)
+      })
       .catch(error => console.error('Error fetching stars:', error))
   }, [])
 

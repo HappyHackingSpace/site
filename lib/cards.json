@@ -1,4 +1,7 @@
 [
+  { "component": "vulnerable-target", "section": "opensource" },
+  { "component": "communityHub", "section": "opensource" },
+  { "component": "githubmon", "section": "opensource" },
   { "component": "awesome-hackathon", "section": "opensource" },
   { "component": "osint", "section": "community", "disabled": true },
   { "component": "som", "section": "community", "disabled": true },

@@ -168,13 +168,15 @@ import RelativeTime from 'react-relative-time'
 //   )
 // }
 
-export default function Sprig({ stars }) {
+export default function VulnerableTarget({ stars }) {
   const [repoStars, setRepoStars] = useState(stars || 0)
 
   useEffect(() => {
     fetch('https://api.github.com/repos/HappyHackingSpace/vt')
       .then(response => response.json())
-      .then(data => setRepoStars(data.stargazers_count))
+      .then(data => {
+        if (data.stargazers_count != null) setRepoStars(data.stargazers_count)
+      })
       .catch(error => console.error('Error fetching stars:', error))
   }, [])
 

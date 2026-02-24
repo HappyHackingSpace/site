@@ -32,13 +32,6 @@ const Carousel = dynamic(() => import('../components/index/carousel'), {
   ssr: true // Carousel is above fold
 })
 
-const Sprig = dynamic(() => import('../components/index/cards/vulnerable-target'), {
-  loading: () => {
-    const { SprigSkeleton } = require('../components/loading-skeletons')
-    return <SprigSkeleton />
-  },
-  ssr: false // Below fold component
-})
 const Sinerider = dynamic(() => import('../components/index/cards/sinerider'), {
   loading: () => {
     const { SprigSkeleton } = require('../components/loading-skeletons')
@@ -63,22 +56,6 @@ const GitHub = dynamic(() => import('../components/index/github'), {
   loading: () => {
     const { GitHubSkeleton } = require('../components/loading-skeletons')
     return <GitHubSkeleton />
-  },
-  ssr: false
-})
-
-const Haxidraw = dynamic(() => import('../components/index/cards/githubmon'), {
-  loading: () => {
-    const { SprigSkeleton } = require('../components/loading-skeletons')
-    return <SprigSkeleton />
-  },
-  ssr: false
-})
-
-const Onboard = dynamic(() => import('../components/index/cards/communityHub'), {
-  loading: () => {
-    const { SprigSkeleton } = require('../components/loading-skeletons')
-    return <SprigSkeleton />
   },
   ssr: false
 })
@@ -1086,40 +1063,6 @@ function Page({
                   </Flex>
                 )}
               </Flex>
-              <LazySection
-                fallback={
-                  (() => {
-                    const { SprigSkeleton } = require('../components/loading-skeletons')
-                    return (
-                      <Box sx={{ py: 4 }}>
-                        <SprigSkeleton />
-                        <SprigSkeleton />
-                        <SprigSkeleton />
-                      </Box>
-                    )
-                  })()
-                }
-              >
-                <Sprig
-                  delay={100}
-                  stars={apiData.stars?.sprig?.stargazerCount || 1000}
-                  game={apiData.game}
-                  gameImage={uiState.gameImage}
-                  gameImage1={uiState.gameImage1}
-                  loading={loadingStates.games}
-                />
-                <Onboard
-                  stars={apiData.stars?.onboard?.stargazerCount || 200}
-                  delay={100}
-                  loading={loadingStates.stars}
-                />
-                <Haxidraw
-                  stars={apiData.stars?.blot?.stargazerCount || 300}
-                  delay={100}
-                  loading={loadingStates.stars}
-                />
-              </LazySection>
-              {/* <Sinerider delay={200} stars={stars.sinerider.stargazerCount} /> */}
               <CardRenderer cards={cardsList.filter(c => c.section === 'opensource')} />
               {/* <Workshops delay={400} stars={stars.happyhackingspace.stargazerCount} /> */}
             </Box>
