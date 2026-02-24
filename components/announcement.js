@@ -54,8 +54,8 @@ const Announcement = ({
       />
     )}
     {imgSrc && (
-      <Box sx={{ mr: [2, 3], ml: 2, width: [40, 48, 48], flexShrink: 0 }}>
-        <Image src={imgSrc} alt={imgAlt} width={48} height={48} />
+      <Box sx={{ mr: [2, 3], ml: 2, width: [48, 64, 72], flexShrink: 0 }}>
+        <Image src={imgSrc} alt={imgAlt} width={72} height={72} />
       </Box>
     )}
     <Text

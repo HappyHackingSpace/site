@@ -1,0 +1,8 @@
+[
+  { "component": "osint", "disabled": true },
+  { "component": "som", "disabled": true },
+  { "component": "athena", "disabled": true },
+  { "component": "highway", "disabled": true },
+  { "component": "shipwrecked", "disabled": true },
+  { "component": "pizza", "disabled": true }
+]

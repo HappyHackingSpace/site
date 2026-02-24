@@ -1,8 +1,17 @@
+import dynamic from 'next/dynamic'
 import { Box, Text, Image, Card, Button } from 'theme-ui'
-import DoorCTA from './door-cta'
 
-const DYNAMIC_COMPONENTS = {
-  door: DoorCTA
+// Stable cache so dynamic() isn't called on every render
+const dynamicCache = {}
+
+function resolveCTA(componentPath) {
+  if (!dynamicCache[componentPath]) {
+    dynamicCache[componentPath] = dynamic(
+      () => import(`./${componentPath}`),
+      { ssr: false }
+    )
+  }
+  return dynamicCache[componentPath]
 }
 
 export default function CTAS({ cards }) {
@@ -20,8 +29,8 @@ export default function CTAS({ cards }) {
       }}
     >
       {cards.map((card, idx) => {
-        const DynamicComponent = card.type && DYNAMIC_COMPONENTS[card.type]
-        if (DynamicComponent) {
+        if (card.component) {
+          const DynamicComponent = resolveCTA(card.component)
           return <DynamicComponent key={idx} />
         }
 

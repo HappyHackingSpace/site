@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { Box, Text, Card, Button } from 'theme-ui'
 import { keyframes } from '@emotion/react'
-import usePrefersReducedMotion from '../../../lib/use-prefers-reduced-motion'
+import usePrefersReducedMotion from '../../../../lib/use-prefers-reduced-motion'
 
 const DoorScene = dynamic(() => import('./door-scene'), { ssr: false })
 

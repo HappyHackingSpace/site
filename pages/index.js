@@ -20,11 +20,7 @@ import ForceTheme from '../components/force-theme'
 import Footer from '../components/footer'
 import Stage from '../components/stage'
 // import Snowfall from '../components/snowfall'
-// import Som from '../components/index/cards/som'
-// import Athena from '../components/index/cards/athena'
-// import Highway from '../components/index/cards/highway' 
-// import Shipwrecked from '../components/index/cards/shipwrecked'
-// import Pizza from '../components/index/cards/pizza'
+import CardRenderer from '../components/index/cards/card-renderer'
 import Slack from '../components/index/cards/slack'
 import MailingList from '../components/index/cards/mailing-list'
 // Lazy load heavy components with skeletons for better perceived performance
@@ -112,6 +108,7 @@ function getActiveAnnouncements() {
 function Page({
   carouselCards,
   ctaCards,
+  cardsList,
   events: initialEvents
 }) {
   // Client-side API data states for async loading
@@ -983,17 +980,13 @@ function Page({
                 and make things together!
               </Text>
             </Box>
-            {/* <Som /> */}
-            {/* <Athena /> */}
-            {/* <Highway /> */}
-            {/* <Shipwrecked /> */}
+            <CardRenderer cards={cardsList} />
             <Slack
               slackKey={uiState.slackKey}
               data={apiData.slackData}
               events={apiData.events}
               loading={loadingStates.slack}
             />
-            {/* <Pizza /> */}
           </Box>
         </Box>
         <Box>
@@ -1565,6 +1558,7 @@ export async function getStaticProps() {
   // Only load critical static data at build time
   const carouselCards = require('../lib/carousel.json')
   const ctaCards = require('../lib/cta.json').filter(c => !c.disabled)
+  const cardsList = require('../lib/cards.json').filter(c => !c.disabled)
 
   // Load basic events data for initial page render (optional)
   let events = []
@@ -1583,6 +1577,7 @@ export async function getStaticProps() {
     props: {
       carouselCards,
       ctaCards,
+      cardsList,
       events // Optional events data for initial render
     },
     revalidate: 60 // Revalidate every minute for fresh static content
