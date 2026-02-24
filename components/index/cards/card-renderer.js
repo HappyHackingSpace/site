@@ -9,7 +9,7 @@ function resolveCard(componentPath) {
   if (!cache[componentPath]) {
     cache[componentPath] = dynamic(() =>
       import(
-        /* webpackInclude: /\/(osint|som|athena|highway|shipwrecked|pizza)\.js$/ */
+        /* webpackInclude: /\/(awesome-hackathon|osint|som|athena|highway|shipwrecked|pizza)\.js$/ */
         `./${componentPath}`
       )
     )

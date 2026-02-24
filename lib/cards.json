@@ -1,8 +1,9 @@
 [
-  { "component": "osint", "disabled": true },
-  { "component": "som", "disabled": true },
-  { "component": "athena", "disabled": true },
-  { "component": "highway", "disabled": true },
-  { "component": "shipwrecked", "disabled": true },
-  { "component": "pizza", "disabled": true }
+  { "component": "awesome-hackathon", "section": "opensource" },
+  { "component": "osint", "section": "community", "disabled": true },
+  { "component": "som", "section": "community", "disabled": true },
+  { "component": "athena", "section": "community", "disabled": true },
+  { "component": "highway", "section": "community", "disabled": true },
+  { "component": "shipwrecked", "section": "community", "disabled": true },
+  { "component": "pizza", "section": "community", "disabled": true }
 ]

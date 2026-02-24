@@ -39,15 +39,6 @@ const Sprig = dynamic(() => import('../components/index/cards/vulnerable-target'
   },
   ssr: false // Below fold component
 })
-
-const SprigConsole = dynamic(() => import('../components/index/cards/awesome-hackathon'), {
-  loading: () => {
-    const { SprigSkeleton } = require('../components/loading-skeletons')
-    return <SprigSkeleton />
-  },
-  ssr: false
-})
-
 const Sinerider = dynamic(() => import('../components/index/cards/sinerider'), {
   loading: () => {
     const { SprigSkeleton } = require('../components/loading-skeletons')
@@ -980,7 +971,7 @@ function Page({
                 and make things together!
               </Text>
             </Box>
-            <CardRenderer cards={cardsList} />
+            <CardRenderer cards={cardsList.filter(c => c.section === 'community')} />
             <Slack
               slackKey={uiState.slackKey}
               data={apiData.slackData}
@@ -1129,22 +1120,7 @@ function Page({
                 />
               </LazySection>
               {/* <Sinerider delay={200} stars={stars.sinerider.stargazerCount} /> */}
-              <LazySection
-                fallback={
-                  (() => {
-                    const { SprigSkeleton } = require('../components/loading-skeletons')
-                    return <SprigSkeleton />
-                  })()
-                }
-              >
-                <Box as="section" id="sprig">
-                  <SprigConsole
-                    delay={300}
-                    stars={apiData.stars?.sprig?.stargazerCount || 1000}
-                    consoleCount={apiData.consoleCount}
-                  />
-                </Box>
-              </LazySection>
+              <CardRenderer cards={cardsList.filter(c => c.section === 'opensource')} />
               {/* <Workshops delay={400} stars={stars.happyhackingspace.stargazerCount} /> */}
             </Box>
           </Box>
