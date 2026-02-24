@@ -1331,7 +1331,7 @@ function Page({
                   }}
                 />
                 <Stage
-                  icon="welcome"
+                  icon="discord"
                   color="white"
                   name="Join Our Community"
                   desc="Connect with other technical people and hack on things together."

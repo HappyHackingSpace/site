@@ -215,7 +215,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Icon glyph="slack-fill" size={24} color="#5865F2" />
+                <Icon glyph="discord" size={24} color="#5865F2" />
                 <SocialLinkContent>
                   <SocialTitle>Discord</SocialTitle>
                   <SocialSubtitle>Join our server</SocialSubtitle>

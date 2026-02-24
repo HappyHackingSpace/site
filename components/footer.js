@@ -155,7 +155,7 @@ const Footer = ({
           >
             <Service
               href="https://discord.happyhacking.space"
-              icon="welcome"
+              icon="discord"
               name="Community"
               target="_blank"
             />

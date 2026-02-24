@@ -119,7 +119,7 @@ const MailingList = () => {
               alignItems: ['left', 'left', 'center'],
               flexDirection: 'column',
               gap: '10px',
-              width: ['100%', '100%', '75%']
+              width: ['100%', '100%', '50%']
             }}
           >
             <Box>
@@ -144,12 +144,11 @@ const MailingList = () => {
               >
                 We&apos;ll send you an email no more than once a month, when we
                 work on something cool for you.
-                <br />
                 {/* Check out our{' '}
                 <Link
-                  href="https://workshops.hackclub.com/leader-newsletters/"
+                  href="https://happyhacking.space/newsletters"
                   target="_blank"
-                  rel="noopener norefferer"
+                  rel="noopener noreferrer"
                 >
                   previous issues
                 </Link>
