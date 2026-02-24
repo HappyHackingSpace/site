@@ -358,7 +358,6 @@ export const getServerSideProps = async () => {
     const team = await fetchTeam()
     return { props: { team } }
   } catch (e) {
-    console.error("TEAM_PAGE_FETCH_ERROR:", e)
     return { props: { team: { current: [], acknowledged: [] } } }
   }
 }
