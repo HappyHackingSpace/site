@@ -923,7 +923,7 @@ function Page({
           sx={{
             backgroundImage: `
               linear-gradient(rgba(249, 250, 252, 0.7), rgba(249, 250, 252, 0.7)),
-              url('https://icons.happyhacking.space/api/icons/0x8492a6/glyph:rep.svg')
+              url('https://icons.hackclub.com/api/icons/0x8492a6/glyph:rep.svg')
             `,
             backgroundSize: '40px 40px',
             backgroundRepeat: 'repeat',
@@ -939,7 +939,7 @@ function Page({
               left: 0,
               right: 0,
               bottom: 0,
-              bg: 'snow',
+              background: 'rgba(249, 250, 252, 1)',
               pointerEvents: 'none'
             }}
           />
@@ -1152,12 +1152,12 @@ function Page({
             sx={{
               position: 'relative',
               background: 'snow',
-              backgroundImage: `url('https://icons.happyhacking.space/api/icons/0xF4F7FB/glyph:rep.svg')`,
+              backgroundImage: `url('https://icons.hackclub.com/api/icons/0xF4F7FB/glyph:rep.svg')`,
               backgroundSize: '40px 40px',
               backgroundRepeat: 'repeat',
               backgroundPosition: '10% 10%'
               // '&:hover': {
-              //   backgroundImage: `url('https://icons.happyhacking.space/api/icons/0x000000/glyph:rep.svg')`
+              //   backgroundImage: `url('https://icons.hackclub.com/api/icons/0x000000/glyph:rep.svg')`
               // }
             }}
           >

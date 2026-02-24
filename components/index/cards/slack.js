@@ -109,9 +109,11 @@ export default function Slack({ data, slackKey, events }) {
             with them.{' '}
           </Text>
           {/* <Event events={events} /> */}
-          <Buttons id="13" link="https://discord.happyhacking.space" icon="discord" primary="purple">
-            Join our community
-          </Buttons>
+          <Box sx={{ mt: [3, 3, 4] }}>
+            <Buttons id="13" link="https://discord.happyhacking.space" icon="discord" primary="purple">
+              Join our community
+            </Buttons>
+          </Box>
           <Grid
             sx={{
               zIndex: 2,

@@ -178,7 +178,7 @@ const nextConfig = withBundleAnalyzer({
       },
       {
         source: '/icons/',
-        destination: 'https://icons.happyhacking.space',
+        destination: 'https://icons.hackclub.com',
         permanent: true
       },
       {
