@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
-import { Box, Grid, Image, Text } from 'theme-ui'
+import { Box, Flex, Grid, Text } from 'theme-ui'
 import Buttons from './button'
 import CardModel from './card-model'
-import Tilt from '../../tilt'
 
 /** @jsxImportSource theme-ui */
 
-export default function SprigConsole({ stars, consoleCount }) {
+const REPO_URL = 'https://github.com/HappyHackingSpace/awesome-hackathon'
+const ACCENT = '#FFB900'
+
+export default function SprigConsole({ stars }) {
   const [repoStars, setRepoStars] = useState(stars || 0)
 
   useEffect(() => {
@@ -17,146 +19,118 @@ export default function SprigConsole({ stars, consoleCount }) {
   }, [])
 
   return (
-    <Box sx={{ position: 'relative' }}>
-      <CardModel
-        github_link="https://github.com/HappyHackingSpace/awesome-hackathon"
-        stars={repoStars}
-        color="white"
-        position={[null, 'top', 'top']}
+    <CardModel
+      github_link={REPO_URL}
+      stars={repoStars}
+      color="white"
+      position={[null, 'top', 'top']}
+      sx={{
+        position: 'relative',
+        overflow: 'hidden',
+        backgroundColor: '#1a1a2e',
+        backgroundImage: `url('/home/awesome.gif')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        minHeight: ['auto', '400px', '400px']
+      }}
+      highlight={ACCENT}
+    >
+      {/* Left-heavy gradient so text stays readable while GIF peeks through on the right */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          background: [
+            'linear-gradient(to bottom, rgba(26,26,46,0.93) 0%, rgba(26,26,46,0.8) 100%)',
+            'linear-gradient(to bottom, rgba(26,26,46,0.93) 0%, rgba(26,26,46,0.8) 100%)',
+            'linear-gradient(to right, rgba(26,26,46,0.92) 0%, rgba(26,26,46,0.7) 45%, rgba(26,26,46,0.3) 100%)'
+          ],
+          zIndex: 0
+        }}
+      />
+
+      <Grid
+        columns={[1, 1, '1.2fr 1fr']}
         sx={{
           position: 'relative',
-          overflow: 'hidden',
-          backgroundColor: '#1A3C14',
-          backgroundSize: 'cover',
-          maxHeight: ['300px', '200px', '275px']
+          zIndex: 1,
+          minHeight: ['auto', '350px', '350px'],
+          alignItems: 'center'
         }}
-        highlight="#427A43"
       >
-        {/* Desktop GIF - hidden on mobile */}
-        <Image
-          src="/home/awesome.gif"
-          alt="Awesome Hackathon Demo"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: 0,
-          }}
-          // sx={{
-          //   display: ['none', 'none', 'block', 'block']
-          // }}
-        />
-        
-        {/* Mobile video - visible only on mobile */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: 0
-          }}
-          sx={{
-            display: ['block', 'block', 'none', 'none']
-          }}
-        >
-          <source src="/home/awesomePhone.mp4" type="video/mp4" />
-        </video>
-        <Box sx={{ position: 'relative', zIndex: 1 , mt: [3, 4, 4] }}>
-        {/* <Image
-          src="https://sprig.hackclub.com/pcb.svg"
-          sx={{
-            objectFit: 'cover',
-            position: 'absolute',
-            width: '100%',
-            height: '120%',
-            ml: '-24px',
-            opacity: '0.4',
-            mt: '-24px',
-            zIndex: 0
-          }}
-          alt="Printed circuit board"
-        /> */}
-        {/* <Image
-          src="https://cloud-8u6hh0ho9-hack-club-bot.vercel.app/0sprig_console.svg"
-          sx={{
-            width: ['90%', '320px', '450px', '500px'],
-            mt: ['42px', 0, 0],
-            position: 'relative',
-            zIndex: 2,
-            fontSize: ['36px', 4, 5],
-            color: 'white'
-          }}
-          alt="Sprig console"
-        /> */}
-        {/* <Text
-          as="p"
-          variant="subheadline"
-          sx={{
-            px: 2,
-            py: 1,
-            mt: 2,
-            width: 'fit-content',
-            borderRadius: 'extra',
-            color: 'white',
-            border: 'rgba(255,255,255,0.2) dashed 1px',
-            zIndex: 2,
-            top: ['24px', 0, '5px']
-          }}
-        >
-          Join the other {consoleCount} teenagers with Sprigs!
-        </Text> */}
-        <Box sx={{ zIndex: 2, position: 'relative', mt: [4, 5, 1] }}>
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', px: [2,3,4], py: [3,4] }}>
-            <Text as="h6" variant="subtitle" sx={{
+        <Flex sx={{ flexDirection: 'column', gap: 3, py: [3, 4, 4] }}>
+          <Text
+            as="h2"
+            variant="title"
+            sx={{
+              fontSize: ['36px', 4, 5],
+              color: ACCENT,
+              textShadow: '0 0 30px rgba(255, 185, 0, 0.4)',
+              lineHeight: 1.1
+            }}
+          >
+            Awesome Hackathon
+          </Text>
+
+          <Text
+            as="p"
+            variant="subtitle"
+            sx={{
               color: 'white',
-              textAlign: 'center',
-              maxWidth: '40rem',
-              fontSize: [1, 2, 3],
-              lineHeight: 1.4
-            }}>
-              Tools and resources to help you build, design, and win hackathons! 🏆
+              fontSize: ['18px', '20px', '22px'],
+              lineHeight: 1.5,
+              maxWidth: '500px',
+              opacity: 0.9
+            }}
+          >
+            Your ultimate toolkit to build, ship & win hackathons — curated
+            resources, tools, and battle-tested strategies from the community.
+          </Text>
+
+          {repoStars > 0 && (
+            <Text
+              as="span"
+              sx={{
+                px: 3,
+                py: 1,
+                width: 'fit-content',
+                borderRadius: 'extra',
+                color: ACCENT,
+                border: `${ACCENT} dashed 1px`,
+                fontSize: 1,
+                fontWeight: 'bold'
+              }}
+            >
+              {repoStars.toLocaleString()} stars on GitHub
             </Text>
-            <Box sx={{ mt: [3, 3, 3] }}>
-              <Buttons
-                id="6"
-                link="/events"
-                primary="#FFB900"
-                sx={{}}
-              >
-                Discover events
-              </Buttons>
-            </Box>
-          </Box>
-        </Box>
-        </Box>
-      </CardModel>
-      {/* <Tilt>
-        <Image
-          src="/home/sprig-console.webp"
-          sx={{
-            position: 'absolute',
-            right: ['', '-50%', '-35%', '-25%'],
-            top: ['', '15%', '15%', '10%'],
-            width: ['', '100%', '85%', '70%'],
-            display: ['none', 'none', 'block', 'block'],
-            '&:hover': {
-              cursor: 'pointer'
-            },
-            zIndex: 3
-          }}
-          alt="Sprig console"
-        />
-      </Tilt> */}
-    </Box>
+          )}
+
+          <Flex sx={{ flexDirection: 'column', mt: 2 }}>
+            <Buttons
+              id="awesome-hackathon-explore"
+              link={REPO_URL}
+              primary={ACCENT}
+              icon="explore"
+              sx={{ color: '#1a1a2e' }}
+            >
+              Explore Resources
+            </Buttons>
+            <Buttons
+              id="awesome-hackathon-star"
+              link={REPO_URL}
+              icon="view"
+            >
+              Star on GitHub
+            </Buttons>
+          </Flex>
+        </Flex>
+
+        {/* Right column intentionally empty — GIF shows through the lighter gradient */}
+        <Box sx={{ display: ['none', 'none', 'block'] }} />
+      </Grid>
+    </CardModel>
   )
 }
