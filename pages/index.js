@@ -1277,7 +1277,7 @@ function Page({
               pt={[3, 4]}
               pb={[4, 5]}
               gap={3}
-              columns={[1, 2, 3]}
+              columns={[1, 2]}
               sx={{
                 textAlign: 'left',
                 '> a, > div': {
@@ -1399,7 +1399,7 @@ function Page({
                   }}
                 />
               </Card>
-              <Card
+              {/* <Card
                 sx={{
                   background:
                     'linear-gradient(to bottom, rgba(255, 140, 55, 0.9) 0%, rgba(236, 55, 80, 0.9) 100%)',
@@ -1452,7 +1452,7 @@ function Page({
                     }
                   }}
                 />
-              </Card>
+              </Card> */}
             </Grid>
           </Box>
         </Box>
