@@ -32,6 +32,11 @@ const MailingList = () => {
   const [submitted, setSubmitted] = useState(false)
   const [data, setData] = useState({ finalHtml: [], names: [] })
   const formRef = useRef(null)
+  const [formTs, setFormTs] = useState('')
+
+  useEffect(() => {
+    setFormTs(String(Date.now()))
+  }, [])
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -44,11 +49,14 @@ const MailingList = () => {
       },
       body: JSON.stringify({
         name: e.target.name.value,
-        email: e.target.email.value
+        email: e.target.email.value,
+        website: e.target.website.value,
+        _ts: e.target._ts.value
       })
     })
 
     formRef.current.reset()
+    setFormTs(String(Date.now()))
 
     if (res.ok) {
       setSubmitted(true)
@@ -197,6 +205,20 @@ const MailingList = () => {
                   }}
                 />
               </div>
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                style={{
+                  position: 'absolute',
+                  left: '-9999px',
+                  opacity: 0,
+                  height: 0,
+                  width: 0
+                }}
+              />
+              <input type="hidden" name="_ts" value={formTs} />
               <Button type="submit" sx={{ mt: [2, 0], fontSize: 2 }}>
                 {submitting ? (
                   <>
