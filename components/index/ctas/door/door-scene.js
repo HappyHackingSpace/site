@@ -6,24 +6,25 @@ import FoxModel from './fox-model'
 function Scene({ isOpen, isNight }) {
   const loading = isOpen === null
   const foxPositions = useRef({})
+  const useDark = isNight || !isOpen
 
   return (
     <>
       {/* Ambient light */}
       <ambientLight
-        color={isNight ? '#6670aa' : '#fff5e6'}
-        intensity={isNight ? 0.8 : 0.6}
+        color={useDark ? '#6670aa' : '#fff5e6'}
+        intensity={useDark ? 0.8 : 0.6}
       />
 
       {/* Directional light */}
       <directionalLight
-        color={isNight ? '#8899cc' : '#ffd700'}
-        intensity={isNight ? 0.8 : 1.2}
+        color={useDark ? '#8899cc' : '#ffd700'}
+        intensity={useDark ? 0.8 : 1.2}
         position={[5, 5, 5]}
       />
 
-      {/* Night point light glow */}
-      {isNight && (
+      {/* Dark point light glow */}
+      {useDark && (
         <pointLight
           color="#33d6a6"
           intensity={1.2}
@@ -38,17 +39,17 @@ function Scene({ isOpen, isNight }) {
         args={[20, 20]}
         cellSize={0.5}
         cellThickness={0.5}
-        cellColor={isNight ? '#1a3a5c' : '#2d8a56'}
+        cellColor={useDark ? '#1a3a5c' : '#2d8a56'}
         sectionSize={2}
         sectionThickness={1}
-        sectionColor={isNight ? '#0ea5e9' : '#1a6b3c'}
+        sectionColor={useDark ? '#0ea5e9' : '#1a6b3c'}
         fadeDistance={10}
         fadeStrength={1}
         infiniteGrid
       />
 
-      {/* Stars for night */}
-      {isNight && (
+      {/* Stars for dark state */}
+      {useDark && (
         <Stars
           radius={50}
           depth={50}
@@ -60,10 +61,11 @@ function Scene({ isOpen, isNight }) {
         />
       )}
 
+
       {/* Contact shadows */}
       <ContactShadows
         position={[0, 0.01, 0]}
-        opacity={isNight ? 0.3 : 0.5}
+        opacity={useDark ? 0.3 : 0.5}
         scale={10}
         blur={2}
         far={4}
@@ -80,13 +82,13 @@ function Scene({ isOpen, isNight }) {
         />
       ) : isOpen ? (
         isNight ? (
-          // Night: 7 sleepy foxes — slower, longer idles, rarely run
+          // Night: 7 sleepy foxes — spread out, slower
           <>
-            {/* Adult — left side, sleepy patrol */}
+            {/* Adult — far left */}
             <FoxModel
               foxId={0}
               foxPositions={foxPositions}
-              territory={{ centerX: -1.5, centerZ: 0.3, radius: 1 }}
+              territory={{ centerX: -3, centerZ: 2, radius: 1.2 }}
               walkSpeed={0.4}
               runSpeed={0.7}
               walkTimeScale={0.5}
@@ -95,13 +97,13 @@ function Scene({ isOpen, isNight }) {
               idleRange={[5, 10]}
               runChance={0.1}
               scale={0.02}
-              position={[-1.5, 0, 0.3]}
+              position={[-3, 0, 2]}
             />
-            {/* Teen — right side, drowsy wanderer */}
+            {/* Teen — far right */}
             <FoxModel
               foxId={1}
               foxPositions={foxPositions}
-              territory={{ centerX: 1.3, centerZ: 0, radius: 0.8 }}
+              territory={{ centerX: 3, centerZ: 1, radius: 1 }}
               walkSpeed={0.35}
               runSpeed={0.6}
               walkTimeScale={0.4}
@@ -110,7 +112,7 @@ function Scene({ isOpen, isNight }) {
               idleRange={[4, 8]}
               runChance={0.05}
               scale={0.016}
-              position={[1.3, 0, 0]}
+              position={[3, 0, 1]}
             />
             {/* Adult — center-front, sleepy lookout */}
             <FoxModel
@@ -119,14 +121,14 @@ function Scene({ isOpen, isNight }) {
               stationary
               surveyTimeScale={0.12}
               scale={0.02}
-              position={[0, 0, 1.2]}
+              position={[0, 0, 3]}
               rotation={[0, -0.3, 0]}
             />
-            {/* Kid — near left adult, mostly rests */}
+            {/* Kid — front-left, near status */}
             <FoxModel
               foxId={3}
               foxPositions={foxPositions}
-              territory={{ centerX: -0.8, centerZ: 1, radius: 0.5 }}
+              territory={{ centerX: -1.5, centerZ: 4, radius: 0.8 }}
               walkSpeed={0.3}
               runSpeed={0.5}
               walkTimeScale={0.4}
@@ -135,13 +137,13 @@ function Scene({ isOpen, isNight }) {
               idleRange={[6, 12]}
               runChance={0.05}
               scale={0.013}
-              position={[-0.8, 0, 1]}
+              position={[-1.5, 0, 4]}
             />
-            {/* Kid — right-back, barely awake */}
+            {/* Kid — back-right */}
             <FoxModel
               foxId={4}
               foxPositions={foxPositions}
-              territory={{ centerX: 0.6, centerZ: -0.8, radius: 0.5 }}
+              territory={{ centerX: 1.5, centerZ: -1, radius: 0.8 }}
               walkSpeed={0.25}
               runSpeed={0.4}
               walkTimeScale={0.35}
@@ -150,13 +152,13 @@ function Scene({ isOpen, isNight }) {
               idleRange={[7, 14]}
               runChance={0}
               scale={0.012}
-              position={[0.6, 0, -0.8]}
+              position={[1.5, 0, -1]}
             />
-            {/* Teen — back-left, slow drifter */}
+            {/* Teen — back-left */}
             <FoxModel
               foxId={5}
               foxPositions={foxPositions}
-              territory={{ centerX: -1.2, centerZ: -0.8, radius: 0.7 }}
+              territory={{ centerX: -2, centerZ: -1, radius: 0.8 }}
               walkSpeed={0.3}
               runSpeed={0.5}
               walkTimeScale={0.4}
@@ -165,13 +167,13 @@ function Scene({ isOpen, isNight }) {
               idleRange={[5, 9]}
               runChance={0.05}
               scale={0.015}
-              position={[-1.2, 0, -0.8]}
+              position={[-2, 0, -1]}
             />
-            {/* Baby — near center-right, tiny sleepyhead */}
+            {/* Baby — front-right, near status */}
             <FoxModel
               foxId={6}
               foxPositions={foxPositions}
-              territory={{ centerX: 0.5, centerZ: 0.8, radius: 0.4 }}
+              territory={{ centerX: 1, centerZ: 5, radius: 0.6 }}
               walkSpeed={0.2}
               runSpeed={0.35}
               walkTimeScale={0.3}
@@ -180,17 +182,17 @@ function Scene({ isOpen, isNight }) {
               idleRange={[8, 16]}
               runChance={0}
               scale={0.011}
-              position={[0.5, 0, 0.8]}
+              position={[1, 0, 5]}
             />
           </>
         ) : (
-          // Day: 7 lively foxes — varied speeds and personalities
+          // Day: 7 lively foxes — well spread, some near camera
           <>
-            {/* Adult — left territory, active explorer */}
+            {/* Adult — far left */}
             <FoxModel
               foxId={0}
               foxPositions={foxPositions}
-              territory={{ centerX: -1.5, centerZ: 0.3, radius: 1.5 }}
+              territory={{ centerX: -3, centerZ: 2, radius: 1.5 }}
               walkSpeed={0.9}
               runSpeed={2.0}
               walkTimeScale={1}
@@ -199,13 +201,13 @@ function Scene({ isOpen, isNight }) {
               idleRange={[2, 4]}
               runChance={0.4}
               scale={0.02}
-              position={[-1.5, 0, 0.3]}
+              position={[-3, 0, 2]}
             />
-            {/* Teen — right territory, energetic runner */}
+            {/* Teen — far right */}
             <FoxModel
               foxId={1}
               foxPositions={foxPositions}
-              territory={{ centerX: 1.3, centerZ: 0, radius: 1.2 }}
+              territory={{ centerX: 3, centerZ: 1, radius: 1.5 }}
               walkSpeed={1.0}
               runSpeed={2.2}
               walkTimeScale={1.1}
@@ -214,13 +216,13 @@ function Scene({ isOpen, isNight }) {
               idleRange={[1.5, 3]}
               runChance={0.5}
               scale={0.016}
-              position={[1.3, 0, 0]}
+              position={[3, 0, 1]}
             />
-            {/* Adult — center-back, casual stroller */}
+            {/* Adult — center-back */}
             <FoxModel
               foxId={2}
               foxPositions={foxPositions}
-              territory={{ centerX: 0, centerZ: -0.5, radius: 1.3 }}
+              territory={{ centerX: 0, centerZ: -2, radius: 1.5 }}
               walkSpeed={0.7}
               runSpeed={1.5}
               walkTimeScale={0.8}
@@ -229,13 +231,13 @@ function Scene({ isOpen, isNight }) {
               idleRange={[3, 6]}
               runChance={0.2}
               scale={0.02}
-              position={[0, 0, -0.5]}
+              position={[0, 0, -2]}
             />
-            {/* Kid — front-left, hyperactive */}
+            {/* Kid — front-left, near status */}
             <FoxModel
               foxId={3}
               foxPositions={foxPositions}
-              territory={{ centerX: -0.5, centerZ: 1.2, radius: 0.8 }}
+              territory={{ centerX: -1.5, centerZ: 4, radius: 1 }}
               walkSpeed={0.8}
               runSpeed={2.0}
               walkTimeScale={1.2}
@@ -244,13 +246,13 @@ function Scene({ isOpen, isNight }) {
               idleRange={[1, 2.5]}
               runChance={0.6}
               scale={0.013}
-              position={[-0.5, 0, 1.2]}
+              position={[-1.5, 0, 4]}
             />
-            {/* Kid — right-front, curious */}
+            {/* Kid — front-right, near status */}
             <FoxModel
               foxId={4}
               foxPositions={foxPositions}
-              territory={{ centerX: 0.8, centerZ: 1, radius: 0.7 }}
+              territory={{ centerX: 1.5, centerZ: 4, radius: 1 }}
               walkSpeed={0.6}
               runSpeed={1.2}
               walkTimeScale={0.9}
@@ -259,13 +261,13 @@ function Scene({ isOpen, isNight }) {
               idleRange={[2, 5]}
               runChance={0.3}
               scale={0.012}
-              position={[0.8, 0, 1]}
+              position={[1.5, 0, 4]}
             />
-            {/* Teen — back-left, adventurous scout */}
+            {/* Teen — back-left */}
             <FoxModel
               foxId={5}
               foxPositions={foxPositions}
-              territory={{ centerX: -1.2, centerZ: -0.8, radius: 1 }}
+              territory={{ centerX: -2, centerZ: -1, radius: 1.2 }}
               walkSpeed={0.85}
               runSpeed={1.8}
               walkTimeScale={1}
@@ -274,13 +276,13 @@ function Scene({ isOpen, isNight }) {
               idleRange={[1.5, 3.5]}
               runChance={0.45}
               scale={0.015}
-              position={[-1.2, 0, -0.8]}
+              position={[-2, 0, -1]}
             />
-            {/* Baby — near center, tiny and curious */}
+            {/* Baby — center-front, closest to camera */}
             <FoxModel
               foxId={6}
               foxPositions={foxPositions}
-              territory={{ centerX: 0.3, centerZ: 0.5, radius: 0.5 }}
+              territory={{ centerX: 0.5, centerZ: 5, radius: 1 }}
               walkSpeed={0.5}
               runSpeed={1.0}
               walkTimeScale={1}
@@ -289,7 +291,7 @@ function Scene({ isOpen, isNight }) {
               idleRange={[1, 3]}
               runChance={0.4}
               scale={0.011}
-              position={[0.3, 0, 0.5]}
+              position={[0.5, 0, 5]}
             />
           </>
         )

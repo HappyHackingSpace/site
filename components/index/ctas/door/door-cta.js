@@ -75,15 +75,16 @@ export default function DoorCTA() {
       ? 'OPEN'
       : 'CLOSED'
 
+  const useDark = isNight || !isOpen
   const dayBg = 'linear-gradient(180deg, #87CEEB, #98D8C8)'
   const nightBg = 'linear-gradient(135deg, #141440, #1e2d50, #1a4070)'
-  const bg = isNight ? nightBg : dayBg
+  const bg = useDark ? nightBg : dayBg
 
   const dayOverlay =
     'linear-gradient(180deg, transparent 20%, rgba(0,0,0,0.55) 100%)'
   const nightOverlay =
     'linear-gradient(180deg, transparent 30%, rgba(15,15,50,0.45) 100%)'
-  const overlay = isNight ? nightOverlay : dayOverlay
+  const overlay = useDark ? nightOverlay : dayOverlay
 
   return (
     <Box
@@ -115,6 +116,39 @@ export default function DoorCTA() {
           zIndex: 0
         }}
       />
+
+      {/* Sun/Moon celestial element */}
+      {!loading && (
+        <Box
+          sx={{
+            position: 'absolute',
+            borderRadius: '50%',
+            transition: 'all 1s ease',
+            zIndex: 1,
+            ...(useDark
+              ? {
+                  width: '60px',
+                  height: '60px',
+                  top: '-15px',
+                  left: '-15px',
+                  background:
+                    'radial-gradient(circle at 35% 35%, #fffde8, #f5f5dc 50%, #e8e4c9)',
+                  boxShadow:
+                    '0 0 20px 8px rgba(245,245,220,0.3), 0 0 60px 20px rgba(200,200,180,0.15)'
+                }
+              : {
+                  width: '70px',
+                  height: '70px',
+                  top: '-18px',
+                  right: '-18px',
+                  background:
+                    'radial-gradient(circle at 40% 40%, #fff9e0, #ffdd44 40%, #ffaa00)',
+                  boxShadow:
+                    '0 0 30px 10px rgba(255,200,0,0.5), 0 0 80px 30px rgba(255,160,0,0.25), 0 0 120px 50px rgba(255,120,0,0.1)'
+                })
+          }}
+        />
+      )}
 
       {/* Layer 1: 3D scene */}
       {!prefersReducedMotion && (

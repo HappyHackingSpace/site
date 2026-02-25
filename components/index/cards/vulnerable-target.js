@@ -483,13 +483,10 @@ export default function VulnerableTarget({ stars }) {
               </Buttons>
               <Buttons
                 id="vt-templates"
-                link={TEMPLATES_REPO_URL}
+                link="https://vulnerabletarget.com"
                 icon="docs"
               >
                 Browse Templates
-              </Buttons>
-              <Buttons id="vt-star" link={REPO_URL} icon="view">
-                Star on GitHub
               </Buttons>
             </Flex>
           </Flex>
