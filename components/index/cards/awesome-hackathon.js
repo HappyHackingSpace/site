@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Box, Flex, Grid, Text } from 'theme-ui'
+import { Box, Flex, Grid, Image, Text } from 'theme-ui'
 import { keyframes } from '@emotion/react'
 import Buttons from './button'
 import CardModel from './card-model'
@@ -7,41 +7,28 @@ import CardModel from './card-model'
 /** @jsxImportSource theme-ui */
 
 const REPO_URL = 'https://github.com/HappyHackingSpace/awesome-hackathon'
-const ACCENT = '#FFB900'
+const BLUE = '#2563EB'
+const BG = '#0d0d0d'
 
 const CATEGORIES = [
-  { emoji: '\u{1F916}', label: 'AI/ML Hacks' },
-  { emoji: '\u{1F680}', label: 'Ship Fast' },
-  { emoji: '\u{1F9E0}', label: 'LLM Prompting' },
-  { emoji: '\u{26A1}', label: 'Vibe Coding' },
-  { emoji: '\u{1F525}', label: 'Demo Day' },
-  { emoji: '\u{1F3C6}', label: 'Win Strats' }
+  'AI/ML Hacks',
+  'Ship Fast',
+  'LLM Prompting',
+  'Vibe Coding',
+  'Demo Day',
+  'Win Strats'
 ]
 
 const float = keyframes`
-  0% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-8px) rotate(3deg); }
-  66% { transform: translateY(4px) rotate(-2deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0px); }
 `
 
 const floatAlt = keyframes`
-  0% { transform: translateY(0px) scale(1) rotate(0deg); }
-  25% { transform: translateY(6px) scale(1.05) rotate(-3deg); }
-  50% { transform: translateY(-6px) scale(0.97) rotate(2deg); }
-  75% { transform: translateY(3px) scale(1.02) rotate(-1deg); }
-  100% { transform: translateY(0px) scale(1) rotate(0deg); }
-`
-
-const gradientShift = keyframes`
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-`
-
-const titleGlow = keyframes`
-  0%, 100% { text-shadow: 0 0 30px rgba(255, 185, 0, 0.2), 0 0 60px rgba(255, 185, 0, 0.1); }
-  50% { text-shadow: 0 0 40px rgba(255, 185, 0, 0.5), 0 0 80px rgba(255, 185, 0, 0.25); }
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(3px); }
+  100% { transform: translateY(0px); }
 `
 
 const pillPop = keyframes`
@@ -49,29 +36,161 @@ const pillPop = keyframes`
   100% { opacity: 1; transform: translateY(0) scale(1); }
 `
 
-const orbPulse = keyframes`
-  0%, 100% { transform: scale(1); opacity: 0.4; }
-  50% { transform: scale(1.15); opacity: 0.7; }
-`
-
-const FLOATING_EMOJIS = [
-  { emoji: '\u{1F680}', top: '8%', left: '5%', size: 22, anim: float, dur: '6s', delay: '0s' },
-  { emoji: '\u{2B50}', top: '15%', left: '82%', size: 18, anim: floatAlt, dur: '5.5s', delay: '0.8s' },
-  { emoji: '\u{1F4BB}', top: '70%', left: '90%', size: 24, anim: float, dur: '7s', delay: '1.2s' },
-  { emoji: '\u{26A1}', top: '45%', left: '3%', size: 20, anim: floatAlt, dur: '4.5s', delay: '0.3s' },
-  { emoji: '\u{1F527}', top: '85%', left: '15%', size: 16, anim: float, dur: '6.5s', delay: '2s' },
-  { emoji: '\u{2699}\u{FE0F}', top: '25%', left: '45%', size: 14, anim: floatAlt, dur: '8s', delay: '1.5s' },
-  { emoji: '\u{1F3C6}', top: '5%', left: '60%', size: 20, anim: float, dur: '5s', delay: '0.5s' },
-  { emoji: '\u{1F525}', top: '60%', left: '50%', size: 26, anim: floatAlt, dur: '7.5s', delay: '3s' },
-  { emoji: '\u{1F4A1}', top: '35%', left: '92%', size: 18, anim: float, dur: '6s', delay: '1s' },
-  { emoji: '\u{1F389}', top: '90%', left: '70%', size: 22, anim: floatAlt, dur: '5s', delay: '2.5s' },
-  { emoji: '\u{1F308}', top: '50%', left: '20%', size: 16, anim: float, dur: '9s', delay: '4s' },
-  { emoji: '\u{1F4A5}', top: '75%', left: '40%', size: 28, anim: floatAlt, dur: '6s', delay: '0.7s' },
-  { emoji: '\u{1F50B}', top: '20%', left: '30%', size: 14, anim: float, dur: '7s', delay: '3.5s' },
-  { emoji: '\u{1F3AF}', top: '40%', left: '72%', size: 20, anim: floatAlt, dur: '5.5s', delay: '1.8s' }
+const CORNER_BRACKETS = [
+  { top: '10px', left: '10px', borderTop: `2.5px solid ${BLUE}`, borderLeft: `2.5px solid ${BLUE}` },
+  { top: '10px', right: '10px', borderTop: `2.5px solid ${BLUE}`, borderRight: `2.5px solid ${BLUE}` },
+  { bottom: '10px', left: '10px', borderBottom: `2.5px solid ${BLUE}`, borderLeft: `2.5px solid ${BLUE}` },
+  { bottom: '10px', right: '10px', borderBottom: `2.5px solid ${BLUE}`, borderRight: `2.5px solid ${BLUE}` }
 ]
 
-const CategoryPill = ({ emoji, label, index }) => (
+/* Hacker Emblem — Glider from Conway's Game of Life */
+const GLIDER_CELLS = [
+  [0, 1], [1, 2], [2, 0], [2, 1], [2, 2]
+]
+
+const HackerEmblem = () => (
+  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+    {[0, 1, 2].map(row =>
+      [0, 1, 2].map(col => {
+        const active = GLIDER_CELLS.some(([r, c]) => r === row && c === col)
+        const cx = 8 + col * 14
+        const cy = 8 + row * 14
+        return active ? (
+          <circle key={`${row}-${col}`} cx={cx} cy={cy} r="5" fill="white" />
+        ) : (
+          <circle key={`${row}-${col}`} cx={cx} cy={cy} r="5" stroke="rgba(255,255,255,0.2)" strokeWidth="1" fill="none" />
+        )
+      })
+    )}
+  </svg>
+)
+
+/* Reticle — blue plus inside corner bracket marks */
+const Reticle = () => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+    <path d="M1 8 L1 1 L8 1" stroke={BLUE} strokeWidth="2" fill="none" />
+    <path d="M20 1 L27 1 L27 8" stroke={BLUE} strokeWidth="2" fill="none" />
+    <path d="M27 20 L27 27 L20 27" stroke={BLUE} strokeWidth="2" fill="none" />
+    <path d="M8 27 L1 27 L1 20" stroke={BLUE} strokeWidth="2" fill="none" />
+    <line x1="14" y1="7" x2="14" y2="21" stroke={BLUE} strokeWidth="3" strokeLinecap="round" />
+    <line x1="7" y1="14" x2="21" y2="14" stroke={BLUE} strokeWidth="3" strokeLinecap="round" />
+  </svg>
+)
+
+/* 8-ray starburst with line rays */
+const StarburstRays = ({ color = 'white', size = 32 }) => {
+  const c = size / 2
+  const r = size / 2 - 2
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" aria-hidden="true">
+      {[0, 45, 90, 135, 180, 225, 270, 315].map(angle => {
+        const rad = (angle * Math.PI) / 180
+        return (
+          <line
+            key={angle}
+            x1={c}
+            y1={c}
+            x2={c + r * Math.cos(rad)}
+            y2={c - r * Math.sin(rad)}
+            stroke={color}
+            strokeWidth={angle % 90 === 0 ? 2 : 1.5}
+            strokeLinecap="round"
+          />
+        )
+      })}
+    </svg>
+  )
+}
+
+/* Mixed starburst — mostly white rays with 2 blue accent rays + center circle */
+const MixedStarburst = ({ size = 36 }) => {
+  const c = size / 2
+  const r = size / 2 - 2
+  const blueAngles = [135, 180]
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" aria-hidden="true">
+      {[0, 45, 90, 135, 180, 225, 270, 315].map(angle => {
+        const rad = (angle * Math.PI) / 180
+        const isBlue = blueAngles.includes(angle)
+        return (
+          <line
+            key={angle}
+            x1={c}
+            y1={c}
+            x2={c + r * Math.cos(rad)}
+            y2={c - r * Math.sin(rad)}
+            stroke={isBlue ? BLUE : 'white'}
+            strokeWidth={isBlue ? 2.5 : 1.8}
+            strokeLinecap="round"
+          />
+        )
+      })}
+      <circle cx={c} cy={c} r="3.5" stroke="white" strokeWidth="1.5" fill={BG} />
+    </svg>
+  )
+}
+
+/* Loading bar — vertical bar with rotated text */
+const LoadingBar = () => (
+  <Flex
+    aria-hidden="true"
+    sx={{
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '6px',
+      opacity: 0.5
+    }}
+  >
+    <Text
+      sx={{
+        fontSize: '7px',
+        color: 'white',
+        letterSpacing: '1.5px',
+        fontFamily: 'monospace',
+        writingMode: 'vertical-rl',
+        transform: 'rotate(180deg)'
+      }}
+    >
+      75%
+    </Text>
+    <Box
+      sx={{
+        width: '6px',
+        height: '48px',
+        bg: 'rgba(255,255,255,0.15)',
+        borderRadius: '3px',
+        position: 'relative',
+        overflow: 'hidden'
+      }}
+    >
+      <Box
+        sx={{
+          position: 'absolute',
+          bottom: 0,
+          width: '100%',
+          height: '75%',
+          bg: 'white',
+          borderRadius: '3px'
+        }}
+      />
+    </Box>
+    <Text
+      sx={{
+        fontSize: '6px',
+        color: 'white',
+        letterSpacing: '0.8px',
+        fontFamily: 'monospace',
+        writingMode: 'vertical-rl',
+        transform: 'rotate(180deg)',
+        opacity: 0.7
+      }}
+    >
+      LOADING...
+    </Text>
+  </Flex>
+)
+
+const CategoryPill = ({ label, index }) => (
   <Box
     sx={{
       display: 'flex',
@@ -79,25 +198,35 @@ const CategoryPill = ({ emoji, label, index }) => (
       gap: 2,
       px: 3,
       py: '10px',
-      background: 'rgba(255, 255, 255, 0.08)',
-      backdropFilter: 'blur(4px)',
-      borderRadius: '12px',
-      border: '1px solid rgba(255, 185, 0, 0.15)',
+      background: 'transparent',
+      borderRadius: '4px',
+      border: '1px solid rgba(255, 255, 255, 0.2)',
       color: 'white',
       whiteSpace: 'nowrap',
       transition: 'all 0.2s ease',
       animation: `${pillPop} 0.4s ease-out both`,
       animationDelay: `${index * 0.08}s`,
       '&:hover': {
-        background: 'rgba(255, 185, 0, 0.12)',
-        border: '1px solid rgba(255, 185, 0, 0.35)',
+        background: BLUE,
+        borderColor: BLUE,
         transform: 'translateY(-2px) scale(1.03)',
-        boxShadow: '0 4px 16px rgba(255, 185, 0, 0.2)'
+        boxShadow: `0 4px 16px ${BLUE}40`
       }
     }}
   >
-    <Text as="span" sx={{ fontSize: '18px', lineHeight: 1 }}>{emoji}</Text>
-    <Text as="span" sx={{ fontWeight: 'bold', fontSize: 1, fontFamily: 'Phantom Sans' }}>
+    <Box
+      sx={{
+        width: '6px',
+        height: '6px',
+        borderRadius: '50%',
+        bg: index % 2 === 0 ? BLUE : 'white',
+        flexShrink: 0
+      }}
+    />
+    <Text
+      as="span"
+      sx={{ fontWeight: 'bold', fontSize: 1, fontFamily: 'Phantom Sans' }}
+    >
       {label}
     </Text>
   </Box>
@@ -123,95 +252,171 @@ export default function AwesomeHackathon({ stars }) {
       position={[null, 'top', 'top']}
       sx={{
         position: 'relative',
-        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 30%, #0f3460 60%, #1a1a2e 100%)',
-        backgroundSize: '200% 200%',
-        animation: `${gradientShift} 12s ease infinite`,
+        background: BG,
         overflow: 'hidden',
         height: 'fit-content'
       }}
-      highlight={ACCENT}
+      highlight={BLUE}
     >
-      {/* Glow orbs */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: '-20%',
-          right: '-10%',
-          width: '300px',
-          height: '300px',
-          background: 'radial-gradient(circle, rgba(255,185,0,0.18) 0%, transparent 70%)',
-          borderRadius: '50%',
-          zIndex: 0,
-          pointerEvents: 'none',
-          animation: `${orbPulse} 8s ease-in-out infinite`
-        }}
-      />
-      <Box
-        sx={{
-          position: 'absolute',
-          bottom: '-15%',
-          left: '-5%',
-          width: '250px',
-          height: '250px',
-          background: 'radial-gradient(circle, rgba(131,58,180,0.15) 0%, transparent 70%)',
-          borderRadius: '50%',
-          zIndex: 0,
-          pointerEvents: 'none',
-          animation: `${orbPulse} 10s ease-in-out infinite`,
-          animationDelay: '3s'
-        }}
-      />
-      <Box
-        sx={{
-          position: 'absolute',
-          top: '40%',
-          left: '15%',
-          width: '200px',
-          height: '200px',
-          background: 'radial-gradient(circle, rgba(255,100,50,0.12) 0%, transparent 70%)',
-          borderRadius: '50%',
-          zIndex: 0,
-          pointerEvents: 'none',
-          animation: `${orbPulse} 12s ease-in-out infinite`,
-          animationDelay: '5s'
-        }}
-      />
-
-      {/* Floating emojis */}
-      {FLOATING_EMOJIS.map(({ emoji, top, left, size, anim, dur, delay }, i) => (
+      {/* Corner crop-mark brackets */}
+      {CORNER_BRACKETS.map((style, i) => (
         <Box
           key={i}
-          aria-hidden="true"
           sx={{
             position: 'absolute',
-            top,
-            left,
-            fontSize: `${size}px`,
-            opacity: 0.18,
+            width: '28px',
+            height: '28px',
             zIndex: 1,
             pointerEvents: 'none',
-            willChange: 'transform',
-            animation: `${anim} ${dur} ease-in-out infinite`,
-            animationDelay: delay
+            ...style
           }}
-        >
-          {emoji}
-        </Box>
+        />
       ))}
 
+      {/* Reticle — top left */}
+      <Box
+        aria-hidden="true"
+        sx={{
+          position: 'absolute',
+          top: '8%',
+          left: '4%',
+          opacity: 0.6,
+          zIndex: 1,
+          pointerEvents: 'none',
+          animation: `${float} 9s ease-in-out infinite`
+        }}
+      >
+        <Reticle />
+      </Box>
+
+      {/* HHS Logo + Hacker Emblem (Glider) — top right */}
+      <Flex
+        aria-hidden="true"
+        sx={{
+          position: 'absolute',
+          top: ['18%', '14%', '12%'],
+          right: ['48px', '52px', '56px'],
+          alignItems: 'center',
+          gap: '12px',
+          opacity: 0.6,
+          zIndex: 1,
+          pointerEvents: 'none',
+          animation: `${float} 8s ease-in-out infinite`
+        }}
+      >
+        <Image
+          src="https://assets.happyhacking.space/flag-standalone-bw.svg"
+          alt=""
+          sx={{
+            height: '44px',
+            width: 'auto'
+          }}
+        />
+        <HackerEmblem />
+      </Flex>
+
+      {/* Blue starburst rays — bottom left */}
+      <Box
+        aria-hidden="true"
+        sx={{
+          position: 'absolute',
+          bottom: '14%',
+          left: '4%',
+          opacity: 0.45,
+          zIndex: 1,
+          pointerEvents: 'none',
+          animation: `${floatAlt} 7s ease-in-out infinite`,
+          animationDelay: '1s'
+        }}
+      >
+        <StarburstRays color={BLUE} size={30} />
+      </Box>
+
+      {/* White starburst rays — mid left */}
+      <Box
+        aria-hidden="true"
+        sx={{
+          position: 'absolute',
+          top: '52%',
+          left: '6%',
+          opacity: 0.3,
+          zIndex: 1,
+          pointerEvents: 'none',
+          animation: `${float} 8s ease-in-out infinite`,
+          animationDelay: '3s'
+        }}
+      >
+        <StarburstRays color="white" size={26} />
+      </Box>
+
+      {/* Mixed starburst — bottom right area */}
+      <Box
+        aria-hidden="true"
+        sx={{
+          position: 'absolute',
+          bottom: ['20%', '24%', '28%'],
+          right: ['14%', '16%', '18%'],
+          opacity: 0.4,
+          zIndex: 1,
+          pointerEvents: 'none',
+          animation: `${floatAlt} 9s ease-in-out infinite`,
+          animationDelay: '2s',
+          display: ['none', 'block', 'block']
+        }}
+      >
+        <MixedStarburst size={34} />
+      </Box>
+
+      {/* Loading bar — right edge */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: '50%',
+          right: '3%',
+          transform: 'translateY(-50%)',
+          zIndex: 1,
+          pointerEvents: 'none',
+          display: ['none', 'block', 'block']
+        }}
+      >
+        <LoadingBar />
+      </Box>
+
+      {/* Blue dash — left edge */}
+      <Box
+        aria-hidden="true"
+        sx={{
+          position: 'absolute',
+          top: '38%',
+          left: '3%',
+          width: '14px',
+          height: '2.5px',
+          bg: BLUE,
+          opacity: 0.6,
+          zIndex: 1,
+          pointerEvents: 'none'
+        }}
+      />
+
+      {/* Title */}
       <Text
         as="h2"
         variant="title"
         sx={{
           fontSize: ['36px', 4, 5],
-          color: ACCENT,
-          animation: `${titleGlow} 3s ease-in-out infinite`,
           lineHeight: 1.1,
           position: 'relative',
-          zIndex: 2
+          zIndex: 2,
+          fontWeight: 900,
+          fontStyle: 'italic'
         }}
       >
-        Awesome Hackathon
+        <Text as="span" sx={{ color: 'white' }}>
+          Awesome{' '}
+        </Text>
+        <Text as="span" sx={{ color: BLUE }}>
+          Hackathon
+        </Text>
       </Text>
 
       <Grid columns={[1, 2, 2]} sx={{ gap: 4, height: 'fit-content' }}>
@@ -219,9 +424,13 @@ export default function AwesomeHackathon({ stars }) {
           <Text
             as="p"
             variant="subtitle"
-            sx={{ zIndex: 2, position: 'relative' }}
+            sx={{
+              zIndex: 2,
+              position: 'relative',
+              color: 'rgba(255, 255, 255, 0.7)'
+            }}
           >
-            Your ultimate open-source toolkit for hackathons - curated
+            Your ultimate open-source toolkit for hackathons — curated
             resources, battle-tested tools & strategies to help you ideate,
             build, pitch & win.
           </Text>
@@ -229,18 +438,11 @@ export default function AwesomeHackathon({ stars }) {
             <Buttons
               id="awesome-explore"
               link={REPO_URL}
-              primary={ACCENT}
+              primary={BLUE}
               icon="explore"
-              sx={{ color: '#1a1a2e' }}
+              sx={{ color: 'white' }}
             >
               Explore the List
-            </Buttons>
-            <Buttons
-              id="awesome-star"
-              link={REPO_URL}
-              icon="view"
-            >
-              Star on GitHub
             </Buttons>
           </Flex>
         </Flex>
@@ -252,7 +454,8 @@ export default function AwesomeHackathon({ stars }) {
               fontSize: [1, '14px', '16px'],
               position: 'relative',
               zIndex: 2,
-              opacity: 0.7,
+              opacity: 0.5,
+              color: 'white',
               mb: 3
             }}
           >
@@ -262,8 +465,12 @@ export default function AwesomeHackathon({ stars }) {
             columns={[1, 2, 2]}
             sx={{ gap: '12px', position: 'relative', zIndex: 2 }}
           >
-            {CATEGORIES.map(({ emoji, label }, index) => (
-              <CategoryPill key={label} emoji={emoji} label={label} index={index} />
+            {CATEGORIES.map((label, index) => (
+              <CategoryPill
+                key={label}
+                label={label}
+                index={index}
+              />
             ))}
           </Grid>
         </Box>
