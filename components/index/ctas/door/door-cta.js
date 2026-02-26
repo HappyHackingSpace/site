@@ -19,16 +19,48 @@ const blink = keyframes({
   '50%': { opacity: 0 }
 })
 
+/*
+ * Sunrise/sunset for Diyarbakir, Turkey
+ * Lat: 37.91°N, Lng: 40.22°E, UTC+3 (TRT, no DST)
+ */
+const DYB_LAT = 37.91
+const DYB_LNG = 40.22
+const DYB_UTC_OFFSET = 3
+
+function getDiyarbakirSunTimes() {
+  const now = new Date()
+  const start = new Date(Date.UTC(now.getUTCFullYear(), 0, 1))
+  const dayOfYear = Math.floor((now - start) / 86400000) + 1
+
+  const declination =
+    -23.45 * Math.cos((2 * Math.PI * (dayOfYear + 10)) / 365)
+  const latRad = (DYB_LAT * Math.PI) / 180
+  const decRad = (declination * Math.PI) / 180
+
+  const cosHA = -Math.tan(latRad) * Math.tan(decRad)
+  const hourAngle =
+    (Math.acos(Math.max(-1, Math.min(1, cosHA))) * 180) / Math.PI
+
+  const solarNoon = 12 - DYB_LNG / 15
+  const sunrise = solarNoon - hourAngle / 15 + DYB_UTC_OFFSET
+  const sunset = solarNoon + hourAngle / 15 + DYB_UTC_OFFSET
+
+  const currentHour =
+    ((now.getUTCHours() + DYB_UTC_OFFSET) % 24) + now.getUTCMinutes() / 60
+
+  return { sunrise, sunset, currentHour }
+}
+
 function useTimeOfDay() {
   const [isNight, setIsNight] = useState(() => {
-    const h = new Date().getHours()
-    return h >= 20 || h < 6
+    const { sunrise, sunset, currentHour } = getDiyarbakirSunTimes()
+    return currentHour < sunrise || currentHour >= sunset
   })
 
   useEffect(() => {
     const check = () => {
-      const h = new Date().getHours()
-      setIsNight(h >= 20 || h < 6)
+      const { sunrise, sunset, currentHour } = getDiyarbakirSunTimes()
+      setIsNight(currentHour < sunrise || currentHour >= sunset)
     }
     const interval = setInterval(check, 60_000)
     return () => clearInterval(interval)
