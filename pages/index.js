@@ -7,7 +7,8 @@ import {
   Grid,
   Heading,
   Link,
-  Text
+  Text,
+  Container
 } from 'theme-ui'
 import { useEffect, useRef, useState, useMemo, useCallback } from 'react'
 import { LazySection } from '../hooks/useInView'
@@ -31,6 +32,150 @@ const Carousel = dynamic(() => import('../components/index/carousel'), {
   },
   ssr: true // Carousel is above fold
 })
+
+const FAQItem = ({ question, answer, isOpen, onToggle }) => {
+  const contentRef = useRef(null)
+  const [height, setHeight] = useState(0)
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setHeight(isOpen ? contentRef.current.scrollHeight : 0)
+    }
+  }, [isOpen])
+
+  return (
+    <Box
+      sx={{
+        borderBottom: '1px solid',
+        borderColor: 'sunken',
+        py: 3,
+        '&:last-child': { borderBottom: 'none' }
+      }}
+    >
+      <Flex
+        onClick={onToggle}
+        sx={{
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          cursor: 'pointer',
+          '&:hover h3': { color: 'red' }
+        }}
+      >
+        <Heading
+          as="h3"
+          variant="subheadline"
+          sx={{
+            fontSize: [2, 3],
+            m: 0,
+            transition: 'color 0.2s ease',
+            color: isOpen ? 'red' : 'inherit'
+          }}
+        >
+          {question}
+        </Heading>
+        <Icon
+          glyph={isOpen ? 'view-close' : 'plus'}
+          sx={{
+            flexShrink: 0,
+            ml: 3,
+            color: isOpen ? 'red' : 'muted',
+            transition: 'transform 0.3s ease',
+            transform: isOpen ? 'rotate(90deg)' : 'none'
+          }}
+        />
+      </Flex>
+      <Box
+        ref={contentRef}
+        sx={{
+          height: `${height}px`,
+          overflow: 'hidden',
+          transition: 'height 0.3s ease-in-out'
+        }}
+      >
+        <Text
+          as="p"
+          variant="subtitle"
+          sx={{
+            mt: 3,
+            mb: 0,
+            fontSize: [1, 2],
+            color: 'slate',
+            lineHeight: 'tall'
+          }}
+        >
+          {answer}
+        </Text>
+      </Box>
+    </Box>
+  )
+}
+
+const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState(null)
+
+  const faqs = [
+    {
+      question: 'What is HHS?',
+      answer: 'Happy Hacking Space is a non-profit community of hackers, crafters, and explorers in Mesopotamia who build together.'
+    },
+    {
+      question: 'How can I join?',
+      answer: 'You can become a part of our community by joining our Discord channel or attending our physical events.'
+    },
+    {
+      question: 'Is it free?',
+      answer: 'Yes, joining our community and most of our events is completely free. Some special workshops may require covering material costs.'
+    }
+  ]
+
+  return (
+    <Box
+      id="faq"
+      as="section"
+      sx={{
+        py: [5, 6],
+        bg: 'snow'
+      }}
+    >
+      <Container sx={{ maxWidth: 'layout' }}>
+        <Text
+          variant="eyebrow"
+          as="h4"
+          sx={{ color: 'red', textAlign: 'center', mb: 2 }}
+        >
+          FAQ
+        </Text>
+        <Heading
+          as="h2"
+          variant="title"
+          sx={{ textAlign: 'center', mb: [4, 5], fontSize: [4, 5, 6] }}
+        >
+          Frequently Asked Questions
+        </Heading>
+        <Box
+          sx={{
+            maxWidth: '800px',
+            mx: 'auto',
+            bg: 'white',
+            p: [3, 4],
+            borderRadius: 'extra',
+            boxShadow: 'card'
+          }}
+        >
+          {faqs.map((faq, index) => (
+            <FAQItem
+              key={index}
+              question={faq.question}
+              answer={faq.answer}
+              isOpen={openIndex === index}
+              onToggle={() => setOpenIndex(openIndex === index ? null : index)}
+            />
+          ))}
+        </Box>
+      </Container>
+    </Box>
+  )
+}
 
 const Sinerider = dynamic(() => import('../components/index/cards/sinerider'), {
   loading: () => {
@@ -1375,6 +1520,7 @@ function Page({
             </Grid>
           </Box>
         </Box>
+        <FAQ />
 
         {new URL(asPath, 'http://example.com').searchParams.get('gen') ===
           'z' && (

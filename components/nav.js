@@ -292,6 +292,9 @@ const Navigation = props => {
       <NextLink href="/contact">
         <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Contact</NavLinkText>
       </NextLink>
+      <NextLink href="/#faq">
+        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>FAQ</NavLinkText>
+      </NextLink>
       {/* <NextLink href="/slack">
       <NavLinkText isMobile={props.isMobile}>Community</NavLinkText>
     </NextLink>
