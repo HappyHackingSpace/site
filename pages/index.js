@@ -1622,8 +1622,10 @@ function Page({
 export async function getStaticProps() {
   // Only load critical static data at build time
   const carouselCards = require('../lib/carousel.json')
-  const ctaCards = require('../lib/cta.json').filter(c => !c.disabled)
-  const cardsList = require('../lib/cards.json').filter(c => !c.disabled)
+  const now = new Date()
+  const isActive = c => !c.disabled && (!c.expiresAt || new Date(c.expiresAt) > now)
+  const ctaCards = require('../lib/cta.json').filter(isActive)
+  const cardsList = require('../lib/cards.json').filter(isActive)
 
   // Load basic events data for initial page render (optional)
   let events = []

@@ -227,7 +227,7 @@ export default function OsintCTA() {
           }}
           as="span"
         >
-          START HUNTING
+          REGISTER
         </Button>
       </Card>
     </Box>

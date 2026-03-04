@@ -1,7 +1,7 @@
 [
   {
     "component": "osint/osint-cta",
-    "disabled": true
+    "expiresAt": "2026-04-15"
   },
   {
     "component": "door/door-cta"
