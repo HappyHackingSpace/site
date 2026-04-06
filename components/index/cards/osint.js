@@ -240,7 +240,7 @@ export default function Osint() {
                 letterSpacing: '1px'
               }}
             >
-              REGISTER
+              START HUNTING
             </Buttons>
           </Box>
 

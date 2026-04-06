@@ -1,9 +1,9 @@
 [
   {
     "id": "hhs-osint-ctf",
-    "expiresAt": "2026-04-15",
-    "copy": "HHS OSINT CTF Registration Open!",
-    "caption": "Test your open-source intelligence skills in our capture the flag challenge. Register now!",
+    "expiresAt": "2026-04-20",
+    "copy": "HHS OSINT CTF Has Started — Start Hunting!",
+    "caption": "Test your open-source intelligence skills in our capture the flag challenge. The hunt is on!",
     "href": "https://hhs.ninja",
     "imgSrc": "/project-icon/osint-sticker.svg",
     "imgAlt": "OSINT CTF"
