@@ -19,6 +19,7 @@ import BGImg from '../components/background-image'
 import ForceTheme from '../components/force-theme'
 import Footer from '../components/footer'
 import Image from 'next/image'
+import PhysicalAddress from '../components/physical-address'
 
 // General Support Card Component
 const DonationCard = ({ title, description, payment_link, contact_required }) => (
@@ -354,7 +355,14 @@ export default function BagisPage({ supportNeeds = [], productNeeds = [] }) {
 
               {/* Product List */}
               <Box>
-                <Flex sx={{ justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
+                <PhysicalAddress lang="tr" sx={{ mb: 1 }} />
+                <Flex
+                  sx={{
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    mb: 2
+                  }}
+                >
                   <Text sx={{ color: 'slate', fontWeight: 'bold' }}>
                     {filteredProducts.length} products found
                   </Text>
