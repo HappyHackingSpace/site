@@ -9,15 +9,6 @@
     "link": "https://github.com/HappyHackingSpace/vt"
   },
   {
-    "background": "#C76B0F",
-    "titleColor": "#F6D193",
-    "descriptionColor": "#F6D193",
-    "title": "Githubmon",
-    "description": "Developer Dashboard for GitHub Activity Management  ",
-    "img": "/project-icon/githubmon.png",
-    "link": "https://github.com/HappyHackingSpace/githubmon"
-  },
-  {
     "background": "#FFF1DE",
     "titleColor": "#4F2A0E",
     "descriptionColor": "#4F2A0E",
@@ -56,7 +47,7 @@
   {
     "background": "snow",
     "titleColor": "dark",
-    "descriptionColor": "black",  
+    "descriptionColor": "black",
     "title": "HackerTaboo",
     "description": "Taboo for hackers: guess the word without saying it!",
     "img": "/project-icon/hackertaboo.png",

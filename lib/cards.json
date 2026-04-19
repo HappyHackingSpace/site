@@ -1,12 +1,44 @@
 [
-  { "component": "vulnerable-target", "section": "opensource" },
-  { "component": "communityHub", "section": "opensource" },
-  { "component": "githubmon", "section": "opensource" },
-  { "component": "awesome-hackathon", "section": "opensource" },
-  { "component": "osint", "section": "community", "expiresAt": "2026-04-20" },
-  { "component": "som", "section": "community", "disabled": true },
-  { "component": "athena", "section": "community", "disabled": true },
-  { "component": "highway", "section": "community", "disabled": true },
-  { "component": "shipwrecked", "section": "community", "disabled": true },
-  { "component": "pizza", "section": "community", "disabled": true }
+  {
+    "component": "vulnerable-target",
+    "section": "opensource"
+  },
+  {
+    "component": "communityHub",
+    "section": "opensource"
+  },
+  {
+    "component": "awesome-hackathon",
+    "section": "opensource"
+  },
+  {
+    "component": "osint",
+    "section": "community",
+    "expiresAt": "2026-04-20"
+  },
+  {
+    "component": "som",
+    "section": "community",
+    "disabled": true
+  },
+  {
+    "component": "athena",
+    "section": "community",
+    "disabled": true
+  },
+  {
+    "component": "highway",
+    "section": "community",
+    "disabled": true
+  },
+  {
+    "component": "shipwrecked",
+    "section": "community",
+    "disabled": true
+  },
+  {
+    "component": "pizza",
+    "section": "community",
+    "disabled": true
+  }
 ]
