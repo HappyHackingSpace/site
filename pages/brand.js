@@ -19,6 +19,7 @@ import ForceTheme from "../components/force-theme";
 import Nav from "../components/nav";
 import Footer from "../components/footer";
 import { startCase } from "lodash";
+import { useTranslation } from "../lib/i18n";
 
 export const Logo = ({ name }) => (
   <Card variant="sunken" sx={{ p: [3, 3] }}>
@@ -111,7 +112,9 @@ const ColorSwatch = ({ bg }) => (
   </Card>
 );
 
-const Page = ({ css }) => (
+const Page = ({ css }) => {
+  const { t } = useTranslation();
+  return (
   <>
     <Meta
       as={Head}
@@ -143,7 +146,7 @@ const Page = ({ css }) => (
     >
       <Container variant="copy">
         <Heading as="h1" variant="title" sx={{ color: "primary", mt: [2, 4] }}>
-        Happy Hacking Space Brand
+        {t('brand.header')}
         </Heading>
         <Heading as="h2" variant="subtitle" sx={{ mt: 3, color: "text" }}>
           Download HQ’s logos and preview our brand colors & font.
@@ -171,7 +174,7 @@ const Page = ({ css }) => (
         h2: { variant: "text.headline" },
       }}
     >
-      <Heading variant="headline">Logos</Heading>
+      <Heading variant="headline">{t('brand.logos')}</Heading>
       <Grid columns={[null, 2, 3]} gap={3}>
         {[
           "flag-standalone",
@@ -189,7 +192,7 @@ const Page = ({ css }) => (
         mb={[4, 5]}
         download
       >
-        Download all →
+        {t('brand.downloadAll')}
       </Button>
 
       {/* <Heading id="bank" variant="headline">
@@ -210,7 +213,7 @@ const Page = ({ css }) => (
       </Button> */}
 
       <Heading id="banners" variant="headline">
-        HTML banners
+        {t('brand.htmlBanners')}
       </Heading>
       <Box
         as="table"
@@ -226,8 +229,8 @@ const Page = ({ css }) => (
       >
         <Box as="thead">
           <tr>
-            <th>Preview</th>
-            <th>HTML code</th>
+            <th>{t('brand.preview')}</th>
+            <th>{t('brand.htmlCode')}</th>
           </tr>
         </Box>
         <tbody>
@@ -252,9 +255,9 @@ const Page = ({ css }) => (
         mt={3}
         mb={[4, 5]}
       >
-        React component →
+        {t('brand.reactComponent')}
       </Button>
-      <Heading variant="headline">Colors</Heading>
+      <Heading variant="headline">{t('brand.colors')}</Heading>
       <Grid columns={[2, 4]} gap={3} mb={[4, 5]}>
         {[
           "red",
@@ -309,10 +312,9 @@ const Page = ({ css }) => (
       >
         Explore Hack Club Icons →
       </Button> */}
-      <Heading variant="headline">UI components</Heading>
+      <Heading variant="headline">{t('brand.uiComponents')}</Heading>
       <Text as="p" variant="subtitle" sx={{ mb: 3 }}>
-        Want to make a Happy Hacking Space themed site? Use our pre-made CSS and UI
-        components to hackify your site.
+        {t('brand.uiComponentsDesc')}
       </Text>
       <Button
         as="a"
@@ -322,7 +324,7 @@ const Page = ({ css }) => (
         sx={{ mr: 3, mb: 3 }}
         variant="outline"
       >
-        Explore Hack Club Theme →
+        {t('brand.exploreTheme')}
       </Button>
       {/* <Button
         as="a"
@@ -345,6 +347,7 @@ const Page = ({ css }) => (
     <Footer />
   </>
 );
+};
 
 export default Page;
 

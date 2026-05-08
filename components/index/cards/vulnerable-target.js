@@ -3,6 +3,7 @@ import { Box, Flex, Grid, Text } from 'theme-ui'
 import { keyframes } from '@emotion/react'
 import Buttons from './button'
 import CardModel from './card-model'
+import { useTranslation } from '../../../lib/i18n'
 
 /** @jsxImportSource theme-ui */
 
@@ -276,6 +277,7 @@ function ReticleCanvas({ size = 420 }) {
 }
 
 export default function VulnerableTarget({ stars }) {
+  const { t } = useTranslation()
   const [repoStars, setRepoStars] = useState(stars || 0)
   const [stats, setStats] = useState(DEFAULT_STATS)
   const [vulnTags, setVulnTags] = useState(DEFAULT_TAGS)
@@ -294,10 +296,10 @@ export default function VulnerableTarget({ stars }) {
         const { total, categories, tags } = data
         if (total != null && categories != null) {
           setStats([
-            { value: total, label: 'TARGETS' },
-            { value: categories.cves || 0, label: 'CVES' },
-            { value: categories.benchmarks || 0, label: 'BENCHMARKS' },
-            { value: categories.labs || 0, label: 'LABS' }
+            { value: total, label: t('cards.vulnerableTarget.targets') },
+            { value: categories.cves || 0, label: t('cards.vulnerableTarget.cves') },
+            { value: categories.benchmarks || 0, label: t('cards.vulnerableTarget.benchmarks') },
+            { value: categories.labs || 0, label: t('cards.vulnerableTarget.labs') }
           ])
         }
         if (Array.isArray(tags)) {
@@ -380,7 +382,7 @@ export default function VulnerableTarget({ stars }) {
                     '0 0 20px rgba(255,255,255,0.15), 0 0 40px rgba(255,255,255,0.05)'
                 }}
               >
-                VT
+                {t('cards.vulnerableTarget.title')}
               </Text>
               <Text
                 as="p"
@@ -392,7 +394,7 @@ export default function VulnerableTarget({ stars }) {
                   fontFamily: 'monospace'
                 }}
               >
-                vulnerable target
+                {t('cards.vulnerableTarget.subtitle')}
               </Text>
             </Box>
 
@@ -404,7 +406,7 @@ export default function VulnerableTarget({ stars }) {
                 fontFamily: 'monospace'
               }}
             >
-              // spin up vulnerable targets from your terminal //
+              {t('cards.vulnerableTarget.tagline')}
             </Text>
 
             <Flex sx={{ gap: [3, 3, 4], flexWrap: 'wrap' }}>
@@ -469,7 +471,7 @@ export default function VulnerableTarget({ stars }) {
                 whiteSpace: 'nowrap'
               }}
             >
-              go install github.com/happyhackingspace/vt/cmd/vt@latest
+              {t('cards.vulnerableTarget.install')}
             </Text>
 
             <Flex sx={{ flexDirection: 'column' }}>
@@ -479,14 +481,14 @@ export default function VulnerableTarget({ stars }) {
                 primary={DANGER}
                 icon="explore"
               >
-                Explore
+                {t('cards.vulnerableTarget.explore')}
               </Buttons>
               <Buttons
                 id="vt-templates"
                 link="https://vulnerabletarget.com"
                 icon="docs"
               >
-                Browse Templates
+                {t('cards.vulnerableTarget.browse')}
               </Buttons>
             </Flex>
           </Flex>

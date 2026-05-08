@@ -1,10 +1,12 @@
 import CardModel from './card-model'
 import { Box, Button, Flex, Grid, Image, Text } from 'theme-ui'
 import Buttons from './button'
+import { useTranslation } from '../../../lib/i18n'
 
 /** @jsxImportSource theme-ui */
 
 export default function Pizza() {
+  const { t } = useTranslation()
   return (
     <CardModel
       color="white"
@@ -32,29 +34,15 @@ export default function Pizza() {
               mb: '8px'
             }}
           >
-            Start A Hack Club <br /> Get{' '}
-            <Text
-              sx={{
-                background: [
-                  'linear-gradient(180deg, #FF8C37 25%, #EC3750 100%)'
-                ],
-                WebkitBackgroundClip: 'text',
-                WebkitTextStroke: 'currentColor',
-                WebkitTextFillColor: 'transparent'
-              }}
-            >
-              {' '}
-              Pizza for Every Project
-            </Text>
+            {t('cards.pizza.title')}
           </Text>
 
           <Text as="p" variant="subtitle" sx={{ color: '#000', mb: 3 }}>
-            GitHub is providing pizza grants to every teen who starts a
-            Hack Club at their school.
+            {t('cards.pizza.desc')}
           </Text>
 
           <Buttons id="14" link="/pizza" icon="welcome" primary="primary">
-            Get Your Pizza Grant
+            {t('cards.pizza.grant')}
           </Buttons>
         </Box>
         <Box>
@@ -67,7 +55,7 @@ export default function Pizza() {
             }}
           >
             <Image
-              alt="Group of Happy Hacking Space"
+              alt={t('cards.pizza.alt')}
               sx={{
                 borderRadius: '16px',
                 border: '1px solid #EC3750',
@@ -87,7 +75,7 @@ export default function Pizza() {
                 position: 'absolute'
               }}
             >
-             From Happy Hacking Space Academy
+             {t('cards.pizza.from')}
             </Text>
           </Flex>
         </Box>

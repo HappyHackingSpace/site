@@ -10,6 +10,7 @@ import Image from 'next/image'
 import volleyballPic from '../../public/jobs/volleyball-group-pic.jpg'
 import { compact } from 'lodash'
 import { decodeHtmlEntities } from '../../lib/helpers'
+import { useTranslation } from '../../lib/i18n'
 
 const JobListing = ({
   positionName,
@@ -65,7 +66,9 @@ const JobListing = ({
   </Link>
 )
 
-const Page = ({ jobs }) => (
+const Page = ({ jobs }) => {
+  const { t } = useTranslation()
+  return (
   <>
     <Meta
       as={Head}
@@ -104,7 +107,7 @@ const Page = ({ jobs }) => (
         >
           <Image
             src={volleyballPic}
-            alt="Happy Hackers during a volleyball game"
+            alt={t('jobs.imageAlt')}
             layout="fill"
             style={{ objectFit: 'cover' }}
           />
@@ -117,7 +120,7 @@ const Page = ({ jobs }) => (
               color: 'white'
             }}
           >
-            Join the Happy Hacking Space Team
+            {t('jobs.hero.title')}
           </Heading>
           <Heading
             sx={{
@@ -138,9 +141,9 @@ const Page = ({ jobs }) => (
                 mr: 1
               }}
             >
-              $ ssh jobs.happyhacking.space -p 1337
+              {t('jobs.sshPrompt')}
             </Text>{' '}
-            or scroll down to learn more...
+            {t('jobs.hero.subtitle')}
           </Heading>
         </Container>
       </Box>
@@ -186,7 +189,7 @@ const Page = ({ jobs }) => (
                 gridColumn: '1 / -1'
               }}
             >
-              Please be aware that all positions are currently volunteer based roles. Apply <a target="_blank" rel="noopener noreferrer"href="https://airtable.com/app5eKIfSXPFULKX8/pag0z4PqwOVHdr0ak/form">here</a>. 
+              {t('jobs.volunteerNotice')}<a target="_blank" rel="noopener noreferrer"href="https://airtable.com/app5eKIfSXPFULKX8/pag0z4PqwOVHdr0ak/form">here</a>. 
             </Text>
         </Grid>
       </Container>
@@ -195,6 +198,7 @@ const Page = ({ jobs }) => (
     <Footer key="footer" />
   </>
 )
+}
 
 export default Page
 

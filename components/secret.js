@@ -1,7 +1,9 @@
 import { Box, Text } from 'theme-ui'
 import { useState, useEffect } from 'react'
+import { useTranslation } from '../lib/i18n'
 
 export default function Secret({ reveal, ...props }) {
+  const { t } = useTranslation()
   const [img, setImage] = useState('')
 
   useEffect(() => {
@@ -123,9 +125,9 @@ export default function Secret({ reveal, ...props }) {
             src={img}
             width="30%"
             sx={{ margin: 'auto' }}
-            alt="a secret fox!"
+            alt={t('secret.alt')}
           />
-          <Text>print kc</Text>
+          <Text>{t('secret.text')}</Text>
         </Box>
       </Box>
     </Box>

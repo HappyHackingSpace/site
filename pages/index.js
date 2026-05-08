@@ -20,6 +20,7 @@ import BGImg from '../components/background-image'
 import ForceTheme from '../components/force-theme'
 import Footer from '../components/footer'
 import Stage from '../components/stage'
+import { useTranslation } from '../lib/i18n'
 // import Snowfall from '../components/snowfall'
 import CardRenderer from '../components/index/cards/card-renderer'
 import Slack from '../components/index/cards/slack'
@@ -111,20 +112,21 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => {
 }
 
 const FAQ = () => {
+  const { t } = useTranslation()
   const [openIndex, setOpenIndex] = useState(null)
 
   const faqs = [
     {
-      question: 'What is HHS?',
-      answer: 'Happy Hacking Space is a non-profit community of hackers, crafters, and explorers in Mesopotamia who build together.'
+      question: t('home.faq.q1'),
+      answer: t('home.faq.a1')
     },
     {
-      question: 'How can I join?',
-      answer: 'You can become a part of our community by joining our Discord channel or attending our physical events.'
+      question: t('home.faq.q2'),
+      answer: t('home.faq.a2')
     },
     {
-      question: 'Is it free?',
-      answer: 'Yes, joining our community and most of our events is completely free. Some special workshops may require covering material costs.'
+      question: t('home.faq.q3'),
+      answer: t('home.faq.a3')
     }
   ]
 
@@ -143,14 +145,14 @@ const FAQ = () => {
           as="h4"
           sx={{ color: 'red', textAlign: 'center', mb: 2 }}
         >
-          FAQ
+          {t('home.faq.eyebrow')}
         </Text>
         <Heading
           as="h2"
           variant="title"
           sx={{ textAlign: 'center', mb: [4, 5], fontSize: [4, 5, 6] }}
         >
-          Frequently Asked Questions
+          {t('home.faq.title')}
         </Heading>
         <Box
           sx={{
@@ -224,6 +226,7 @@ function Page({
   cardsList,
   events: initialEvents
 }) {
+  const { t } = useTranslation()
   // Client-side API data states for async loading
   const [apiData, setApiData] = useState({
     slackData: { total_members_count: 500 }, // fallback
@@ -400,7 +403,7 @@ function Page({
   }, [])
 
   const easterEgg = () => {
-    alert('Hey, you typed the Konami Code!')
+    alert(t('easterEgg.alert'))
 
     jsConfetti.current.addConfetti({
       confettiColors: [
@@ -428,11 +431,11 @@ function Page({
 
   // Memoize images array to prevent unnecessary re-renders
   const images = useMemo(() => [
-    { alt: 'Map of Happy Hacking Spaces in and around the Mesopotamia', src: '/diyarmap.png' },
-    { alt: 'Happy Hackers organized code jam', src: '/codejams/firstcodejam.jpeg' },
-    { alt: 'Happy Hackers at Language Club', src: '/home/langclub.jpeg' },
-    { alt: 'Happy Hackers organized hackathon', src: '/hackathons/culturehack.jpeg' },
-  ], [])
+    { alt: t('home.hero.photo1'), src: '/diyarmap.png' },
+    { alt: t('home.hero.photo2'), src: '/codejams/firstcodejam.jpeg' },
+    { alt: t('home.hero.photo3'), src: '/home/langclub.jpeg' },
+    { alt: t('home.hero.photo4'), src: '/hackathons/culturehack.jpeg' },
+  ], [t])
 
   // janky right now and does not show last image
 
@@ -504,8 +507,8 @@ function Page({
       /> */}
       <Meta
         as={Head}
-        title="A Home for Hackers"
-        description="Happy Hacking Space is a nonprofit network of hackers, crafters, explorers where people build the agency, the network, & the technical talent to think big & do big things in the world."
+        title={t('home.meta.title')}
+        description={t('home.meta.description')}
       />
       <Head>
         <meta
@@ -535,7 +538,7 @@ function Page({
           }}
         />
         <Konami action={easterEgg}>
-          {"Hey, I'm an Easter Egg! Look at me!"}
+          {t('easterEgg.konamiText')}
         </Konami>
         <Box
           as="header"
@@ -551,7 +554,7 @@ function Page({
         >
           <BGImg
             src={OuternetImgFile}
-            alt="Happy Hackers at Diyarbakir Outdoor Meeting"
+            alt={t('home.hero.heroAlt')}
             priority
             gradient="linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.45))"
           />
@@ -587,7 +590,7 @@ function Page({
               }}
               as="h4"
             >
-              Welcome to Happy Hacking Space
+              {t('home.hero.eyebrow')}
             </Text>
             <Heading>
               <Text
@@ -603,8 +606,7 @@ function Page({
                   width: '100%'
                 }}
               >
-                We are
-                {/* <Comma>{apiData.slackData.total_members_count}</Comma>{' '} */}
+                {t('home.hero.title')}
                 <Text
                   sx={{
                     color: 'transparent',
@@ -618,7 +620,6 @@ function Page({
                       !uiState.reveal ? setReveal(true) : setReveal(false)
                     }}
                     sx={{
-                      // lineHeight: 0.875,
                       px: 2,
                       backgroundColor: 'red',
                       position: 'absolute',
@@ -633,12 +634,11 @@ function Page({
                     }}
                     aria-hidden="true"
                   >
-                    hackers
+                    {t('home.hero.hackers')}
                   </Text>
-                  hackers
+                  {t('home.hero.hackers')}
                 </Text>
-                <br sx={{ display: ['inline', 'none', 'none'] }} /> from in and around
-                the Mesopotamia who hack together
+                <br sx={{ display: ['inline', 'none', 'none'] }} /> {t('home.hero.subtitle')}
               </Text>
             </Heading>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -650,7 +650,7 @@ function Page({
                 mr={3}
                 sx={{ transformOrigin: 'center left' }}
               >
-                Join us
+                {t('home.hero.joinUs')}
               </Button>
               {ctaCards && ctaCards.length > 0 && (
                 <Text
@@ -667,7 +667,7 @@ function Page({
                       'rgba(0, 0, 0, 1) 0 0 10px, rgba(0, 0, 0, 1) 0 0 10px, rgba(0, 0, 0, 0.5) 0 0 10px'
                   }}
                 >
-                  Or, See what we're hacking on:
+                  {t('home.hero.seeWhatHacking')}
                 </Text>
               )}
             </Box>
@@ -693,7 +693,7 @@ function Page({
               href="#spotlight"
             >
               <Icon glyph="rep" sx={{ color: 'inherit', mr: 2 }} size={24} />
-              View more programs
+              {t('home.hero.viewMore')}
             </Button>
           </Box>
           <Box
@@ -719,11 +719,10 @@ function Page({
                 fontWeight: 'normal',
                 ':hover': { opacity: 1 },
                 transition: '0.3s ease'
-                // mixBlendMode: 'multiply'
               }}
-              title="📸 Photo by Seyma Alpay Bakir, Diyarbakir"
+              title={t('home.hero.photoCredit')}
             >
-              Hackers at AMA with HHS
+              {t('home.hero.badge')}
             </Badge>
           </Box>
         </Box>
@@ -741,7 +740,7 @@ function Page({
               as="h1"
               sx={{ fontSize: ['36px', '48px', '56px'] }}
             >
-              Discover the{' '}
+              {t('home.discover.title')}
               <Text
                 as="span"
                 sx={{
@@ -755,9 +754,9 @@ function Page({
                   WebkitTextFillColor: 'transparent'
                 }}
               >
-                joy of hacking
+                {t('home.discover.highlight')}
               </Text>
-              , together.
+              {t('home.discover.titleEnd')}
             </Text>
             <Text
               variant="subtitle"
@@ -768,12 +767,9 @@ function Page({
                 maxWidth: '62ch'
               }}
             >
-              Every day, hackers of Happy Hacking Space gather online and
-              in-person to hack, craft,and explore, together. Whether you're a beginner
-              programmer or have years of experience, there's a place for you at
-              Happy Hacking Space. Read about our{' '}
+              {t('home.discover.subtitle')}
               <Link href="/philosophy" target="_blank" rel="noopener">
-                hacker ethic
+                {t('home.discover.hackerEthic')}
               </Link>
               .
             </Text>
@@ -937,14 +933,13 @@ function Page({
                   </Text>
                   <Text as="p" variant="subtitle">
                     <strong sx={{ mb: 1 }}>
-                      Connect with other coders
+                      {t('home.discover.feature1Title')}
                     </strong>
-                    Have a coding question? Looking for project feedback? You'll
-                    find hundreds of fabulous people to talk to in our {' '}
+                    {t('home.discover.feature1Desc')}
                     <Link href="https://discord.happyhacking.space" target="_blank" rel="noopener">
-                      Community{' '}
+                      {t('home.discover.feature1Link')}{' '}
                     </Link>
-                    , active at all hours.
+                    {t('home.discover.feature1End')}
                   </Text>
                 </Grid>
                 <Grid
@@ -971,16 +966,9 @@ function Page({
                     }}
                   >
                     <strong sx={{ mb: 1 }}>
-                      Build open source learning tools
+                      {t('home.discover.feature2Title')}
                     </strong>
-                    We build open source projects together
-                    {/* (
-                    <Link href="https://github.com/happyhackingspace" target="_blank">
-                      3k+&nbsp;PRs a year
-                    </Link>
-                    ) */}
-                    like this website, game, AI tools, security tools, and
-                    more!
+                    {t('home.discover.feature2Desc')}
                   </Text>
                 </Grid>
                 <Grid
@@ -1000,17 +988,16 @@ function Page({
                     3
                   </Text>
                   <Text as="p" variant="subtitle">
-                    <strong sx={{ mb: 1 }}>Gather IRL with other hackers</strong>
-                    Meet other Happy Hackers in the community to build
-                    together at one of the community events{' '}
+                    <strong sx={{ mb: 1 }}>{t('home.discover.feature3Title')}</strong>
+                    {t('home.discover.feature3Desc')}
                     <Link href="/events" target="_blank" rel="noopener">
-                      Events
+                      {t('home.discover.feature3Link1')}
                     </Link>{' '}
-                    and{' '}
+                    {t('home.discover.feature3And')}{' '}
                     <Link href="/hackathons" target="_blank" rel="noopener">
-                      Hackathons
+                      {t('home.discover.feature3Link2')}
                     </Link>
-                    .
+                    {t('home.discover.feature3End')}
                   </Text>
                 </Grid>
               </Grid>
@@ -1068,7 +1055,7 @@ function Page({
           >
             <Box>
               <Text variant="title" sx={{ fontSize: ['36px', 4, 5] }}>
-                Connect with{' '}
+                {t('home.spotlight.title')}
                 <Text
                   as="span"
                   sx={{
@@ -1080,17 +1067,16 @@ function Page({
                     bg: 'red'
                   }}
                 >
-                  builders
+                  {t('home.spotlight.highlight')}
                 </Text>{' '}
-                from the community
+                {t('home.spotlight.titleEnd')}
               </Text>
               <Text
                 variant="subtitle"
                 as="p"
                 sx={{ fontSize: ['18px', '20px', '22px'], pb: [3, 0, 0] }}
               >
-                We gather both online and in-person to share our love of code
-                and make things together!
+                {t('home.spotlight.subtitle')}
               </Text>
             </Box>
             <CardRenderer cards={cardsList.filter(c => c.section === 'community')} />
@@ -1134,7 +1120,7 @@ function Page({
                       maxWidth: '20ch'
                     }}
                   >
-                    We build{' '}
+                    {t('home.opensource.title')}
                     <Text
                       as="span"
                       sx={{
@@ -1144,9 +1130,9 @@ function Page({
                         color: 'orange'
                       }}
                     >
-                      open source
+                      {t('home.opensource.highlight')}
                     </Text>{' '}
-                    games and tools together
+                    {t('home.opensource.titleEnd')}
                   </Text>
                   <Text
                     variant="subtitle"
@@ -1157,10 +1143,7 @@ function Page({
                       maxWidth: '60ch'
                     }}
                   >
-                    In collaboration with engineers on the Happy Hacking Space team,
-                    Happy Hackers build learning tools for each other. Get
-                    involved with these projects by building something with our
-                    tools or contribute to the tools themselves.
+                    {t('home.opensource.subtitle')}
                   </Text>
                 </Box>
                 {apiData.gitHubData.length > 0 && (
@@ -1186,7 +1169,7 @@ function Page({
                         width: 'fit-content'
                       }}
                     >
-                      Live from GitHub
+                      {t('home.opensource.liveFromGitHub')}
                     </Text>
                     {apiData.gitHubData
                       .filter(data => !data.user.endsWith('[bot]'))
@@ -1309,7 +1292,7 @@ function Page({
                 variant="eyebrow"
                 sx={{ fontSize: ['22px', 2, 3], textAlign: 'center' }}
               >
-                We've got a lot going on - Let's recap
+                {t('home.recap.eyebrow')}
               </Text>
               <Text
                 variant="title"
@@ -1321,7 +1304,7 @@ function Page({
                   margin: 'auto'
                 }}
               >
-                Find your second home at{' '}
+                {t('home.recap.title')}
                 <Text
                   as="span"
                   sx={{
@@ -1333,7 +1316,7 @@ function Page({
                     WebkitTextFillColor: 'transparent'
                   }}
                 >
-                  HHS
+                  {t('home.recap.highlight')}
                 </Text>
               </Text>
             </Box>
@@ -1397,8 +1380,8 @@ function Page({
                 <Stage
                   icon="discord"
                   color="white"
-                  name="Join Our Community"
-                  desc="Connect with other technical people and hack on things together."
+                  name={t('common.stages.joinCommunity')}
+                  desc={t('common.stages.joinCommunityDesc')}
                   sx={{
                     p: {
                       fontSize: ['18px', '20px', '22px']
@@ -1451,8 +1434,8 @@ function Page({
                 <Stage
                   icon="github"
                   color="white"
-                  name="Explore Our Open Source Tools"
-                  desc="We're currently building tools for security, ai, games, and more!"
+                  name={t('common.stages.exploreTools')}
+                  desc={t('common.stages.exploreToolsDesc')}
                   sx={{
                     p: {
                       fontSize: [1, '16px', '20px']

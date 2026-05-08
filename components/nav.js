@@ -7,6 +7,7 @@ import Icon from './icon'
 import Flag from './flag'
 import ScrollLock from 'react-scrolllock'
 import NextLink from 'next/link'
+import { useTranslation } from '../lib/i18n'
 
 
 const NavLinkText = styled('span', {
@@ -179,6 +180,7 @@ const ToggleContainer = styled(Flex)`
 `
 
 function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
+  const { t } = useTranslation()
   const [scrolled, setScrolled] = useState(false)
   const [toggled, setToggled] = useState(false)
   const [mobile, setMobile] = useState(false)
@@ -273,37 +275,27 @@ Header.defaultProps = {
 
 // Update Navigation to use showDoor prop
 const Navigation = props => {
+  const { t } = useTranslation()
   return (
     <NavBar role="navigation" {...props}>
       <NextLink href="/philosophy">
-        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Philosophy</NavLinkText>
+        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>{t('nav.philosophy')}</NavLinkText>
       </NextLink>
       <NextLink href="https://discord.happyhacking.space" target="_blank" rel="noopener noreferrer">
-
-        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Community</NavLinkText>
-
+        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>{t('nav.community')}</NavLinkText>
       </NextLink>
       <NextLink href="/events">
-        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Events</NavLinkText>
+        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>{t('nav.events')}</NavLinkText>
       </NextLink>
       <NextLink href="/philanthropy">
-        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Donors</NavLinkText>
+        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>{t('nav.donors')}</NavLinkText>
       </NextLink>
       <NextLink href="/contact">
-        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Contact</NavLinkText>
+        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>{t('nav.contact')}</NavLinkText>
       </NextLink>
       <NextLink href="/#faq">
-        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>FAQ</NavLinkText>
+        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>{t('nav.faq')}</NavLinkText>
       </NextLink>
-      {/* <NextLink href="/slack">
-      <NavLinkText isMobile={props.isMobile}>Community</NavLinkText>
-    </NextLink>
-    <NextLink href="https://scrapbook.hackclub.com/">
-      <NavLinkText isMobile={props.isMobile}>Scrapbook</NavLinkText>
-    </NextLink>
-    <NextLink href="https://toolbox.hackclub.com/">
-      <NavLinkText isMobile={props.isMobile}>Toolbox</NavLinkText>
-    </NextLink> */}
     </NavBar>
   );
 }

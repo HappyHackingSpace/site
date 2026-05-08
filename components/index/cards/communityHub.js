@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react'
 import { Box, Flex, Image, Text } from 'theme-ui'
 import CardModel from './card-model'
 import Buttons from './button'
+import { useTranslation } from '../../../lib/i18n'
 
 /** @jsxImportSource theme-ui */
 
 export default function CommunityHub({ stars }) {
+  const { t } = useTranslation()
   const [projects, setProjects] = useState(0)
   const [repoStars, setRepoStars] = useState(stars || 0)
 
@@ -43,7 +45,7 @@ export default function CommunityHub({ stars }) {
       {/* Desktop GIF - hidden on mobile */}
       <Image
         src="/home/Communityhub1.gif"
-        alt="Community Hub Demo"
+        alt={t('cards.communityHub.alt')}
         style={{
           position: 'absolute',
           top: 0,
@@ -98,7 +100,7 @@ export default function CommunityHub({ stars }) {
                 position: 'relative',
                 display: ['none', 'none', 'block']
               }}>
-                Join our development processes! Contribute to our open source projects, learn new technologies and work together with experienced developers.
+                {t('cards.communityHub.desc')}
               </Text>
 
               <Text as="p" variant="subtitle" sx={{
@@ -110,7 +112,7 @@ export default function CommunityHub({ stars }) {
                 position: 'relative',
                 display: ['block', 'block', 'none']
               }}>
-                Contribute to open source projects and learn with experienced developers.
+                {t('cards.communityHub.shortDesc')}
               </Text>
 
               

@@ -3,6 +3,7 @@ import { Box, Card, Flex, Grid, Heading, Text } from 'theme-ui'
 import Buttons from './button'
 import Image from 'next/image'
 import Icon from '@hackclub/icons'
+import { useTranslation } from '../../../lib/i18n'
 /** @jsxImportSource theme-ui */
 
 function BreakdownBox({ icon, text, description, href }) {
@@ -54,6 +55,7 @@ function BreakdownBox({ icon, text, description, href }) {
 }
 
 export default function Som() {
+  const { t } = useTranslation()
   return (
     <CardModel
       color="white"
@@ -79,7 +81,7 @@ export default function Som() {
             margin: ['auto', 'auto', 'initial']
           }}
         >
-          <Image src="/home/som.png" width={300} height={180} alt="Summer of making logo" />
+          <Image src="/home/som.png" width={300} height={180} alt={t('cards.som.alt')} />
           <Box>
             <Buttons
               id="13"
@@ -88,7 +90,7 @@ export default function Som() {
               primary="#592F31"
               sx={{ color: '#f6dbba' }}
             >
-              Start building
+              {t('cards.som.start')}
             </Buttons>
           </Box>
         </Box>
@@ -104,13 +106,13 @@ export default function Som() {
         >
           <BreakdownBox
             icon="idea"
-            text="Build Projects"
-            description="Build websites, games, apps, or any other personal open-source coding projects to showcase your skills."
+            text={t('cards.som.buildTitle')}
+            description={t('cards.som.buildDesc')}
           />
           <BreakdownBox
             icon="plus-fill"
-            text="Get Stuff"
-            description="Get awesome prizes like Raspberry Pis, Server hosting credits, 3D printers, and more to fuel your next creation."
+            text={t('cards.som.getTitle')}
+            description={t('cards.som.getDesc')}
           />
         </Box>
       </Flex>

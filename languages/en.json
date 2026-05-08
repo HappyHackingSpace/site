@@ -1,0 +1,526 @@
+{
+  "nav": {
+    "philosophy": "Philosophy",
+    "community": "Community",
+    "events": "Events",
+    "donors": "Donors",
+    "contact": "Contact",
+    "faq": "FAQ"
+  },
+  "footer": {
+    "title": "Happy Hacking Space",
+    "resources": "Resources",
+    "philosophy": "Philosophy",
+    "team": "Our Team & Board",
+    "jobs": "Jobs",
+    "branding": "Branding",
+    "donate": "Donate",
+    "contact": "Contact",
+    "communityEvents": "Community Events",
+    "codeOfConduct": "Code of Conduct",
+    "copyright": "© {year} Happy Hacking Space."
+  },
+  "home": {
+    "meta": {
+      "title": "A Home for Hackers",
+      "description": "Happy Hacking Space is a nonprofit network of hackers, crafters, explorers where people build the agency, the network, & the technical talent to think big & do big things in the world."
+    },
+    "hero": {
+      "eyebrow": "Welcome to Happy Hacking Space",
+      "title": "We are",
+      "hackers": "hackers",
+      "subtitle": "from in and around the Mesopotamia who hack together",
+      "joinUs": "Join us",
+      "seeWhatHacking": "Or, See what we're hacking on:",
+      "viewMore": "View more programs",
+      "badge": "Hackers at AMA with HHS",
+      "heroAlt": "Happy Hackers at Diyarbakir Outdoor Meeting",
+      "photoCredit": "📸 Photo by Seyma Alpay Bakir, Diyarbakir",
+      "photo1": "Map of Happy Hacking Spaces in and around the Mesopotamia",
+      "photo2": "Happy Hackers organized code jam",
+      "photo3": "Happy Hackers at Language Club",
+      "photo4": "Happy Hackers organized hackathon"
+    },
+    "discover": {
+      "title": "Discover the ",
+      "highlight": "joy of hacking",
+      "titleEnd": ", together.",
+      "subtitle": "Every day, hackers of Happy Hacking Space gather online and in-person to hack, craft, and explore, together. Whether you're a beginner programmer or have years of experience, there's a place for you at Happy Hacking Space. Read about our ",
+      "hackerEthic": "hacker ethic",
+      "feature1Title": "Connect with other coders",
+      "feature1Desc": "Have a coding question? Looking for project feedback? You'll find hundreds of fabulous people to talk to in our ",
+      "feature1Link": "Community",
+      "feature1End": ", active at all hours.",
+      "feature2Title": "Build open source learning tools",
+      "feature2Desc": "We build open source projects together like this website, game, AI tools, security tools, and more!",
+      "feature3Title": "Gather IRL with other hackers",
+      "feature3Desc": "Meet other Happy Hackers in the community to build together at one of the community events ",
+      "feature3Link1": "Events",
+      "feature3And": "and",
+      "feature3Link2": "Hackathons",
+      "feature3End": "."
+    },
+    "carousel": {
+      "eyebrow": "Here are a few projects you could get involved in:"
+    },
+    "spotlight": {
+      "title": "Connect with ",
+      "highlight": "builders",
+      "titleEnd": " from the community",
+      "subtitle": "We gather both online and in-person to share our love of code and make things together!"
+    },
+    "opensource": {
+      "title": "We build ",
+      "highlight": "open source",
+      "titleEnd": " games and tools together",
+      "subtitle": "In collaboration with engineers on the Happy Hacking Space team, Happy Hackers build learning tools for each other. Get involved with these projects by building something with our tools or contribute to the tools themselves.",
+      "liveFromGitHub": "Live from GitHub"
+    },
+    "recap": {
+      "eyebrow": "We've got a lot going on - Let's recap",
+      "title": "Find your second home at ",
+      "highlight": "HHS"
+    },
+    "ctaCards": {
+      "joinCommunity": "Join Our Community",
+      "joinCommunityDesc": "Connect with other technical people and hack on things together.",
+      "exploreTools": "Explore Our Open Source Tools",
+      "exploreToolsDesc": "We're currently building tools for security, ai, games, and more!"
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Frequently Asked Questions",
+      "q1": "What is HHS?",
+      "a1": "Happy Hacking Space is a non-profit community of hackers, crafters, and explorers in Mesopotamia who build together.",
+      "q2": "How can I join?",
+      "a2": "You can become a part of our community by joining our Discord channel or attending our physical events.",
+      "q3": "Is it free?",
+      "a3": "Yes, joining our community and most of our events is completely free. Some special workshops may require covering material costs."
+    }
+  },
+  "slack": {
+    "eyebrow": "~ The Hack Club Slack ~",
+    "title": "Come for the skills, stay for the people.",
+    "description1": "Communication and planning for our open source projects happen in the Slack. Coding is often seen as an isolating activity. Plenty of groups exist for kids who are interested in sports, theater, or chess, but the stereotype of a programmer is a person who sits alone in a dark room. ",
+    "descriptionStrong": "It doesn't have to be this way",
+    "description2": "—in the Hack Club Slack (Discord-style online groupchat), you'll find a group of {formatted}+ ",
+    "descriptionHighlight": "fabulous people",
+    "description3": " to talk to, active at all hours.",
+    "join": "Join our Slack →"
+  },
+  "doorCta": {
+    "scanning": "Scanning...",
+    "happyHacking": "Happy Hacking!",
+    "spaceClosed": "Space is Closed",
+    "pinging": "Pinging the hacker space door...",
+    "doorOpen": "The door is open, come join us!",
+    "noOne": "No one is currently at the place.",
+    "probing": "probing...",
+    "open": "OPEN",
+    "closed": "CLOSED",
+    "prompt": "door@hhs:~$",
+    "status": "status: {status}"
+  },
+  "carousel": {
+    "vulnerableTargetTitle": "vulnerable target",
+    "vulnerableTarget": "VT creates intentionally vulnerable environments for security testing.",
+    "communityHubTitle": "Community Hub",
+    "communityHub": "Club management and task tracking system",
+    "levelUpTitle": "LevelUp",
+    "levelUp": "AI-powered CV analyzer scores software field suitability.",
+    "funUrlTitle": "FunURL",
+    "funUrl": "A Functional URL Swiss Army Knife 🛠️",
+    "skyBoundTitle": "SkyBound-Quest",
+    "skyBound": "Retro pixel platformer: young inventor saves sky islands.",
+    "hackerTabooTitle": "HackerTaboo",
+    "hackerTaboo": "Taboo for hackers: guess the word without saying it!",
+    "awesomeHackathonTitle": "Awesome Hackathon",
+    "awesomeHackathon": "Tools and resources to help you build, design, and win hackathons! 🏆"
+  },
+  "cards": {
+    "slack": {
+      "alt": "Slack AMA",
+      "title": "Our Online Community",
+      "desc": "Coding doesn't have to be a solitary activity. At Happy Hacking Space, we make remarkable things together, and in our community you'll find awesome people to hang out with too. Code together, find your programming community, dream up something wild, or just hang out.",
+      "amaDesc": "Occasionally we invite someone we really want to speak to and host an ",
+      "ama": "AMA",
+      "amaEnd": " with them.",
+      "join": "Join our community",
+      "online": "Currently Online",
+      "channels": "Total Channels",
+      "messages": "Daily Messages",
+      "members": "Total Members"
+    },
+    "mailingList": {
+      "title": "Join the newsletter",
+      "desc": "We'll send you an email no more than once a month, when we work on something cool for you.",
+      "namePlaceholder": "Your Name",
+      "emailPlaceholder": "Your Email",
+      "subscribe": "Subscribe",
+      "subscribed": "You're on the list!",
+      "bgAlt": "Globe with hundreds of Hack Clubs"
+    },
+    "sinerider": {
+      "desc": "SineRider is a game about love and graphing, powered by teenage hackers of all kinds: artists, musicians, programmers, storytellers… so if that's you, come join us! We can always use help keeping everything up to date and running smoothly.",
+      "joinDev": "Join the development"
+    },
+    "vulnerableTarget": {
+      "title": "VT",
+      "subtitle": "vulnerable target",
+      "tagline": "// spin up vulnerable targets from your terminal //",
+      "targets": "TARGETS",
+      "cves": "CVES",
+      "benchmarks": "BENCHMARKS",
+      "labs": "LABS",
+      "install": "go install github.com/happyhackingspace/vt/cmd/vt@latest",
+      "explore": "Explore",
+      "browse": "Browse Templates"
+    },
+    "communityHub": {
+      "alt": "Community Hub Demo",
+      "desc": "Join our development processes! Contribute to our open source projects, learn new technologies and work together with experienced developers.",
+      "shortDesc": "Contribute to open source projects and learn with experienced developers."
+    },
+    "githubmon": {
+      "alt1": "GitMon Demo",
+      "alt2": "GitMon Demo Mobile",
+      "desc": "GitMon is an open source GitHub analytics and monitoring platform, designed to be a fun and developer-friendly introduction to repository insights and performance tracking.",
+      "dressWarmly": "Dress warmly!"
+    },
+    "awesomeHackathon": {
+      "tag1": "AI/ML Hacks",
+      "tag2": "Ship Fast",
+      "tag3": "LLM Prompting",
+      "tag4": "Vibe Coding",
+      "tag5": "Demo Day",
+      "tag6": "Win Strats",
+      "percent": "75%",
+      "loading": "LOADING...",
+      "awesome": "Awesome",
+      "hackathon": "Hackathon",
+      "desc": "Your ultimate open-source toolkit for hackathons — curated resources, battle-tested tools & strategies to help you ideate, build, pitch & win.",
+      "whatsInside": "What's inside...",
+      "explore": "Explore the List"
+    },
+    "osint": {
+      "vcm1": "+0.0/VCM",
+      "vcm2": "+0.1/VCM",
+      "input1": "INPUT_1",
+      "input2": "INPUT_2",
+      "adminControl": "ADMN_CONTROL",
+      "inputFeeds": "INPUT_FEEDS",
+      "tk": "TK_009.557_-1",
+      "ctlCode": "CTL_CODE [423]",
+      "sysOnline": "SYS.ONLINE +0092",
+      "cam": "CAM-0847",
+      "rec": "REC",
+      "date": "2026.02.13 14:37:22",
+      "relevant": "RELEVANT",
+      "alt": "OSINT CTF",
+      "desc": "Test your open-source intelligence skills. Gather data, analyze digital footprints, and uncover hidden connections.",
+      "start": "START HUNTING",
+      "mascotAlt": "OSINT owl mascot",
+      "id": "379-14-4023",
+      "subject": "SUBJECT OF INTEREST",
+      "probability": "PROBABILITY: 0.9847",
+      "flag": "FLAG{??????}",
+      "nodes": "NODES: 2,847 INDEXED",
+      "identifiers": "IDENTIFIERS: MASKED",
+      "threat": "THREAT LEVEL: ELEVATED"
+    },
+    "som": {
+      "alt": "Summer of making logo",
+      "start": "Start building",
+      "buildTitle": "Build Projects",
+      "buildDesc": "Build websites, games, apps, or any other personal open-source coding projects to showcase your skills.",
+      "getTitle": "Get Stuff",
+      "getDesc": "Get awesome prizes like Raspberry Pis, Server hosting credits, 3D printers, and more to fuel your next creation."
+    },
+    "athena": {
+      "alt1": "Prizes from Athena",
+      "alt2": "The Athena Award",
+      "desc": "Earn an industry recognized technical certificate for coding 30 hours and building 3 personal projects. Win prizes as you code, and a chance to travel to NYC for 2025's largest high school hackathon for girls.",
+      "join": "Join Athena"
+    },
+    "highway": {
+      "alt": "Highway logo",
+      "desc": "Design a hardware project. Get the parts for free.",
+      "start": "Start building"
+    },
+    "shipwrecked": {
+      "alt": "Shipwrecked logo",
+      "desc": "Attend a once in a lifetime, 4-day story-based hackathon on Cathleen Stone Island in the Boston Harbor. Aug 8-11, 2025.",
+      "invite": "Get your invite"
+    },
+    "pizza": {
+      "title": "Start A Hack Club Get Pizza for Every Project",
+      "desc": "GitHub is providing pizza grants to every teen who starts a Hack Club at their school.",
+      "grant": "Get Your Pizza Grant",
+      "alt": "Group of Happy Hacking Space",
+      "from": "From Happy Hacking Space Academy"
+    }
+  },
+  "secret": {
+    "alt": "a secret fox!",
+    "text": "print kc"
+  },
+  "easterEgg": {
+    "alert": "Hey, you typed the Konami Code!",
+    "konamiText": "Hey, I'm an Easter Egg! Look at me!"
+  },
+  "photoCredits": {
+    "diyarbakir": "📸 Photo by Seyma Alpay Bakir, Diyarbakir",
+    "heroAlt": "Happy Hackers at Diyarbakir Outdoor Meeting"
+  },
+  "philosophy": {
+    "meta": {
+      "title": "Philosophy",
+      "description": "Read about Happy Hacking Space, a network of hackers. We want to make building apps and websites accessible to everyone."
+    },
+    "hero": {
+      "line1": "We're",
+      "line2": "at our best",
+      "line3": "when we're",
+      "line4": "hacking.",
+      "sealTitle": "Happy Hacking Space",
+      "sealSubtitle": "Philosophy"
+    },
+    "sections": {
+      "superpower": {
+        "title": "Coding is a ",
+        "highlight": "superpower.",
+        "description": "Learning to code is uniquely like gaining a superpower: it converts you from a consumer to a creator. Suddenly, computers become a tool for creating."
+      },
+      "makeFromAnywhere": {
+        "title": "Make, from anywhere.",
+        "description": "There's never been a better time for making: anywhere in the world, anyone with a laptop and an internet connection can learn to make an app. Building things has never been so globally democratized."
+      },
+      "hackHackHack": {
+        "title": "Hack, hack, hack.",
+        "description": "The goal of Happy Hacking Space is to help you become a hacker. We want a space at every place where people are making interesting things with code, every week. Schools or institutions don't provide that, so we're creating it in every place to make building things accessible to everyone."
+      },
+      "startBuilding": {
+        "title": "Start building.",
+        "description": "Most coding classes teach you programming concepts instead of how to write real code—it's like trying to learn carpentry without any wood. So at Happy Hacking Space, you learn to code entirely through building things. You start with no experience and build and ship a project every meeting."
+      },
+      "learnAsYouBuild": {
+        "title": "Learn as you build.",
+        "description1": "Just as the best carpenters didn't learn in the classroom, neither did the best programmers. Through our ",
+        "workshopsLink": "workshops",
+        "description2": ", you'll be walked through building projects. Starting out, you won't understand how the code works, but you'll build understanding as you go. You'll get stuck along the way, but we're here to help."
+      },
+      "community": {
+        "title": "Be part of a community.",
+        "description": "Happy Hacking Space gives you a community of thousands of other makers to talk to. We're artists, writers, engineers, tinkerers, campers, filmmakers, volunteers. We make things. We help one another. We have fun. Join us."
+      }
+    },
+    "cta": {
+      "title": "Join the movement!",
+      "button": "Join our community"
+    }
+  },
+  "events": {
+    "meta": {
+      "title": "Events",
+      "description": "Now and then, we gather, not just to build things, but to play, to wonder, to disrupt the ordinary. Let's look back at how it all unfolded."
+    },
+    "hero": {
+      "title": "Happy Hacking Space's Events",
+      "subtitle": "Now and then, we gather, not just to build things, but to play, to wonder, to disrupt the ordinary. Let's look back at how it all unfolded.",
+      "button": "Get ready for the next one!"
+    },
+    "imageAlt": "Happy Hackers at The Cultural Heritage and Digitalization Hackathon",
+    "items": {
+      "cultureHack": {
+        "name": "Hackathon: The Cultural Heritage and Digitalization",
+        "description": "A hackathon focused on the cultural heritage and digitalization of the city of Diyarbakır and Mesopotamia.",
+        "location": "Diyarbakır, Turkey",
+        "season": "December",
+        "year": "2024"
+      },
+      "codeJam": {
+        "name": "Code Jam 181925",
+        "description": "An event dedicated to spreading the culture of competitive programming and the joy of hacking. Participants engaged in a series of challenges to test their coding skills and creativity.",
+        "location": "Diyarbakır, Turkey",
+        "season": "January",
+        "year": "2025"
+      }
+    },
+    "dateTemplate": "{season}, {year} - {location}",
+    "moreCard": {
+      "text1": "Looking for more? Happy Hackers often organise their own hackathons! Check them out at ",
+      "link1": "hackathons.happyhacking.space",
+      "text2": ". Happy Hacking Space is also behind a series of ",
+      "link2": "Day of Service",
+      "text3": " events and ",
+      "link3": "frequent virtual events",
+      "text4": "."
+    }
+  },
+  "philanthropy": {
+    "meta": {
+      "title": "Philanthropy",
+      "description": "Support Happy Hacking Space"
+    },
+    "hero": {
+      "title": "Invest in the future of Mesopotamia.",
+      "subtitle": "Contribute today to empower the next generation of Mesopotamians.",
+      "button": "Donate",
+      "buttonSuffix": "to Happy Hacking Space"
+    },
+    "photoAlt": "Happy Hacking Space students",
+    "vision": {
+      "nextTenYears": "In the next ten years, Happy Hacking Space will discover, foster and inspire thousands more to use technical skills to solve problems.",
+      "ledBy": "Led by hackers, crafters, explorers, Happy Hacking Space already reaches thousands, and represents the largest technical network in the Mesopotamia. Each day, new projects are shipped, new lines of code are written, and new friendships are forged through collaborative, problem-solving technical projects happening at Happy Hacking Space.",
+      "alwaysFree": "Happy Hacking Space is always free for hackers and with your support, Happy Hacking Space can grow to hundreds of thousands of hackers, bringing free computer science education, a hacker mindset, and an equal shot at success to every hacker, regardless of where they're from, how they identify, or what their parents do.",
+      "overTime": "Over time, Happy Hackers will reshape societies as entrepreneurs, environmentalists, political leaders, activists and policy makers. We help shape the values of these future leaders, modeling and incentivizing them to be curious, humble, kind, optimistic problem solvers.",
+      "needSupport": "We need your support to make this vision a reality."
+    },
+    "testimonials": {
+      "ahsen": {
+        "quote": "Pushing me to push the boundaries.",
+        "info": "Ahsen, Diyarbakir"
+      },
+      "muslime": {
+        "quote": "I've met some of the best minds here!",
+        "info": "Muslime, Diyarbakir"
+      },
+      "kerem": {
+        "quote": "Perfect space for building the next thing.",
+        "info": "Kerem, Diyarbakir"
+      },
+      "arjin": {
+        "quote": "A great beacon for the lost.",
+        "info": "Arjin, Diyarbakir"
+      },
+      "miwa": {
+        "quote": "Helped me build my a strong foundation in coding.",
+        "info": "Miwa, Diyarbakir"
+      }
+    },
+    "contact": {
+      "discussGift": "To discuss a gift:",
+      "reachOut": "Reach out to",
+      "teamName": "Team Happy Hacking Space",
+      "sendPhysical": "Send physical gifts",
+      "orgName": "Happy Hacking Space",
+      "address": "Talaytepe Mah. 4009/1 Sk. Corner Ofis, A Blok Dis Kapi No: 4A, Ic Kapi No:4 Kayapinar/Diyarbakir",
+      "donateOnline": "Donate online to Happy Hacking Space",
+      "noMonetary": "We don't accept monetary donations right now."
+    },
+    "donors": {
+      "joinTitle": "Join our community of generous donors"
+    },
+    "mapCaption": "What Happy Hacking Space could look like with your support"
+  },
+  "team": {
+    "meta": {
+      "title": "Team",
+      "description": "Meet the team that runs Happy Hacking Space, a nonprofit network of hackers in Mesopotamia."
+    },
+    "hero": {
+      "title": "By the hackers,\nfor the hackers.",
+      "subtitle": "We believe in a world where every person is empowered to be the change they want to see around them. At Happy Hacking Space, we're working hard to make it reality."
+    },
+    "board": "Board & Advisors",
+    "hackerResources": "Hacker Resources Team",
+    "campusDivision": "HHS Campus Division",
+    "highSchoolDivision": "HHS High School Division",
+    "communityTeam": "Community Team",
+    "moderation": "Moderation",
+    "virtualEvents": "Virtual Events",
+    "newspaper": "Newspaper",
+    "welcomers": "Welcomers",
+    "founderRole": "Founder & Chief Hacking Officer",
+    "cofounderRole": "Co-founder & Ninja",
+    "boardAdvisor": "Board Advisor",
+    "advisorPrompt": "Interested in advising? Reach out!",
+    "acknowledgements": "Acknowledgements",
+    "ackText": "Thank you to everyone who helped shape Happy Hacking Space into what it is today..."
+  },
+  "jobs": {
+    "meta": {
+      "title": "Jobs",
+      "description": "Happy Hacking Space is hiring! Check out the open positions."
+    },
+    "hero": {
+      "title": "Join the Happy Hacking Space Team",
+      "subtitle": "or scroll down to learn more..."
+    },
+    "sshPrompt": "$ ssh jobs.happyhacking.space -p 1337",
+    "imageAlt": "Happy Hackers during a volleyball game",
+    "volunteerNotice": "Please be aware that all positions are currently volunteer based roles. Apply "
+  },
+  "brand": {
+    "meta": {
+      "title": "Branding",
+      "description": "Download Hack Club HQ's logos and preview our brand fonts & colors."
+    },
+    "header": "Happy Hacking Space Brand",
+    "subtitle": "Download HQ's logos and preview our brand colors & font.",
+    "logos": "Logos",
+    "downloadAll": "Download all →",
+    "htmlBanners": "HTML banners",
+    "preview": "Preview",
+    "htmlCode": "HTML code",
+    "reactComponent": "React component →",
+    "colors": "Colors",
+    "uiComponents": "UI components",
+    "uiComponentsDesc": "Want to make a Happy Hacking Space themed site? Use our pre-made CSS and UI components to hackify your site.",
+    "exploreTheme": "Explore Hack Club Theme →"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact",
+      "description": "Get in touch with Happy Hacking Space. Visit us, send an email, or connect on social media."
+    },
+    "header": "Contact Us",
+    "subtitle": "We'd love to hear from you",
+    "visitUs": "Visit Us",
+    "addressLine1": "Talaytepe Mah. 4009/1 Sokak",
+    "addressLine2": "Ay Yapi Corner Ofis A Blok",
+    "addressLine3": "Dis Kapi No: 4A Ic Kapi No: 4",
+    "addressLine4": "Diyarbakir, Turkey 21070",
+    "viewOnMaps": "View on Google Maps",
+    "emailUs": "Email Us",
+    "emailDesc": "Have a question or want to collaborate? Send us an email and we'll get back to you as soon as possible.",
+    "emailLoading": "Loading...",
+    "connectWithUs": "Connect With Us",
+    "socialMedia": "Social Media",
+    "videoStreaming": "Video & Streaming",
+    "developerResources": "Developer & Resources",
+    "social": {
+      "discord": { "title": "Discord", "subtitle": "Join our server" },
+      "whatsapp": { "title": "WhatsApp", "subtitle": "Join our group" },
+      "twitter": { "title": "X (Twitter)", "subtitle": "@happyhackings" },
+      "instagram": { "title": "Instagram", "subtitle": "@happyhackingspace" },
+      "linkedin": { "title": "LinkedIn", "subtitle": "happyhackingspace" },
+      "bluesky": { "title": "Bluesky", "subtitle": "@happyhackingspace" },
+      "mastodon": { "title": "Mastodon", "subtitle": "@happyhackingspace" },
+      "reddit": { "title": "Reddit", "subtitle": "r/HappyHackingSpace" },
+      "youtube": { "title": "YouTube", "subtitle": "@HappyHackingSpace" },
+      "tiktok": { "title": "TikTok", "subtitle": "@happyhackingspace" },
+      "twitch": { "title": "Twitch", "subtitle": "happyhackingspace" },
+      "kick": { "title": "Kick", "subtitle": "happyhackingspace" },
+      "spotify": { "title": "Spotify", "subtitle": "Podcast" },
+      "github": { "title": "GitHub", "subtitle": "happyhackingspace" },
+      "huggingface": { "title": "Hugging Face", "subtitle": "happyhackingspace" },
+      "blog": { "title": "Blog", "subtitle": "happyhackingspace.blog" },
+      "events": { "title": "Events", "subtitle": "Community events" },
+      "giphy": { "title": "Giphy", "subtitle": "happyhackingspace" }
+    },
+    "cta": {
+      "title": "Ready to start hacking?",
+      "subtitle": "Join our community of hackers",
+      "button": "Join the Community"
+    }
+  },
+  "common": {
+    "stages": {
+      "joinCommunity": "Join Our Community",
+      "joinCommunityDesc": "Connect with other technical people and hack on things together.",
+      "exploreTools": "Explore Our Open Source Tools",
+      "exploreToolsDesc": "We're currently building tools for security, ai, games, and more!"
+    }
+  }
+}

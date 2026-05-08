@@ -5,6 +5,7 @@ import { format, parse } from 'date-fns'
 import BGImg from '../../background-image'
 import background from '../../../public/home/footer.png'
 import MailCard from '../../mail-card'
+import { useTranslation } from '../../../lib/i18n'
 
 const Loading = () => (
   <Box
@@ -28,6 +29,7 @@ const Loading = () => (
 )
 
 const MailingList = () => {
+  const { t } = useTranslation()
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [data, setData] = useState({ finalHtml: [], names: [] })
@@ -139,7 +141,7 @@ const MailingList = () => {
                   textAlign: 'left'
                 }}
               >
-                Join the newsletter
+                {t('cards.mailingList.title')}
               </Text>
               <Text
                 sx={{
@@ -150,17 +152,7 @@ const MailingList = () => {
                 }}
                 as="p"
               >
-                We&apos;ll send you an email no more than once a month, when we
-                work on something cool for you.
-                {/* Check out our{' '}
-                <Link
-                  href="https://happyhacking.space/newsletters"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  previous issues
-                </Link>
-                . */}
+                {t('cards.mailingList.desc')}
               </Text>
             </Box>
             <Grid
@@ -181,7 +173,7 @@ const MailingList = () => {
                   type="text"
                   name="name"
                   id="name"
-                  placeholder="Your Name"
+                  placeholder={t('cards.mailingList.namePlaceholder')}
                   required
                   sx={{
                     width: '100%',
@@ -196,7 +188,7 @@ const MailingList = () => {
                   type="email"
                   name="email"
                   id="email"
-                  placeholder="Your Email"
+                  placeholder={t('cards.mailingList.emailPlaceholder')}
                   required
                   sx={{
                     width: '100%',
@@ -222,14 +214,14 @@ const MailingList = () => {
               <Button type="submit" sx={{ mt: [2, 0], fontSize: 2 }}>
                 {submitting ? (
                   <>
-                    <Loading /> Subscribe
+                    <Loading /> {t('cards.mailingList.subscribe')}
                   </>
                 ) : submitted ? (
                   <>
-                    <Icon glyph="send" /> You're on the list!
+                    <Icon glyph="send" /> {t('cards.mailingList.subscribed')}
                   </>
                 ) : (
-                  'Subscribe'
+                  t('cards.mailingList.subscribe')
                 )}
               </Button>
             </Grid>
@@ -263,7 +255,7 @@ const MailingList = () => {
         gradient="linear-gradient(rgba(0,0,0,0.125), rgba(0,0,0,0.25))"
         src={background}
         placeholder="blur"
-        alt="Globe with hundreds of Hack Clubs"
+        alt={t('cards.mailingList.bgAlt')}
       />
     </Box>
   )

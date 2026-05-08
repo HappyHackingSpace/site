@@ -4,6 +4,7 @@ import { Box, Heading, Container, Text, Button, Link } from 'theme-ui'
 import Nav from '../components/nav'
 import styled from '@emotion/styled'
 import Footer from '../components/footer'
+import { useTranslation } from '../lib/i18n'
 
 const Header = styled(Box)`
   color: white;
@@ -106,14 +107,16 @@ const Super = styled(Text)`
 `
 
 export default function Philosophy() {
+  const { t } = useTranslation()
+
   return (
     <Box sx={{ bg: 'white', color: 'black', minHeight: '100vh' }}>
       <Nav />
       {/* TODO: Update description and iamge */}
       <Meta
         as={Head}
-        title="Philosophy"
-        description="Read about Happy Hacking Space, a network of hackers. We want to make building apps and websites accessible to everyone."
+        title={t('philosophy.meta.title')}
+        description={t('philosophy.meta.description')}
         image="https://cloud-cz9a6kt0a-hack-club-bot.vercel.app/0social-photo_2.jpg"
       />
       <Box>
@@ -124,10 +127,10 @@ export default function Philosophy() {
             px={3}
             align="left"
           >
-            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>We're</Ultraline>
-            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>at our best</Ultraline>
-            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>when we're</Ultraline>
-            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>hacking.</Ultraline>
+            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>{t('philosophy.hero.line1')}</Ultraline>
+            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>{t('philosophy.hero.line2')}</Ultraline>
+            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>{t('philosophy.hero.line3')}</Ultraline>
+            <Ultraline sx={{ fontSize: [44, 54, 72, 96] }}>{t('philosophy.hero.line4')}</Ultraline>
             <Seal pt={[3, 4]} sx={{ display: ['none', 'none', 'none', 'block']}}>
               <Heading
                 fontSize={[1, 2]}
@@ -140,7 +143,7 @@ export default function Philosophy() {
                 }}
                 caps
               >
-                Happy Hacking Space
+                {t('philosophy.hero.sealTitle')}
               </Heading>
               <Heading
                 fontSize={[3, 4]}
@@ -150,7 +153,7 @@ export default function Philosophy() {
                   textTransform: 'uppercase'
                 }}
               >
-                Philosophy
+                {t('philosophy.hero.sealSubtitle')}
               </Heading>
             </Seal>
           </Container>
@@ -161,12 +164,10 @@ export default function Philosophy() {
             sx={{ fontSize: [36, 48] }}
             color="rgb(228, 45, 66);"
           >
-            Coding is a <Super>superpower.</Super>
+            {t('philosophy.sections.superpower.title')}<Super>{t('philosophy.sections.superpower.highlight')}</Super>
           </Heading>
           <Box sx={{ fontSize: [3, 3] }}>
-            Learning to code is uniquely like gaining a superpower: it converts
-            you from a consumer to a creator. Suddenly, computers become a tool
-            for creating.
+            {t('philosophy.sections.superpower.description')}
           </Box>
         </Row>
         <Row>
@@ -175,12 +176,10 @@ export default function Philosophy() {
             sx={{ fontSize: [36, 48] , py: 4}}
             color="rgb(207, 45, 228);"
           >
-            Make, from anywhere.
+            {t('philosophy.sections.makeFromAnywhere.title')}
           </Heading>
           <Box sx={{ fontSize: [3, 3] , py: 4}}>
-            There’s never been a better time for making: anywhere in the world,
-            anyone with a laptop and an internet connection can learn to make an
-            app. Building things has never been so globally democratized.
+            {t('philosophy.sections.makeFromAnywhere.description')}
           </Box>
         </Row>
         <Row>
@@ -189,28 +188,20 @@ export default function Philosophy() {
             sx={{ fontSize: [36, 48], py: 4 }}
             color="rgb(115, 45, 228);"
           >
-            Hack, hack, hack.
+            {t('philosophy.sections.hackHackHack.title')}
           </Heading>
           <Box sx={{ fontSize: [3, 3] , py: 4}}>
             <strong>
-              The goal of Happy Hacking Space is to help you become a hacker.
-            </strong>{' '}
-            We want a space at every place where people are making interesting
-            things with code, every week. Schools or institutions don’t provide that, so we’re
-            creating it in every place to make building things accessible to
-            everyone.
+              {t('philosophy.sections.hackHackHack.description')}
+            </strong>
           </Box>
         </Row>
         <Row>
           <Heading as="h2" sx={{ fontSize: [36, 48], py: 4 }} color="rgb(45, 66, 228)">
-            Start building.
+            {t('philosophy.sections.startBuilding.title')}
           </Heading>
           <Box sx={{ fontSize: [3, 3] , py: 4}}>
-            Most coding classes teach you programming concepts instead of how to
-            write real code—it’s like trying to learn carpentry without any
-            wood. So at Happy Hacking Space, you learn to code entirely through building
-            things. You start with no experience and build and ship a project
-            every meeting.
+            {t('philosophy.sections.startBuilding.description')}
           </Box>
         </Row>
         <Row>
@@ -219,15 +210,12 @@ export default function Philosophy() {
             sx={{ fontSize: [36, 48] , py: 4}}
             color="rgb(41, 143, 206)"
           >
-            Learn as you build.
+            {t('philosophy.sections.learnAsYouBuild.title')}
           </Heading>
           <Box sx={{ fontSize: [3, 3] , py: 4}}>
-            Just as the best carpenters didn’t learn in the classroom, neither
-            did the best programmers. Through our{' '}
-            <Link href="/workshops">workshops</Link>, you’ll be walked through
-            building projects. Starting out, you won’t understand how the code
-            works, but you’ll build understanding as you go. You’ll get stuck
-            along the way, but we’re here to help.
+            {t('philosophy.sections.learnAsYouBuild.description1')}
+            <Link href="/workshops">{t('philosophy.sections.learnAsYouBuild.workshopsLink')}</Link>
+            {t('philosophy.sections.learnAsYouBuild.description2')}
           </Box>
         </Row>
         <Row>
@@ -236,13 +224,10 @@ export default function Philosophy() {
             sx={{ fontSize: [36, 48], py: 4 }}
             color="rgb(36, 181, 165)"
           >
-            Be part of a community.
+            {t('philosophy.sections.community.title')}
           </Heading>
           <Box sx={{ fontSize: [3, 3], py: 4 }}>
-            Happy Hacking Space gives you a community of thousands of other
-            makers to talk to. We’re artists, writers, engineers,
-            tinkerers, campers, filmmakers, volunteers. We make things. We help
-            one another. We have fun. Join us.
+            {t('philosophy.sections.community.description')}
           </Box>
         </Row>
         <Box
@@ -260,7 +245,7 @@ export default function Philosophy() {
           }}
         >
           <Heading as="h1" sx={{ fontSize: 5, mb: 2 }}>
-            Join the movement!
+            {t('philosophy.cta.title')}
           </Heading>
           {/* <Button
             mr={[0, 3]}
@@ -283,7 +268,7 @@ export default function Philosophy() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Join our community
+              {t('philosophy.cta.button')}
             </Button>
         </Box>
       </Box>

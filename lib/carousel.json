@@ -4,7 +4,8 @@
     "titleColor": "white",
     "descriptionColor": "white",
     "title": "vulnerable target",
-    "description": "VT creates intentionally vulnerable environments for security testing.",
+    "titleKey": "carousel.vulnerableTargetTitle",
+    "descriptionKey": "carousel.vulnerableTarget",
     "img": "/project-icon/vulnerability_1.png",
     "link": "https://github.com/HappyHackingSpace/vt"
   },
@@ -13,7 +14,8 @@
     "titleColor": "#4F2A0E",
     "descriptionColor": "#4F2A0E",
     "title": "Community Hub",
-    "description": "Club management and task tracking system",
+    "titleKey": "carousel.communityHubTitle",
+    "descriptionKey": "carousel.communityHub",
     "img": "/project-icon/community_hub.png",
     "link": "https://github.com/HappyHackingSpace/CommunityHub"
   },
@@ -22,7 +24,8 @@
     "titleColor": "#EDE2DC",
     "descriptionColor": "#EDE2DC",
     "title": "LevelUp",
-    "description": "AI-powered CV analyzer scores software field suitability.",
+    "titleKey": "carousel.levelUpTitle",
+    "descriptionKey": "carousel.levelUp",
     "img": "/project-icon/resumex.png",
     "link": "https://github.com/HappyHackingSpace/LevelUp"
   },
@@ -31,7 +34,8 @@
     "titleColor": "dark",
     "descriptionColor": "black",
     "title": "FunURL",
-    "description": "A Functional URL Swiss Army Knife 🛠️",
+    "titleKey": "carousel.funUrlTitle",
+    "descriptionKey": "carousel.funUrl",
     "img": "/project-icon/funurl.png",
     "link": "https://github.com/HappyHackingSpace/funURL"
   },
@@ -40,7 +44,8 @@
     "titleColor": "green",
     "descriptionColor": "white",
     "title": "SkyBound-Quest",
-    "description": "Retro pixel platformer: young inventor saves sky islands.",
+    "titleKey": "carousel.skyBoundTitle",
+    "descriptionKey": "carousel.skyBound",
     "img": "/project-icon/skybound_quest.png",
     "link": "https://github.com/HappyHackingSpace/SkyBound-Quest"
   },
@@ -49,7 +54,8 @@
     "titleColor": "dark",
     "descriptionColor": "black",
     "title": "HackerTaboo",
-    "description": "Taboo for hackers: guess the word without saying it!",
+    "titleKey": "carousel.hackerTabooTitle",
+    "descriptionKey": "carousel.hackerTaboo",
     "img": "/project-icon/hackertaboo.png",
     "link": "https://github.com/HappyHackingSpace/HackerTaboo"
   },
@@ -59,7 +65,8 @@
     "textColor": "black",
     "descriptionColor": "black",
     "title": "Awesome Hackathon",
-    "description": "Tools and resources to help you build, design, and win hackathons! 🏆",
+    "titleKey": "carousel.awesomeHackathonTitle",
+    "descriptionKey": "carousel.awesomeHackathon",
     "img": "/project-icon/awesome_hackathon.png",
     "link": "https://github.com/HappyHackingSpace/awesome-hackathon"
   }

@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import { Box, Text, Card, Button } from 'theme-ui'
 import { keyframes } from '@emotion/react'
 import usePrefersReducedMotion from '../../../../lib/use-prefers-reduced-motion'
+import { useTranslation } from '../../../../lib/i18n'
 
 const DoorScene = dynamic(() => import('./door-scene'), { ssr: false })
 
@@ -71,6 +72,7 @@ function useTimeOfDay() {
 
 // million-ignore
 export default function DoorCTA() {
+  const { t } = useTranslation()
   const [isOpen, setIsOpen] = useState(null)
   const isNight = useTimeOfDay()
   const prefersReducedMotion = usePrefersReducedMotion()
@@ -92,20 +94,20 @@ export default function DoorCTA() {
 
   const loading = isOpen === null
   const title = loading
-    ? 'Scanning...'
+    ? t('doorCta.scanning')
     : isOpen
-      ? 'Happy Hacking!'
-      : 'Space is Closed'
+      ? t('doorCta.happyHacking')
+      : t('doorCta.spaceClosed')
   const description = loading
-    ? 'Pinging the hacker space door...'
+    ? t('doorCta.pinging')
     : isOpen
-      ? 'The door is open, come join us!'
-      : 'No one is currently at the place.'
+      ? t('doorCta.doorOpen')
+      : t('doorCta.noOne')
   const statusText = loading
-    ? 'probing...'
+    ? t('doorCta.probing')
     : isOpen
-      ? 'OPEN'
-      : 'CLOSED'
+      ? t('doorCta.open')
+      : t('doorCta.closed')
 
   const useDark = isNight || !isOpen
   const dayBg = 'linear-gradient(180deg, #87CEEB, #98D8C8)'
@@ -264,7 +266,7 @@ export default function DoorCTA() {
               bg: '#28c840'
             }}
           />
-          <Text sx={{ ml: 1 }}>door@hhs:~$</Text>
+          <Text sx={{ ml: 1 }}>{t('doorCta.prompt')}</Text>
         </Box>
 
         <Text
@@ -340,7 +342,7 @@ export default function DoorCTA() {
               transition: 'all 0.5s ease'
             }}
           />
-          status: {statusText}
+          {t('doorCta.status', { status: statusText })}
         </Button>
       </Card>
     </Box>

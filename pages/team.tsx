@@ -8,6 +8,7 @@ import BoardBox from '../components/boardbio'
 import ForceTheme from '../components/force-theme'
 import { fetchTeam } from './api/team'
 import Link from 'next/link'
+import { useTranslation } from '../lib/i18n'
 
 const CommunityTeamBox = ({ title, children }) => {
   return (
@@ -42,6 +43,7 @@ const CommunityTeamBox = ({ title, children }) => {
 }
 
 export default function Team({ team }) {
+  const { t } = useTranslation()
   // Spacing between major team section boxes
   const BOX_SPACING = 5
 
@@ -52,8 +54,8 @@ export default function Team({ team }) {
         <Nav />
         <Meta
           as={Head}
-          title="Team"
-          description="Meet the team that runs Happy Hacking Space, a nonprofit network of hackers in Mesopotamia."
+          title={t('team.meta.title')}
+          description={t('team.meta.description')}
         />
         <Box
           pt={6}
@@ -68,8 +70,8 @@ export default function Team({ team }) {
         >
           <Container>
             <Text variant="ultratitle" color="snow">
-              By the hackers,
-              <br /> for the hackers.
+              {t('team.hero.title').split('\n')[0]}
+              <br /> {t('team.hero.title').split('\n')[1]}
             </Text>
 
             <Text
@@ -78,9 +80,7 @@ export default function Team({ team }) {
               color="smoke"
               sx={{ maxWidth: '650px' }}
             >
-              We believe in a world where every person is empowered to be
-              the change they want to see around them. At Happy Hacking Space, we're
-              working hard to make it reality.
+              {t('team.hero.subtitle')}
             </Text>
           </Container>
         </Box>
@@ -94,20 +94,20 @@ export default function Team({ team }) {
                 as="h3"
                 sx={{ textAlign: 'center', fontSize: 4 }}
               >
-                Board & Advisors
+                {t('team.board')}
               </Text>
               <Grid columns={[1, null, 2]} gap={5} mb={4}>
                 <BoardBox
                   img="/team/dogan.jpg"
                   name="Dogan Can Bakir"
-                  teamRole="Founder & Chief Hacking Officer"
+                  teamRole={t('team.founderRole')}
                   text=""
                   email="dogan"
                 />
                 <BoardBox
                   img="/team/omar.jpg"
                   name="Omar Kurt"
-                  teamRole="Co-founder & Ninja"
+                  teamRole={t('team.cofounderRole')}
                   text=""
                   email="omar"
                 />
@@ -115,20 +115,20 @@ export default function Team({ team }) {
               <Grid columns={[1, null, 3]} gap={4} mb={4}>
                 <BoardBox
                   name="Your Name Here"
-                  teamRole={<>Board Advisor</>}
-                  subrole="Interested in advising? Reach out!"
+                  teamRole={t('team.boardAdvisor')}
+                  subrole={t('team.advisorPrompt')}
                   href="mailto:team@happyhacking.space"
                 />
                 <BoardBox
                   name="Your Name Here"
-                  teamRole={<>Board Advisor</>}
-                  subrole="Interested in advising? Reach out!"
+                  teamRole={t('team.boardAdvisor')}
+                  subrole={t('team.advisorPrompt')}
                   href="mailto:team@happyhacking.space"
                 />
                 <BoardBox
                   name="Your Name Here"
-                  teamRole={<>Board Advisor</>}
-                  subrole="Interested in advising? Reach out!"
+                  teamRole={t('team.boardAdvisor')}
+                  subrole={t('team.advisorPrompt')}
                   href="mailto:team@happyhacking.space"
                 />
               </Grid>
@@ -148,7 +148,7 @@ export default function Team({ team }) {
                 as="h3"
                 sx={{ textAlign: 'center', fontSize: 4 }}
               >
-                Hacker Resources Team
+                {t('team.hackerResources')}
               </Text>
               <Grid columns={[1, null, 2, 3]} gap={3}>
                 {(team.current || [])
@@ -183,7 +183,7 @@ export default function Team({ team }) {
                 as="h3"
                 sx={{ textAlign: 'center', fontSize: 4 }}
               >
-                HHS Campus Division
+                {t('team.campusDivision')}
               </Text>
               <Grid columns={[1, null, 2, 3]} gap={3}>
                 {(team.current || [])
@@ -217,7 +217,7 @@ export default function Team({ team }) {
                 as="h3"
                 sx={{ textAlign: 'center', fontSize: 4 }}
               >
-                HHS High School Division
+                {t('team.highSchoolDivision')}
               </Text>
               <Grid columns={[1, null, 2, 3]} gap={3}>
                 {(team.current || [])
@@ -250,10 +250,10 @@ export default function Team({ team }) {
                 as="h3"
                 sx={{ textAlign: 'center', fontSize: 4 }}
               >
-                Community Team
+                {t('team.communityTeam')}
               </Text>
               <Grid columns={[1, null, 2]} gap={3}>
-                <CommunityTeamBox title="Moderation">
+                <CommunityTeamBox title={t('team.moderation')}>
                   <Grid columns={[1, null, 2]} gap={3} m={10}>
                     {(team.current || [])
                       .filter(member => member.department === 'Moderation')
@@ -271,7 +271,7 @@ export default function Team({ team }) {
                       ))}
                   </Grid>
                 </CommunityTeamBox>
-                <CommunityTeamBox title="Virtual Events">
+                <CommunityTeamBox title={t('team.virtualEvents')}>
                   <Grid columns={[1, null, 2]} gap={3} m={10}>
                     {(team.current || [])
                       .filter(member => member.department === 'Events')
@@ -289,7 +289,7 @@ export default function Team({ team }) {
                       ))}
                   </Grid>
                 </CommunityTeamBox>
-                <CommunityTeamBox title="Newspaper">
+                <CommunityTeamBox title={t('team.newspaper')}>
                   <Grid columns={[1, null, 2]} gap={3} m={10}>
                     {(team.current || [])
                       .filter(member => member.department === 'Newspaper')
@@ -307,7 +307,7 @@ export default function Team({ team }) {
                       ))}
                   </Grid>
                 </CommunityTeamBox>
-                <CommunityTeamBox title="Welcomers">
+                <CommunityTeamBox title={t('team.welcomers')}>
                   <Grid columns={[1, null, 2]} gap={3} m={10}>
                     {(team.current || [])
                       .filter(member => member.department === 'Welcoming')
@@ -337,10 +337,10 @@ export default function Team({ team }) {
                     sx={{ lineHeight: '1em', fontSize: [4, 5, 6], textAlign: 'center', textDecoration: 'underline', textDecorationColor: 'orange', textUnderlineOffset: '6px' }}
                     as="h2"
                   >
-                    Acknowledgements
+                    {t('team.acknowledgements')}
                   </Text>
                   <Text sx={{ color: 'muted', fontSize: 2, mt: 2, textDecoration: 'none' }}>
-                    Thank you to everyone who helped shape Happy Hacking Space into what it is today...
+                    {t('team.ackText')}
                   </Text>
                 </Box>
               </Link>

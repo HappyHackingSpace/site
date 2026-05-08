@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react'
 import CardModel from './card-model'
 import { Box, Flex, Grid, Image, Text } from 'theme-ui'
 import Buttons from './button'
+import { useTranslation } from '../../../lib/i18n'
 
 /** @jsxImportSource theme-ui */
 
 export default function Githubmon({ stars }) {
+  const { t } = useTranslation()
   const [repoStars, setRepoStars] = useState(stars || 0)
 
   useEffect(() => {
@@ -35,7 +37,7 @@ export default function Githubmon({ stars }) {
       {/* Desktop Image - hidden on mobile */}
       <Image
         src="/home/gitmon.png"
-        alt="GitMon Demo"
+        alt={t('cards.githubmon.alt1')}
         style={{
           position: 'absolute',
           top: 0,
@@ -53,7 +55,7 @@ export default function Githubmon({ stars }) {
       {/* Mobile Image - visible only on mobile */}
       <Image
         src="/home/gitmonPhone.png"
-        alt="GitMon Demo Mobile"
+        alt={t('cards.githubmon.alt2')}
         style={{
           position: 'absolute',
           top: 0,
@@ -93,9 +95,7 @@ export default function Githubmon({ stars }) {
               textAlign: 'center'
             }}
           >
-            GitMon is an open source GitHub analytics and monitoring platform, designed
-            to be a fun and developer-friendly introduction to repository insights
-            and performance tracking.
+            {t('cards.githubmon.desc')}
           </Text>
         </Box>
         <Box sx={{ mt: [1, 2, 3] }}>
@@ -107,7 +107,7 @@ export default function Githubmon({ stars }) {
               primary="rgba(255, 255, 255, 0.9)"
               sx={{ color: 'black' }}
             >
-             Dress warmly!
+             {t('cards.githubmon.dressWarmly')}
             </Buttons>
             {/* Additional buttons removed for clarity */}
           </Flex>

@@ -3,21 +3,13 @@ import { Box, Flex, Grid, Image, Text } from 'theme-ui'
 import { keyframes } from '@emotion/react'
 import Buttons from './button'
 import CardModel from './card-model'
+import { useTranslation } from '../../../lib/i18n'
 
 /** @jsxImportSource theme-ui */
 
 const REPO_URL = 'https://github.com/HappyHackingSpace/awesome-hackathon'
 const BLUE = '#2563EB'
 const BG = '#0d0d0d'
-
-const CATEGORIES = [
-  'AI/ML Hacks',
-  'Ship Fast',
-  'LLM Prompting',
-  'Vibe Coding',
-  'Demo Day',
-  'Win Strats'
-]
 
 const float = keyframes`
   0% { transform: translateY(0px); }
@@ -131,7 +123,7 @@ const MixedStarburst = ({ size = 36 }) => {
 }
 
 /* Loading bar — vertical bar with rotated text */
-const LoadingBar = () => (
+const LoadingBar = ({ t }) => (
   <Flex
     aria-hidden="true"
     sx={{
@@ -151,7 +143,7 @@ const LoadingBar = () => (
         transform: 'rotate(180deg)'
       }}
     >
-      75%
+      {t('cards.awesomeHackathon.percent')}
     </Text>
     <Box
       sx={{
@@ -185,7 +177,7 @@ const LoadingBar = () => (
         opacity: 0.7
       }}
     >
-      LOADING...
+      {t('cards.awesomeHackathon.loading')}
     </Text>
   </Flex>
 )
@@ -233,7 +225,17 @@ const CategoryPill = ({ label, index }) => (
 )
 
 export default function AwesomeHackathon({ stars }) {
+  const { t } = useTranslation()
   const [repoStars, setRepoStars] = useState(stars || 0)
+
+  const categories = [
+    t('cards.awesomeHackathon.tag1'),
+    t('cards.awesomeHackathon.tag2'),
+    t('cards.awesomeHackathon.tag3'),
+    t('cards.awesomeHackathon.tag4'),
+    t('cards.awesomeHackathon.tag5'),
+    t('cards.awesomeHackathon.tag6')
+  ]
 
   useEffect(() => {
     fetch('https://api.github.com/repos/HappyHackingSpace/awesome-hackathon')
@@ -379,7 +381,7 @@ export default function AwesomeHackathon({ stars }) {
           display: ['none', 'block', 'block']
         }}
       >
-        <LoadingBar />
+        <LoadingBar t={t} />
       </Box>
 
       {/* Blue dash — left edge */}
@@ -412,10 +414,10 @@ export default function AwesomeHackathon({ stars }) {
         }}
       >
         <Text as="span" sx={{ color: 'white' }}>
-          Awesome{' '}
+          {t('cards.awesomeHackathon.awesome')}{' '}
         </Text>
         <Text as="span" sx={{ color: BLUE }}>
-          Hackathon
+          {t('cards.awesomeHackathon.hackathon')}
         </Text>
       </Text>
 
@@ -430,9 +432,7 @@ export default function AwesomeHackathon({ stars }) {
               color: 'rgba(255, 255, 255, 0.7)'
             }}
           >
-            Your ultimate open-source toolkit for hackathons — curated
-            resources, battle-tested tools & strategies to help you ideate,
-            build, pitch & win.
+            {t('cards.awesomeHackathon.desc')}
           </Text>
           <Flex sx={{ flexDirection: 'column', mt: [3, 3, 4] }}>
             <Buttons
@@ -442,7 +442,7 @@ export default function AwesomeHackathon({ stars }) {
               icon="explore"
               sx={{ color: 'white' }}
             >
-              Explore the List
+              {t('cards.awesomeHackathon.explore')}
             </Buttons>
           </Flex>
         </Flex>
@@ -459,13 +459,13 @@ export default function AwesomeHackathon({ stars }) {
               mb: 3
             }}
           >
-            What&apos;s inside...
+            {t('cards.awesomeHackathon.whatsInside')}
           </Text>
           <Grid
             columns={[1, 2, 2]}
             sx={{ gap: '12px', position: 'relative', zIndex: 2 }}
           >
-            {CATEGORIES.map((label, index) => (
+            {categories.map((label, index) => (
               <CategoryPill
                 key={label}
                 label={label}

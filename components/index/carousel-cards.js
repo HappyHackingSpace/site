@@ -1,5 +1,6 @@
 import { Box, Card, Image, Link, Text } from 'theme-ui'
 import Icon from '../icon'
+import { useTranslation } from '../../lib/i18n'
 
 /** @jsxImportSource theme-ui */
 
@@ -8,10 +9,15 @@ export default function CarouselCards({
   titleColor,
   descriptionColor,
   title,
+  titleKey,
   description,
+  descriptionKey,
   img,
   link
 }) {
+  const { t } = useTranslation()
+  const displayTitle = titleKey && t(titleKey) !== titleKey ? t(titleKey) : title
+  const displayDescription = descriptionKey && t(descriptionKey) !== descriptionKey ? t(descriptionKey) : description
   return (
     <Box
       sx={{
@@ -73,13 +79,13 @@ export default function CarouselCards({
             as="h3"
             sx={{ color: titleColor, fontSize: ['20px', '21px', '22px'] }}
           >
-            {title}
+            {displayTitle}
           </Text>
           <Text
             as="p"
             sx={{ color: descriptionColor, fontSize: [1, '16px', '20px'] }}
           >
-            {description}
+            {displayDescription}
           </Text>
           <Icon
             glyph="external"

@@ -4,6 +4,7 @@ import Buttons from './button'
 import Event from '../events'
 import Dot from '../../dot'
 import Comma from '../../comma'
+import { useTranslation } from '../../../lib/i18n'
 /** @jsxImportSource theme-ui */
 
 const Cover = () => (
@@ -43,6 +44,7 @@ const Stats = ({ data, subheading, nonMobile = false }) => (
   </Box>
 )
 export default function Slack({ data, slackKey, events }) {
+  const { t } = useTranslation()
   return (
     <CardModel
       color="white"
@@ -64,7 +66,7 @@ export default function Slack({ data, slackKey, events }) {
           ml: ['-24px', '-32px', '-32px', '-32px'],
           mt: ['-24px', '-32px', '-32px', '-32px']
         }}
-        alt="Slack AMA"
+        alt={t('cards.slack.alt')}
       />
       <Cover />
       <Grid sx={{ zIndex: 2 }}>
@@ -77,7 +79,7 @@ export default function Slack({ data, slackKey, events }) {
             maxWidth: [null, null, '70%', null]
           }}
         >
-          Our Online Community
+          {t('cards.slack.title')}
         </Text>
       </Grid>
       <Grid columns={[1, 1, '1.6fr 1fr', '1.6fr 1fr']} sx={{ zIndex: 2 }}>
@@ -91,27 +93,24 @@ export default function Slack({ data, slackKey, events }) {
             variant="subtitle"
             sx={{ fontSize: [1, '16px', '24px'] }}
           >
-            Coding doesn’t have to be a solitary activity. At Happy Hacking Space,
-            we make remarkable things together, and in our community you’ll find 
-            awesome people to hang out with too. Code together, find your programming 
-            community, dream up something wild, or just hang out.
+            {t('cards.slack.desc')}
           </Text>
           <Text as="p" variant="subtitle">
-            Occasionally we invite someone we really want to speak to and host an{' '}
+            {t('cards.slack.amaDesc')}
             <Link
               href="/amas"
               target="_blank"
               rel="noopener"
               sx={{ color: 'inherit' }}
             >
-              AMA
-            </Link>{' '}
-            with them.{' '}
+              {t('cards.slack.ama')}
+            </Link>
+            {t('cards.slack.amaEnd')}
           </Text>
           {/* <Event events={events} /> */}
           <Box sx={{ mt: [3, 3, 4] }}>
             <Buttons id="13" link="https://discord.happyhacking.space" icon="discord" primary="purple">
-              Join our community
+              {t('cards.slack.join')}
             </Buttons>
           </Box>
           <Grid
@@ -146,20 +145,20 @@ export default function Slack({ data, slackKey, events }) {
               >
                 <Stats
                   data={data.readers_count_1d}
-                  subheading="Currently Online"
+                  subheading={t('cards.slack.online')}
                 />
                 <Stats
                   data={data.chats_channels_count_1d}
-                  subheading="Total Channels"
+                  subheading={t('cards.slack.channels')}
                   nonMobile={true}
                 />
                 <Stats
                   data={data.messages_count_1d}
-                  subheading="Daily Messages"
+                  subheading={t('cards.slack.messages')}
                 />
                 <Stats
                   data={data.total_members_count}
-                  subheading="Total Members"
+                  subheading={t('cards.slack.members')}
                 />
               </Flex>
             </Box>

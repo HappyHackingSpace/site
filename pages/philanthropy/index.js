@@ -19,6 +19,7 @@ import ForceTheme from '../../components/force-theme'
 import Footer from '../../components/footer'
 import { useState, useEffect } from 'react'
 import PhysicalAddress from '../../components/physical-address'
+import { useTranslation } from '../../lib/i18n'
 // import Fade from 'react-reveal/Fade'
 // import Slide from 'react-reveal/Slide'
 
@@ -101,7 +102,7 @@ const Header = styled(Box)`
   background: url('/pattern.svg');
 `
 
-const PhotoRow = ({ photos }) => (
+const PhotoRow = ({ photos, alt }) => (
   <Box sx={{ height: '160px', overflow: 'hidden' }}>
     {/* Mobil ve tablet görünüm */}
     <Box sx={{ display: ['block', 'block', 'block', 'block', 'none'] }}>
@@ -119,7 +120,7 @@ const PhotoRow = ({ photos }) => (
               className="next-image"
               height={200}
               width={300}
-              alt="Happy Hacking Space students"
+              alt={alt}
               style={{
                 objectFit: 'cover',
                 display: 'block'
@@ -146,7 +147,7 @@ const PhotoRow = ({ photos }) => (
               className="next-image"
               height={200}
               width={600}
-              alt="Happy Hacking Space students"
+              alt={alt}
               style={{
                 objectFit: 'cover',
                 display: 'block'
@@ -508,7 +509,7 @@ const Map = () => {
           />
         </Box>
         <Text variant="caption">
-          What Happy Hacking Space could look like with your support
+          {t('philanthropy.mapCaption')}
         </Text>
       </Box>
     </Fade>
@@ -516,12 +517,13 @@ const Map = () => {
 }
 
 const Philanthropy = ({ posts = [] }) => {
+  const { t } = useTranslation()
   return (
     <>
       <Meta
         as={Head}
-        title="Philanthropy"
-        description="Support Happy Hacking Space"
+        title={t('philanthropy.meta.title')}
+        description={t('philanthropy.meta.description')}
       />
       <ForceTheme theme="light" />
       <Nav color="white" />
@@ -606,7 +608,7 @@ const Philanthropy = ({ posts = [] }) => {
                     color: 'white'
                   }}
                 >
-                  Invest in the future of Mesopotamia.
+                  {t('philanthropy.hero.title')}
                 </Heading>
                 <Box
                   sx={{
@@ -615,7 +617,7 @@ const Philanthropy = ({ posts = [] }) => {
                     color: 'white'
                   }}
                 >
-                  Contribute today to empower the next generation of Mesopotamians.
+                  {t('philanthropy.hero.subtitle')}
                 </Box>
                 <Button
                   variant="ctaLg"
@@ -624,9 +626,9 @@ const Philanthropy = ({ posts = [] }) => {
                   as="a"
                   href="https://airtable.com/appKfmTrC8b23hJNQ/shrUCpuTfSraCfmvu"
                 >
-                  Donate
+                  {t('philanthropy.hero.button')}
                   <Text sx={{ display: ['none', 'inline-block'], ml: 2 }}>
-                    to Happy Hacking Space
+                    {t('philanthropy.hero.buttonSuffix')}
                   </Text>
                 </Button>
 
@@ -651,9 +653,11 @@ const Philanthropy = ({ posts = [] }) => {
                 HHS5,
                 HHS6
               ]}
+              alt={t('philanthropy.photoAlt')}
             />
             <PhotoRow
               photos={[HHS7, HHS8, HHS9, HHS10, HHS11]}
+              alt={t('philanthropy.photoAlt')}
             />
             <PhotoRow
               photos={[
@@ -663,6 +667,7 @@ const Philanthropy = ({ posts = [] }) => {
                 HHS15,
                 HHS16
               ]}
+              alt={t('philanthropy.photoAlt')}
             />
           </Box>
         </Header>
@@ -692,19 +697,13 @@ const Philanthropy = ({ posts = [] }) => {
           <Line /> */}
           <Fade>
             <Text as="h1" mb={2} mt={4}>
-              In the next ten years, Happy Hacking Space will discover, foster and inspire
-              thousands more to use technical skills to solve
-              problems.
+              {t('philanthropy.vision.nextTenYears')}
             </Text>
           </Fade>
           <br />
           <Fade>
             <Text as="p">
-              Led by hackers, crafters, explorers, Happy Hacking Space already reaches thousands,
-              and represents the largest technical network in the Mesopotamia. Each day, new projects are shipped, new lines
-              of code are written, and new friendships are forged through
-              collaborative, problem-solving technical projects happening at
-              Happy Hacking Space.
+              {t('philanthropy.vision.ledBy')}
             </Text>
           </Fade>
           <br />
@@ -720,13 +719,9 @@ const Philanthropy = ({ posts = [] }) => {
           <Fade>
             <br />
             <Text as="p">
-              Over time, Happy Hackers will reshape societies as entrepreneurs,
-              environmentalists, political leaders, activists and policy makers.
-              We help shape the values of these future leaders, modeling and
-              incentivizing them to be curious, humble, kind, optimistic problem
-              solvers.{' '}
+              {t('philanthropy.vision.overTime')}{' '}
               <Highlight>
-                We need your support to make this vision a reality.
+                {t('philanthropy.vision.needSupport')}
               </Highlight>
             </Text>
           </Fade>
@@ -734,50 +729,49 @@ const Philanthropy = ({ posts = [] }) => {
             <Fade delay={30}>
               <HappyHacker
                 photo="../../team/ahsen.jpg"
-                quote="Pushing me to push the boundaries."
-                info="Ahsen, Diyarbakir"
+                quote={t('philanthropy.testimonials.ahsen.quote')}
+                info={t('philanthropy.testimonials.ahsen.info')}
               />
             </Fade>
             <Fade delay={60}>
               <HappyHacker
                 photo="../../team/muslime.jpeg"
-                quote="I've met some of the best minds here!"
-                info="Muslime, Diyarbakir"
+                quote={t('philanthropy.testimonials.muslime.quote')}
+                info={t('philanthropy.testimonials.muslime.info')}
               />
             </Fade>
             <Fade delay={90}>
               <HappyHacker
                 photo="../../team/kerem.jpeg"
-                quote="Perfect space for building the next thing."
-                info="Kerem, Diyarbakir"
-
+                quote={t('philanthropy.testimonials.kerem.quote')}
+                info={t('philanthropy.testimonials.kerem.info')}
               />
             </Fade>
             <Fade delay={120}>
               <HappyHacker
                 photo="../../team/arjin.jpg"
-                quote="A great beacon for the lost."
-                info="Arjin, Diyarbakir"
+                quote={t('philanthropy.testimonials.arjin.quote')}
+                info={t('philanthropy.testimonials.arjin.info')}
               />
             </Fade>
             <Fade delay={150}>
               <HappyHacker
                 photo="../../team/miwa.jpg"
-                quote="Helped me build my a strong foundation in coding."
-                info="Miwa, Diyarbakir"
+                quote={t('philanthropy.testimonials.miwa.quote')}
+                info={t('philanthropy.testimonials.miwa.info')}
               />
             </Fade>
           </Grid>
           <Fade>
             <Text as="h2" mt={5}>
-              To discuss a gift:
+              {t('philanthropy.contact.discussGift')}
             </Text>
           </Fade>
           <Fade>
             <Grid gap={[4, 2, 2]} columns={[1, '1r 1fr', '1fr 1fr']} mt={2}>
               <Box>
-                <Text as="h3">Reach out to</Text>
-                <Text as="p">Team Happy Hacking Space</Text>
+                <Text as="h3">{t('philanthropy.contact.reachOut')}</Text>
+                <Text as="p">{t('philanthropy.contact.teamName')}</Text>
                 <Text
                   as="a"
                   href="mailto:team@happyhacking.space"
@@ -792,10 +786,10 @@ const Philanthropy = ({ posts = [] }) => {
                 </Text>
               </Box>
               <Box>
-                <Text as="h3">Send physical gifts</Text>
-                <Text as="p">Happy Hacking Space</Text>
+                <Text as="h3">{t('philanthropy.contact.sendPhysical')}</Text>
+                <Text as="p">{t('philanthropy.contact.orgName')}</Text>
                 <Text as="p">
-                  Talaytepe Mah. 4009/1 Sk. Corner Ofis, A Blok Dis Kapi No: 4A, Ic Kapi No:4 Kayapinar/Diyarbakir
+                  {t('philanthropy.contact.address')}
                 </Text>
                 <Box mt={[2, 3]}>
                   <Text
@@ -809,11 +803,11 @@ const Philanthropy = ({ posts = [] }) => {
                       fontSize: '1.2em'
                     }}
                   >
-                    Donate online to Happy Hacking Space &#9654;
+                    {t('philanthropy.contact.donateOnline')} &#9654;
                   </Text>
                 </Box>
                 <Text>
-                  We don't accept monetary donations right now.
+                  {t('philanthropy.contact.noMonetary')}
                 </Text>
               </Box>
             </Grid>
@@ -1315,7 +1309,7 @@ const Philanthropy = ({ posts = [] }) => {
           <Box>
             <Fade>
               <Text as="h1" sx={{ marginBottom: 1 }}>
-                Join our community of generous donors
+                {t('philanthropy.donors.joinTitle')}
               </Text>
             </Fade>
             <Fade delay={100}>

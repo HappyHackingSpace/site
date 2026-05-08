@@ -4,6 +4,7 @@ import usePrefersMotion from '../lib/use-prefers-motion'
 import useHasMounted from '../lib/use-has-mounted'
 import { formatted } from '../lib/members'
 import Link from 'next/link'
+import { useTranslation } from '../lib/i18n'
 
 let Highlight = styled(Text)`
   color: inherit;
@@ -17,47 +18,48 @@ let Highlight = styled(Text)`
 `
 Highlight = Highlight.withComponent('mark')
 
-const Content = () => (
-  <Container
-    sx={{
-      textAlign: 'center',
-      zIndex: 999,
-      py: 6,
-      color: 'white',
-      'h2,p': { textShadow: 'text' },
-      textAlign: [null, 'center'],
-      position: 'relative',
-      overflow: 'hidden'
-    }}
-  >
-    <Text as="p" variant="eyebrow" sx={{ color: 'white', opacity: 0.75 }}>
-      ~ The Hack Club Slack ~
-    </Text>
-    <Heading as="h2" variant="title">
-      Come for the skills, <br /> stay for the people.
-    </Heading>
-    <Text as="p" variant="lead" sx={{ maxWidth: 'copyPlus', mx: 'auto' }}>
-      Communication and planning for our open source projects happen in the
-      Slack. Coding is often seen as an isolating activity. Plenty of groups
-      exist for kids who are interested in sports, theater, or chess, but the
-      stereotype of a programmer is a person who sits alone in a dark room.{' '}
-      <strong>It doesn't have to be this way</strong>—in the Hack Club Slack
-      (Discord-style online groupchat), you'll find a group of {formatted}+{' '}
-      <Highlight>fabulous people</Highlight> to talk to, active at all hours.
-    </Text>
-    <Link href="/slack">
-      <Button
-        as="a"
-        variant="ctaLg"
-        sx={{
-          background: 'linear-gradient(-132deg, #338eda 14%, #33d6a6 82%)'
-        }}
-      >
-        Join our Slack →
-      </Button>
-    </Link>
-  </Container>
-)
+const Content = () => {
+  const { t } = useTranslation()
+  return (
+    <Container
+      sx={{
+        textAlign: 'center',
+        zIndex: 999,
+        py: 6,
+        color: 'white',
+        'h2,p': { textShadow: 'text' },
+        textAlign: [null, 'center'],
+        position: 'relative',
+        overflow: 'hidden'
+      }}
+    >
+      <Text as="p" variant="eyebrow" sx={{ color: 'white', opacity: 0.75 }}>
+        {t('slack.eyebrow')}
+      </Text>
+      <Heading as="h2" variant="title">
+        {t('slack.title')}
+      </Heading>
+      <Text as="p" variant="lead" sx={{ maxWidth: 'copyPlus', mx: 'auto' }}>
+        {t('slack.description1')}
+        <strong>{t('slack.descriptionStrong')}</strong>
+        {t('slack.description2', { formatted })}
+        <Highlight>{t('slack.descriptionHighlight')}</Highlight>
+        {t('slack.description3')}
+      </Text>
+      <Link href="/slack">
+        <Button
+          as="a"
+          variant="ctaLg"
+          sx={{
+            background: 'linear-gradient(-132deg, #338eda 14%, #33d6a6 82%)'
+          }}
+        >
+          {t('slack.join')}
+        </Button>
+      </Link>
+    </Container>
+  )
+}
 
 const Cover = () => (
   <Box

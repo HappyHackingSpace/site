@@ -1,10 +1,12 @@
 import CardModel from './card-model'
 import { Box, Flex, Grid, Image, Text } from 'theme-ui'
 import Buttons from './button'
+import { useTranslation } from '../../../lib/i18n'
 
 /** @jsxImportSource theme-ui */
 
 export default function Athena() {
+  const { t } = useTranslation()
   return (
     <CardModel
       color="white"
@@ -36,7 +38,7 @@ export default function Athena() {
             }}
           >
             <Image
-              alt="Prizes from Athena"
+              alt={t('cards.athena.alt1')}
               src="/home/athena.webp"
               sx={{
                 position: 'absolute',
@@ -54,7 +56,7 @@ export default function Athena() {
         <Box>
           <img
             src="/home/athena_award.svg"
-            alt="The Athena Award"
+            alt={t('cards.athena.alt2')}
             sx={{ width: '100%', marginTop: '-20px' }}
           />
 
@@ -81,7 +83,7 @@ export default function Athena() {
             primary="white"
             color="#D35648"
           >
-            Join Athena
+            {t('cards.athena.join')}
           </Buttons>
         </Box>
       </Grid>

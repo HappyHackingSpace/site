@@ -1,10 +1,12 @@
 import CardModel from './card-model'
 import { Box, Flex, Grid, Image, Text } from 'theme-ui'
 import Buttons from './button'
+import { useTranslation } from '../../../lib/i18n'
 
 /** @jsxImportSource theme-ui */
 
 export default function Sinerider({ stars }) {
+  const { t } = useTranslation()
   return (
     <CardModel
       github_link="https://github.com/hackclub/sinerider/"
@@ -33,7 +35,7 @@ export default function Sinerider({ stars }) {
           fontSize: ['36px', 4, 5],
           color: 'white'
         }}
-        alt="Sinerider"
+        alt="SineRider"
       />
       <Grid columns={[1, 1, 2]} sx={{ position: 'relative', zIndex: 2 }}>
         <Box></Box>

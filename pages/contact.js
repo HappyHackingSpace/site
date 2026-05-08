@@ -6,6 +6,7 @@ import Nav from '../components/nav'
 import styled from '@emotion/styled'
 import Footer from '../components/footer'
 import Icon from '../components/icon'
+import { useTranslation } from '../lib/i18n'
 
 // Obfuscate email to prevent bot scraping
 const useObfuscatedEmail = () => {
@@ -91,6 +92,7 @@ const SocialSubtitle = styled(Text)`
 `
 
 export default function Contact() {
+  const { t } = useTranslation()
   const { email, mailto } = useObfuscatedEmail()
 
   return (
@@ -98,8 +100,8 @@ export default function Contact() {
       <Nav />
       <Meta
         as={Head}
-        title="Contact"
-        description="Get in touch with Happy Hacking Space. Visit us, send an email, or connect on social media."
+        title={t('contact.meta.title')}
+        description={t('contact.meta.description')}
         image="https://cloud-cz9a6kt0a-hack-club-bot.vercel.app/0social-photo_2.jpg"
       />
       <Box>
@@ -116,10 +118,10 @@ export default function Contact() {
                 lineHeight: 1.125
               }}
             >
-              Contact Us
+              {t('contact.header')}
             </Heading>
             <Text sx={{ fontSize: [2, 3], mt: 2, opacity: 0.9 }}>
-              We'd love to hear from you
+              {t('contact.subtitle')}
             </Text>
           </Container>
         </Header>
@@ -131,17 +133,17 @@ export default function Contact() {
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
                 <Icon glyph="pin" size={28} color="rgb(45, 66, 228)" />
                 <Heading as="h2" sx={{ fontSize: 3, m: 0 }}>
-                  Visit Us
+                  {t('contact.visitUs')}
                 </Heading>
               </Box>
               <Text sx={{ fontSize: 2, lineHeight: 1.6, color: 'slate' }}>
-                Talaytepe Mah. 4009/1 Sokak
+                {t('contact.addressLine1')}
                 <br />
-                Ay Yapi Corner Ofis A Blok
+                {t('contact.addressLine2')}
                 <br />
-                Dis Kapi No: 4A Ic Kapi No: 4
+                {t('contact.addressLine3')}
                 <br />
-                Diyarbakir, Turkey 21070
+                {t('contact.addressLine4')}
               </Text>
               <Link
                 href="https://maps.app.goo.gl/fx44ZMf3NFSA46Qn9"
@@ -156,7 +158,7 @@ export default function Contact() {
                   fontSize: 2
                 }}
               >
-                View on Google Maps
+                {t('contact.viewOnMaps')}
                 <Icon glyph="external" size={16} />
               </Link>
             </ContactCard>
@@ -166,11 +168,11 @@ export default function Contact() {
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
                 <Icon glyph="email-fill" size={28} color="rgb(41, 143, 206)" />
                 <Heading as="h2" sx={{ fontSize: 3, m: 0 }}>
-                  Email Us
+                  {t('contact.emailUs')}
                 </Heading>
               </Box>
               <Text sx={{ fontSize: 2, lineHeight: 1.6, color: 'slate', mb: 3 }}>
-                Have a question or want to collaborate? Send us an email and we'll get back to you as soon as possible.
+                {t('contact.emailDesc')}
               </Text>
               <Link
                 href={mailto}
@@ -194,7 +196,7 @@ export default function Contact() {
                 }}
               >
                 <Icon glyph="send" size={18} />
-                {email || 'Loading...'}
+                {email || t('contact.emailLoading')}
               </Link>
             </ContactCard>
           </Grid>
@@ -202,12 +204,12 @@ export default function Contact() {
           {/* Social Links Section */}
           <Box sx={{ mt: 5 }}>
             <Heading as="h2" sx={{ fontSize: [3, 4], mb: 4, textAlign: 'center' }}>
-              Connect With Us
+              {t('contact.connectWithUs')}
             </Heading>
 
             {/* Main Social */}
             <Text sx={{ fontSize: 1, fontWeight: 'bold', color: 'slate', mb: 2, textTransform: 'uppercase', letterSpacing: 1 }}>
-              Social Media
+              {t('contact.socialMedia')}
             </Text>
             <Grid columns={[1, 2, 3]} gap={3} sx={{ mb: 4 }}>
               <SocialLink
@@ -217,8 +219,8 @@ export default function Contact() {
               >
                 <Icon glyph="discord" size={24} color="#5865F2" />
                 <SocialLinkContent>
-                  <SocialTitle>Discord</SocialTitle>
-                  <SocialSubtitle>Join our server</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.discord.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.discord.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
 
@@ -229,8 +231,8 @@ export default function Contact() {
               >
                 <Icon glyph="message-fill" size={24} color="#25D366" />
                 <SocialLinkContent>
-                  <SocialTitle>WhatsApp</SocialTitle>
-                  <SocialSubtitle>Join our group</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.whatsapp.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.whatsapp.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
 
@@ -241,8 +243,8 @@ export default function Contact() {
               >
                 <Icon glyph="twitter" size={24} color="#000" />
                 <SocialLinkContent>
-                  <SocialTitle>X (Twitter)</SocialTitle>
-                  <SocialSubtitle>@happyhackings</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.twitter.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.twitter.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
 
@@ -253,8 +255,8 @@ export default function Contact() {
               >
                 <Icon glyph="instagram" size={24} color="#E4405F" />
                 <SocialLinkContent>
-                  <SocialTitle>Instagram</SocialTitle>
-                  <SocialSubtitle>@happyhackingspace</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.instagram.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.instagram.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
 
@@ -265,8 +267,8 @@ export default function Contact() {
               >
                 <Icon glyph="link" size={24} color="#0A66C2" />
                 <SocialLinkContent>
-                  <SocialTitle>LinkedIn</SocialTitle>
-                  <SocialSubtitle>happyhackingspace</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.linkedin.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.linkedin.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
 
@@ -277,8 +279,8 @@ export default function Contact() {
               >
                 <Icon glyph="share" size={24} color="#0085FF" />
                 <SocialLinkContent>
-                  <SocialTitle>Bluesky</SocialTitle>
-                  <SocialSubtitle>@happyhackingspace</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.bluesky.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.bluesky.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
 
@@ -289,8 +291,8 @@ export default function Contact() {
               >
                 <Icon glyph="mastodon" size={24} color="#6364FF" />
                 <SocialLinkContent>
-                  <SocialTitle>Mastodon</SocialTitle>
-                  <SocialSubtitle>@happyhackingspace</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.mastodon.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.mastodon.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
 
@@ -301,15 +303,15 @@ export default function Contact() {
               >
                 <Icon glyph="community" size={24} color="#FF4500" />
                 <SocialLinkContent>
-                  <SocialTitle>Reddit</SocialTitle>
-                  <SocialSubtitle>r/HappyHackingSpace</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.reddit.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.reddit.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
             </Grid>
 
             {/* Video & Streaming */}
             <Text sx={{ fontSize: 1, fontWeight: 'bold', color: 'slate', mb: 2, textTransform: 'uppercase', letterSpacing: 1 }}>
-              Video & Streaming
+              {t('contact.videoStreaming')}
             </Text>
             <Grid columns={[1, 2, 4]} gap={3} sx={{ mb: 4 }}>
               <SocialLink
@@ -319,8 +321,8 @@ export default function Contact() {
               >
                 <Icon glyph="youtube" size={24} color="#FF0000" />
                 <SocialLinkContent>
-                  <SocialTitle>YouTube</SocialTitle>
-                  <SocialSubtitle>@HappyHackingSpace</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.youtube.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.youtube.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
 
@@ -331,8 +333,8 @@ export default function Contact() {
               >
                 <Icon glyph="photo" size={24} color="#000" />
                 <SocialLinkContent>
-                  <SocialTitle>TikTok</SocialTitle>
-                  <SocialSubtitle>@happyhackingspace</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.tiktok.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.tiktok.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
 
@@ -343,8 +345,8 @@ export default function Contact() {
               >
                 <Icon glyph="twitch" size={24} color="#9146FF" />
                 <SocialLinkContent>
-                  <SocialTitle>Twitch</SocialTitle>
-                  <SocialSubtitle>happyhackingspace</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.twitch.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.twitch.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
 
@@ -355,8 +357,8 @@ export default function Contact() {
               >
                 <Icon glyph="view" size={24} color="#53FC18" />
                 <SocialLinkContent>
-                  <SocialTitle>Kick</SocialTitle>
-                  <SocialSubtitle>happyhackingspace</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.kick.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.kick.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
 
@@ -367,15 +369,15 @@ export default function Contact() {
               >
                 <Icon glyph="controls" size={24} color="#1DB954" />
                 <SocialLinkContent>
-                  <SocialTitle>Spotify</SocialTitle>
-                  <SocialSubtitle>Podcast</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.spotify.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.spotify.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
             </Grid>
 
             {/* Developer & Resources */}
             <Text sx={{ fontSize: 1, fontWeight: 'bold', color: 'slate', mb: 2, textTransform: 'uppercase', letterSpacing: 1 }}>
-              Developer & Resources
+              {t('contact.developerResources')}
             </Text>
             <Grid columns={[1, 2, 3]} gap={3}>
               <SocialLink
@@ -385,8 +387,8 @@ export default function Contact() {
               >
                 <Icon glyph="github" size={24} color="#333" />
                 <SocialLinkContent>
-                  <SocialTitle>GitHub</SocialTitle>
-                  <SocialSubtitle>happyhackingspace</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.github.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.github.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
 
@@ -397,8 +399,8 @@ export default function Contact() {
               >
                 <Icon glyph="sam" size={24} color="#FFD21E" />
                 <SocialLinkContent>
-                  <SocialTitle>Hugging Face</SocialTitle>
-                  <SocialSubtitle>happyhackingspace</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.huggingface.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.huggingface.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
 
@@ -409,8 +411,8 @@ export default function Contact() {
               >
                 <Icon glyph="post" size={24} color="rgb(207, 45, 228)" />
                 <SocialLinkContent>
-                  <SocialTitle>Blog</SocialTitle>
-                  <SocialSubtitle>happyhackingspace.blog</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.blog.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.blog.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
 
@@ -421,8 +423,8 @@ export default function Contact() {
               >
                 <Icon glyph="event-code" size={24} color="rgb(41, 143, 206)" />
                 <SocialLinkContent>
-                  <SocialTitle>Events</SocialTitle>
-                  <SocialSubtitle>Community events</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.events.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.events.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
 
@@ -433,8 +435,8 @@ export default function Contact() {
               >
                 <Icon glyph="emoji" size={24} color="#00FF99" />
                 <SocialLinkContent>
-                  <SocialTitle>Giphy</SocialTitle>
-                  <SocialSubtitle>happyhackingspace</SocialSubtitle>
+                  <SocialTitle>{t('contact.social.giphy.title')}</SocialTitle>
+                  <SocialSubtitle>{t('contact.social.giphy.subtitle')}</SocialSubtitle>
                 </SocialLinkContent>
               </SocialLink>
             </Grid>
@@ -455,10 +457,10 @@ export default function Contact() {
             }}
           >
             <Heading as="h2" sx={{ fontSize: [3, 4], mb: 2 }}>
-              Ready to start hacking?
+              {t('contact.cta.title')}
             </Heading>
             <Text as="p" sx={{ fontSize: 2, mb: 3, opacity: 0.9 }}>
-              Join our community of hackers
+              {t('contact.cta.subtitle')}
             </Text>
             <Link
               href="https://discord.happyhacking.space"
@@ -480,7 +482,7 @@ export default function Contact() {
                 }
               }}
             >
-              Join the Community
+              {t('contact.cta.button')}
             </Link>
           </Box>
         </Container>

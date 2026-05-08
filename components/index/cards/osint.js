@@ -2,6 +2,7 @@ import CardModel from './card-model'
 import { Box, Flex, Image, Text } from 'theme-ui'
 import Buttons from './button'
 import { keyframes } from '@emotion/react'
+import { useTranslation } from '../../../lib/i18n'
 
 /** @jsxImportSource theme-ui */
 
@@ -73,11 +74,7 @@ function RelevantTriangle() {
   )
 }
 
-function SideHUD({ side }) {
-  const leftLines = ['+0.0/VCM', '+0.1/VCM', 'INPUT_1', 'INPUT_2', 'ADMN_CONTROL']
-  const rightLines = ['INPUT_FEEDS', 'TK_009.557_-1', 'CTL_CODE [423]', 'SYS.ONLINE +0092']
-  const lines = side === 'left' ? leftLines : rightLines
-
+function SideHUD({ side, lines }) {
   return (
     <Box
       sx={{
@@ -102,6 +99,9 @@ function SideHUD({ side }) {
 }
 
 export default function Osint() {
+  const { t } = useTranslation()
+  const leftLines = [t('cards.osint.vcm1'), t('cards.osint.vcm2'), t('cards.osint.input1'), t('cards.osint.input2'), t('cards.osint.adminControl')]
+  const rightLines = [t('cards.osint.inputFeeds'), t('cards.osint.tk'), t('cards.osint.ctlCode'), t('cards.osint.sysOnline')]
   return (
     <CardModel
       color="white"
@@ -149,14 +149,14 @@ export default function Osint() {
       />
 
       {/* Side HUD readouts */}
-      <SideHUD side="left" />
-      <SideHUD side="right" />
+      <SideHUD side="left" lines={leftLines} />
+      <SideHUD side="right" lines={rightLines} />
 
       {/* Content */}
       <Box sx={{ position: 'relative', zIndex: 2 }}>
         {/* CCTV HUD header */}
         <Flex sx={{ alignItems: 'center', gap: '8px', mb: 3, fontFamily: 'monospace' }}>
-          <Text sx={{ fontSize: '11px', color: '#969a9e' }}>CAM-0847</Text>
+          <Text sx={{ fontSize: '11px', color: '#969a9e' }}>{t('cards.osint.cam')}</Text>
           <Box
             sx={{
               width: '8px',
@@ -166,9 +166,9 @@ export default function Osint() {
               animation: `${recBlink} 2s ease-in-out infinite`
             }}
           />
-          <Text sx={{ fontSize: '11px', color: '#8b2c2c' }}>REC</Text>
+          <Text sx={{ fontSize: '11px', color: '#8b2c2c' }}>{t('cards.osint.rec')}</Text>
           <Text sx={{ fontSize: '9px', color: '#3c3f46', ml: 'auto', display: ['none', 'block'] }}>
-            2026.02.13 14:37:22
+            {t('cards.osint.date')}
           </Text>
         </Flex>
 
@@ -202,14 +202,14 @@ export default function Osint() {
                   color: '#0e0f12'
                 }}
               >
-                RELEVANT
+                {t('cards.osint.relevant')}
               </Box>
               <RelevantTriangle />
             </Flex>
 
             <Image
               src="/project-icon/osint-ctf-logo.svg"
-              alt="OSINT CTF"
+              alt={t('cards.osint.alt')}
               sx={{ width: ['200px', '240px', '280px'], mb: 3, display: 'block' }}
             />
 
@@ -224,8 +224,7 @@ export default function Osint() {
                 maxWidth: '460px'
               }}
             >
-              Test your open-source intelligence skills. Gather data, analyze
-              digital footprints, and uncover hidden connections.
+              {t('cards.osint.desc')}
             </Text>
 
             <Buttons
@@ -240,7 +239,7 @@ export default function Osint() {
                 letterSpacing: '1px'
               }}
             >
-              START HUNTING
+              {t('cards.osint.start')}
             </Buttons>
           </Box>
 
@@ -255,7 +254,7 @@ export default function Osint() {
             <PoiTargetingBox>
               <Image
                 src="/project-icon/osint-sticker.svg"
-                alt="OSINT owl mascot"
+                alt={t('cards.osint.mascotAlt')}
                 sx={{ width: '180px', display: 'block' }}
               />
             </PoiTargetingBox>
@@ -263,10 +262,10 @@ export default function Osint() {
             {/* SSN + Subject of Interest */}
             <Box sx={{ mt: '8px', fontFamily: 'monospace', textAlign: 'center' }}>
               <Text sx={{ fontSize: '13px', fontWeight: 'bold', color: '#d6d9dd', display: 'block' }}>
-                379-14-4023
+                {t('cards.osint.id')}
               </Text>
               <Text sx={{ fontSize: '9px', color: '#969a9e', display: 'block' }}>
-                SUBJECT OF INTEREST
+                {t('cards.osint.subject')}
               </Text>
             </Box>
           </Box>
@@ -283,11 +282,11 @@ export default function Osint() {
             flexWrap: 'wrap'
           }}
         >
-          <Text>PROBABILITY: 0.9847</Text>
-          <Text sx={{ color: '#91802a' }}>FLAG{'{'+'??????'+'}'}</Text>
-          <Text>NODES: 2,847 INDEXED</Text>
-          <Text>IDENTIFIERS: MASKED</Text>
-          <Text sx={{ color: '#8b2c2c' }}>THREAT LEVEL: ELEVATED</Text>
+          <Text>{t('cards.osint.probability')}</Text>
+          <Text sx={{ color: '#91802a' }}>{t('cards.osint.flag')}</Text>
+          <Text>{t('cards.osint.nodes')}</Text>
+          <Text>{t('cards.osint.identifiers')}</Text>
+          <Text sx={{ color: '#8b2c2c' }}>{t('cards.osint.threat')}</Text>
         </Flex>
       </Box>
     </CardModel>

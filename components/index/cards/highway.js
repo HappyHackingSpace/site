@@ -2,10 +2,12 @@ import CardModel from './card-model'
 import { Box, Flex, Image, Text } from 'theme-ui'
 import Buttons from './button'
 import Balancer from 'react-wrap-balancer'
+import { useTranslation } from '../../../lib/i18n'
 
 /** @jsxImportSource theme-ui */
 
 export default function Highway() {
+  const { t } = useTranslation()
   return (
     <CardModel
       color="white"
@@ -45,7 +47,7 @@ export default function Highway() {
       >
         <Image
           src="/home/highway-logo.png"
-          alt="Highway logo"
+          alt={t('cards.highway.alt')}
           sx={{
             width: ['250px', '350px', '500px'],
             mb: 3
@@ -61,7 +63,7 @@ export default function Highway() {
               mb: 3
             }}
           >
-            Design a hardware project. Get the parts for free.
+            {t('cards.highway.desc')}
           </Text>
         </Balancer>
         <Buttons
@@ -72,7 +74,7 @@ export default function Highway() {
           id="53"
           icon="bolt-circle"
         >
-          Start building
+          {t('cards.highway.start')}
         </Buttons>
       </Flex>
     </CardModel>

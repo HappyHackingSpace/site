@@ -2,10 +2,12 @@ import CardModel from './card-model'
 import { Box, Flex, Image, Text } from 'theme-ui'
 import Buttons from './button'
 import Balancer from 'react-wrap-balancer'
+import { useTranslation } from '../../../lib/i18n'
 
 /** @jsxImportSource theme-ui */
 
 export default function Shipwrecked() {
+  const { t } = useTranslation()
   return (
     <CardModel
       color="white"
@@ -53,7 +55,7 @@ export default function Shipwrecked() {
         >
           <Image
             src="/home/shipwrecked-logo.svg"
-            alt="Shipwrecked logo"
+            alt={t('cards.shipwrecked.alt')}
             sx={{
               width: ['250px', '250px', '300px'],
               mb: [3, 3, 5]
@@ -101,7 +103,7 @@ export default function Shipwrecked() {
             id="53"
             icon="explore"
           >
-            Get your invite
+            {t('cards.shipwrecked.invite')}
           </Buttons>
         </Flex>
       </Flex>

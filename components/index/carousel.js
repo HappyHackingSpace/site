@@ -5,10 +5,12 @@ import React, { useEffect, useState } from 'react'
 import Ticker from 'react-ticker'
 import PageVisibility from 'react-page-visibility'
 import { Fade } from 'react-reveal'
+import { useTranslation } from '../../lib/i18n'
 /** @jsxImportSource theme-ui */
 
 export default function Carousel({ cards }) {
   let [speed, setSpeed] = useState(5)
+  const { t } = useTranslation()
 
   const [pageIsVisible, setPageIsVisible] = useState(true)
 
@@ -31,7 +33,7 @@ export default function Carousel({ cards }) {
               margin: 'auto'
             }}
           >
-            Here are a few projects you could get involved in:
+            {t('home.carousel.eyebrow')}
           </Text>
           <Ticker speed={speed} sx={{ overflowX: 'hidden' }}>
             {() => (

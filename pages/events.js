@@ -21,84 +21,19 @@ import Image from 'next/image'
 import CultureHackPic from '../public/hackathons/culturedigitalizationhackathon.jpg'
 import { compact } from 'lodash'
 import theme from '@happyhackingspace/theme'
+import { useTranslation } from '../lib/i18n'
 
-const events = [
+const eventsData = [
   {
-    name: 'Hackathon: The Cultural Heritage and Digitalization ',
-    description: `A hackathon focused on the cultural heritage and digitalization of the city of Diyarbakır and Mesopotamia.`,
-    // logo: '',
-    location: 'Diyarbakır, Turkey',
-    season: 'December',
+    key: 'cultureHack',
     year: '2024',
-    // repo: 'culturehack',
-    image: '/hackathons/culturehack.jpeg',
-    // link: 'https://cunted.hackclub.com'
+    image: '/hackathons/culturehack.jpeg'
   },
   {
-    name: 'Code Jam 181925',
-    description: `An event dedicated to spreading the culture of competitive programming and the joy of hacking. Participants engaged in a series of challenges to test their coding skills and creativity.`,
-    location: 'Diyarbakır, Turkey',
-    season: 'January',
+    key: 'codeJam',
     year: '2025',
-    image: '/codejams/firstcodejam.jpeg',
-  },
-  // {
-  //   name: 'Epoch',
-  //   logo: `https://emoji.slack-edge.com/T0266FRGM/epoch/1337c0f7f3c8341d.png`,
-  //   description: `A magical New Year's spent hacking in New Delhi, our first flagship event abroad and in India.`,
-  //   location: 'Delhi NCR, India',
-  //   season: 'Winter',
-  //   year: '2022/23',
-  //   video: 'https://www.youtube.com/embed/KLx4NZZPzMc',
-  //   repo: 'epoch'
-  // },
-  // {
-  //   name: 'Assemble',
-  //   logo: 'https://emoji.slack-edge.com/T0266FRGM/assemble/4f9465eb00175463.png',
-  //   description:
-  //     'The first high school hackathon since the pandemic! Hosted by a team of Hack Clubbers to kick off a hackathon renaissance.',
-  //   location: 'San Francisco, California',
-  //   season: 'Summer',
-  //   year: '2022',
-  //   video: 'https://youtube.com/embed/PnK4gzO6S3Q',
-  //   repo: 'assemble'
-  // },
-  // {
-  //   name: 'The Hacker Zephyr',
-  //   logo: 'https://hackclub.com/stickers/zephyr.svg',
-  //   description:
-  //     'A cross-country hacker adventure on a train and the longest hackathon (by miles) on land.',
-  //   location: 'Burlington (VT) to Los Angeles (CA)',
-  //   season: 'Summer',
-  //   year: '2021',
-  //   video: 'https://youtube.com/embed/2BID8_pGuqA',
-  //   repo: 'the-hacker-zephyr'
-  // },
-  // {
-  //   name: 'Summer of Making',
-  //   logo: 'https://hackclub.com/stickers/summer_of_making.svg',
-  //   description:
-  //     '$50k in hardware donations to teen hackers around the world and the creation of Scrapbook:',
-  //   location: 'Online (thanks COVID-19!)',
-  //   season: 'Summer',
-  //   year: '2020',
-  //   image:
-  //     'https://cdn.sanity.io/images/2ejqxsnu/production/ed144128afb78a7095d6c77945efdd2c38078ecf-1637x990.png?w=3840&q=75&fit=clip&auto=format',
-  //   link: 'https://scrapbook.hackclub.com/r/summer-of-making',
-  //   ghTag: 'summer-of-making'
-  // },
-  // {
-  //   name: 'Flagship',
-  //   logo: 'https://hackclub.com/stickers/ship.png',
-  //   description:
-  //     'An IRL meetup of high school hackathon organizers and coding club leaders. Our first "flagship" event.',
-  //   location: 'San Francisco, California',
-  //   season: 'Summer',
-  //   year: '2019',
-  //   image:
-  //     'https://github.com/hackclub/www-assemble/blob/main/public/hackers-assemble.jpg?raw=true',
-  //   link: 'https://hack.af/flagship-album'
-  // }
+    image: '/codejams/firstcodejam.jpeg'
+  }
 ]
 
 const Event = ({
@@ -112,7 +47,8 @@ const Event = ({
   repo,
   ghTag,
   image,
-  link
+  link,
+  t
 }) => (
   <Card variant="sunken">
     <Flex sx={{ alignItems: 'center', mb: 2 }}>
@@ -149,7 +85,7 @@ const Event = ({
     )}
     <Box sx={{ color: 'darkless' }}>
       <b>
-        {season}, {year} - {location}
+        {t('events.dateTemplate', { season, year, location })}
       </b>{' '}
     </Box>
     <Box>
@@ -173,149 +109,159 @@ const Event = ({
   </Card>
 )
 
-const Page = ({ jobs }) => (
-  <>
-    <Meta
-      as={Head}
-      title="Events"
-      description="Now and then, we gather, not just to build things, but to play, to wonder, to disrupt the ordinary. Let’s look back at how it all unfolded."
-      image="/hackathons/culturedigitalizationhackathon.jpg"
-    />
-    <ForceTheme theme="light" />
-    <Nav />
-    <Box
-      as="main"
-      key="main"
-      sx={{
-        color: 'black'
-      }}
-    >
+const Page = () => {
+  const { t } = useTranslation()
+
+  const events = eventsData.map(e => ({
+    ...e,
+    name: t(`events.items.${e.key}.name`),
+    description: t(`events.items.${e.key}.description`),
+    location: t(`events.items.${e.key}.location`),
+    season: t(`events.items.${e.key}.season`)
+  }))
+
+  return (
+    <>
+      <Meta
+        as={Head}
+        title={t('events.meta.title')}
+        description={t('events.meta.description')}
+        image="/hackathons/culturedigitalizationhackathon.jpg"
+      />
+      <ForceTheme theme="light" />
+      <Nav />
       <Box
+        as="main"
+        key="main"
         sx={{
-          py: [5, 6],
-          background:
-            'linear-gradient(90deg, rgba(2,0,36,0.63) 0%, rgba(2,0,36,0.56) 100%)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          textAlign: 'center',
-          position: 'relative'
+          color: 'black'
         }}
       >
         <Box
           sx={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            bottom: 0,
-            right: 0,
-            zIndex: -1
+            py: [5, 6],
+            background:
+              'linear-gradient(90deg, rgba(2,0,36,0.63) 0%, rgba(2,0,36,0.56) 100%)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            textAlign: 'center',
+            position: 'relative'
           }}
         >
-          <Image
-            src={CultureHackPic}
-            alt="Happy Hackers at The Cultural Heritage and Digitalization Hackathon"
-            layout="fill"
-            style={{ objectFit: 'cover' }}
-          />
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              bottom: 0,
+              right: 0,
+              zIndex: -1
+            }}
+          >
+            <Image
+              src={CultureHackPic}
+              alt={t('events.imageAlt')}
+              layout="fill"
+              style={{ objectFit: 'cover' }}
+            />
+          </Box>
+          <Container>
+            <Heading
+              as="h1"
+              sx={{
+                fontSize: ['48px', '48px', '72px'],
+                color: 'white',
+                textShadow: 'elevated'
+              }}
+            >
+              {t('events.hero.title')}
+            </Heading>
+            <Heading
+              sx={{
+                color: 'smoke',
+                mt: 3,
+                fontSize: ['18px', '24px'],
+                lineHeight: ['1.5', '1.325'],
+                maxWidth: '900px',
+                margin: 'auto',
+                fontWeight: 400,
+                textShadow: 'small'
+              }}
+            >
+              {t('events.hero.subtitle')}
+            </Heading>
+            <Button
+              as="a"
+              variant="ctaLg"
+              href="https://discord.happyhacking.space"
+              target="_blank"
+              rel="noopener"
+              sx={{ mt: 3, background: theme.util.gx('purple', 'blue') }}
+            >
+              {t('events.hero.button')}
+            </Button>
+          </Container>
         </Box>
-        <Container>
-          <Heading
-            as="h1"
+        <Container sx={{ py: [3, 4], px: [2, 2, 0] }}>
+          <Grid
             sx={{
-              fontSize: ['48px', '48px', '72px'],
+              maxWidth: '64rem',
+              mx: 'auto'
+            }}
+            align="left"
+            columns={['1fr', '1fr 1fr']}
+          >
+            {events.map((event, i) => (
+              <Event key={`event-${i}`} {...event} t={t} />
+            ))}
+          </Grid>
+          <Card
+            variant="sunken"
+            sx={{
+              textAlign: 'center',
+              background: theme.util.gx('cyan', 'blue'),
               color: 'white',
-              textShadow: 'elevated'
-            }}
-          >
-            Happy Hacking Space's Events
-          </Heading>
-          <Heading
-            sx={{
-              color: 'smoke',
+              width: '100%',
+              maxWidth: '64rem',
+              mx: 'auto',
               mt: 3,
-              fontSize: ['18px', '24px'],
-              lineHeight: ['1.5', '1.325'],
-              maxWidth: '900px',
-              margin: 'auto',
-              fontWeight: 400,
-              textShadow: 'small'
+              fontSize: 2
             }}
           >
-            Now and then, we gather, not just to build things, but to play, to wonder, to disrupt the ordinary.
-            Let’s look back at how it all unfolded.
-          </Heading>
-          <Button
-            as="a"
-            variant="ctaLg"
-            href="https://discord.happyhacking.space"
-            target="_blank"
-            rel="noopener"
-            sx={{ mt: 3, background: theme.util.gx('purple', 'blue') }}
-          >
-            Get ready for the next one!
-          </Button>
+            <Box sx={{ maxWidth: '600px', mx: 'auto' }}>
+              {t('events.moreCard.text1')}
+              <Link
+                href="https://hackathons.happyhacking.space"
+                sx={{ color: 'white' }}
+                target="_blank"
+              >
+                {t('events.moreCard.link1')}
+              </Link>
+              {t('events.moreCard.text2')}
+              <Link
+                href="https://daysofservice.happyhacking.space/"
+                sx={{ color: 'white' }}
+                target="_blank"
+              >
+                {t('events.moreCard.link2')}
+              </Link>
+              {t('events.moreCard.text3')}
+              <Link
+                href="https://events.happyhacking.space/"
+                sx={{ color: 'white' }}
+                target="_blank"
+              >
+                {t('events.moreCard.link3')}
+              </Link>
+              {t('events.moreCard.text4')}
+            </Box>
+          </Card>
         </Container>
       </Box>
-      <Container sx={{ py: [3, 4], px: [2, 2, 0] }}>
-        <Grid
-          sx={{
-            maxWidth: '64rem',
-            mx: 'auto'
-          }}
-          align="left"
-          columns={['1fr', '1fr 1fr']}
-        >
-          {events.map((event, i) => (
-            <Event key={`event-${i}`} {...event} />
-          ))}
-        </Grid>
-        <Card
-          variant="sunken"
-          sx={{
-            textAlign: 'center',
-            background: theme.util.gx('cyan', 'blue'),
-            color: 'white',
-            width: '100%',
-            maxWidth: '64rem',
-            mx: 'auto',
-            mt: 3,
-            fontSize: 2
-          }}
-        >
-          <Box sx={{ maxWidth: '600px', mx: 'auto' }}>
-            Looking for more? Happy Hackers often organise their own hackathons!
-            Check them out at{' '}
-            <Link
-              href="https://hackathons.happyhacking.space"
-              sx={{ color: 'white' }}
-              target="_blank"
-            >
-              hackathons.happyhacking.space
-            </Link>
-            . Happy Hacking Space is also behind a series of{' '}
-            <Link
-              href="https://daysofservice.happyhacking.space/"
-              sx={{ color: 'white' }}
-              target="_blank"
-            >
-              Day of Service
-            </Link>{' '}
-            events and{' '}
-            <Link
-              href="https://events.happyhacking.space/"
-              sx={{ color: 'white' }}
-              target="_blank"
-            >
-              frequent virtual events
-            </Link>
-            .
-          </Box>
-        </Card>
-      </Container>
-    </Box>
 
-    <Footer key="footer" />
-  </>
-)
+      <Footer key="footer" />
+    </>
+  )
+}
 
 export default Page
