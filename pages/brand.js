@@ -149,7 +149,7 @@ const Page = ({ css }) => {
         {t('brand.header')}
         </Heading>
         <Heading as="h2" variant="subtitle" sx={{ mt: 3, color: "text" }}>
-          Download HQ’s logos and preview our brand colors & font.
+          {t('brand.subtitle')}
         </Heading>
         {/* <p>
           Hack Club must always be written as Hack Club, not hackclub / Hackclub

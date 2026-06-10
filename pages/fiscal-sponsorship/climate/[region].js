@@ -26,19 +26,6 @@ export const getStaticPaths = () => {
   return { paths, fallback: false }
 }
 
-export const getStaticProps = async ({ params }) => {
-  let { region } = params
-  region = find(regionsWithIds, ['id', region.replace('organizations-in-', '')])
-
-  let orgs = (await fetchRawClimateOrganizations()).filter(
-    org => org.location.continent === region.label
-  )
-
-  return {
-    props: {
-      rawOrganizations: orgs,
-      pageRegion: region
-    },
-    revalidate: 60 // seconds
-  }
+export const getStaticProps = async () => {
+  return { notFound: true }
 }

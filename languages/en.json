@@ -436,7 +436,26 @@
     "boardAdvisor": "Board Advisor",
     "advisorPrompt": "Interested in advising? Reach out!",
     "acknowledgements": "Acknowledgements",
-    "ackText": "Thank you to everyone who helped shape Happy Hacking Space into what it is today..."
+    "ackText": "Thank you to everyone who helped shape Happy Hacking Space into what it is today...",
+    "yourNameHere": "Your Name Here",
+    "roles": {
+      "Game Club Lead": "Game Club Lead",
+      "Sport Club Lead": "Sport Club Lead",
+      "Book Club Lead": "Book Club Lead",
+      "Open Source Lead": "Open Source Lead",
+      "Garage Lead": "Garage Lead",
+      "Garage & Writers Club Lead": "Garage & Writers Club Lead",
+      "HHS Academy - English Club Lead & HHS Relations": "HHS Academy - English Club Lead & HHS Relations",
+      "Career Development Lead": "Career Development Lead",
+      "Intern": "Intern",
+      "Open Source Security Lead": "Open Source Security Lead",
+      "HHS Academy - Book Club Lead": "HHS Academy - Book Club Lead",
+      "HHS Academy - Book Club Lead, HHS Dicle - President": "HHS Academy - Book Club Lead, HHS Dicle - President",
+      "HHS Dicle - President": "HHS Dicle - President",
+      "HHS Dicle - Bookkeeper": "HHS Dicle - Bookkeeper",
+      "HHS Dicle - Secretary General": "HHS Dicle - Secretary General",
+      "High School Division Lead": "High School Division Lead"
+    }
   },
   "jobs": {
     "meta": {
@@ -513,6 +532,78 @@
       "title": "Ready to start hacking?",
       "subtitle": "Join our community of hackers",
       "button": "Join the Community"
+    }
+  },
+  "banner": {
+    "meta": {
+      "title": "Banner",
+      "description": "React component for adding a Happy Hacking Space banner to your site"
+    },
+    "title": "@happyhackingspace/banner",
+    "description": "React component for adding a Happy Hacking Space banner to your site",
+    "ogImageTitle": "Happy Hacking Space Banner"
+  },
+  "dontasktoask": {
+    "meta": {
+      "title": "Don't Ask to Ask — Question Asking Guide",
+      "description": "A guide to asking questions efficiently in the Happy Hacking Space community."
+    },
+    "hero": {
+      "title": "For Quick Answers: A Guide to Asking Questions",
+      "subtitle": "Save time and keep the community productive."
+    },
+    "intro": "At Happy Hacking Space, we follow this approach to save time and keep the community productive:",
+    "section1": {
+      "title": "Don't Ask \"Can I Ask a Question?\", Just Ask",
+      "description": "Instead of intros like \"Is anyone available?\" or \"Can I ask something?\", write the topic, what you've tried, and the error you got — all in one message."
+    },
+    "section2": {
+      "title": "Example: Time Waster vs. Hacker Method",
+      "badLabel": "Wasteful Communication (Hazar)",
+      "bad": {
+        "name1": "Hazar",
+        "name2": "Arjin",
+        "line1": "Hey, is there anyone who knows Python?",
+        "line2": "Hey, go ahead, I'm here.",
+        "line3": "I'm getting an error, can we look at it?",
+        "line4": "Sure, what's the error? Can you send the code?",
+        "line5": "[Sends photo of code] Look, it says NameError here.",
+        "line6": "It's hard to read from a photo, but it looks like you didn't define the variable...",
+        "result": "Result: 50 minutes spent on a simple fix."
+      },
+      "goodLabel": "Efficient Communication (Arjin)",
+      "good": {
+        "name1": "Arjin",
+        "name2": "Hazar",
+        "line1": "Hey, I'm getting a NameError in Python while printing a list. I defined the variable but it's not seeing it. Here's my code, can you help? my_list = [1, 2, 3] print(my_lista)",
+        "line2": "Hey Arjin, you wrote the variable name wrong in print, there's an extra 'a' at the end.",
+        "result": "Result: Problem solved in 2 minutes, everyone got back to work!"
+      }
+    },
+    "section3": {
+      "title": "Whatever the Topic, Ask in a \"Package\"",
+      "description": "Whether it's a software bug, design idea, or hardware issue; always include these in a single message:",
+      "goal": {
+        "title": "Goal:",
+        "desc": "What are you trying to do?"
+      },
+      "attempt": {
+        "title": "Attempt:",
+        "desc": "What have you tried so far?"
+      },
+      "error": {
+        "title": "Error:",
+        "desc": "Where exactly are you stuck? (Add error code, image, or link.)"
+      }
+    },
+    "section4": {
+      "title": "Don't Send Photos, Share",
+      "description": "Use code blocks for code, and clear visuals for design or hardware issues."
+    },
+    "summary": {
+      "title": "In Short",
+      "text": "The better you package your problem, the faster you can get back to hacking.",
+      "closing": "Happy Hacking!"
     }
   },
   "common": {

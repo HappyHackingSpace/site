@@ -709,11 +709,7 @@ const Philanthropy = ({ posts = [] }) => {
           <br />
           <Fade>
             <Text as="p">
-              Happy Hacking Space is always free for hackers and with your support, Happy Hacking Space
-              can grow to hundreds of thousands of hackers, bringing
-              free computer science education, a hacker mindset, and an equal
-              shot at success to every hacker, regardless of where they’re
-              from, how they identify, or what their parents do.
+              {t('philanthropy.vision.alwaysFree')}
             </Text>
           </Fade>
           <Fade>

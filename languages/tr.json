@@ -23,38 +23,38 @@
   "home": {
     "meta": {
       "title": "Hackerlar İçin Bir Ev",
-      "description": "Happy Hacking Space, hackerların, üreticilerin ve kaşiflerin bir araya geldiği kâr amacı gütmeyen bir ağdır; burada insanlar büyük düşünmek ve dünyada büyük işler yapmak için gereken yetkinliği, ağı ve teknik yeteneği inşa eder."
+      "description": "Happy Hacking Space, hackerların, üreticilerin ve kaşiflerin bir araya geldiği kâr amacı gütmeyen bir ağdır; burada insanlar büyük düşünmek ve dünyada güzel işler yapmak için gereken yetkinliği, ağı ve teknik yeteneği inşa eder."
     },
-    "hero": {
-      "eyebrow": "Happy Hacking Space'e Hoş Geldiniz",
-      "title": "Biz",
-      "hackers": "hacker'ız",
-      "subtitle": "Mezopotamya'da ve çevresinde bir arada hack'leyen",
-      "joinUs": "Bize Katıl",
-      "seeWhatHacking": "Ya da neler hack'liyoruz gör:",
-      "viewMore": "Daha fazla program gör",
-      "badge": "HHS ile AMA'daki Hackerlar",
-      "heroAlt": "Diyarbakır Açık Hava Toplantısı'ndaki Happy Hacker'lar",
-      "photoCredit": "📸 Fotoğraf: Seyma Alpay Bakir, Diyarbakır",
-      "photo1": "Mezopotamya'daki Happy Hacking Space haritası",
-      "photo2": "Happy Hacker'ların düzenlediği kod şenliği",
-      "photo3": "Dil Kulübündeki Happy Hacker'lar",
-      "photo4": "Happy Hacker'ların düzenlediği hackathon"
-    },
+   "hero": {
+  "eyebrow": "Happy Hacking Space'e Hoş Geldin",
+  "title": "Biz",
+  "hackers": "hackerız",
+  "subtitle": "Mezopotamya’da ve çevresinde birlikte üreten, birlikte hackleyen topluluk",
+  "joinUs": "Bize Katıl",
+  "seeWhatHacking": "Ya da neler yaptığımıza göz at:",
+  "viewMore": "Diğer etkinlikleri gör",
+  "badge": "HHS'deki AMA'ya Katılan Hackerlar",
+  "heroAlt": "Diyarbakır’daki açık hava buluşmasında Happy Hackerlar",
+  "photoCredit": "📸 Fotoğraf: Seyma Alpay Bakir, Diyarbakır",
+  "photo1": "Mezopotamya’daki Happy Hacking Space haritası",
+  "photo2": "Happy Hackerlar tarafından düzenlenen kod şenliği",
+  "photo3": "Dil Kulübü'ndeki Happy Hackerlar",
+  "photo4": "Happy Hackerların düzenlediği hackathon"
+},
     "discover": {
-      "title": "Birlikte hack'lemenin ",
-      "highlight": "keyfini",
+      "title": "Birlikte hacklemenin ",
+      "highlight": "tadını",
       "titleEnd": " çıkar.",
-      "subtitle": "Her gün Happy Hacking Space hacker'ları çevrimiçi ve yüz yüze bir araya gelerek birlikte hack'ler, üretir ve keşif yapar. İster yeni başlayan bir programcı olun, ister yılların deneyimine sahip olun, Happy Hacking Space'de sizin için bir yer var. ",
+      "subtitle": "Her gün Happy Hacking Space hackerları çevrimiçi ve yüz yüze bir araya gelerek birlikte hackler, üretir ve keşifler yapar. İster yeni başlayan bir programcı olun, ister yılların deneyimine sahip olun, Happy Hacking Space'de sizin için bir yer var. ",
       "hackerEthic": "hacker etiği",
       "feature1Title": "Diğer kodlayıcılarla bağlantı kur",
       "feature1Desc": "Bir kodlama sorunuz mu var? Proje geri bildirimi mi arıyorsunuz? Günün her saati aktif olan ",
       "feature1Link": "Topluluğumuzda",
-      "feature1End": " konuşabileceğiniz yüzlerce harika insan bulacaksınız.",
-      "feature2Title": "Açık kaynak öğrenme araçları inşa et",
-      "feature2Desc": "Bu web sitesi, oyun, yapay zeka araçları, güvenlik araçları ve daha fazlası gibi açık kaynak projeleri birlikte inşa ediyoruz!",
-      "feature3Title": "Diğer hacker'larla yüz yüze buluş",
-      "feature3Desc": "Topluluktaki diğer Happy Hacker'larla bir araya gelin ve birlikte bir şeyler inşa edin: ",
+      "feature1End": " sohbet edebileceğiniz yüzlerce harika insan bulacaksınız.",
+      "feature2Title": "Açık kaynak öğrenme araçları geliştir",
+      "feature2Desc": "Birlikte web sitesi, oyun, yapay zeka araçları, güvenlik araçları ve daha fazlası gibi açık kaynak projeler inşa ediyoruz!",
+      "feature3Title": "Diğer hackerlarla yüz yüze buluş",
+      "feature3Desc": "Topluluktaki diğer Happy Hackerlarla bir araya gelin ve birlikte bir şeyler inşa edin: ",
       "feature3Link1": "Etkinlikler",
       "feature3And": "ve",
       "feature3Link2": "Hackathon'lar",
@@ -73,14 +73,13 @@
       "title": "Birlikte ",
       "highlight": "açık kaynak",
       "titleEnd": " oyun ve araçlar inşa ediyoruz",
-      "subtitle": "Happy Hacking Space ekibindeki mühendislerle iş birliği içinde, Happy Hacker'lar birbirleri için öğrenme araçları inşa ediyor. Araçlarımızla bir şeyler inşa ederek veya araçların kendilerine katkıda bulunarak bu projelere dahil olun.",
+      "subtitle": "Happy Hacking Space ekibindeki mühendislerle iş birliği içinde, Happy Hackerlar birbirleri için öğrenme araçları inşa ediyor. Araçlarımızla bir şeyler inşa ederek veya araçların kendilerine katkıda bulunarak bu projelere dahil olun.",
       "liveFromGitHub": "GitHub'dan canlı"
     },
     "recap": {
       "eyebrow": "Çok şey oluyor - Özetleyelim",
       "title": "İkinci evinizi ",
-      "highlight": "HHS'de",
-      "titleEnd": " bulun"
+      "highlight": "HHS'de"
     },
     "ctaCards": {
       "joinCommunity": "Topluluğumuza Katıl",
@@ -92,7 +91,7 @@
       "eyebrow": "SSS",
       "title": "Sıkça Sorulan Sorular",
       "q1": "HHS nedir?",
-      "a1": "Happy Hacking Space, Mezopotamya'da birlikte üreten hacker'ların, zanaatkârların ve kaşiflerin oluşturduğu kâr amacı gütmeyen bir topluluktur.",
+      "a1": "Happy Hacking Space, Mezopotamya'da birlikte üreten hackerların, zanaatkârların ve kaşiflerin oluşturduğu kâr amacı gütmeyen bir topluluktur.",
       "q2": "Nasıl katılabilirim?",
       "a2": "Discord kanalımıza katılarak veya fiziksel etkinliklerimize katılarak topluluğumuzun bir parçası olabilirsiniz.",
       "q3": "Ücretsiz mi?",
@@ -100,13 +99,13 @@
     }
   },
   "slack": {
-    "eyebrow": "~ Hack Club Slack ~",
-    "title": "Beceriler için gel, insanlar için kal.",
+    "eyebrow": "~ Happy Hacking Space Slack ~",
+    "title": "Beceri için gel, topluluk için kal.",
     "description1": "Açık kaynak projelerimizin iletişimi ve planlaması Slack'te yapılır. Kodlama genellikle yalnız bir aktivite olarak görülür. Spor, tiyatro veya satrançla ilgilenen çocuklar için birçok grup varken, programcı stereotipi karanlık bir odada tek başına oturan kişidir. ",
-    "descriptionStrong": "Bu böyle olmak zorunda değil",
-    "description2": "—Hack Club Slack'te (Discord tarzı çevrimiçi grup sohbeti), günün her saati aktif, {formatted}+ ",
-    "descriptionHighlight": "harika insan",
-    "description3": "la konuşacak bir grup bulacaksın.",
+    "descriptionStrong": "Bunun böyle olması gerekmez",
+    "description2": "—Happy Hacking Space Slack'te (Discord tarzı çevrimiçi grup sohbeti), günün her saati aktif {formatted}+ ",
+    "descriptionHighlight": "harika insanla",
+    "description3": " sohbet edebileceğin bir topluluk bulacaksın.",
     "join": "Slack'e Katıl →"
   },
   "doorCta": {
@@ -128,11 +127,11 @@
     "communityHubTitle": "Community Hub",
     "communityHub": "Kulüp yönetimi ve görev takip sistemi",
     "levelUpTitle": "LevelUp",
-    "levelUp": "Yapay zeka destekli özgeçmiş analizörü yazılım alanı uygunluğunu puanlar.",
+    "levelUp": "Yapay zeka destekli özgeçmiş analizörü; yazılım alanına uygunluğu puanlar.",
     "funUrlTitle": "FunURL",
     "funUrl": "Fonksiyonel URL Çakısı 🛠️",
     "skyBoundTitle": "SkyBound-Quest",
-    "skyBound": "Retro piksel platform oyunu: genç mucit gök adalarını kurtarır.",
+    "skyBound": "Retro piksel platform oyunu: Genç bir mucit gök adalarını kurtarıyor.",
     "hackerTabooTitle": "HackerTaboo",
     "hackerTaboo": "Hacker Tabusu: kelimeyi söylemeden tahmin et!",
     "awesomeHackathonTitle": "Awesome Hackathon",
@@ -142,7 +141,7 @@
     "slack": {
       "alt": "Slack AMA",
       "title": "Çevrimiçi Topluluğumuz",
-      "desc": "Kodlama yalnız bir aktivite olmak zorunda değil. Happy Hacking Space'de birlikte olağanüstü şeyler yapıyoruz ve topluluğumuzda takılacağınız harika insanlar da bulacaksınız. Birlikte kodlayın, programlama topluluğunuzu bulun, çılgın bir şey hayal edin veya sadece takılın.",
+      "desc": "Kodlama yalnız bir aktivite olmak zorunda değil. Happy Hacking Space'de birlikte olağanüstü şeyler yapıyoruz ve topluluğumuzda takılacağın harika insanlar da bulacaksın. Birlikte kodlayın, programlama topluluğunuzu bulun, çılgın bir şeyler hayal edin veya sadece takılın.",
       "amaDesc": "Arada sırada konuşmak istediğimiz birini davet edip onunla bir ",
       "ama": "AMA",
       "amaEnd": " düzenliyoruz.",
@@ -154,7 +153,7 @@
     },
     "mailingList": {
       "title": "Bültene abone ol",
-      "desc": "Sizin için harika bir şey üzerinde çalıştığımızda, ayda en fazla bir kez e-posta göndeririz.",
+      "desc": "Sizin için harika bir şey üzerinde çalıştığımızda ayda en fazla bir kez e-posta göndeririz.",
       "namePlaceholder": "Adınız",
       "emailPlaceholder": "E-posta Adresiniz",
       "subscribe": "Abone Ol",
@@ -162,7 +161,7 @@
       "bgAlt": "Yüzlerce Hack Kulübü olan küre"
     },
     "sinerider": {
-      "desc": "SineRider, aşk ve grafik üzerine bir oyun; sanatçılar, müzisyenler, programcılar, hikâye anlatıcıları gibi her türlü genç hacker tarafından destekleniyor… eğer bu sensen, bize katıl! Her şeyi güncel ve sorunsuz tutmak için yardımımızı her zaman kullanabiliriz.",
+      "desc": "SineRider, aşk ve grafikler üzerine bir oyun; sanatçılar, müzisyenler, programcılar ve hikâye anlatıcıları gibi her türlü genç hacker tarafından destekleniyor… eğer bu sensen, bize katıl! Her şeyi güncel ve sorunsuz tutmak için yardımımızı her zaman kullanabiliriz.",
       "joinDev": "Geliştirmeye katıl"
     },
     "vulnerableTarget": {
@@ -240,7 +239,7 @@
     "athena": {
       "alt1": "Athena'dan ödüller",
       "alt2": "Athena Ödülü",
-      "desc": "30 saat kod yazarak ve 3 kişisel proje üreterek sektörde tanınan bir teknik sertifika kazanın. Kodlarken ödüller kazanın ve 2025'in en büyük liseli kız hackathon'una New York'a gitme şansı yakalayın.",
+      "desc": "30 saat kod yazarak ve 3 kişisel proje üreterek sektörde tanınan bir teknik sertifika kazanın. Kodlarken ödüller kazanın ve 2025'in en büyük liseli kız hackathon'una New York'ta katılma şansı yakalayın.",
       "join": "Athena'ya Katıl"
     },
     "highway": {
@@ -250,7 +249,7 @@
     },
     "shipwrecked": {
       "alt": "Shipwrecked logosu",
-      "desc": "Boston Limanı'ndaki Cathleen Stone Adası'nda hayatınızda bir kez yaşayacağınız, 4 günlük hikâye tabanlı bir hackathon'a katılın. 8-11 Ağustos 2025.",
+      "desc": "Boston Limanı'ndaki Cathleen Stone Adası'nda hayatınızda bir kez yaşayacağınız 4 günlük, hikâye tabanlı bir hackathon'a katılın. 8-11 Ağustos 2025.",
       "invite": "Davetiyeni al"
     },
     "pizza": {
@@ -271,17 +270,17 @@
   },
   "photoCredits": {
     "diyarbakir": "📸 Fotoğraf: Seyma Alpay Bakir, Diyarbakır",
-    "heroAlt": "Diyarbakır Açık Hava Toplantısı'ndaki Happy Hacker'lar"
+    "heroAlt": "Diyarbakır Açık Hava Toplantısı'ndaki Happy Hackerlar"
   },
   "philosophy": {
     "meta": {
       "title": "Felsefe",
-      "description": "Hacker'lardan oluşan bir ağ olan Happy Hacking Space hakkında bilgi edinin. Uygulama ve web sitesi oluşturmayı herkes için erişilebilir kılmak istiyoruz."
+      "description": "Hackerlardan oluşan bir ağ olan Happy Hacking Space hakkında bilgi edinin. Uygulama ve web sitesi oluşturmayı herkes için erişilebilir kılmak istiyoruz."
     },
     "hero": {
       "line1": "Biz",
       "line2": "en iyisini",
-      "line3": "hack'lerken",
+      "line3": "hacklerken",
       "line4": "yaparız.",
       "sealTitle": "Happy Hacking Space",
       "sealSubtitle": "Felsefe"
@@ -294,25 +293,25 @@
       },
       "makeFromAnywhere": {
         "title": "Her yerden üret.",
-        "description": "Üretmek için hiç bu kadar iyi bir zaman olmamıştı: dünyanın herhangi bir yerinde, dizüstü bilgisayarı ve internet bağlantısı olan herkes bir uygulama yapmayı öğrenebilir. Bir şeyler inşa etmek hiç bu kadar küresel olarak demokratikleşmemişti."
+        "description": "Üretmek için hiç bu kadar iyi bir zaman olmamıştı: dünyanın herhangi bir yerinde, dizüstü bilgisayarı ve internet bağlantısı olan herkes bir uygulama yapmayı öğrenebilir. Bir şeyler inşa etmek hiç bu kadar küresel ve demokratik olmamıştı."
       },
       "hackHackHack": {
-        "title": "Hack'le, hack'le, hack'le.",
-        "description": "Happy Hacking Space'in amacı sizi bir hacker olmanıza yardımcı olmaktır. İnsanların her hafta kodla ilginç şeyler ürettiği her yerde bir alan istiyoruz. Okullar veya kurumlar bunu sağlamıyor, bu yüzden herkes için bir şeyler inşa etmeyi erişilebilir kılmak adına her yerde bunu oluşturuyoruz."
+        "title": "Hackle, hackle, hackle.",
+        "description": "Happy Hacking Space'in amacı sizin bir hacker olmanıza yardımcı olmaktır. İnsanların her hafta kodla ilginç şeyler üretebileceği bir alan istiyoruz, her yerde. Okullar veya kurumlar bunu sağlamadığı için, bu alanları herkes için üretmeyi erişilebilir kılmak adına kendimiz oluşturuyoruz."
       },
       "startBuilding": {
         "title": "Üretmeye başla.",
-        "description": "Çoğu kodlama dersi size gerçek kod yazmayı değil, programlama kavramlarını öğretir—bu, hiç odun olmadan marangozluk öğrenmeye çalışmak gibidir. Bu yüzden Happy Hacking Space'te tamamen bir şeyler inşa ederek kodlama öğrenirsiniz. Hiç deneyim olmadan başlarsınız ve her toplantıda bir proje oluşturur ve yayınlarsınız."
+        "description": "Çoğu kodlama dersi size gerçek kod yazmayı değil, programlama kavramlarını öğretir—bu, odun olmadan marangozluk öğrenmeye çalışmak gibidir. Bu yüzden Happy Hacking Space'te tamamen bir şeyler inşa ederek kodlama öğrenirsiniz. Hiç deneyim olmadan başlarsınız ve her toplantıda bir proje oluşturur ve yayınlarsınız."
       },
       "learnAsYouBuild": {
         "title": "Üretirken öğren.",
-        "description1": "En iyi marangozların sınıfta öğrenmediği gibi, en iyi programcılar da öğrenmemiştir. ",
-        "workshopsLink": "atölyelerimiz",
-        "description2": " aracılığıyla projeler inşa etmeye yönlendirileceksiniz. Başlarken kodun nasıl çalıştığını anlamayacaksınız, ancak ilerledikçe anlayışınızı geliştireceksiniz. Yolunuzda takılacaksınız, ancak biz yardım etmek için buradayız."
+        "description1": "En iyi marangozlar sınıfta öğrenmez; en iyi programcılar da öyle. ",
+        "workshopsLink": "Atölyelerimizde",
+        "description2": " projeler geliştirmeye yönlendirileceksiniz. Başlarken kodun nasıl çalıştığını anlamayabilirsiniz, ama ilerledikçe kavrayışınız derinleşecek. Takıldığınızda yardım etmek için buradayız."
       },
       "community": {
         "title": "Bir topluluğun parçası ol.",
-        "description": "Happy Hacking Space, size konuşabileceğiniz binlerce başka üreticiden oluşan bir topluluk sunar. Biz sanatçıyız, yazar, mühendis, tamirci, kampçı, film yapımcısı, gönüllüyüz. Biz bir şeyler üretiriz. Birbirimize yardım ederiz. Eğleniriz. Bize katıl."
+        "description": "Happy Hacking Space, konuşabileceğiniz binlerce üreticiden oluşan bir topluluk sunar. Biz sanatçı, yazar, mühendis, tamirci, kampçı, film yapımcısı ve gönüllüyüz. Biz bir şeyler üretiriz. Birbirimize yardım ederiz. Eğleniriz. Bize katıl."
       }
     },
     "cta": {
@@ -323,14 +322,14 @@
   "events": {
     "meta": {
       "title": "Etkinlikler",
-      "description": "Arada bir toplanırız, sadece bir şeyler inşa etmek için değil, oynamak, merak etmek, sıradan olanı bozmak için. Her şeyin nasıl geliştiğine bir göz atalım."
+      "description": "Bazen bir araya geliyoruz; sadece bir şeyler inşa etmek için değil, oyun oynamak, merak etmek ve sıradan olanı bozmak için. Her şeyin nasıl geliştiğine bir göz atalım."
     },
     "hero": {
       "title": "Happy Hacking Space Etkinlikleri",
-      "subtitle": "Arada bir toplanırız, sadece bir şeyler inşa etmek için değil, oynamak, merak etmek, sıradan olanı bozmak için. Her şeyin nasıl geliştiğine bir göz atalım.",
+      "subtitle": "Bazen bir araya geliyoruz; sadece bir şeyler inşa etmek için değil, oyun oynamak, merak etmek ve sıradan olanı bozmak için. Her şeyin nasıl geliştiğine bir göz atalım.",
       "button": "Bir sonrakine hazırlan!"
     },
-    "imageAlt": "Kültürel Miras ve Dijitalleşme Hackathonu'ndaki Happy Hacker'lar",
+    "imageAlt": "Kültürel Miras ve Dijitalleşme Hackathonu'ndaki Happy Hackerlar",
     "items": {
       "cultureHack": {
         "name": "Hackathon: Kültürel Miras ve Dijitalleşme",
@@ -341,7 +340,7 @@
       },
       "codeJam": {
         "name": "Code Jam 181925",
-        "description": "Rekabetçi programlama kültürünü ve hack'lemenin keyfini yaymaya adanmış bir etkinlik. Katılımcılar kodlama becerilerini ve yaratıcılıklarını test eden bir dizi mücadeleye katıldılar.",
+        "description": "Rekabetçi programlama kültürünü ve hacklemenin tadını yaymaya adanmış bir etkinlik. Katılımcılar kodlama becerilerini ve yaratıcılıklarını test eden bir dizi mücadeleye katıldı.",
         "location": "Diyarbakır, Türkiye",
         "season": "Ocak",
         "year": "2025"
@@ -349,7 +348,7 @@
     },
     "dateTemplate": "{season}, {year} - {location}",
     "moreCard": {
-      "text1": "Daha fazlasını mı arıyorsunuz? Happy Hacker'lar sık sık kendi hackathon'larını düzenler! Şuradan inceleyin: ",
+      "text1": "Daha fazlasını mı arıyorsunuz? Happy Hackerlar sık sık kendi hackathon'larını düzenler! Şuradan inceleyin: ",
       "link1": "hackathons.happyhacking.space",
       "text2": ". Happy Hacking Space aynı zamanda bir dizi ",
       "link2": "Day of Service",
@@ -371,10 +370,10 @@
     },
     "photoAlt": "Happy Hacking Space öğrencileri",
     "vision": {
-      "nextTenYears": "Önümüzdeki on yılda, Happy Hacking Space binlerce insanı teknik becerileri kullanarak sorunları çözmeye teşvik edecek, keşfedecek ve ilham verecek.",
-      "ledBy": "Hacker'lar, zanaatkârlar ve kaşifler tarafından yönetilen Happy Hacking Space, şimdiden binlere ulaşıyor ve Mezopotamya'daki en büyük teknik ağı temsil ediyor. Her gün yeni projeler yayınlanıyor, yeni kod satırları yazılıyor ve Happy Hacking Space'te gerçekleşen iş birlikçi, sorun çözme odaklı teknik projeler aracılığıyla yeni dostluklar kuruluyor.",
-      "alwaysFree": "Happy Hacking Space, hacker'lar için her zaman ücretsizdir ve sizin desteğinizle yüz binlerce hacker'a büyüyebilir; her hacker'a bedava bilgisayar bilimi eğitimi, bir hacker zihniyeti ve eşit bir başarı şansı getirebilir—nereden geldiğine, kim olduğuna veya ebeveynlerinin ne yaptığına bakılmaksızın.",
-      "overTime": "Zamanla, Happy Hacker'lar girişimciler, çevreciler, siyasi liderler, aktivistler ve politika yapıcılar olarak toplumları şekillendirecek. Bu gelecek liderlerin değerlerini şekillendirmeye yardımcı oluyoruz; onlara meraklı, alçakgönüllü, nazik ve iyimser sorun çözücüler olmayı örnekleyerek ve teşvik ederek.",
+      "nextTenYears": "Önümüzdeki on yılda Happy Hacking Space, binlerce insanı teknik becerilerle sorun çözmeye teşvik edecek, onlara ilham verecek ve keşfetmelerine olanak tanıyacak.",
+      "ledBy": "Hackerlar, zanaatkârlar ve kaşifler tarafından yönetilen Happy Hacking Space, şimdiden binlere ulaşmış durumda ve Mezopotamya'daki en büyük teknik ağı temsil ediyor. Her gün yeni projeler yayınlanıyor, yeni kod satırları yazılıyor ve Happy Hacking Space'te gerçekleşen iş birliğine dayalı, sorun çözme odaklı teknik projeler sayesinde yeni dostluklar kuruluyor.",
+      "alwaysFree": "Happy Hacking Space, hackerlar için her zaman ücretsizdir ve sizin desteğinizle yüz binlerce hackere büyüyebilir; her birine ücretsiz bilgisayar bilimi eğitimi, bir hacker zihniyeti ve eşit başarı şansı sunabilir—nereden gelirse gelsin, kim olursa olsun veya ebeveynleri ne yaparsa yapsın.",
+      "overTime": "Zamanla, Happy Hackerlar girişimciler, çevreciler, siyasi liderler, aktivistler ve politika yapıcılar olarak toplumları şekillendirecek. Bu gelecek liderlerin değerlerini şekillendirmeye yardımcı oluyoruz; onlara meraklı, alçakgönüllü, nazik ve iyimser sorun çözücüler olmayı örnek olarak gösterip teşvik ederek.",
       "needSupport": "Bu vizyonu gerçekleştirmek için sizin desteğinize ihtiyacımız var."
     },
     "testimonials": {
@@ -391,7 +390,7 @@
         "info": "Kerem, Diyarbakır"
       },
       "arjin": {
-        "quote": "Kayıplar için harika bir kılavuz.",
+        "quote": "Kaybolanlar için harika bir rehber.",
         "info": "Arjin, Diyarbakır"
       },
       "miwa": {
@@ -420,7 +419,7 @@
       "description": "Mezopotamya'daki kâr amacı gütmeyen bir hacker ağı olan Happy Hacking Space'i yöneten ekip ile tanışın."
     },
     "hero": {
-      "title": "Hacker'lar tarafından,\nhacker'lar için.",
+      "title": "Hackerlar tarafından,\nhackerlar için.",
       "subtitle": "Herkesin etrafında görmek istediği değişimin kendisi olabileceği güçlendirilmiş bir dünya inancına sahibiz. Happy Hacking Space'te bunu gerçekleştirmek için çok çalışıyoruz."
     },
     "board": "Yönetim Kurulu ve Danışmanlar",
@@ -437,7 +436,26 @@
     "boardAdvisor": "Yönetim Kurulu Danışmanı",
     "advisorPrompt": "Danışmanlık yapmak mı istiyorsunuz? Bize ulaşın!",
     "acknowledgements": "Teşekkürler",
-    "ackText": "Happy Hacking Space'i bugünkü haline getirmeye yardımcı olan herkese teşekkür ederiz..."
+    "ackText": "Happy Hacking Space'i bugünkü haline getirmeye yardımcı olan herkese teşekkür ederiz...",
+    "yourNameHere": "Adınız Burada",
+    "roles": {
+      "Game Club Lead": "Oyun Kulübü Lideri",
+      "Sport Club Lead": "Spor Kulübü Lideri",
+      "Book Club Lead": "Kitap Kulübü Lideri",
+      "Open Source Lead": "Açık Kaynak Lideri",
+      "Garage Lead": "Garaj Lideri",
+      "Garage & Writers Club Lead": "Garaj ve Yazarlar Kulübü Lideri",
+      "HHS Academy - English Club Lead & HHS Relations": "HHS Akademi - İngilizce Kulübü Lideri ve HHS İlişkileri",
+      "Career Development Lead": "Kariyer Gelişimi Lideri",
+      "Intern": "Stajyer",
+      "Open Source Security Lead": "Açık Kaynak Güvenlik Lideri",
+      "HHS Academy - Book Club Lead": "HHS Akademi - Kitap Kulübü Lideri",
+      "HHS Academy - Book Club Lead, HHS Dicle - President": "HHS Akademi - Kitap Kulübü Lideri, HHS Dicle - Başkan",
+      "HHS Dicle - President": "HHS Dicle - Başkan",
+      "HHS Dicle - Bookkeeper": "HHS Dicle - Sayman",
+      "HHS Dicle - Secretary General": "HHS Dicle - Genel Sekreter",
+      "High School Division Lead": "Lise Bölümü Lideri"
+    }
   },
   "jobs": {
     "meta": {
@@ -446,16 +464,16 @@
     },
     "hero": {
       "title": "Happy Hacking Space Ekibine Katıl",
-      "subtitle": "ya da daha fazlasını öğrenmek için aşağı kaydır..."
+      "subtitle": "daha fazlasını öğrenmek için aşağı kaydır..."
     },
     "sshPrompt": "$ ssh jobs.happyhacking.space -p 1337",
-    "imageAlt": "Voleybol maçı sırasında Happy Hacker'lar",
+    "imageAlt": "Voleybol maçı sırasında Happy Hackerlar",
     "volunteerNotice": "Lütfen tüm pozisyonların şu anda gönüllü temelli roller olduğunun farkında olun. Başvurun "
   },
   "brand": {
     "meta": {
       "title": "Marka Kimliği",
-      "description": "Hack Club HQ logolarını indirin ve marka yazı tiplerimizi ve renklerimizi önizleyin."
+      "description": "Happy Hacking Space HQ logolarını indirin ve marka yazı tiplerimizi ve renklerimizi önizleyin."
     },
     "header": "Happy Hacking Space Markası",
     "subtitle": "HQ logolarını indirin ve marka renklerimizi ve yazı tipimizi önizleyin.",
@@ -468,9 +486,9 @@
     "colors": "Renkler",
     "uiComponents": "UI bileşenleri",
     "uiComponentsDesc": "Happy Hacking Space temalı bir site yapmak mı istiyorsunuz? Sitenizi hack'lemek için önceden hazırlanmış CSS ve UI bileşenlerimizi kullanın.",
-    "exploreTheme": "Hack Club Temasını Keşfet →"
+    "exploreTheme": "Happy Hacking Space Temasını Keşfet →"
   },
-  "contact": {
+  "contact": {  
     "meta": {
       "title": "İletişim",
       "description": "Happy Hacking Space ile iletişime geçin. Bizi ziyaret edin, e-posta gönderin veya sosyal medyada bağlantı kurun."
@@ -484,7 +502,7 @@
     "addressLine4": "Diyarbakır, Türkiye 21070",
     "viewOnMaps": "Google Haritalar'da Gör",
     "emailUs": "Bize E-posta Gönderin",
-    "emailDesc": "Bir sorunuz mu var veya iş birliği yapmak mı istiyorsunuz? Bize bir e-posta gönderin, en kısa sürede size dönüş yapacağız.",
+    "emailDesc": "Sorunuz mu var yoksa iş birliği yapmak mı istiyorsunuz? Bize bir e-posta gönderin, en kısa sürede size dönüş yapacağız.",
     "emailLoading": "Yükleniyor...",
     "connectWithUs": "Bizimle Bağlantı Kurun",
     "socialMedia": "Sosyal Medya",
@@ -514,6 +532,78 @@
       "title": "Hack'lemeye başlamaya hazır mısın?",
       "subtitle": "Hacker topluluğumuza katıl",
       "button": "Topluluğa Katıl"
+    }
+  },
+  "banner": {
+    "meta": {
+      "title": "Banner",
+      "description": "Sitenize Happy Hacking Space banner'ı eklemek için React bileşeni"
+    },
+    "title": "@happyhackingspace/banner",
+    "description": "Sitenize Happy Hacking Space banner'ı eklemek için React bileşeni",
+    "ogImageTitle": "Happy Hacking Space Banner"
+  },
+  "dontasktoask": {
+    "meta": {
+      "title": "Sormak İçin Sorma — Soru Sorma Rehberi",
+      "description": "Happy Hacking Space topluluğunda verimli soru sorma rehberi."
+    },
+    "hero": {
+      "title": "Hızlı Yanıt Almak İçin: Soru Sorma Rehberi",
+      "subtitle": "Vakit kazanmak ve topluluğu verimli tutmak için."
+    },
+    "intro": "Happy Hacking Space'te vakit kazanmak ve topluluğu verimli tutmak için şu yöntemi izliyoruz:",
+    "section1": {
+      "title": "\"Soru Sorabilir miyim?\" Deme, Direkt Sor",
+      "description": "\"Müsait olan var mı?\" veya \"Bir şey sorabilir miyim?\" gibi girişler yapmak yerine; konuyu, denediğin yolu ve aldığın hatayı tek seferde yaz."
+    },
+    "section2": {
+      "title": "Örnek: Zaman Kaybı vs. Hacker Yöntemi",
+      "badLabel": "Vakit Kaybettiren İletişim (Hazar)",
+      "bad": {
+        "name1": "Hazar",
+        "name2": "Arjin",
+        "line1": "Selam, Python'dan anlayan var mı?",
+        "line2": "Selam, buyur benim.",
+        "line3": "Bir hata alıyorum da ona bakabilir miyiz?",
+        "line4": "Tabii, hata nedir? Kodu atar mısın?",
+        "line5": "[Kodun fotoğrafını atar] Bak burada NameError diyor.",
+        "line6": "Fotoğraftan okumak zor ama değişkeni tanımlamamışsın gibi duruyor...",
+        "result": "Sonuç: Basit bir çözüm için 50 dakika harcandı."
+      },
+      "goodLabel": "Verimli İletişim (Arjin)",
+      "good": {
+        "name1": "Arjin",
+        "name2": "Hazar",
+        "line1": "Selam, Python'da listeyi ekrana basarken NameError alıyorum. Değişkeni tanımladım ama görmüyor. Kodum aşağıda, yardımcı olabilir misiniz? my_list = [1, 2, 3] print(my_lista)",
+        "line2": "Selam Arjin, print içindeki değişken adını yanlış yazmışsın, sonunda fazla bir 'a' var.",
+        "result": "Sonuç: Sorun 2 dakikada çözüldü, herkes işine döndü!"
+      }
+    },
+    "section3": {
+      "title": "Konu Ne Olursa Olsun \"Paket\" Halinde Sor",
+      "description": "İster yazılım hatası, ister tasarım fikri, ister donanım sorunu olsun; her zaman şunları tek mesajda belirt:",
+      "goal": {
+        "title": "Hedef:",
+        "desc": "Ne yapmaya çalışıyorsun?"
+      },
+      "attempt": {
+        "title": "Deneme:",
+        "desc": "Şimdiye kadar ne denedin?"
+      },
+      "error": {
+        "title": "Hata:",
+        "desc": "Tam olarak nerede takıldın? (Hata kodu, görsel veya link ekle.)"
+      }
+    },
+    "section4": {
+      "title": "Fotoğraf Atma, Paylaş",
+      "description": "Kod için kod bloğu (code block), tasarım veya donanım sorunları için ise net bir görsel kullan."
+    },
+    "summary": {
+      "title": "Özetle",
+      "text": "Sorunu ne kadar net paketlersen, o kadar hızlı \"hack\"lemeye devam edebilirsin.",
+      "closing": "Happy Hacking!"
     }
   },
   "common": {

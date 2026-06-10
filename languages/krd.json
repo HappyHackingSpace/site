@@ -1,0 +1,617 @@
+{
+  "nav": {
+    "philosophy": "Felsefe",
+    "community": "Civak",
+    "events": "Bûyer",
+    "donors": "Piştgir",
+    "contact": "Têkilî",
+    "faq": "PPP"
+  },
+  "footer": {
+    "title": "Happy Hacking Space",
+    "resources": "Çavkanî",
+    "philosophy": "Felsefe",
+    "team": "Tîm û Rêveberî",
+    "jobs": "Kar",
+    "branding": "Nîşan",
+    "donate": "Piştgiriyê Bide",
+    "contact": "Têkilî",
+    "communityEvents": "Bûyerên Civakê",
+    "codeOfConduct": "Rêgezên Tewrebûnê",
+    "copyright": "© {year} Happy Hacking Space."
+  },
+  "home": {
+    "meta": {
+      "title": "Cihê Hackeran",
+      "description": "Happy Hacking Space torêke bêqezence ya hackeran, hunermendan û lêgerîneran e; li vir em hêz, tora xwe û hunerên teknîkî ava dikin da ku mezin bifikirin û tiştên mezin ji bo cîhanê çêbikin."
+    },
+    "hero": {
+      "eyebrow": "Bi xêr hatî Happy Hacking Space",
+      "title": "Em",
+      "hackers": "hacker in",
+      "subtitle": "ji Mezopotamyayê û derdorê, bi hev re hack dikin",
+      "joinUs": "Tevlî me bibe",
+      "seeWhatHacking": "An jî bibîne em çi dikin:",
+      "viewMore": "Zêdetir bernameyan bibîne",
+      "badge": "Hackerên li AMA bi HHS re",
+      "heroAlt": "Hackerên xweş li civîna Diyarbekirê ya li derve",
+      "photoCredit": "📸 Wêne: Seyma Alpay Bakir, Diyarbekir",
+      "photo1": "Nexşeya Happy Hacking Spaceyan li Mezopotamya û derdora wê",
+      "photo2": "Hackerên xweş hackathon organîze kir",
+      "photo3": "Hackerên xweş li Koma Zimanê",
+      "photo4": "Hackerên xweş hackathon organîze kir"
+    },
+    "discover": {
+      "title": "Kêfa ",
+      "highlight": "hackkirinê",
+      "titleEnd": " bi hev re keşf bike.",
+      "subtitle": "Her roj hackerên Happy Hacking Spaceê li serhêl û rûbirû kom dibin da ku bi hev re hack bikin, tiştên bêhempa çêbikin û lêgerînê bikin. Heke tu nivîskarek nû yî an jî salên ezmûna te hene, li Happy Hacking Spaceê cihê te heye. Li ser ",
+      "hackerEthic": "exlaqa hackeran",
+      "feature1Title": "Bi nivîskarên din re têkilî dayne",
+      "feature1Desc": "Pirsên kodkirinê heye? Lêgerîna feedbacka projeyê? Tu ê di nav ",
+      "feature1Link": "Civakê",
+      "feature1End": " de sedan mirovên ecêb bibîne ku li her demê çalak in.",
+      "feature2Title": "Amûrên fêrbûna çavkaniya vekirî ava bike",
+      "feature2Desc": "Em bi hev re projeyên çavkaniya vekirî ava dikin, mîna vê malperê, lîstokan, amûrên AIyê, amûrên ewlehiyê û zêdetir!",
+      "feature3Title": "Bi hackerên din re rûbirû kom bibe",
+      "feature3Desc": "Bi hackerên xweş ên din re li civakê re bibin yek da ku bi hev re tiştên bêhempa ava bikin: ",
+      "feature3Link1": "Bûyer",
+      "feature3And": "û",
+      "feature3Link2": "Hackathon",
+      "feature3End": "."
+    },
+    "carousel": {
+      "eyebrow": "Heke tu dixwazî beşdar bibî, çend projeyên li vir hene:"
+    },
+    "spotlight": {
+      "title": "Bi ",
+      "highlight": "alavên",
+      "titleEnd": " civakê re têkilî dayne",
+      "subtitle": "Em li serhêl û rûbirû kom dibin da ku hezkirina xwe ya kodê parve bikin û bi hev re tiştên bêhempa ava bikin!"
+    },
+    "opensource": {
+      "title": "Em bi hev re ",
+      "highlight": "çavkaniya vekirî",
+      "titleEnd": " lîstok û amûr ava dikin",
+      "subtitle": "Bi hevkariya endazyarên li ser tîma Happy Hacking Spaceê re, hackerên xweş amûrên fêrbûnê ji bo hevdu ava dikin. Bi amûrên me tiştên ava bike an jî beşdarî wan amûran bibe.",
+      "liveFromGitHub": "Ji GitHubê zindî"
+    },
+    "recap": {
+      "eyebrow": "Gelek tiştên balkêş diqewimin - Ka em bibînin",
+      "title": "Malê xwe yê duyemîn li ",
+      "highlight": "HHSê"
+    },
+    "ctaCards": {
+      "joinCommunity": "Tevlî Civaka Me Bibe",
+      "joinCommunityDesc": "Bi mirovên teknîk re têkilî dayne û bi hev re tiştên bêhempa ava bike.",
+      "exploreTools": "Amûrên Me yên Çavkaniya Vekirî Keşf Bike",
+      "exploreToolsDesc": "Em niha amûrên ji bo ewlehiyê, AIyê, lîstokan û zêdetir ava dikin!"
+    },
+    "faq": {
+      "eyebrow": "PPP",
+      "title": "Pirsên Pir Caran Têne Pirsîn",
+      "q1": "HHS çi ye?",
+      "a1": "Happy Hacking Space komaleke bêqezence ya hackeran, hunermendan û lêgerîneran li Mezopotamyayê ye, ku bi hev re tiştên bêhempa ava dikin.",
+      "q2": "Ez çawa dikarim beşdar bibim?",
+      "a2": "Tu dikarî bi tevlîbûna kanala me ya Discord an jî beşdarî bûyerên fizîkî yên me bibî beşdarî civaka me bibî.",
+      "q3": "Ma ew belaş e?",
+      "a3": "Erê, tevlîbûna civaka me û piraniya bûyerên me bi tevahî belaş in. Hin atolyeyên taybet dibe ku lêçûnên madeyê pêwîst bibin."
+    }
+  },
+  "slack": {
+    "eyebrow": "~ The Hack Club Slack ~",
+    "title": "Ji bo hunerê were, ji bo mirovan bimîne.",
+    "description1": "Pêwendî û plansaziya projeyên me yên çavkaniya vekirî li Slackê tê kirin. Kodkirin bi gelemperî wekî çalakiyeke bi tenê tê dîtin. Ji bo zarokên ku ji werzîş, tiyatro an jî şah re eleqedar in komên pir hene, lê stêreotîpa nivîskarek mirovek e ku li odeyeke tarî rûniştiye. ",
+    "descriptionStrong": "Divê ev wisa nebe",
+    "description2": "—li Hack Club Slackê (çatê serhêl ê bi şêwaza Discordê), tu ê komek {formatted}+ ",
+    "descriptionHighlight": "mirovên ecêb",
+    "description3": " bibîne ku li her demê dikarin biaxivin.",
+    "join": "Têkeve Slackê →"
+  },
+  "doorCta": {
+    "scanning": "Tê lêgerîn...",
+    "happyHacking": "Happy Hacking!",
+    "spaceClosed": "Cih Girtiye",
+    "pinging": "Deriyê hacker space tê kontrolkirin...",
+    "doorOpen": "Derî vekirî ye, were em bibin yek!",
+    "noOne": "Niha tu kes li vir nîne.",
+    "probing": "tê lêgerîn...",
+    "open": "VEKIRÎ",
+    "closed": "GIRTÎ",
+    "prompt": "door@hhs:~$",
+    "status": "rewş: {status}"
+  },
+  "carousel": {
+    "vulnerableTargetTitle": "vulnerable target",
+    "vulnerableTarget": "VT jîngehên bi zanebûn lawaz ji bo testkirina ewlehiyê diafirîne.",
+    "communityHubTitle": "Community Hub",
+    "communityHub": "Sîstema rêveberiya komê û şopandina karên komeleyê.",
+    "levelUpTitle": "LevelUp",
+    "levelUp": "Analîzerê CVyê bi hêza AIyê, ji bo lêçûna qada nivîsbariyê puan dike.",
+    "funUrlTitle": "FunURL",
+    "funUrl": "Çakûçek URLê ya Fonksiyonel 🛠️",
+    "skyBoundTitle": "SkyBound-Quest",
+    "skyBound": "Lîstoka platformê ya pîkselên retro: xortekî dîskovîn giravên asîmanî rizgar dike.",
+    "hackerTabooTitle": "HackerTaboo",
+    "hackerTaboo": "Tabûya hackeran: bê gotina peyvê wê bibîne!",
+    "awesomeHackathonTitle": "Awesome Hackathon",
+    "awesomeHackathon": "Amûr û çavkaniyên ji bo hackathonan da ku tu fikran bide, ava bike, pêşkêş bike û bi ser bikeve! 🏆"
+  },
+  "cards": {
+    "slack": {
+      "alt": "Slack AMA",
+      "title": "Civaka Me ya Serhêl",
+      "desc": "Kodkirin ne hewce ye ku çalakiyeke bi tenê be. Li Happy Hacking Spaceê em bi hev re tiştên bêhempa ava dikin, û tu ê di nav civaka me de mirovên ecêb bibîne ku dikarin bi te re bihejin. Bi hev re kod bike, komnivîska xwe ya nivîsbariyê bibîne, tiştekî ecêb bifikire, an jî tenê biheje.",
+      "amaDesc": "Carinan em mirovekî ku em bi rastî dixwazin bi axaftina wî/wê re têkilî daynin davet dikin û ",
+      "ama": "AMA",
+      "amaEnd": " bi wî/wê re organîze dikin.",
+      "join": "Beşdarî civaka me bibe",
+      "online": "Niha Serhêl",
+      "channels": "Kanalên Giştî",
+      "messages": "Peyamên Rojane",
+      "members": "Endamên Giştî"
+    },
+    "mailingList": {
+      "title": "Têkeve lîsteya nûçeyan",
+      "desc": "Em ê ji te re carekê di mehê de e-nameyekê bişînin, dema ku em li tiştekî ecêb ji bo te dixebitin.",
+      "namePlaceholder": "Navê te",
+      "emailPlaceholder": "E-nameya te",
+      "subscribe": "Bibe abone",
+      "subscribed": "Tu li lîsteyê yî!",
+      "bgAlt": "Gerdûn bi sedan Hack Cluban"
+    },
+    "sinerider": {
+      "desc": "SineRider lîstokek derbarê evîn û grafîkê ye, ku ji aliyê hackerên ciwan ên her cureyî ve tê piştgirîkirin: hunermend, stranbêj, nivîskar, çîrokvan… heke ew tu yî, were em bibin yek! Em her dem dikarin alîkariya te bikin da ku her tişt bê xeletî bimîne.",
+      "joinDev": "Beşdarî pêşveçûnê bibe"
+    },
+    "vulnerableTarget": {
+      "title": "VT",
+      "subtitle": "vulnerable target",
+      "tagline": "// ji terminala xwe hedefên lawaz derxîne //",
+      "targets": "HEDEF",
+      "cves": "CVE",
+      "benchmarks": "BENCHMARK",
+      "labs": "LAB",
+      "install": "go install github.com/happyhackingspace/vt/cmd/vt@latest",
+      "explore": "Keşf bike",
+      "browse": "Şablonan Bibîne"
+    },
+    "communityHub": {
+      "alt": "Pêşnumaya Community Hub",
+      "desc": "Beşdarî pêvajoyên pêşveçûna me bibe! Beşdarî projeyên me yên çavkaniya vekirî bibe, teknolojiyên nû fêr bibe û bi pêşveçûnerên bi ezmûn re bixebitin.",
+      "shortDesc": "Beşdarî projeyên çavkaniya vekirî bibe û bi pêşveçûnerên bi ezmûn re fêr bibe."
+    },
+    "githubmon": {
+      "alt1": "Pêşnumaya GitMon",
+      "alt2": "Pêşnumaya GitMon ya Mobîl",
+      "desc": "GitMon platformeke analîtîk û şopandina GitHubê ya çavkaniya vekirî ye, ku ji bo pêşkêşkirina têgihiştinên depoyê û şopandina performansê bi kêf û hevaltî hatiye sêwirandin.",
+      "dressWarmly": "Xwe bi germ bike!"
+    },
+    "awesomeHackathon": {
+      "tag1": "Hackên AI/ML",
+      "tag2": "Bi Lez Bikin",
+      "tag3": "LLM Prompting",
+      "tag4": "Vibe Coding",
+      "tag5": "Roja Demo",
+      "tag6": "Stratejiyên Serkeftinê",
+      "percent": "75%",
+      "loading": "DI BAR DE...",
+      "awesome": "Bêhempa",
+      "hackathon": "Hackathon",
+      "desc": "Amûrên te yên dawîn ên çavkaniya vekirî ji bo hackathonan — çavkaniyên hatine hilbijartin, amûrên ji bo şer hatine testkirin û stratejî ji bo alîkarîya te di fikrandinê, avakirinê, pêşkêşkirinê û serkeftinê de.",
+      "whatsInside": "Hundirê wê de çi heye...",
+      "explore": "Lîsteyê Keşf Bike"
+    },
+    "osint": {
+      "vcm1": "+0.0/VCM",
+      "vcm2": "+0.1/VCM",
+      "input1": "INPUT_1",
+      "input2": "INPUT_2",
+      "adminControl": "ADMN_CONTROL",
+      "inputFeeds": "INPUT_FEEDS",
+      "tk": "TK_009.557_-1",
+      "ctlCode": "CTL_CODE [423]",
+      "sysOnline": "SYS.ONLINE +0092",
+      "cam": "CAM-0847",
+      "rec": "REC",
+      "date": "2026.02.13 14:37:22",
+      "relevant": "RELEVANT",
+      "alt": "OSINT CTF",
+      "desc": "Hunerên zaniyariya çavkaniya vekirî yên xwe biceribîne. Daneyan kom bike, şopên dîjîtal analîz bike û girêdanên veşartî derxe holê.",
+      "start": "DESTPÊKIRINA NÊÇÎRÊ",
+      "mascotAlt": "Maskota kovê OSINT",
+      "id": "379-14-4023",
+      "subject": "Mijara Eleqeyê",
+      "probability": "PIRBÛNA: 0.9847",
+      "flag": "FLAG{??????}",
+      "nodes": "GÎRÊK: 2,847 INDÊKSKIRÎ",
+      "identifiers": "NASNAME: MASKELÎ",
+      "threat": "Asta Tehdîdê: BILIND"
+    },
+    "som": {
+      "alt": "Logoya havîna çêkirinê",
+      "start": "Dest bi avakirinê bike",
+      "buildTitle": "Projeyan Ava Bike",
+      "buildDesc": "Malperan, lîstokan, sepanan an jî projeyên kodkirinê yên çavkaniya vekirî yên kesane ava bike da ku hunerên xwe nîşan bidî.",
+      "getTitle": "Tiştên Bistîne",
+      "getDesc": "Xelatên ecêb mîna Raspberry Pi, krediyên mêvandariya serverê, çapkirina 3D û zêdetir bistîne da ku afirandina xwe ya din xurtir bike."
+    },
+    "athena": {
+      "alt1": "Xelat ji Athena",
+      "alt2": "Xelata Athena",
+      "desc": "Ji bo 30 saetan kodkirinê û avakirina 3 projeyên kesane sertîfîkayek teknîkî ya ku ji aliyê pîşesaziyê ve tê naskirin bidest bixe. Dema ku tu kod dikî xelatan bi dest bixe, û ji bo mezintirîn hackathonê ji bo keçên dibistanên bilind ên sala 2025an ya li NYCity beşdar bibe.",
+      "join": "Beşdarî Athena bibe"
+    },
+    "highway": {
+      "alt": "Logoya Highway",
+      "desc": "Projeyeke hardwareê sêwir bike. Parçeyan belaş bistîne.",
+      "start": "Dest bi avakirinê bike"
+    },
+    "shipwrecked": {
+      "alt": "Logoya Shipwrecked",
+      "desc": "Beşdarî hackathoneke 4-rojî ya li Girava Cathleen Stone a li Bendera Bostonê bibe ku dibe ku tenê carekê di jiyana te de qewime. 8-11 Tebaxa 2025an.",
+      "invite": "Dawetnameya xwe bistîne"
+    },
+    "pizza": {
+      "title": "Klûba Hackê Destpêşke, Ji Bo Her Projeyê Pizza Bistîne",
+      "desc": "GitHub ji bo her ciwanekê ku Klûba Hackê li dibistana xwe destpêşke piştgiriya pizza peyda dike.",
+      "grant": "Piştgiriya Pizza ya Xwe Bistîne",
+      "alt": "Koma Happy Hacking Space",
+      "from": "Ji Happy Hacking Space Academy"
+    }
+  },
+  "secret": {
+    "alt": "tilîkî veşartî!",
+    "text": "print kc"
+  },
+  "easterEgg": {
+    "alert": "Hey, tu koda Konamî nivîsand!",
+    "konamiText": "Hey, ez hêkîşkekî veşartî me! Li min binêre!"
+  },
+  "photoCredits": {
+    "diyarbakir": "📸 Wêne: Seyma Alpay Bakir, Diyarbekir",
+    "heroAlt": "Hackerên xweş li civîna Diyarbekirê ya li derve"
+  },
+  "philosophy": {
+    "meta": {
+      "title": "Felsefe",
+      "description": "Derbarê Happy Hacking Space, torê hackeran de bixwîne. Em dixwazin avakirina sep û malperan ji bo her kesî hêsan bikin."
+    },
+    "hero": {
+      "line1": "Em",
+      "line2": "demên herî xweş",
+      "line3": "hack",
+      "line4": "dikin.",
+      "sealTitle": "Happy Hacking Space",
+      "sealSubtitle": "Felsefe"
+    },
+    "sections": {
+      "superpower": {
+        "title": "Kodkirin hêzeke ",
+        "highlight": "super e.",
+        "description": "Fêrbûna kodkirinê bi awayekî bêhempa mîna bidestxistina hêzeke super e: ew te ji bikarhênerekê veguherîne afirîner. Bi tenê yekcar, komputer dibe amûrek ji bo çêkirinê."
+      },
+      "makeFromAnywhere": {
+        "title": "Ji her derê biafirîne.",
+        "description": "Tu caran demek ji bo avakirinê wisa baş nebûye: li her cihê cîhanê, her kesê ku laptop û înternet heye dikarê fêrê çêkirina sepanekê bibe. Tu caran avakirin bi vî awayî ji aliyê cîhanê ve nebûye demokratîk."
+      },
+      "hackHackHack": {
+        "title": "Hack bike, hack bike, hack bike.",
+        "description": "Armanca Happy Hacking Spaceê ev e ku alîkariya te bike tu bibî hacker. Em dixwazin li her cihê ku mirov bi kodê tiştên balkêş çêdikin cihêk hebe, her hefte. Dibistan an sazî ev pêşkêş nakin, ji ber vê yekê em li her derê vê diafirînin da ku avakirina tiştên ji bo her kesî hêsan be."
+      },
+      "startBuilding": {
+        "title": "Dest bi avakirinê bike.",
+        "description": "Piraniya klasên kodkirinê te bêyî ku meriv fêrê çawa kodeke rastîn nivîsîne, tenê têgihîştinên kodkirinê fêr dikin—mîna hewl didin ku bêyî darî fêrê nêçîrvaniyê bibin. Ji ber vê yekê li Happy Hacking Spaceê, tu bi tevahî bi avakirina tiştan fêrê kodkirinê dibî. Tu bi bê ezmûn dest pê dikî û di her civînê de projeyek ava dikî û biweşanî."
+      },
+      "learnAsYouBuild": {
+        "title": "Dema ku tu ava dikî fêr bibe.",
+        "description1": "Mîna ku nêçîrvanên herî baş di odeyê de fêr nebûne, nivîskarên herî baş jî nebûne. Bi rêya ",
+        "workshopsLink": "atolyeyên me",
+        "description2": ", tu ê bêyî alîkarî ji bo avakirina projeyan bibe. Dema ku tu dest pê dikî, tu ê fêm nekin ku kod çawa dixebite, lê dema ku tu pêşve diçî têgihiştina te zêde dibe. Tu ê li rêya xwe biqele, lê em li vir in da ku alîkariya te bikin."
+      },
+      "community": {
+        "title": "Beşdarî civakekê bibe.",
+        "description": "Happy Hacking Space te bi civakek ji sedan afirînerên din re têkilî dike ku tu dikarî bi wan biaxivî. Em hunermend, nivîskar, endazyar, sêwir, kampvan, fîlmçêker, xwebexş in. Em tiştên ava dikin. Em hevdu alîkar dikin. Em kêf dikin. Were em bibin yek."
+      }
+    },
+    "cta": {
+      "title": "Beşdarî tevgerê bibe!",
+      "button": "Tevlî civaka me bibe"
+    }
+  },
+  "events": {
+    "meta": {
+      "title": "Bûyer",
+      "description": "Ji demekê ve em kom dibin, ne tenê ji bo avakirina tiştan, lê ji bo lîstinê, ecêbmayînê û tevlihevkirina adetî. Ka em vegerin ka hemû çi çawa pêşve çû."
+    },
+    "hero": {
+      "title": "Bûyerên Happy Hacking Space",
+      "subtitle": "Ji demekê ve em kom dibin, ne tenê ji bo avakirina tiştan, lê ji bo lîstinê, ecêbmayînê û tevlihevkirina adetî. Ka em vegerin ka hemû çi çawa pêşve çû.",
+      "button": "Ji bo ya din amade bibe!"
+    },
+    "imageAlt": "Hackerên xweş li Hackathonê ya Mîrateya Çandî û Dîjîtalkirinê",
+    "items": {
+      "cultureHack": {
+        "name": "Hackathon: Mîrateya Çandî û Dîjîtalkirin",
+        "description": "Hackathoneke ku li ser mîrateya çandî û dîjîtalkirina bajarê Diyarbekir û Mezopotamyayê hatiye navendkirin.",
+        "location": "Diyarbekir, Tirkiye",
+        "season": "Berfanbar",
+        "year": "2024"
+      },
+      "codeJam": {
+        "name": "Code Jam 181925",
+        "description": "Bûyereke ku ji belavkirina çanda kodkirinê û kêfa hackkirinê hatiye xwestin. Beşdarên di rêza çalakiyan de beşdar bûn da ku hunerên kodkirinê û afirandiniya xwe biceribînin.",
+        "location": "Diyarbekir, Tirkiye",
+        "season": "Rêbendan",
+        "year": "2025"
+      }
+    },
+    "dateTemplate": "{season}, {year} - {location}",
+    "moreCard": {
+      "text1": "Tu zêdetir dixwazî? Hackerên xweş bi gelemperî hackathonên xwe organîze dikin! Li ",
+      "link1": "hackathons.happyhacking.space",
+      "text2": " binêre. Happy Hacking Space di heman demê de li pey rêzeyeke ",
+      "link2": "Roja Xizmetê",
+      "text3": " û ",
+      "link3": "bûyerên serhêl ên pir caran",
+      "text4": " ye."
+    }
+  },
+  "philanthropy": {
+    "meta": {
+      "title": "Xêrxwazî",
+      "description": "Happy Hacking Space piştgirî bike"
+    },
+    "hero": {
+      "title": "Li pêşeroja Mezopotamyayê veberhênanê bike.",
+      "subtitle": "Îro beşdar bibe da ku nifşa Mezopotamyayê ya din hêzdar bike.",
+      "button": "Beşdar bibe",
+      "buttonSuffix": "ji bo Happy Hacking Space"
+    },
+    "photoAlt": "Xwendekarên Happy Hacking Space",
+    "vision": {
+      "nextTenYears": "Di deh salên pêş de, Happy Hacking Space ê zêdetir mirovên din keşf bike, pêşve bibe û îlham bide da ku bi hunerên teknîkî çareseriya pirsgirêkan bibînin.",
+      "ledBy": "Ji aliyê hackeran, hunermendan û lêgerîneran ve hatiye rêvebirin, Happy Hacking Space jixwe bi hezaran mirovan digihîne û li Mezopotamyayê mezintirîn torê teknîkî temsîl dike. Her roj projeyên nû têne biweşandin, rêzikên koda nû têne nivîsandin û hevaltiyên nû bi rêya projeyên teknîkî yên hevkariyê yên li Happy Hacking Spaceê tên avakirin.",
+      "alwaysFree": "Happy Hacking Space ji bo hackeran her tim belaş e û bi piştgiriya te dikare biçe sedhezaran hackeran, perwerdeya komputerê ya belaş, menêtiya hackerî û şansek wekhev ji bo serkeftinê ji her hackerê re bîne, bêyî ku ew ji ku ye, çawa nas dike, an jî dêûbavên wî/wê çi dikin.",
+      "overTime": "Bi demê re, hackerên xweş ên ciwan dê wekî Entrepreneurship, parastina jîngehê, rêberên siyasî, çalakvan û çêkerên siyasetê civakan ji nû ve sêwir bikin. Em alîkariya şekilkirina nirxên van rêberên pêşerojê dikin, bi modelkirinê û teşwîqkirinê da ku bibin lêgerînerên ecêb, nizm, dilovan û bêhna xweş.",
+      "needSupport": "Ji bo ku ev xeyal bibe rastî em hewceyê piştgiriya te ne."
+    },
+    "testimonials": {
+      "ahsen": {
+        "quote": "Alîkariya min kir ku ez sînoran derbas bikim.",
+        "info": "Ahsen, Diyarbekir"
+      },
+      "muslime": {
+        "quote": "Li vir min hin ji mejîyên herî baş nas kir!",
+        "info": "Muslime, Diyarbekir"
+      },
+      "kerem": {
+        "quote": "Qadeke bêhempa ji bo avakirina tişta din.",
+        "info": "Kerem, Diyarbekir"
+      },
+      "arjin": {
+        "quote": "Rêşevaleke mezin ji bo windayan.",
+        "info": "Arjin, Diyarbekir"
+      },
+      "miwa": {
+        "quote": "Alîkariya min kir ku bingiheke xurt li kodkirinê ava bikim.",
+        "info": "Miwa, Diyarbekir"
+      }
+    },
+    "contact": {
+      "discussGift": "Ji bo gotûbêjkirina diyariyekê:",
+      "reachOut": "Têkilî dayne bi",
+      "teamName": "Tîma Happy Hacking Space",
+      "sendPhysical": "Diyariyên fizîkî bişîne",
+      "orgName": "Happy Hacking Space",
+      "address": "Talaytepe Mah. 4009/1 Sk. Corner Ofis, A Blok Dis Kapi No: 4A, Ic Kapi No:4 Kayapinar/Diyarbekir",
+      "donateOnline": "Serhêl piştgirî bike Happy Hacking Space",
+      "noMonetary": "Em niha piştgiriya diravî qebûl nakin."
+    },
+    "donors": {
+      "joinTitle": "Beşdarî civaka me ya alîkarên dilovan bibe"
+    },
+    "mapCaption": "Happy Hacking Space bi piştgiriya te dikare çawa xuya bike"
+  },
+  "team": {
+    "meta": {
+      "title": "Tîm",
+      "description": "Bi tîma ku Happy Hacking Space, torêke bêqezenc a hackeran li Mezopotamyayê, rêve dibe re bibe nas."
+    },
+    "hero": {
+      "title": "Ji aliyê hackeran ve,\nji bo hackeran.",
+      "subtitle": "Em bawer dikin ku mirov dikare bibe guhertina ku dixwazin li derdora xwe bibînin. Li Happy Hacking Spaceê em ji bo ku wê bikin rastî gelekî xebat dikin."
+    },
+    "board": "Rêveberî & Şêwirmend",
+    "hackerResources": "Tîma Çavkaniyên Hackerî",
+    "campusDivision": "Beşa Kampusa HHS",
+    "highSchoolDivision": "Beşa Dibistana Bilind a HHS",
+    "communityTeam": "Tîma Civakê",
+    "moderation": "Rêveberî",
+    "virtualEvents": "Bûyerên Serhêl",
+    "newspaper": "Rojname",
+    "welcomers": "Pêşwazîker",
+    "founderRole": "Damezirander & Serokê Hackingê",
+    "cofounderRole": "Hev-Damezirander & Ninja",
+    "boardAdvisor": "Şêwirmendê Rêveberiyê",
+    "advisorPrompt": "Tu dixwazî şêwirmendiyê bikî? Têkilî dayne!",
+    "acknowledgements": "Spas",
+    "ackText": "Spas ji bo her kesê ku alîkariya şekilkirina Happy Hacking Space kir ku îro ev wisa be...",
+    "yourNameHere": "Navê te li vir",
+    "roles": {
+      "Game Club Lead": "Rêberê Koma Lîstokan",
+      "Sport Club Lead": "Rêberê Koma Werzişê",
+      "Book Club Lead": "Rêberê Koma Pirtûkan",
+      "Open Source Lead": "Rêberê Çavkaniya Vekirî",
+      "Garage Lead": "Rêberê Garage",
+      "Garage & Writers Club Lead": "Rêberê Garage & Koma Nivîskaran",
+      "HHS Academy - English Club Lead & HHS Relations": "HHS Academy - Rêberê Koma Îngilîzî & Têkiliyên HHS",
+      "Career Development Lead": "Rêberê Pêşveçûna Kariyerê",
+      "Intern": "Stajyer",
+      "Open Source Security Lead": "Rêberê Ewlehiya Çavkaniya Vekirî",
+      "HHS Academy - Book Club Lead": "HHS Academy - Rêberê Koma Pirtûkan",
+      "HHS Academy - Book Club Lead, HHS Dicle - President": "HHS Academy - Rêberê Koma Pirtûkan, HHS Dicle - Serok",
+      "HHS Dicle - President": "HHS Dicle - Serok",
+      "HHS Dicle - Bookkeeper": "HHS Dicle - Hesabdar",
+      "HHS Dicle - Secretary General": "HHS Dicle - Sekreterê Giştî",
+      "High School Division Lead": "Rêberê Beşa Dibistana Bilind"
+    }
+  },
+  "jobs": {
+    "meta": {
+      "title": "Kar",
+      "description": "Happy Hacking Space kar qebûl dike! Pozîsyonên vekirî binêre."
+    },
+    "hero": {
+      "title": "Beşdarî Tîma Happy Hacking Space bibe",
+      "subtitle": "an jî ji bo zêdetir agahî jêr biherikîne..."
+    },
+    "sshPrompt": "$ ssh jobs.happyhacking.space -p 1337",
+    "imageAlt": "Hackerên xweş di dema lîstika voleybolê de",
+    "volunteerNotice": "Ji kerema xwe hay ji vê yekê hebe ku niha hemû pozîsyon ji bo xwebexşiyê ne. Serlêdan bike "
+  },
+  "brand": {
+    "meta": {
+      "title": "Nîşan",
+      "description": "Logoyên HQ yên Happy Hacking Space daxîne û reng û fontên me yên nîşanê pêşdibîne."
+    },
+    "header": "Nîşana Happy Hacking Space",
+    "subtitle": "Logoyên HQ daxîne û reng û fontên me yên nîşanê pêşdibîne.",
+    "logos": "Logoyan",
+    "downloadAll": "Hemûyan daxîne →",
+    "htmlBanners": "Banerên HTML",
+    "preview": "Pêşdîtin",
+    "htmlCode": "Koda HTML",
+    "reactComponent": "Komponenta React →",
+    "colors": "Reng",
+    "uiComponents": "Komponentên UI",
+    "uiComponentsDesc": "Tu dixwazî malperek bi mijara Happy Hacking Space ava bikî? Komponentên CSS û UI yên pêş-sêwirandî yên me bikar bîne da ku malpera xwe hack bike.",
+    "exploreTheme": "Mijara Hack Clubê Keşf Bike →"
+  },
+  "contact": {
+    "meta": {
+      "title": "Têkilî",
+      "description": "Bi Happy Hacking Space re têkilî dayne. Me seredana bike, e-nameyek bişîne an jî li serhêlê têkilî dayne."
+    },
+    "header": "Têkilî Dayne",
+    "subtitle": "Em dixwazin ji te bihîzin",
+    "visitUs": "Me Seredana Bike",
+    "addressLine1": "Talaytepe Mah. 4009/1 Sokak",
+    "addressLine2": "Ay Yapi Corner Ofis A Blok",
+    "addressLine3": "Dis Kapi No: 4A Ic Kapi No: 4",
+    "addressLine4": "Diyarbekir, Tirkiye 21070",
+    "viewOnMaps": "Li ser Google Mapsê Bibîne",
+    "emailUs": "Ji Me re E-nameyek Bişîne",
+    "emailDesc": "Pirsên te hene an jî tu dixwazî hevkariyê bikî? Ji me re e-nameyek bişîne û em ê di demekî kin de vegerin ser te.",
+    "emailLoading": "Di bar de...",
+    "connectWithUs": "Bi Me re Têkilî Dayne",
+    "socialMedia": "Mediya Civakî",
+    "videoStreaming": "Vîdeo & Weşan",
+    "developerResources": "Pêşveçûner & Çavkanî",
+    "social": {
+      "discord": { "title": "Discord", "subtitle": "Têkeve servera me" },
+      "whatsapp": { "title": "WhatsApp", "subtitle": "Têkeve koma me" },
+      "twitter": { "title": "X (Twitter)", "subtitle": "@happyhackings" },
+      "instagram": { "title": "Instagram", "subtitle": "@happyhackingspace" },
+      "linkedin": { "title": "LinkedIn", "subtitle": "happyhackingspace" },
+      "bluesky": { "title": "Bluesky", "subtitle": "@happyhackingspace" },
+      "mastodon": { "title": "Mastodon", "subtitle": "@happyhackingspace" },
+      "reddit": { "title": "Reddit", "subtitle": "r/HappyHackingSpace" },
+      "youtube": { "title": "YouTube", "subtitle": "@HappyHackingSpace" },
+      "tiktok": { "title": "TikTok", "subtitle": "@happyhackingspace" },
+      "twitch": { "title": "Twitch", "subtitle": "happyhackingspace" },
+      "kick": { "title": "Kick", "subtitle": "happyhackingspace" },
+      "spotify": { "title": "Spotify", "subtitle": "Podcast" },
+      "github": { "title": "GitHub", "subtitle": "happyhackingspace" },
+      "huggingface": { "title": "Hugging Face", "subtitle": "happyhackingspace" },
+      "blog": { "title": "Blog", "subtitle": "happyhackingspace.blog" },
+      "events": { "title": "Bûyer", "subtitle": "Bûyerên civakê" },
+      "giphy": { "title": "Giphy", "subtitle": "happyhackingspace" }
+    },
+    "cta": {
+      "title": "Tu amade yî dest bi hackkirinê bike?",
+      "subtitle": "Beşdarî civaka me ya hackeran bibe",
+      "button": "Beşdarî Civakê Bibe"
+    }
+  },
+  "banner": {
+    "meta": {
+      "title": "Banner",
+      "description": "Ji bo lêzêdekirina bannera Happy Hacking Space li ser malpera xwe komponenta Reactê"
+    },
+    "title": "@happyhackingspace/banner",
+    "description": "Ji bo lêzêdekirina bannera Happy Hacking Space li ser malpera xwe komponenta Reactê",
+    "ogImageTitle": "Bannera Happy Hacking Space"
+  },
+  "dontasktoask": {
+    "meta": {
+      "title": "Ji Bo Pirsînê Nepirse — Rêbernameya Pirsînê",
+      "description": "Rêbernameya ji bo pirsîna bi bandor li civaka Happy Hacking Space."
+    },
+    "hero": {
+      "title": "Ji Bo Bersiva Lez: Rêbernameya Pirsînê",
+      "subtitle": "Ji bo xilaskirina demê û parastina çalakiya civakê."
+    },
+    "intro": "Li Happy Hacking Spaceê, em van rêbazan bişopînin da ku demê xilas bikin û civakê çalak bihêlin:",
+    "section1": {
+      "title": "\"Ez dikarim bipirsim?\" Nebêje, Bêyî Navberê Bipirse",
+      "description": "Li şûna destpêkên mîna \"Kesek amade ye?\" an \"Ez dikarim tiştekî bipirsim?\"; mijar, tiştê ku te ceribandiye û çewtiya ku te standiye di yek peyamê de binivîse."
+    },
+    "section2": {
+      "title": "Mînaka Ji Bo Bide: Windakirina Demê vs. Rêbaza Hackerî",
+      "badLabel": "Têkilîya Bêbandor (Hazar)",
+      "bad": {
+        "name1": "Hazar",
+        "name2": "Arjin",
+        "line1": "Silav, kesek Python dizane?",
+        "line2": "Silav, ez im.",
+        "line3": "Çewtiyek tê, em dikarin li wê binêrin?",
+        "line4": "Bê guman, çewtî çi ye? Kodê bişîne.",
+        "line5": "[Wêneya kodê dişîne] Li vir NameError dibêje.",
+        "line6": "Ji wêneyê xwendin zehmet e lê xuya dike ku te guherbar nenivîsandiye...",
+        "result": "Encam: Ji bo çareseriyeke hêsan 50 deqîqe hatin xerc kirin."
+      },
+      "goodLabel": "Têkilîya Bi Bandor (Arjin)",
+      "good": {
+        "name1": "Arjin",
+        "name2": "Hazar",
+        "line1": "Silav, dema ku ez li Python lîsteyê dibêjim NameErrorê digirim. Min guherbar diyar kir lê nabîne. Kod li jêr e, hûn dikarin alîkariya min bikin? my_list = [1, 2, 3] print(my_lista)",
+        "line2": "Silav Arjin, navê guherbar di nav print de şaş nivîsandiye, dawiyê 'a'yeke zêde heye.",
+        "result": "Encam: Pirsgirêk di 2 deqîqeyan de çareser bû, her kes vedigerin kar!"
+      }
+    },
+    "section3": {
+      "title": "Bila Mijar Çi Bibe Jî, Di \"Pakêt\" de Bipirse",
+      "description": "Bila çewtiya nivîsbarî be, fikra sêwiranê be, an pirsgirêka hardwareyê be; her tim van tiştan di peyamekê de diyar bike:",
+      "goal": {
+        "title": "Armanc:",
+        "desc": "Tu hewl didî çi bikî?"
+      },
+      "attempt": {
+        "title": "Ceribandin:",
+        "desc": "Heta niha tu çi ceribandiye?"
+      },
+      "error": {
+        "title": "Çewtî:",
+        "desc": "Tu bi rastî li ku girtiye? (Koda çewtiyê, wêne an lînkê lê zêde bike.)"
+      }
+    },
+    "section4": {
+      "title": "Wêne Neşîne, Parve Bike",
+      "description": "Ji bo kodê bloka kodê (code block) bikar bîne, ji bo pirsgirêkên sêwiranê an hardwareyê jî wêneyek zelal bikar bîne."
+    },
+    "summary": {
+      "title": "Bi Kurtî",
+      "text": "Pirsgirêka xwe çiqas zelal pakêt bikî, ew qas zû dikarî berdewam bikî bi 'hack'kirinê.",
+      "closing": "Happy Hacking!"
+    }
+  },
+  "common": {
+    "stages": {
+      "joinCommunity": "Tevlî Civaka Me Bibe",
+      "joinCommunityDesc": "Bi mirovên teknîk re têkilî dayne û bi hev re tiştên bêhempa ava bike.",
+      "exploreTools": "Amûrên Me yên Çavkaniya Vekirî Keşf Bike",
+      "exploreToolsDesc": "Em niha amûrên ji bo ewlehiyê, AIyê, lîstokan û zêdetir ava dikin!"
+    }
+  }
+}

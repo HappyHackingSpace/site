@@ -44,6 +44,13 @@ const CommunityTeamBox = ({ title, children }) => {
 
 export default function Team({ team }) {
   const { t } = useTranslation()
+  const roleMap = t('team.roles') || {}
+  const translateRole = (role: string | string[]) => {
+    if (Array.isArray(role)) {
+      return role.map(r => roleMap[r] || r).join(', ')
+    }
+    return roleMap[role] || role
+  }
   // Spacing between major team section boxes
   const BOX_SPACING = 5
 
@@ -114,19 +121,19 @@ export default function Team({ team }) {
               </Grid>
               <Grid columns={[1, null, 3]} gap={4} mb={4}>
                 <BoardBox
-                  name="Your Name Here"
+                  name={t('team.yourNameHere')}
                   teamRole={t('team.boardAdvisor')}
                   subrole={t('team.advisorPrompt')}
                   href="mailto:team@happyhacking.space"
                 />
                 <BoardBox
-                  name="Your Name Here"
+                  name={t('team.yourNameHere')}
                   teamRole={t('team.boardAdvisor')}
                   subrole={t('team.advisorPrompt')}
                   href="mailto:team@happyhacking.space"
                 />
                 <BoardBox
-                  name="Your Name Here"
+                  name={t('team.yourNameHere')}
                   teamRole={t('team.boardAdvisor')}
                   subrole={t('team.advisorPrompt')}
                   href="mailto:team@happyhacking.space"
@@ -158,7 +165,7 @@ export default function Team({ team }) {
                     <Bio
                       img={member.avatar}
                       name={member.name}
-                      teamRole={member.role}
+                      teamRole={translateRole(member.role)}
                       text={member.bio}
                       pronouns={member.pronouns}
                       email={member.email}
@@ -192,7 +199,7 @@ export default function Team({ team }) {
                     <Bio
                       img={member.avatar}
                       name={member.name}
-                      teamRole={member.role}
+                      teamRole={translateRole(member.role)}
                       text={member.bio}
                       pronouns={member.pronouns}
                       email={member.email}
@@ -226,7 +233,7 @@ export default function Team({ team }) {
                     <Bio
                       img={member.avatar}
                       name={member.name}
-                      teamRole={member.role}
+                      teamRole={translateRole(member.role)}
                       text={member.bio}
                       pronouns={member.pronouns}
                       email={member.email}
@@ -261,7 +268,7 @@ export default function Team({ team }) {
                         <Bio
                           img={member.avatar}
                           name={member.name}
-                          teamRole={member.role}
+                          teamRole={translateRole(member.role)}
                           text={member.bio}
                           pronouns={member.pronouns}
                           email={member.email}
@@ -279,7 +286,7 @@ export default function Team({ team }) {
                         <Bio
                           img={member.avatar}
                           name={member.name}
-                          teamRole={member.role}
+                          teamRole={translateRole(member.role)}
                           text={member.bio}
                           pronouns={member.pronouns}
                           email={member.email}
@@ -297,7 +304,7 @@ export default function Team({ team }) {
                         <Bio
                           img={member.avatar}
                           name={member.name}
-                          teamRole={member.role}
+                          teamRole={translateRole(member.role)}
                           text={member.bio}
                           pronouns={member.pronouns}
                           email={member.email}
@@ -315,7 +322,7 @@ export default function Team({ team }) {
                         <Bio
                           img={member.avatar}
                           name={member.name}
-                          teamRole={member.role}
+                          teamRole={translateRole(member.role)}
                           text={member.bio}
                           pronouns={member.pronouns}
                           email={member.email}

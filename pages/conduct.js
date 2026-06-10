@@ -35,7 +35,7 @@ const Page = ({ html }) => (
 )
 
 export const getStaticProps = async () => {
-  const markdownToHtml = require('@happyhackingspace/markdown')
+  const { default: markdownToHtml } = require('@happyhackingspace/markdown')
 
   // GitHub'dan Code of Conduct'ı çek
   const response = await fetch('https://raw.githubusercontent.com/HappyHackingSpace/vulnerable-target/main/CODE_OF_CONDUCT.md')

@@ -813,10 +813,5 @@ export async function fetchRawOrganizations() {
 }
 
 export const getStaticProps = async () => {
-  return {
-    props: {
-      rawOrganizations: await fetchRawOrganizations()
-    },
-    revalidate: 60 // seconds
-  }
+  return { notFound: true }
 }

@@ -13,17 +13,5 @@ export default function Index({ projects, itemCount }) {
 }
 
 export async function getStaticProps() {
-  const allProjects = await getAllOnboardProjects()
-  const data = allProjects.slice(0, 10)
-  const projects = []
-  for (const project of data) {
-    projects.push(await getOnboardProject(project.name))
-  }
-  return {
-    props: {
-      projects,
-      itemCount: allProjects.length
-    },
-    revalidate: 120 // 2 minutes
-  }
+  return { notFound: true }
 }

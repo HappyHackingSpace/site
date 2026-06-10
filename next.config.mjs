@@ -254,7 +254,34 @@ const nextConfig = withBundleAnalyzer({
         source: '/security',
         destination: 'https://security.happyhacking.space',
         permanent: true
-      }
+      },
+      // Disabled pages (not currently used)
+      { source: '/acknowledged/', destination: '/404/', permanent: false },
+      { source: '/amas/:path*', destination: '/404/', permanent: false },
+      { source: '/arcade/:path*', destination: '/404/', permanent: false },
+      { source: '/bin/:path*', destination: '/404/', permanent: false },
+      { source: '/clubs/', destination: '/404/', permanent: false },
+      { source: '/congressional-app-challenge/', destination: '/404/', permanent: false },
+      { source: '/content/:path*', destination: '/404/', permanent: false },
+      { source: '/deprecated/:path*', destination: '/404/', permanent: false },
+      { source: '/elon/', destination: '/404/', permanent: false },
+      { source: '/fiscal-sponsorship/:path*', destination: '/404/', permanent: false },
+      { source: '/hackathons/:path*', destination: '/404/', permanent: false },
+      { source: '/minecraft/', destination: '/404/', permanent: false },
+      { source: '/night/', destination: '/404/', permanent: false },
+      { source: '/onboard/:path*', destination: '/404/', permanent: false },
+      { source: '/opensource/', destination: '/404/', permanent: false },
+      { source: '/pizza/', destination: '/404/', permanent: false },
+      { source: '/press/', destination: '/404/', permanent: false },
+      { source: '/preston-werner/', destination: '/404/', permanent: false },
+      { source: '/preston-werner-2022/', destination: '/404/', permanent: false },
+      { source: '/relon/', destination: '/404/', permanent: false },
+      { source: '/replit/', destination: '/404/', permanent: false },
+      { source: '/santa/', destination: '/404/', permanent: false },
+      { source: '/ship/', destination: '/404/', permanent: false },
+      { source: '/steve/', destination: '/404/', permanent: false },
+      { source: '/stickers/', destination: '/404/', permanent: false },
+      { source: '/winter/', destination: '/404/', permanent: false }
     ]
   },
   async rewrites() {

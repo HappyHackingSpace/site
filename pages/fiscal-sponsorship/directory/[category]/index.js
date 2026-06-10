@@ -27,18 +27,6 @@ export const getStaticPaths = () => {
   return { paths, fallback: false }
 }
 
-export const getStaticProps = async ({ params }) => {
-  let { category } = params
-
-  let orgs = (await fetchRawOrganizations()).filter(org =>
-    find(categories, ['id', category]).match(org)
-  )
-
-  return {
-    props: {
-      rawOrganizations: orgs,
-      category
-    },
-    revalidate: 60 // seconds
-  }
+export const getStaticProps = async () => {
+  return { notFound: true }
 }

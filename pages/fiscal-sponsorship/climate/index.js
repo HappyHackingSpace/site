@@ -1311,10 +1311,5 @@ export async function fetchRawClimateOrganizations() {
 }
 
 export const getStaticProps = async () => {
-  return {
-    props: {
-      rawOrganizations: await fetchRawClimateOrganizations()
-    },
-    revalidate: 60 // seconds
-  }
+  return { notFound: true }
 }
