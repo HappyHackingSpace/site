@@ -133,7 +133,13 @@ const ProjectEditForm = ({ project }) => {
             <Text>Screenshot link (required)</Text>
             <Text variant="caption">
               Demo your work! Post an image in{' '}
-              <a href="https://hackclub.slack.com/archives/C016DEDUL87" target="_blank">#cdn</a>{' '}
+              <a
+                href="https://hackclub.slack.com/archives/C016DEDUL87"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                #cdn
+              </a>{' '}
               on Slack and paste the link here.
             </Text>
             <Input

@@ -3,6 +3,8 @@
   "rules": {
     "@next/next/no-img-element": "off",
     "react/no-unescaped-entities": "off",
-    "eqeqeq": "warn"
+    "eqeqeq": "warn",
+    "react/jsx-no-comment-textnodes": "off",
+    "react/no-unknown-property": "off"
   }
 }

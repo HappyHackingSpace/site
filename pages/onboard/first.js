@@ -720,7 +720,7 @@ const ShipPage = () => {
           >
             <a
               href="https://github.com/hackclub/OnBoard/tree/main/projects/E-Fidget%20Lite"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
             >
               <Flex as="article">
                 <Text as="p" sx={{ pr: 115 }}>
@@ -745,7 +745,7 @@ const ShipPage = () => {
 
             <a
               href="https://github.com/hackclub/sprig-hardware"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
             >
               <Flex as="article">
                 <Text as="p" sx={{ pr: 100 }}>
@@ -770,7 +770,7 @@ const ShipPage = () => {
 
             <a
               href="https://github.com/Hugoyhu/Hack-Club-Zephyr-USB-Hub"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
             >
               <Flex as="article">
                 <Text as="p" sx={{ pr: [100, 100, 100, 0] }}>
@@ -798,7 +798,7 @@ const ShipPage = () => {
 
             <a
               href="https://jams.hackclub.com/batch/sparkletilt-pcb"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
             >
               <Flex as="article">
                 <Text as="p" sx={{ pr: 140 }}>

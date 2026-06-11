@@ -20,7 +20,7 @@
     "@github/time-elements": "^4.0.0",
     "@hackclub/icons": "^0.0.15",
     "@happyhackingspace/banner": "^0.0.1",
-    "@happyhackingspace/markdown": "file:../theme/packages/markdown",
+    "@happyhackingspace/markdown": "^0.0.1",
     "@happyhackingspace/meta": "^0.0.2",
     "@happyhackingspace/theme": "^0.0.2",
     "@mdx-js/loader": "^3.1.1",
@@ -113,7 +113,7 @@
     "vanilla-tilt": "^1.8.1"
   },
   "devDependencies": {
-    "eslint": "^10.0.1",
+    "eslint": "^8.57.1",
     "eslint-config-next": "^12.0.4",
     "prettier": "^3.5.3",
     "typescript": "^5.8.2"
