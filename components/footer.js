@@ -111,6 +111,9 @@ const Footer = ({
             <NextLink href="/philanthropy">
               <FooterLinkText>{t('footer.donate')}</FooterLinkText>
             </NextLink>
+            <NextLink href="/philanthropy/supporters">
+              <FooterLinkText>{t('footer.donors')}</FooterLinkText>
+            </NextLink>
             <NextLink href="/contact">
               <FooterLinkText>{t('footer.contact')}</FooterLinkText>
             </NextLink>

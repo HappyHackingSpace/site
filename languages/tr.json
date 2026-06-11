@@ -5,7 +5,8 @@
     "events": "Etkinlikler",
     "donors": "Bağışçılar",
     "contact": "İletişim",
-    "faq": "SSS"
+    "faq": "SSS",
+    "donate": "Bağış Yap"
   },
   "footer": {
     "title": "Happy Hacking Space",
@@ -18,6 +19,7 @@
     "contact": "İletişim",
     "communityEvents": "Topluluk Etkinlikleri",
     "codeOfConduct": "Davranış Kuralları",
+    "donors": "Bağışçılar",
     "copyright": "© {year} Happy Hacking Space."
   },
   "home": {
@@ -468,7 +470,20 @@
     },
     "sshPrompt": "$ ssh jobs.happyhacking.space -p 1337",
     "imageAlt": "Voleybol maçı sırasında Happy Hackerlar",
-    "volunteerNotice": "Lütfen tüm pozisyonların şu anda gönüllü temelli roller olduğunun farkında olun. Başvurun "
+    "volunteerNotice": "Lütfen tüm pozisyonların şu anda gönüllü temelli roller olduğunun farkında olun. ",
+    "applyHere": "Başvuru yap",
+    "rules": {
+      "label": "Kural {number}",
+      "excellent": {
+        "title": "Birbirinize Karşı Mükemmel Olun",
+        "description": "Herkese saygı, nezaket ve empatiyle yaklaşın. İnsanları yargılamak yerine destekleyin, rekabet etmek yerine birlikte üretin. Güçlü bir topluluk, üyelerinin birbirine gösterdiği özenle inşa edilir."
+      },
+      "docracy": {
+        "title": "Sorumluluk Alın",
+        "description": "Bir şeyin yapılmasını istiyorsanız, ilk adımı atmaktan çekinmeyin. Fikirlerin değer kazanması, onları hayata geçiren insanların çabasıyla mümkündür. Girişimciliği, inisiyatif almayı ve birlikte üretmeyi teşvik ediyoruz."
+      },
+      "closing": "Ve unutmayın: Sorumluluk almak kadar, bunu yaparken birbirinize karşı mükemmel olmak da önemlidir."
+    }
   },
   "brand": {
     "meta": {
@@ -605,6 +620,18 @@
       "text": "Sorunu ne kadar net paketlersen, o kadar hızlı \"hack\"lemeye devam edebilirsin.",
       "closing": "Happy Hacking!"
     }
+  },
+  "cta": {
+    "donate": "Bağış Yap",
+    "whatsapp": "WhatsApp'tan Yaz",
+    "whatsappMessage": "Merhaba, bilgi almak istiyorum.",
+    "coffeeMessage": "Merhaba, bir kahve (50₺) bağışında bulunmak istiyorum.",
+    "customAmountMessage": "Merhaba, özel miktarlı bağışta bulunmak istiyorum.",
+    "volunteerPrompt": "volunteer@hhs:~$",
+    "volunteerTitle": "Gönüllü Ol",
+    "volunteerDesc": "Sorumluluk al, birlikte üret.",
+    "volunteerStatus": "katıl",
+    "volunteerWhatsAppMessage": "Merhaba, gönüllülük hakkında bilgi almak istiyorum."
   },
   "common": {
     "stages": {

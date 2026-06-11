@@ -1,7 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
+import { Box } from 'theme-ui'
 
 import Analytics from '../components/analytics.js'
+import CtaBar from '../components/cta-bar.js'
 
 import Meta from '@happyhackingspace/meta'
 import '@happyhackingspace/theme/fonts/reg-bold.css'
@@ -22,7 +24,10 @@ const App = ({ Component, pageProps }) => (
         <link rel="icon" href="/branding/hhs-black-wo-black.avif" type="image/avif" />
       </Head>
       <BalancerProvider>
-        <Component {...pageProps} />
+        <Box sx={{ position: 'relative' }}>
+          <Component {...pageProps} />
+          <CtaBar />
+        </Box>
       </BalancerProvider>
       <Analytics />
     </ThemeProvider>

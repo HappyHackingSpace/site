@@ -25,6 +25,7 @@ import { useTranslation } from '../lib/i18n'
 import CardRenderer from '../components/index/cards/card-renderer'
 import Slack from '../components/index/cards/slack'
 import MailingList from '../components/index/cards/mailing-list'
+import VolunteerCTA from '../components/index/volunteer-cta'
 // Lazy load heavy components with skeletons for better perceived performance
 const Carousel = dynamic(() => import('../components/index/carousel'), {
   loading: () => {
@@ -671,7 +672,9 @@ function Page({
                 </Text>
               )}
             </Box>
-            <CTAS cards={ctaCards || []} />
+            <CTAS cards={ctaCards || []}>
+              <VolunteerCTA />
+            </CTAS>
             <Button
               sx={{
                 background: 'rgba(255, 255, 255, 0.3)',

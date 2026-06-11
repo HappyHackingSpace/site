@@ -468,7 +468,20 @@
     },
     "sshPrompt": "$ ssh jobs.happyhacking.space -p 1337",
     "imageAlt": "Happy Hackers during a volleyball game",
-    "volunteerNotice": "Please be aware that all positions are currently volunteer based roles. Apply "
+    "volunteerNotice": "Please be aware that all positions are currently volunteer based roles. ",
+    "applyHere": "Apply here",
+    "rules": {
+      "label": "Rule {number}",
+      "excellent": {
+        "title": "Be Excellent to Each Other",
+        "description": "Approach everyone with respect, kindness, and empathy. Support people instead of judging them, create together instead of competing. A strong community is built on the care its members show one another."
+      },
+      "docracy": {
+        "title": "Take Responsibility",
+        "description": "If you want something done, don't hesitate to take the first step. Ideas gain value through the efforts of those who bring them to life. We encourage entrepreneurship, taking initiative, and creating together."
+      },
+      "closing": "And remember: taking responsibility is important, but so is being excellent to each other while doing so."
+    }
   },
   "brand": {
     "meta": {
@@ -605,6 +618,18 @@
       "text": "The better you package your problem, the faster you can get back to hacking.",
       "closing": "Happy Hacking!"
     }
+  },
+  "cta": {
+    "donate": "Donate",
+    "whatsapp": "WhatsApp",
+    "whatsappMessage": "Hi, I'd like to get information.",
+    "coffeeMessage": "Hi, I'd like to make a coffee (50₺) donation.",
+    "customAmountMessage": "Hi, I'd like to make a custom amount donation.",
+    "volunteerPrompt": "volunteer@hhs:~$",
+    "volunteerTitle": "Volunteer",
+    "volunteerDesc": "Take responsibility, create together.",
+    "volunteerStatus": "join",
+    "volunteerWhatsAppMessage": "Hi, I'd like to get information about volunteering."
   },
   "common": {
     "stages": {

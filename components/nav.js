@@ -287,8 +287,8 @@ const Navigation = props => {
       <NextLink href="/events">
         <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>{t('nav.events')}</NavLinkText>
       </NextLink>
-      <NextLink href="/philanthropy">
-        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>{t('nav.donors')}</NavLinkText>
+      <NextLink href="/bagis">
+        <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>{t('nav.donate')}</NavLinkText>
       </NextLink>
       <NextLink href="/contact">
         <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>{t('nav.contact')}</NavLinkText>

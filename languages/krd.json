@@ -5,7 +5,8 @@
     "events": "Bûyer",
     "donors": "Piştgir",
     "contact": "Têkilî",
-    "faq": "PPP"
+    "faq": "PPP",
+    "donate": "Ji bo Piştgiriyê Bide"
   },
   "footer": {
     "title": "Happy Hacking Space",
@@ -18,6 +19,7 @@
     "contact": "Têkilî",
     "communityEvents": "Bûyerên Civakê",
     "codeOfConduct": "Rêgezên Tewrebûnê",
+    "donors": "Piştgir",
     "copyright": "© {year} Happy Hacking Space."
   },
   "home": {
@@ -468,7 +470,20 @@
     },
     "sshPrompt": "$ ssh jobs.happyhacking.space -p 1337",
     "imageAlt": "Hackerên xweş di dema lîstika voleybolê de",
-    "volunteerNotice": "Ji kerema xwe hay ji vê yekê hebe ku niha hemû pozîsyon ji bo xwebexşiyê ne. Serlêdan bike "
+    "volunteerNotice": "Ji kerema xwe hay ji vê yekê hebe ku niha hemû pozîsyon ji bo xwebexşiyê ne. ",
+    "applyHere": "Serlêdan bike",
+    "rules": {
+      "label": "Rêgez {number}",
+      "excellent": {
+        "title": "Bi Hev re Bibin Ewrek",
+        "description": "Bi her kesî re bi rêz, nazikî û hestkirinê re mijûl bibin. Mirovên bidinê li şûna ku hûn bêjin piştgirî bidin, li şûna pêşbaziyê bi hev re biafirînin. Civakeke xurt li ser bala ku endamên wê ji hevdu re nîşan didin, tê avakirin."
+      },
+      "docracy": {
+        "title": "Berpirsiyariyê Bigire",
+        "description": "Heke tu dixwazî tiştek were kirin, ji gavê yekemîn bêne avêtin netirse. Raman bi hewildana kesên ku wan jiyan dikin, nirx digirin. Em destpêkirin, gavavêtin û bi hev re afirandinê teşwîq dikin."
+      },
+      "closing": "Ji bîr neke: berpirsiyariyê girtin girîng e, lê dema ku tu wiha dikî jî bi hev re bûn ewrek girîng e."
+    }
   },
   "brand": {
     "meta": {
@@ -605,6 +620,18 @@
       "text": "Pirsgirêka xwe çiqas zelal pakêt bikî, ew qas zû dikarî berdewam bikî bi 'hack'kirinê.",
       "closing": "Happy Hacking!"
     }
+  },
+  "cta": {
+    "donate": "Piştgiriyê Bide",
+    "whatsapp": "Li WhatsAppê Binivîse",
+    "whatsappMessage": "Silav, ez dixwazim agahî bistînim.",
+    "coffeeMessage": "Silav, ez dixwazim piştgiriya qehweyekê (50₺) bikim.",
+    "customAmountMessage": "Silav, ez dixwazim bi mîqdarek taybet piştgiriyê bikim.",
+    "volunteerPrompt": "volunteer@hhs:~$",
+    "volunteerTitle": "Xwebexş Bibe",
+    "volunteerDesc": "Berpirsiyariyê bigire, bi hev re biafirîne.",
+    "volunteerStatus": "beşdarî bibe",
+    "volunteerWhatsAppMessage": "Silav, ez dixwazim li ser xwebexşiyê agahî bistînim."
   },
   "common": {
     "stages": {

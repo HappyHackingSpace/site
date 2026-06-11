@@ -122,32 +122,90 @@ const Page = ({ jobs }) => {
           >
             {t('jobs.hero.title')}
           </Heading>
-          <Heading
+        </Container>
+      </Box>
+      <Container sx={{ py: [3, 4], px: [2, 2, 0] }}>
+        <Grid
+          columns={[1, 2]}
+          gap={[3, 4]}
+          sx={{ maxWidth: '64rem', mx: 'auto', mb: [4, 5] }}
+        >
+          <Card
+            variant="sunken"
             sx={{
-              color: 'smoke',
-              mt: 3,
-              fontSize: ['18px', '24px'],
-              lineHeight: ['1.5', '1.125']
+              p: [3, 4],
+              background:
+                'linear-gradient(135deg, rgba(45,66,228,0.08) 0%, rgba(207,45,228,0.08) 100%)',
+              border: '1px solid rgba(45,66,228,0.2)'
             }}
           >
             <Text
               sx={{
-                bg: 'dark',
-                color: 'green',
-                width: 'fit-content',
-                px: 3,
-                py: [1, 2],
-                borderRadius: 6,
-                mr: 1
+                fontSize: '14px',
+                fontWeight: 'bold',
+                color: 'primary',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                mb: 2
               }}
             >
-              {t('jobs.sshPrompt')}
-            </Text>{' '}
-            {t('jobs.hero.subtitle')}
-          </Heading>
-        </Container>
-      </Box>
-      <Container sx={{ py: [3, 4], px: [2, 2, 0] }}>
+              {t('jobs.rules.label', { number: 1 })}
+            </Text>
+            <Heading
+              as="h3"
+              sx={{ fontSize: ['20px', '24px'], mb: 2, color: 'black' }}
+            >
+              {t('jobs.rules.excellent.title')}
+            </Heading>
+            <Text sx={{ color: 'muted', lineHeight: 1.6 }}>
+              {t('jobs.rules.excellent.description')}
+            </Text>
+          </Card>
+          <Card
+            variant="sunken"
+            sx={{
+              p: [3, 4],
+              background:
+                'linear-gradient(135deg, rgba(45,66,228,0.08) 0%, rgba(207,45,228,0.08) 100%)',
+              border: '1px solid rgba(45,66,228,0.2)'
+            }}
+          >
+            <Text
+              sx={{
+                fontSize: '14px',
+                fontWeight: 'bold',
+                color: 'primary',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                mb: 2
+              }}
+            >
+              {t('jobs.rules.label', { number: 2 })}
+            </Text>
+            <Heading
+              as="h3"
+              sx={{ fontSize: ['20px', '24px'], mb: 2, color: 'black' }}
+            >
+              {t('jobs.rules.docracy.title')}
+            </Heading>
+            <Text sx={{ color: 'muted', lineHeight: 1.6 }}>
+              {t('jobs.rules.docracy.description')}
+            </Text>
+            <Text
+              sx={{
+                color: 'primary',
+                fontSize: ['14px', '15px'],
+                fontStyle: 'italic',
+                mt: 3,
+                pt: 3,
+                borderTop: '1px dashed rgba(45,66,228,0.2)',
+                lineHeight: 1.6
+              }}
+            >
+              {t('jobs.rules.closing')}
+            </Text>
+          </Card>
+        </Grid>
         <Grid
           sx={{
             maxWidth: '64rem',
@@ -189,7 +247,15 @@ const Page = ({ jobs }) => {
                 gridColumn: '1 / -1'
               }}
             >
-              {t('jobs.volunteerNotice')}<a target="_blank" rel="noopener noreferrer"href="https://airtable.com/app5eKIfSXPFULKX8/pag0z4PqwOVHdr0ak/form">here</a>. 
+              {t('jobs.volunteerNotice')}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://airtable.com/app5eKIfSXPFULKX8/pag0z4PqwOVHdr0ak/form"
+                style={{ color: 'inherit', textDecoration: 'underline' }}
+              >
+                {t('jobs.applyHere')}
+              </a>. 
             </Text>
         </Grid>
       </Container>

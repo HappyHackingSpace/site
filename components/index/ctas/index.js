@@ -14,7 +14,7 @@ function resolveCTA(componentPath) {
   return dynamicCache[componentPath]
 }
 
-export default function CTAS({ cards }) {
+export default function CTAS({ cards, children }) {
   return (
     <Box
       as="div"
@@ -170,6 +170,7 @@ export default function CTAS({ cards }) {
           </Box>
         )
       })}
+      {children}
     </Box>
   )
 }
