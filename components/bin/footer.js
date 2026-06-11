@@ -15,24 +15,24 @@ const Footer = () => {
                 <p>
                     <a href="https://hackclub.com/bin/prelaunch">Prelaunch site</a>
                     Thank you:
-                    <a href="https://awdev.codes" target="_blank">Aaron Wong</a>,
-                    <a href="https://github.com/kvnyng" target="_blank">Kevin Yang</a>,
-                    <a href="https://github.com/cjdenio" target="_blank">Caleb Denio</a>,
-                    <a href="https://github.com/24c02" target="_blank">Nora</a>,
-                    <a href="https://maxwofford.com" target="_blank">Max Wofford</a>, 
-                    & <a href="https://github.com/claynicholson" target="_blank">Clay Nicholson</a>
+                    <a href="https://awdev.codes" target="_blank" rel="noopener noreferrer">Aaron Wong</a>,
+                    <a href="https://github.com/kvnyng" target="_blank" rel="noopener noreferrer">Kevin Yang</a>,
+                    <a href="https://github.com/cjdenio" target="_blank" rel="noopener noreferrer">Caleb Denio</a>,
+                    <a href="https://github.com/24c02" target="_blank" rel="noopener noreferrer">Nora</a>,
+                    <a href="https://maxwofford.com" target="_blank" rel="noopener noreferrer">Max Wofford</a>, 
+                    & <a href="https://github.com/claynicholson" target="_blank" rel="noopener noreferrer">Clay Nicholson</a>
                 </p>
                 <p>Hack Club is a registered 501(c)3 nonprofit organization that supports a network
                     of 20k+ technical high schoolers. We believe you learn best by building so we're removing barriers
                     to hardware access so any teenager can explore. In the past few years, we
-                    <a href="https://onboard.happyhacking.space" target="_blank">
+                    <a href="https://onboard.happyhacking.space" target="_blank" rel="noopener noreferrer">
                         fabricated custom PCBs designed by
                         <span>253</span> teenagers
                     </a>,
-                    <a href="https://github.com/happyhackingspace/the-hacker-zephyr" target="_blank">
+                    <a href="https://github.com/happyhackingspace/the-hacker-zephyr" target="_blank" rel="noopener noreferrer">
                         hosted the world's longest hackathon on land
                     </a>, and
-                    <a href="https://happyhacking.space/winter" target="_blank">gave away $75k of
+                    <a href="https://happyhacking.space/winter" target="_blank" rel="noopener noreferrer">gave away $75k of
                         hardware</a>.
                 </p>
             </div>
@@ -76,7 +76,7 @@ const Footer = () => {
                                 </path>
                             </svg>
                         </a>
-                        <a target="_blank" rel="noopener me" href="https://twitter.com/happyhackings"
+                        <a target="_blank" rel="noopener noreferrer me" href="https://twitter.com/happyhackings"
                             title="Hack Club on Twitter">
                             <svg fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round"
                                 strokeMiterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="twitter"
@@ -89,7 +89,7 @@ const Footer = () => {
                                 </g>
                             </svg>
                         </a>
-                        <a target="_blank" rel="noopener me" href="https://github.com/happyhackingspace"
+                        <a target="_blank" rel="noopener noreferrer me" href="https://github.com/happyhackingspace"
                             title="Hack Club on GitHub">
                             <svg fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round"
                                 strokeMiterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="github"
@@ -102,7 +102,7 @@ const Footer = () => {
                                 </g>
                             </svg>
                         </a>
-                        <a target="_blank" rel="noopener me" href="https://figma.com/@happyhackingspace"
+                        <a target="_blank" rel="noopener noreferrer me" href="https://figma.com/@happyhackingspace"
                             title="Hack Club on Figma">
                             <svg fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round"
                                 strokeMiterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="figma-fill"
@@ -118,7 +118,7 @@ const Footer = () => {
                                 </g>
                             </svg>
                         </a>
-                        <a target="_blank" rel="noopener me" href="https://social.dino.icu/@happyhackingspace"
+                        <a target="_blank" rel="noopener noreferrer me" href="https://social.dino.icu/@happyhackingspace"
                             title="Hack Club on Mastodon">
                             <svg fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round"
                                 strokeMiterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="mastodon"
@@ -131,7 +131,7 @@ const Footer = () => {
                                 </g>
                             </svg>
                         </a>
-                        <a target="_blank" rel="noopener me" href="https://www.youtube.com/@HappyHackingSpace"
+                        <a target="_blank" rel="noopener noreferrer me" href="https://www.youtube.com/@HappyHackingSpace"
                             title="Hack Club on YouTube">
                             <svg fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round"
                                 strokeMiterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="youtube"
@@ -144,7 +144,7 @@ const Footer = () => {
                                 </g>
                             </svg>
                         </a>
-                        <a target="_blank" rel="noopener me" href="https://www.instagram.com/happyhackingspace"
+                        <a target="_blank" rel="noopener noreferrer me" href="https://www.instagram.com/happyhackingspace"
                             title="Hack Club on Instagram">
                             <svg fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round"
                                 strokeMiterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="instagram"
@@ -160,7 +160,7 @@ const Footer = () => {
                                 </g>
                             </svg>
                         </a>
-                        <a target="_blank" rel="noopener me" href="mailto:team@happyhacking.space"
+                        <a target="_blank" rel="noopener noreferrer me" href="mailto:team@happyhacking.space"
                             title="Hack Club on email-fill">
                             <svg fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round"
                                 strokeMiterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="email-fill"
