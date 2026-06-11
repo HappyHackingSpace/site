@@ -631,6 +631,47 @@
     "volunteerStatus": "join",
     "volunteerWhatsAppMessage": "Hi, I'd like to get information about volunteering."
   },
+  "bagis": {
+    "meta": {
+      "title": "Donate | Happy Hacking Space",
+      "description": "Donate and support the Happy Hacking Space community."
+    },
+    "hero": {
+      "title": "Growing with Your Support"
+    },
+    "tabs": {
+      "products": "Product Needs",
+      "support": "Donation Support"
+    },
+    "support": {
+      "title": "General Support & Bill Assistance",
+      "subtitle": "You can support the sustainability of our community.",
+      "empty": "No support items added yet."
+    },
+    "donationCard": {
+      "donate": "Donate",
+      "whatsappContact": "WhatsApp Contact",
+      "whatsappMessage": "Hi, I'd like to get information about donations."
+    },
+    "productCard": {
+      "urgent": "Urgent",
+      "completed": "Completed",
+      "progress": "Progress",
+      "thanks": "Thanks!",
+      "buy": "Buy"
+    },
+    "filter": {
+      "title": "Filter",
+      "categories": "CATEGORIES",
+      "all": "All",
+      "urgentOnly": "Urgent Only",
+      "reset": "Reset Filters"
+    },
+    "products": {
+      "found": "{count} products found",
+      "empty": "No products found matching your criteria."
+    }
+  },
   "common": {
     "stages": {
       "joinCommunity": "Join Our Community",

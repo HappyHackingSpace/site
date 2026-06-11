@@ -633,6 +633,47 @@
     "volunteerStatus": "beşdarî bibe",
     "volunteerWhatsAppMessage": "Silav, ez dixwazim li ser xwebexşiyê agahî bistînim."
   },
+  "bagis": {
+    "meta": {
+      "title": "Bexş | Happy Hacking Space",
+      "description": "Bexş bikin û civaka Happy Hacking Space piştgiriyê bikin."
+    },
+    "hero": {
+      "title": "Bi Piştgiriya We Mezin Dibin"
+    },
+    "tabs": {
+      "products": "Pêdiviyên Berhemê",
+      "support": "Piştgiriya Bexşê"
+    },
+    "support": {
+      "title": "Piştgiriya Giştî & Alîkariya Fatûreyê",
+      "subtitle": "Hûn dikarin bimînana civaka me piştgiriyê bikin.",
+      "empty": "Hîn tiştên piştgiriyê nehatine zêdekirin."
+    },
+    "donationCard": {
+      "donate": "Bexş Bide",
+      "whatsappContact": "Têkilî li WhatsAppê",
+      "whatsappMessage": "Silav, ez dixwazim li ser bexşê agahî bistînim."
+    },
+    "productCard": {
+      "urgent": "Acil",
+      "completed": "Qediya",
+      "progress": "Pêşveçûn",
+      "thanks": "Spas!",
+      "buy": "Bikire"
+    },
+    "filter": {
+      "title": "Parzûn",
+      "categories": "KATEGORÎ",
+      "all": "Hemû",
+      "urgentOnly": "Tenê Acil",
+      "reset": "Parzûnan Reset Bike"
+    },
+    "products": {
+      "found": "{count} berhem hatine dîtin",
+      "empty": "Li gorî krîterên we berhem nehat dîtin."
+    }
+  },
   "common": {
     "stages": {
       "joinCommunity": "Tevlî Civaka Me Bibe",

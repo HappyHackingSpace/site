@@ -633,6 +633,47 @@
     "volunteerStatus": "katıl",
     "volunteerWhatsAppMessage": "Merhaba, gönüllülük hakkında bilgi almak istiyorum."
   },
+  "bagis": {
+    "meta": {
+      "title": "Bağış Yap | Happy Hacking Space",
+      "description": "Happy Hacking Space topluluğuna bağış yapın ve destek olun."
+    },
+    "hero": {
+      "title": "Desteğinizle Büyüyoruz"
+    },
+    "tabs": {
+      "products": "Ürün İhtiyaçları",
+      "support": "Bağış Desteği"
+    },
+    "support": {
+      "title": "Genel Destek & Fatura Yardımı",
+      "subtitle": "Topluluğumuzun sürdürülebilirliğine destek olabilirsiniz.",
+      "empty": "Henüz destek kalemi eklenmemiş."
+    },
+    "donationCard": {
+      "donate": "Bağış Yap",
+      "whatsappContact": "WhatsApp'tan İletişim",
+      "whatsappMessage": "Merhaba, bağış hakkında bilgi almak istiyorum."
+    },
+    "productCard": {
+      "urgent": "Acil",
+      "completed": "Tamamlandı",
+      "progress": "İlerleme",
+      "thanks": "Teşekkürler!",
+      "buy": "Satın Al"
+    },
+    "filter": {
+      "title": "Filtrele",
+      "categories": "KATEGORİLER",
+      "all": "Tümü",
+      "urgentOnly": "Sadece Acil",
+      "reset": "Filtreleri Sıfırla"
+    },
+    "products": {
+      "found": "{count} ürün bulundu",
+      "empty": "Kriterlerinize uygun ürün bulunamadı."
+    }
+  },
   "common": {
     "stages": {
       "joinCommunity": "Topluluğumuza Katıl",

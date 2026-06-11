@@ -20,9 +20,10 @@ import ForceTheme from '../components/force-theme'
 import Footer from '../components/footer'
 import Image from 'next/image'
 import PhysicalAddress from '../components/physical-address'
+import { useTranslation } from '../lib/i18n'
 
 // General Support Card Component
-const DonationCard = ({ title, description, payment_link, contact_required }) => (
+const DonationCard = ({ t, title, description, payment_link, contact_required }) => (
   <Card
     sx={{
       bg: 'white',
@@ -47,18 +48,20 @@ const DonationCard = ({ title, description, payment_link, contact_required }) =>
     <Box sx={{ mt: 'auto' }}>
       {payment_link && (
         <Button as="a" href={payment_link} target="_blank" variant="cta" sx={{ width: '100%' }}>
-          Donate
+          {t('bagis.donationCard.donate')}
         </Button>
       )}
       {contact_required && (
         <Button
           as="a"
-          href={`https://wa.me/905347001757?text=${encodeURIComponent("Hi, I'd like to get information about donations.")}`}
+          href={`https://wa.me/905347001757?text=${encodeURIComponent(
+            t('bagis.donationCard.whatsappMessage')
+          )}`}
           target="_blank"
           variant="outline"
           sx={{ width: '100%', mt: payment_link ? 2 : 0, cursor: 'pointer' }}
         >
-          WhatsApp Contact
+          {t('bagis.donationCard.whatsappContact')}
         </Button>
       )}
     </Box>
@@ -66,7 +69,18 @@ const DonationCard = ({ title, description, payment_link, contact_required }) =>
 )
 
 // Product Need Card Component
-const ProductCard = ({ image, title, category, description, current_qty, max_qty, link, urgency, is_completed }) => {
+const ProductCard = ({
+  t,
+  image,
+  title,
+  category,
+  description,
+  current_qty,
+  max_qty,
+  link,
+  urgency,
+  is_completed
+}) => {
   const progress = Math.min(100, (current_qty / max_qty) * 100)
 
   return (
@@ -84,7 +98,7 @@ const ProductCard = ({ image, title, category, description, current_qty, max_qty
         position: 'relative'
       }}
     >
-      {urgency === 'Acil' && !is_completed && (
+      {(urgency === 'Acil' || urgency === 'Urgent') && !is_completed && (
         <Badge
           variant="pill"
           sx={{
@@ -96,7 +110,7 @@ const ProductCard = ({ image, title, category, description, current_qty, max_qty
             zIndex: 1
           }}
         >
-          Urgent
+          {t('bagis.productCard.urgent')}
         </Badge>
       )}
       <Box sx={{ height: '200px', position: 'relative', bg: 'smoke' }}>
@@ -119,29 +133,58 @@ const ProductCard = ({ image, title, category, description, current_qty, max_qty
               justifyContent: 'center'
             }}
           >
-            <Badge variant="pill" sx={{ bg: 'green', color: 'white', px: 3, py: 1, fontSize: 2 }}>
-              Completed
+            <Badge
+              variant="pill"
+              sx={{ bg: 'green', color: 'white', px: 3, py: 1, fontSize: 2 }}
+            >
+              {t('bagis.productCard.completed')}
             </Badge>
           </Box>
         )}
       </Box>
       <Box sx={{ p: 4, display: 'flex', flexDirection: 'column', flex: 1 }}>
-        <Badge variant="pill" sx={{ width: 'fit-content', mb: 2, bg: 'smoke', color: 'slate' }}>
+        <Badge
+          variant="pill"
+          sx={{ width: 'fit-content', mb: 2, bg: 'smoke', color: 'slate' }}
+        >
           {category}
         </Badge>
         <Heading as="h3" variant="headline" sx={{ fontSize: 3, mb: 2 }}>
           {title}
         </Heading>
-        <Text as="p" sx={{ color: 'slate', fontSize: 1, mb: 3, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+        <Text
+          as="p"
+          sx={{
+            color: 'slate',
+            fontSize: 1,
+            mb: 3,
+            display: '-webkit-box',
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden'
+          }}
+        >
           {description}
         </Text>
 
         <Box sx={{ mt: 'auto' }}>
           <Flex sx={{ justifyContent: 'space-between', mb: 1, fontSize: 1 }}>
-            <Text sx={{ fontWeight: 'bold' }}>Progress</Text>
-            <Text sx={{ color: 'slate' }}>{current_qty} / {max_qty}</Text>
+            <Text sx={{ fontWeight: 'bold' }}>
+              {t('bagis.productCard.progress')}
+            </Text>
+            <Text sx={{ color: 'slate' }}>
+              {current_qty} / {max_qty}
+            </Text>
           </Flex>
-          <Box sx={{ height: '8px', bg: 'smoke', borderRadius: 'circle', overflow: 'hidden', mb: 3 }}>
+          <Box
+            sx={{
+              height: '8px',
+              bg: 'smoke',
+              borderRadius: 'circle',
+              overflow: 'hidden',
+              mb: 3
+            }}
+          >
             <Box
               sx={{
                 height: '100%',
@@ -163,7 +206,9 @@ const ProductCard = ({ image, title, category, description, current_qty, max_qty
               cursor: is_completed ? 'not-allowed' : 'pointer'
             }}
           >
-            {is_completed ? 'Thanks!' : 'Buy'}
+            {is_completed
+              ? t('bagis.productCard.thanks')
+              : t('bagis.productCard.buy')}
           </Button>
         </Box>
       </Box>
@@ -186,7 +231,7 @@ const TabButton = ({ active, children, onClick }) => (
       fontWeight: 'bold',
       transition: 'all 0.2s',
       '&:hover': {
-        bg: active ? 'red' : 'smoke',
+        bg: active ? 'red' : 'smoke'
       }
     }}
   >
@@ -195,6 +240,7 @@ const TabButton = ({ active, children, onClick }) => (
 )
 
 export default function BagisPage({ supportNeeds = [], productNeeds = [] }) {
+  const { t, locale } = useTranslation()
   const [activeTab, setActiveTab] = useState('products')
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [showOnlyUrgent, setShowOnlyUrgent] = useState(false)
@@ -209,7 +255,8 @@ export default function BagisPage({ supportNeeds = [], productNeeds = [] }) {
   const filteredProducts = useMemo(() => {
     return productNeeds.filter(p => {
       const categoryMatch = selectedCategory === 'All' || p.category === selectedCategory
-      const urgencyMatch = !showOnlyUrgent || p.urgency === 'Acil' || p.urgency === 'Urgent'
+      const urgencyMatch =
+        !showOnlyUrgent || p.urgency === 'Acil' || p.urgency === 'Urgent'
       return categoryMatch && urgencyMatch
     })
   }, [productNeeds, selectedCategory, showOnlyUrgent])
@@ -218,8 +265,8 @@ export default function BagisPage({ supportNeeds = [], productNeeds = [] }) {
     <>
       <Meta
         as={Head}
-        title="Donate | Happy Hacking Space"
-        description="Donate and support the Happy Hacking Space community."
+        title={t('bagis.meta.title')}
+        description={t('bagis.meta.description')}
       />
       <ForceTheme theme="light" />
       <Nav />
@@ -239,7 +286,7 @@ export default function BagisPage({ supportNeeds = [], productNeeds = [] }) {
       >
         <BGImg
           src="/donate/0color_pop.jpg"
-          alt="Donate"
+          alt={t('bagis.hero.title')}
           priority
           gradient="linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6))"
         />
@@ -253,7 +300,7 @@ export default function BagisPage({ supportNeeds = [], productNeeds = [] }) {
               mb: 3
             }}
           >
-            Growing with Your Support
+            {t('bagis.hero.title')}
           </Heading>
         </Container>
       </Box>
@@ -273,11 +320,17 @@ export default function BagisPage({ supportNeeds = [], productNeeds = [] }) {
             borderColor: 'smoke'
           }}
         >
-          <TabButton active={activeTab === 'products'} onClick={() => setActiveTab('products')}>
-            Product Needs
+          <TabButton
+            active={activeTab === 'products'}
+            onClick={() => setActiveTab('products')}
+          >
+            {t('bagis.tabs.products')}
           </TabButton>
-          <TabButton active={activeTab === 'support'} onClick={() => setActiveTab('support')}>
-            Donation Support
+          <TabButton
+            active={activeTab === 'support'}
+            onClick={() => setActiveTab('support')}
+          >
+            {t('bagis.tabs.support')}
           </TabButton>
         </Flex>
 
@@ -286,39 +339,83 @@ export default function BagisPage({ supportNeeds = [], productNeeds = [] }) {
             <Box>
               <Box sx={{ textAlign: 'center', mb: 5 }}>
                 <Heading as="h2" variant="title" sx={{ fontSize: [4, 5], mb: 2 }}>
-                  General Support & Bill Assistance
+                  {t('bagis.support.title')}
                 </Heading>
                 <Text as="p" variant="subtitle" sx={{ color: 'slate' }}>
-                  You can support the sustainability of our community.
+                  {t('bagis.support.subtitle')}
                 </Text>
               </Box>
               <Grid columns={[1, 2, 3]} gap={4}>
-                {supportNeeds.map((need) => (
-                  <DonationCard key={need.id} {...need} />
+                {supportNeeds.map(need => (
+                  <DonationCard key={need.id} t={t} {...need} />
                 ))}
               </Grid>
               {supportNeeds.length === 0 && (
                 <Box sx={{ textAlign: 'center', py: 5 }}>
-                  <Text color="slate">No support items added yet.</Text>
+                  <Text color="slate">{t('bagis.support.empty')}</Text>
                 </Box>
               )}
             </Box>
           ) : (
             <Grid columns={[1, '220px 1fr']} gap={[4, 5]}>
               {/* Sidebar / Filtering */}
-              <Box sx={{ position: ['static', 'sticky'], top: '100px', height: 'fit-content' }}>
-                <Card sx={{ p: 4, bg: 'white', borderRadius: 'extra', boxShadow: 'card', border: '1px solid', borderColor: 'smoke' }}>
-                  <Heading as="h3" sx={{ fontSize: 2, mb: 3, pb: 2, borderBottom: '1px solid', borderColor: 'smoke' }}>
-                    Filter
+              <Box
+                sx={{
+                  position: ['static', 'sticky'],
+                  top: '100px',
+                  height: 'fit-content'
+                }}
+              >
+                <Card
+                  sx={{
+                    p: 4,
+                    bg: 'white',
+                    borderRadius: 'extra',
+                    boxShadow: 'card',
+                    border: '1px solid',
+                    borderColor: 'smoke'
+                  }}
+                >
+                  <Heading
+                    as="h3"
+                    sx={{
+                      fontSize: 2,
+                      mb: 3,
+                      pb: 2,
+                      borderBottom: '1px solid',
+                      borderColor: 'smoke'
+                    }}
+                  >
+                    {t('bagis.filter.title')}
                   </Heading>
 
                   <Box sx={{ mb: 4 }}>
-                    <Label sx={{ mb: 3, fontWeight: 'bold', color: 'muted', fontSize: 0, textTransform: 'uppercase', letterSpacing: 'wider' }}>
-                      CATEGORIES
+                    <Label
+                      sx={{
+                        mb: 3,
+                        fontWeight: 'bold',
+                        color: 'muted',
+                        fontSize: 0,
+                        textTransform: 'uppercase',
+                        letterSpacing: 'wider'
+                      }}
+                    >
+                      {t('bagis.filter.categories')}
                     </Label>
                     <Grid gap={2}>
                       {categories.map(cat => (
-                        <Label key={cat} sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer', fontSize: 1, py: 1, transition: 'color 0.2s', '&:hover': { color: 'red' } }}>
+                        <Label
+                          key={cat}
+                          sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            cursor: 'pointer',
+                            fontSize: 1,
+                            py: 1,
+                            transition: 'color 0.2s',
+                            '&:hover': { color: 'red' }
+                          }}
+                        >
                           <input
                             type="radio"
                             name="category"
@@ -326,36 +423,59 @@ export default function BagisPage({ supportNeeds = [], productNeeds = [] }) {
                             onChange={() => setSelectedCategory(cat)}
                             style={{ marginRight: '10px', accentColor: '#ff6259' }}
                           />
-                          {cat}
+                          {cat === 'All' ? t('bagis.filter.all') : cat}
                         </Label>
                       ))}
                     </Grid>
                   </Box>
 
-                  <Box sx={{ pt: 3, borderTop: '1px solid', borderColor: 'smoke' }}>
-                    <Label sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer', fontWeight: 'bold', fontSize: 1 }}>
+                  <Box
+                    sx={{
+                      pt: 3,
+                      borderTop: '1px solid',
+                      borderColor: 'smoke'
+                    }}
+                  >
+                    <Label
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        cursor: 'pointer',
+                        fontWeight: 'bold',
+                        fontSize: 1
+                      }}
+                    >
                       <Checkbox
                         checked={showOnlyUrgent}
-                        onChange={(e) => setShowOnlyUrgent(e.target.checked)}
+                        onChange={e => setShowOnlyUrgent(e.target.checked)}
                         sx={{ color: 'red' }}
                       />
-                      Urgent Only
+                      {t('bagis.filter.urgentOnly')}
                     </Label>
                   </Box>
 
                   <Button
                     variant="outline"
-                    sx={{ width: '100%', mt: 4, py: 2, fontSize: 1, borderRadius: 'circle' }}
-                    onClick={() => { setSelectedCategory('All'); setShowOnlyUrgent(false); }}
+                    sx={{
+                      width: '100%',
+                      mt: 4,
+                      py: 2,
+                      fontSize: 1,
+                      borderRadius: 'circle'
+                    }}
+                    onClick={() => {
+                      setSelectedCategory('All')
+                      setShowOnlyUrgent(false)
+                    }}
                   >
-                    Reset Filters
-                  </Button>
+                    {t('bagis.filter.reset')}
+          </Button>
                 </Card>
               </Box>
 
               {/* Product List */}
               <Box>
-                <PhysicalAddress lang="tr" sx={{ mb: 1 }} />
+                <PhysicalAddress lang={locale} sx={{ mb: 1 }} />
                 <Flex
                   sx={{
                     justifyContent: 'space-between',
@@ -364,19 +484,32 @@ export default function BagisPage({ supportNeeds = [], productNeeds = [] }) {
                   }}
                 >
                   <Text sx={{ color: 'slate', fontWeight: 'bold' }}>
-                    {filteredProducts.length} products found
+                    {t('bagis.products.found', {
+                      count: filteredProducts.length
+                    })}
                   </Text>
                 </Flex>
 
                 {filteredProducts.length > 0 ? (
                   <Grid columns={[1, 2, 3]} gap={3}>
                     {filteredProducts.map(product => (
-                      <ProductCard key={product.id} {...product} />
+                      <ProductCard key={product.id} t={t} {...product} />
                     ))}
                   </Grid>
                 ) : (
-                  <Box sx={{ textAlign: 'center', py: 6, bg: 'white', borderRadius: 'extra', border: '1px dashed', borderColor: 'muted' }}>
-                    <Text sx={{ color: 'slate', fontSize: 2 }}>No products found matching your criteria.</Text>
+                  <Box
+                    sx={{
+                      textAlign: 'center',
+                      py: 6,
+                      bg: 'white',
+                      borderRadius: 'extra',
+                      border: '1px dashed',
+                      borderColor: 'muted'
+                    }}
+                  >
+                    <Text sx={{ color: 'slate', fontSize: 2 }}>
+                      {t('bagis.products.empty')}
+                    </Text>
                   </Box>
                 )}
               </Box>
