@@ -110,8 +110,7 @@
     "three": "^0.183.1",
     "tinytime": "^0.2.6",
     "turndown": "^7.2.0",
-    "vanilla-tilt": "^1.8.1",
-    "yarn": "^1.22.22"
+    "vanilla-tilt": "^1.8.1"
   },
   "devDependencies": {
     "eslint": "^10.0.1",
@@ -139,5 +138,5 @@
     "elliptic": "^6.6.1",
     "next": "^15.5.9"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "yarn@1.22.22"
 }
