@@ -5,6 +5,7 @@ import { Box, Container, Flex, Link } from 'theme-ui'
 import theme from '../lib/theme'
 import Icon from './icon'
 import Flag from './flag'
+import LanguageSelector from './language-selector'
 import ScrollLock from 'react-scrolllock'
 import NextLink from 'next/link'
 import { useTranslation } from '../lib/i18n'
@@ -296,6 +297,7 @@ const Navigation = props => {
       <NextLink href="/#faq">
         <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>{t('nav.faq')}</NavLinkText>
       </NextLink>
+      <LanguageSelector color={props.color} scrolled={props.scrolled} isMobile={props.isMobile} />
     </NavBar>
   );
 }

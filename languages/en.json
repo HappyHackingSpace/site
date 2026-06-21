@@ -5,7 +5,9 @@
     "events": "Events",
     "donors": "Donors",
     "contact": "Contact",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "donate": "Donate",
+    "language": "Language"
   },
   "footer": {
     "title": "Happy Hacking Space",
