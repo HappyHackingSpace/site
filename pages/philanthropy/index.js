@@ -18,6 +18,7 @@ import Nav from '../../components/nav'
 import ForceTheme from '../../components/force-theme'
 import Footer from '../../components/footer'
 import { useState, useEffect } from 'react'
+import PhysicalAddress from '../../components/physical-address'
 // import Fade from 'react-reveal/Fade'
 // import Slide from 'react-reveal/Slide'
 
@@ -1313,9 +1314,12 @@ const Philanthropy = ({ posts = [] }) => {
           <Line />
           <Box>
             <Fade>
-              <Text as="h1" sx={{ marginBottom: '20px' }}>
+              <Text as="h1" sx={{ marginBottom: 1 }}>
                 Join our community of generous donors
               </Text>
+            </Fade>
+            <Fade delay={100}>
+              <PhysicalAddress sx={{ mb: 1 }} />
             </Fade>
             <Box
               sx={{
