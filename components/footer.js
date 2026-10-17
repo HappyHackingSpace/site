@@ -201,7 +201,7 @@ const Footer = ({
         </Box>
       </Grid>
       <Text as="p" variant="caption" sx={{ mt: 3 }}>
-         © {new Date().getFullYear()} Happy Hacking Space. {/* 501(c)(3) nonprofit (EIN: 81-2908499) */}
+         © {new Date().getFullYear()} Happy Hacking Space. Registered under Mezopotamya Teknoloji, Bilim ve Kültür Derneği, a nonprofit association in Türkiye (Kütük No: 21-020-179).
       </Text>
     </Container>
   </Base>
