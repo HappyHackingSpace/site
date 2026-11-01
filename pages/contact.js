@@ -100,7 +100,7 @@ export default function Contact() {
         as={Head}
         title="Contact"
         description="Get in touch with Happy Hacking Space. Visit us, send an email, or connect on social media."
-        image="https://cloud-cz9a6kt0a-hack-club-bot.vercel.app/0social-photo_2.jpg"
+        image="https://assets.happyhacking.space/flag-standalone.png"
       />
       <Box>
         <Header>
