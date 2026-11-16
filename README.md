@@ -18,9 +18,9 @@ Start running the website on your computer:
 
 And then open up your web browser and go to [localhost:3000](http://localhost:3000).
 
-Please note: There are a number of redirects and rewrites essential to the website's functionality, which you can see in [next.config.mjs](./next.config.mjs).
+Please note: There are a number of redirects essential to the website's functionality, which you can see in [next.config.mjs](./next.config.mjs).
 
-Powered by [Next.js] with [MDX], [Theme UI], & [Hack Club Theme].
+Powered by [Next.js] with [MDX], [Theme UI], & [Happy Hacking Space Theme].
 
 Code under MIT License, assets may not be re-used or re-distributed.
 
@@ -72,9 +72,9 @@ _Have questions? Join us @ https://discord.happyhacking.space and to learn more 
 
 ---
 
-Hack Club, 2025. MIT License.
+Forked from [Hack Club's site](https://github.com/hackclub/site). MIT License, see [LICENSE.md](./LICENSE.md).
 
 [next.js]: https://nextjs.org
 [mdx]: https://mdxjs.com
 [theme ui]: https://theme-ui.com
-[hack club theme]: https://theme.happyhacking.space
+[happy hacking space theme]: https://theme.happyhacking.space

@@ -295,15 +295,6 @@ const Navigation = props => {
       <NextLink href="/#faq">
         <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>FAQ</NavLinkText>
       </NextLink>
-      {/* <NextLink href="/slack">
-      <NavLinkText isMobile={props.isMobile}>Community</NavLinkText>
-    </NextLink>
-    <NextLink href="https://scrapbook.hackclub.com/">
-      <NavLinkText isMobile={props.isMobile}>Scrapbook</NavLinkText>
-    </NextLink>
-    <NextLink href="https://toolbox.hackclub.com/">
-      <NavLinkText isMobile={props.isMobile}>Toolbox</NavLinkText>
-    </NextLink> */}
     </NavBar>
   );
 }

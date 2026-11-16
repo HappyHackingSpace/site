@@ -1,4 +1,4 @@
-# AGENT.md - Hack Club Site Development Guide
+# AGENT.md - Happy Hacking Space Site Development Guide
 
 ## Commands
 - **Dev**: `yarn dev` (start development server)
@@ -19,7 +19,7 @@
 ## Architecture
 - Next.js app with pages/ directory structure
 - MDX support for content pages
-- Theme UI for consistent styling with Hack Club theme
+- Theme UI for consistent styling with the Happy Hacking Space theme
 - Components in components/ directory, modular cards in components/index/cards/
 - Static assets in public/
-- Configuration in next.config.mjs includes essential redirects/rewrites
+- Configuration in next.config.mjs includes essential redirects

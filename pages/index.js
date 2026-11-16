@@ -178,13 +178,6 @@ const FAQ = () => {
   )
 }
 
-const Sinerider = dynamic(() => import('../components/index/cards/sinerider'), {
-  loading: () => {
-    const { SprigSkeleton } = require('../components/loading-skeletons')
-    return <SprigSkeleton />
-  },
-  ssr: false
-})
 import OuternetImgFile from '../public/home/outernet-110.jpg'
 import Announcement from '../components/announcement'
 import dynamic from 'next/dynamic'
@@ -208,10 +201,6 @@ const GitHub = dynamic(() => import('../components/index/github'), {
 
 const CTAS = dynamic(() => import('../components/index/ctas'), { ssr: false })
 
-// Unused components removed to reduce bundle size
-// Available for dynamic import when needed:
-// - MailingList, Slack, Som, Athena, Highway, Shipwrecked
-
 import ANNOUNCEMENTS_DATA from '../lib/announcements.json'
 
 function getActiveAnnouncements() {
@@ -229,25 +218,12 @@ function Page({
   const [apiData, setApiData] = useState({
     slackData: { total_members_count: 500 }, // fallback
     gitHubData: [],
-    consoleCount: 500,
-    stars: {
-      sprig: { stargazerCount: 1000 },
-      sinerider: { stargazerCount: 500 },
-      blot: { stargazerCount: 300 },
-      onboard: { stargazerCount: 200 }
-    },
-    game: [],
-    events: initialEvents || [],
-    hackathonsData: []
+    events: initialEvents || []
   })
 
   const [loadingStates, setLoadingStates] = useState({
-    slack: true,
-    github: true,
-    stars: true,
-    games: true,
-    console: true,
-    hackathons: true
+    slack: false,
+    github: true
   })
 
   // Pick a random active announcement on client to avoid hydration mismatches
@@ -309,95 +285,6 @@ function Page({
     // Delay GitHub API call to prioritize critical content
     const timer = setTimeout(loadGitHubData, 500)
     return () => clearTimeout(timer)
-  }, [])
-
-  // Async API loading - Slack data (DISABLED - using fallback data)
-  useEffect(() => {
-    // const loadSlackData = async () => {
-    //   try {
-    //     const response = await fetch('/api/slack')
-    //     if (response.ok) {
-    //       const data = await response.json()
-    //       setApiData(prev => ({ ...prev, slackData: data }))
-    //     }
-    //   } catch (error) {
-    //     console.warn('Slack API failed, using fallback:', error)
-    //   } finally {
-    //     setLoadingStates(prev => ({ ...prev, slack: false }))
-    //   }
-    // }
-    // const timer = setTimeout(loadSlackData, 300)
-
-    // Just use fallback data and mark as loaded
-    setLoadingStates(prev => ({ ...prev, slack: false }))
-
-    // return () => clearTimeout(timer)
-  }, [])
-
-  // Async API loading - GitHub Stars (ACTIVE - fetching real star counts)
-  useEffect(() => {
-    const loadStars = async () => {
-      try {
-        const response = await fetch('/api/stars')
-        if (response.ok) {
-          const data = await response.json()
-          setApiData(prev => ({ ...prev, stars: data }))
-        }
-      } catch (error) {
-        console.warn('Stars API failed, using fallback:', error)
-      } finally {
-        setLoadingStates(prev => ({ ...prev, stars: false }))
-      }
-    }
-
-    const timer = setTimeout(loadStars, 800)
-    return () => clearTimeout(timer)
-  }, [])
-
-  // Async API loading - Sprig Games (DISABLED - using fallback data)
-  useEffect(() => {
-    // const loadGames = async () => {
-    //   try {
-    //     const response = await fetch('/api/games')
-    //     if (response.ok) {
-    //       const data = await response.json()
-    //       setApiData(prev => ({ ...prev, game: data }))
-    //     }
-    //   } catch (error) {
-    //     console.warn('Games API failed, using fallback:', error)
-    //   } finally {
-    //     setLoadingStates(prev => ({ ...prev, games: false }))
-    //   }
-    // }
-    // const timer = setTimeout(loadGames, 1000)
-
-    // Just use fallback data and mark as loaded
-    setLoadingStates(prev => ({ ...prev, games: false }))
-
-    // return () => clearTimeout(timer)
-  }, [])
-
-  // Async API loading - Console Count (DISABLED - using fallback data)
-  useEffect(() => {
-    // const loadConsoleCount = async () => {
-    //   try {
-    //     const response = await fetch('/api/sprig-console')
-    //     if (response.ok) {
-    //       const data = await response.json()
-    //       setApiData(prev => ({ ...prev, consoleCount: data }))
-    //     }
-    //   } catch (error) {
-    //     console.warn('Console API failed, using fallback:', error)
-    //   } finally {
-    //     setLoadingStates(prev => ({ ...prev, console: false }))
-    //   }
-    // }
-    // const timer = setTimeout(loadConsoleCount, 1200)
-
-    // Just use fallback data and mark as loaded
-    setLoadingStates(prev => ({ ...prev, console: false }))
-
-    // return () => clearTimeout(timer)
   }, [])
 
   const easterEgg = () => {
@@ -1015,13 +902,9 @@ function Page({
                   <Text as="p" variant="subtitle">
                     <strong sx={{ mb: 1 }}>Gather IRL with other hackers</strong>
                     Meet other Happy Hackers in the community to build
-                    together at one of the community events{' '}
+                    together at one of our{' '}
                     <Link href="/events" target="_blank" rel="noopener">
-                      Events
-                    </Link>{' '}
-                    and{' '}
-                    <Link href="/hackathons" target="_blank" rel="noopener">
-                      Hackathons
+                      community events and hackathons
                     </Link>
                     .
                   </Text>
@@ -1293,15 +1176,6 @@ function Page({
                   hackathons and after school coding clubs.
                 </Text>
               </Box> */}
-            {/* <Clubs /> */}
-            {/* <Hackathons
-                delay={400}
-                data={hackathonsData}
-                stars={stars.hackathons.stargazerCount}
-              /> */}
-
-            {/* <Events events={events} /> */}
-            {/* <HCB data={bankData} /> */}
             {/* </Box> */}
           </Box>
         </Box>

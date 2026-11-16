@@ -1,10 +1,8 @@
 import Icon from '@hackclub/icons'
 import { useEffect, useRef, useState } from 'react'
 import { Box, Button, Card, Flex, Grid, Input, Link, Text } from 'theme-ui'
-import { format, parse } from 'date-fns'
 import BGImg from '../../background-image'
-import background from '../../../public/home/footer.png'
-import MailCard from '../../mail-card'
+import background from '../../../public/hackathons/culturehack.jpeg'
 
 const Loading = () => (
   <Box
@@ -30,7 +28,6 @@ const Loading = () => (
 const MailingList = () => {
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
-  const [data, setData] = useState({ finalHtml: [], names: [] })
   const formRef = useRef(null)
   const [formTs, setFormTs] = useState('')
 
@@ -63,46 +60,6 @@ const MailingList = () => {
     }
     setSubmitting(false)
   }
-
-  // This lovely concoction of JavaScript basically fetches the last two newsletters from the GitHub repo,
-  // converts them to HTML, gets rid of those HTML tags, the sets all of that as the state of the component.
-  // Then, It makes a second fetch request to get the filename, so that can be used to determine the link.
-  // After that, it removes the file extension, so we can use that as the date.
-  // Finally, it sets the state of data to the final HTML and the names of the files, so we can map that later on!
-
-  useEffect(() => {
-    Promise.all([
-      fetch(
-        'https://api.github.com/repos/hackclub/leaders-newsletter/contents/updates'
-      )
-        .then(response => response.json())
-        .then(data => {
-          if (!Array.isArray(data)) return []; // Handle rate limiting gracefully
-          return data.sort((a, b) => b.name.localeCompare(a.name));
-        })
-        .then(data => data.slice(0, 2))
-        .then(data => Promise.all(data.map(item => fetch(item.download_url))))
-        .then(responses =>
-          Promise.all(responses.map(response => response.text()))
-        )
-        .then(markdownArray => {
-          return markdownArray.map(markdown =>
-            markdown.replace(/<[^>]*>/g, '').replace(/The Hackening/g, '')
-          )
-        }),
-
-      fetch(
-        'https://api.github.com/repos/hackclub/leaders-newsletter/contents/updates'
-      )
-        .then(response => response.json())
-        .then(data => {
-          if (!Array.isArray(data)) return []; // Handle rate limiting gracefully
-          return data.sort((a, b) => b.name.localeCompare(a.name));
-        })
-        .then(data => data.map(item => item.name.split('.')[0]))
-    ]).then(([finalHtml, names]) => setData({ finalHtml, names }))
-      .catch(err => console.error("Error fetching mailing list data:", err))
-  }, [])
 
   return (
     <Box sx={{ position: 'relative', py: 6, background: 'darker' }}>
@@ -234,36 +191,13 @@ const MailingList = () => {
               </Button>
             </Grid>
           </Flex>
-          {/* <Box
-            sx={{
-              display: 'grid',
-              gridGap: 4,
-              mt: [4, 0],
-              width: '100%'
-            }}
-          >
-            {data.finalHtml
-              .map((html, index) => (
-                <MailCard
-                  issue={index + 1}
-                  body={html}
-                  date={format(
-                    parse('', '', new Date(data.names[index])),
-                    'MMMM d, yyyy'
-                  )}
-                  link={data.names[index]}
-                  key={index}
-                />
-              ))
-              .reverse()}
-          </Box> */}
         </Flex>
       </Card>
       <BGImg
         gradient="linear-gradient(rgba(0,0,0,0.125), rgba(0,0,0,0.25))"
         src={background}
         placeholder="blur"
-        alt="Globe with community locations"
+        alt="Happy Hacking Space hackathon"
       />
     </Box>
   )

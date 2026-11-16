@@ -28,9 +28,6 @@ const Page = ({ html }) => (
     <Header
       title="@happyhackingspace/banner"
       desc="React component for adding a Happy Hacking Space banner to your site"
-      img={`https://workshop-cards.hackclub.com/${encodeURIComponent(
-        'Happy Hacking Space Banner'
-      )}.png&brand=Open%20Source`}
       includeMeta
       hideNav
       sx={{ bg: 'transparent', mt: [6, 5], mb: [-4, -5] }}

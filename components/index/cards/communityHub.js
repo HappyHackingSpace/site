@@ -18,13 +18,6 @@ export default function CommunityHub({ stars }) {
       .catch(error => console.error('Error fetching stars:', error))
   }, [])
 
-  // useEffect(() => {
-  //   fetch(
-  //     'https://api.github.com/search/issues?q=repo:hackclub/onboard+is:pr+is:merged+label:Submission'
-  //   )
-  //     .then(response => response.json())
-  //     .then(data => setProjects(data.total_count))
-  // }, [])
 
   return (
     <CardModel

@@ -224,7 +224,7 @@ export default function Philosophy() {
           <Box sx={{ fontSize: [3, 3] , py: 4}}>
             Just as the best carpenters didn’t learn in the classroom, neither
             did the best programmers. Through our{' '}
-            <Link href="/workshops">workshops</Link>, you’ll be walked through
+            <Link href="/events">workshops</Link>, you’ll be walked through
             building projects. Starting out, you won’t understand how the code
             works, but you’ll build understanding as you go. You’ll get stuck
             along the way, but we’re here to help.
@@ -262,20 +262,6 @@ export default function Philosophy() {
           <Heading as="h1" sx={{ fontSize: 5, mb: 2 }}>
             Join the movement!
           </Heading>
-          {/* <Button
-            mr={[0, 3]}
-            mb={[3, 0]}
-            sx={{
-              bg: 'white',
-              color: 'red',
-              display: ['block', 'inline-block'],
-              mx: 'auto'
-            }}
-            as="a"
-            href="https://apply.hackclub.com"
-          >
-            Start a club
-          </Button> */}
             <Button
               sx={{ bg: 'white', color: 'red' }}
               as="a"

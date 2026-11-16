@@ -173,16 +173,6 @@ const Footer = ({
               icon="github"
               name="GitHub"
             />
-            {/* <Service
-              href="https://figma.com/@hackclub"
-              icon="figma-fill"
-              name="Figma"
-            /> */}
-            {/* <Service
-              href="https://social.dino.icu/@hackclub"
-              icon="mastodon"
-              name="Mastodon"
-            /> */}
             <Service
               href="https://www.youtube.com/@HappyHackingSpace"
               icon="youtube"

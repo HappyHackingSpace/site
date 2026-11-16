@@ -13,7 +13,6 @@ import {
 } from "theme-ui";
 import theme from "@happyhackingspace/theme";
 import Meta from "@happyhackingspace/meta";
-// import Icon from "@hackclub/icons";
 import Head from "next/head";
 import ForceTheme from "../components/force-theme";
 import Nav from "../components/nav";
@@ -32,10 +31,7 @@ export const Logo = ({ name }) => (
       variant="subheadline"
       sx={{ fontSize: [2, 3], mt: 2, mb: 2 }}
     >
-      {startCase(name)
-        .replace("Flag Orpheus", "Orpheus Flag –")
-        .replace("Bw", " (B/W)")
-        .replace("Hcb", "HCB")}
+      {startCase(name).replace("Bw", " (B/W)")}
     </Text>
     <Grid
       columns="repeat(3, 1fr)"
@@ -111,13 +107,12 @@ const ColorSwatch = ({ bg }) => (
   </Card>
 );
 
-const Page = ({ css }) => (
+const Page = () => (
   <>
     <Meta
       as={Head}
       title="Branding"
-      description="Download Hack Club HQ’s logos and preview our brand fonts & colors."
-      image="https://workshop-cards.hackclub.com/Branding.png?theme=dark&fontSize=350px&brand=HQ"
+      description="Download Happy Hacking Space logos and preview our brand colors."
     />
     <Head>
       <style>{`
@@ -146,22 +141,8 @@ const Page = ({ css }) => (
         Happy Hacking Space Brand
         </Heading>
         <Heading as="h2" variant="subtitle" sx={{ mt: 3, color: "text" }}>
-          Download HQ’s logos and preview our brand colors & font.
+          Download our logos and preview our brand colors.
         </Heading>
-        {/* <p>
-          Hack Club must always be written as Hack Club, not hackclub / Hackclub
-          / HackClub / hackClub
-        </p>
-        <p>
-          Same with Hack Clubber or Hack Clubbers. It's never hackclubbers or
-          Hackclubbers
-        </p>
-        <p>
-          Important / should not be missable by anyone who is designing a
-          sticker: All sticker designs must have the text Hack Club somewhere on
-          the design. It can be subtle, but "Hack Club" must appear somewhere on
-          the design
-        </p> */}
       </Container>
     </Box>
     <Container
@@ -192,23 +173,6 @@ const Page = ({ css }) => (
         Download all →
       </Button>
 
-      {/* <Heading id="bank" variant="headline">
-        HCB Logos
-      </Heading>
-      <Grid columns={[null, 2, 3]} gap={3}>
-        <Logo name="hcb-light" />
-        <Logo name="hcb-dark" />
-      </Grid>
-      <Button
-        as="a"
-        href="https://hcb.happyhacking.space/branding"
-        variant="outline"
-        mt={3}
-        mb={[4, 5]}
-      >
-        See all HCB logos →
-      </Button> */}
-
       <Heading id="banners" variant="headline">
         HTML banners
       </Heading>
@@ -231,10 +195,6 @@ const Page = ({ css }) => (
           </tr>
         </Box>
         <tbody>
-          {/* <HTML
-            file="flag-orpheus-top"
-            html={`<a href="https://happyhacking.space/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.happyhacking.space/flag-orpheus-top.svg" alt="Hack Club"/></a>`}
-          /> */}
           <HTML
             file="flag-standalone-bw"
             html={`<a href="https://happyhacking.space/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.happyhacking.space/flag-standalone-bw.svg" alt="Happy Hacking Space"/></a>`}
@@ -269,46 +229,6 @@ const Page = ({ css }) => (
           <ColorSwatch key={key} bg={key} />
         ))}
       </Grid>
-      {/* <Heading variant="headline">Fonts</Heading>
-      <Text variant="title">Phantom Sans</Text>
-      <Text variant="subtitle" sx={{ mb: 3, ml: 2 }}>
-        is our brand font.
-      </Text>
-      <Box as="details" mb={[4, 5]}>
-        <Text as="summary" sx={{ fontSize: 2, cursor: "default" }}>
-          Webfont CSS (for HQ sites only)
-        </Text>
-        <Text as="pre" variant="styles.pre">
-          {css}
-        </Text>
-      </Box> */}
-      {/* <Heading variant="headline">Icons</Heading>
-      <Text as="p" variant="subtitle" sx={{ mb: 3 }}>
-        We have a custom iconset, published as{" "}
-        <A href="https://github.com/hackclub/icons">@hackclub/icons</A>.
-      </Text> */}
-      {/* <Flex sx={{ flexWrap: "wrap", svg: { fill: "muted", mr: 3, mb: 3 } }}>
-        {[
-          "clubs",
-          "bank-circle",
-          "event-code",
-          "home",
-          "transactions",
-          "bolt",
-          "photo",
-          "emoji",
-        ].map((k) => (
-          <Icon glyph={k} key={k} size={64} />
-        ))}
-      </Flex> */}
-      {/* <Button
-        as="a"
-        href="https://icons.hackclub.com"
-        sx={{ mt: 3, mb: [4, 5] }}
-        variant="outline"
-      >
-        Explore Hack Club Icons →
-      </Button> */}
       <Heading variant="headline">UI components</Heading>
       <Text as="p" variant="subtitle" sx={{ mb: 3 }}>
         Want to make a Happy Hacking Space themed site? Use our pre-made CSS and UI
@@ -322,37 +242,11 @@ const Page = ({ css }) => (
         sx={{ mr: 3, mb: 3 }}
         variant="outline"
       >
-        Explore Hack Club Theme →
+        Explore Happy Hacking Space Theme →
       </Button>
-      {/* <Button
-        as="a"
-        href="https://github.com/hackclub/theme-starter"
-        mb={3}
-        mr={3}
-        variant="outline"
-      >
-        Theme Starter on GitHub →
-      </Button> */}
-      {/* <Button
-        as="a"
-        href="https://github.com/hackclub/css"
-        sx={{ mb: 3 }}
-        variant="outline"
-      >
-        CSS Theme on GitHub →
-      </Button> */}
     </Container>
     <Footer />
   </>
 );
 
 export default Page;
-
-// export const getStaticProps = () => {
-//   const fs = require("fs");
-//   const css = fs.readFileSync(
-//     "./node_modules/@hackclub/theme/fonts/reg-ital-bold.css",
-//     "utf8"
-//   );
-//   return { props: { css } };
-// };

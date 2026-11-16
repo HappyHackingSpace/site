@@ -32,7 +32,6 @@ const events = [
     year: '2024',
     // repo: 'culturehack',
     image: '/hackathons/culturehack.jpeg',
-    // link: 'https://cunted.hackclub.com'
   },
   {
     name: 'Code Jam 181925',
@@ -42,63 +41,6 @@ const events = [
     year: '2025',
     image: '/codejams/firstcodejam.jpeg',
   },
-  // {
-  //   name: 'Epoch',
-  //   logo: `https://emoji.slack-edge.com/T0266FRGM/epoch/1337c0f7f3c8341d.png`,
-  //   description: `A magical New Year's spent hacking in New Delhi, our first flagship event abroad and in India.`,
-  //   location: 'Delhi NCR, India',
-  //   season: 'Winter',
-  //   year: '2022/23',
-  //   video: 'https://www.youtube.com/embed/KLx4NZZPzMc',
-  //   repo: 'epoch'
-  // },
-  // {
-  //   name: 'Assemble',
-  //   logo: 'https://emoji.slack-edge.com/T0266FRGM/assemble/4f9465eb00175463.png',
-  //   description:
-  //     'The first high school hackathon since the pandemic! Hosted by a team of Hack Clubbers to kick off a hackathon renaissance.',
-  //   location: 'San Francisco, California',
-  //   season: 'Summer',
-  //   year: '2022',
-  //   video: 'https://youtube.com/embed/PnK4gzO6S3Q',
-  //   repo: 'assemble'
-  // },
-  // {
-  //   name: 'The Hacker Zephyr',
-  //   logo: 'https://hackclub.com/stickers/zephyr.svg',
-  //   description:
-  //     'A cross-country hacker adventure on a train and the longest hackathon (by miles) on land.',
-  //   location: 'Burlington (VT) to Los Angeles (CA)',
-  //   season: 'Summer',
-  //   year: '2021',
-  //   video: 'https://youtube.com/embed/2BID8_pGuqA',
-  //   repo: 'the-hacker-zephyr'
-  // },
-  // {
-  //   name: 'Summer of Making',
-  //   logo: 'https://hackclub.com/stickers/summer_of_making.svg',
-  //   description:
-  //     '$50k in hardware donations to teen hackers around the world and the creation of Scrapbook:',
-  //   location: 'Online (thanks COVID-19!)',
-  //   season: 'Summer',
-  //   year: '2020',
-  //   image:
-  //     'https://cdn.sanity.io/images/2ejqxsnu/production/ed144128afb78a7095d6c77945efdd2c38078ecf-1637x990.png?w=3840&q=75&fit=clip&auto=format',
-  //   link: 'https://scrapbook.hackclub.com/r/summer-of-making',
-  //   ghTag: 'summer-of-making'
-  // },
-  // {
-  //   name: 'Flagship',
-  //   logo: 'https://hackclub.com/stickers/ship.png',
-  //   description:
-  //     'An IRL meetup of high school hackathon organizers and coding club leaders. Our first "flagship" event.',
-  //   location: 'San Francisco, California',
-  //   season: 'Summer',
-  //   year: '2019',
-  //   image:
-  //     'https://github.com/hackclub/www-assemble/blob/main/public/hackers-assemble.jpg?raw=true',
-  //   link: 'https://hack.af/flagship-album'
-  // }
 ]
 
 const Event = ({

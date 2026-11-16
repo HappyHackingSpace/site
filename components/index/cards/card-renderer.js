@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 const cache = {}
 
 // webpackInclude scopes the context to only bundle cards listed in cards.json,
-// preventing webpack from scanning all 37 files in this directory.
+// preventing webpack from scanning every file in this directory.
 // Add new card names to the regex when adding entries to cards.json.
 // ssr: false prevents hydration mismatches from Emotion + Million.js interaction.
 // All cards are below the fold so client-only rendering has no UX impact.
@@ -12,7 +12,7 @@ function resolveCard(componentPath) {
     cache[componentPath] = dynamic(
       () =>
         import(
-          /* webpackInclude: /\/(vulnerable-target|communityHub|githubmon|awesome-hackathon|osint|som|athena|highway|shipwrecked|pizza)\.js$/ */
+          /* webpackInclude: /\/(vulnerable-target|communityHub|githubmon|awesome-hackathon|osint)\.js$/ */
           `./${componentPath}`
         ),
       { ssr: false }

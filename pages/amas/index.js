@@ -9,15 +9,15 @@ import Nav from '../../components/nav'
 import SlideDown from '../../components/slide-down'
 import Footer from '../../components/footer'
 import { dt } from '../../lib/dates'
-import Sal from '../../public/ama/sal.png'
+import HackerTeam from '../../public/home/hacker-team.png'
 
 const Page = ({ upcoming, past }) => (
   <>
     <Meta
       as={Head}
       title="AMAs"
-      description="Every month, the Hack Club community gets on a Zoom call with someone awesome for a 1-hour AMA. Past guests have included George Hotz, Elon Musk, Limor Fried, Tom Preston-Werner, & more."
-      image="https://cloud-n6i5i4zb9-hack-club-bot.vercel.app/62020-07-24_03dp4nhf5acfeyhvg84whafyhe1q30zq.jpeg"
+      description="We call someone we’ve always wanted to talk to, and the entire Happy Hacking Space community is invited to ask questions & chat with the guest live."
+      image="https://happyhacking.space/home/hacker-team.png"
     />
     <ForceTheme theme="dark" />
     <Nav dark />
@@ -32,10 +32,8 @@ const Page = ({ upcoming, past }) => (
     >
       <BGImg
         gradient="linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.625))"
-        src={Sal}
-        width={2048}
-        height={1170}
-        alt="Screenshot of Elon Musk AMA on Zoom"
+        src={HackerTeam}
+        alt="Happy Hacking Space members on an online call"
       />
       <SlideDown
         variant="layout.narrow"
@@ -103,7 +101,7 @@ const Page = ({ upcoming, past }) => (
               .map(event => (
                 <Card
                   as="a"
-                  href={`https://events.hackclub.com/${event.slug}`}
+                  href={`https://events.happyhacking.space/${event.slug}/`}
                   variant="interactive"
                   m={[2, 3]}
                   sx={{
