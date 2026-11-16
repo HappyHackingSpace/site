@@ -19,6 +19,7 @@ import Nav from '../components/nav'
 import BGImg from '../components/background-image'
 import ForceTheme from '../components/force-theme'
 import Footer from '../components/footer'
+import { org, identityStatement } from '../lib/organization'
 import Stage from '../components/stage'
 // import Snowfall from '../components/snowfall'
 import CardRenderer from '../components/index/cards/card-renderer'
@@ -116,7 +117,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: 'What is HHS?',
-      answer: 'Happy Hacking Space is a non-profit community of hackers, crafters, and explorers in Mesopotamia who build together.'
+      answer: `Happy Hacking Space is a non-profit community of hackers, crafters, and explorers in Mesopotamia who build together. ${identityStatement.en}`
     },
     {
       question: 'How can I join?',
@@ -286,7 +287,7 @@ function Page({
     loadJSConfetti()
 
     window.kc = `In the days of old, when gaming was young \nA mysterious code was found among \nA sequence of buttons, pressed in a row \nIt unlocked something special, we all know \n\nUp, up, down, down, left, right, left, right \nB, A, Start, we all have heard it's plight \nIn the 8-bit days, it was all the rage \nAnd it still lives on, with time, it will never age \n\nKonami Code, it's a legend of days gone by \nIt's a reminder of the classics we still try \nNo matter the game, no matter the system \nThe code will live on, and still be with them \n\nSo the next time you play, take a moment to pause \nAnd remember the code, and the Konami cause \nIt's a part of gaming's history, and a part of our lives \nLet's keep it alive, and let the Konami Code thrive!\n`
-    window.paper = `Welcome, intrepid hacker! We'd love to have you in our community. Get your invite at hack.af/slack. Under "Why do you want to join the Hack Club Slack?" add a 🦄 and we'll ship you some exclusive stickers! `
+    window.paper = `Welcome, intrepid hacker! We'd love to have you in our community. Get your invite at discord.happyhacking.space.`
   }, [])
 
   // Async API loading - GitHub data (loads after initial page render)
@@ -505,7 +506,7 @@ function Page({
       <Meta
         as={Head}
         title="A Home for Hackers"
-        description="Happy Hacking Space is a nonprofit network of hackers, crafters, explorers where people build the agency, the network, & the technical talent to think big & do big things in the world."
+        description={`Happy Hacking Space (${org.legalName}) is a nonprofit network of hackers, crafters, explorers where people build the agency, the network, & the technical talent to think big & do big things in the world.`}
       />
       <Head>
         <meta
@@ -641,6 +642,18 @@ function Page({
                 the Mesopotamia who hack together
               </Text>
             </Heading>
+            <Text
+              as="p"
+              sx={{
+                color: 'smoke',
+                fontSize: [1, 2],
+                maxWidth: 'copyPlus',
+                mt: [-2, -3],
+                mb: [3, 4]
+              }}
+            >
+              {identityStatement.en}
+            </Text>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
               <Button
                 variant="ctaLg"
@@ -1036,7 +1049,7 @@ function Page({
           sx={{
             backgroundImage: `
               linear-gradient(rgba(249, 250, 252, 0.7), rgba(249, 250, 252, 0.7)),
-              url('https://icons.hackclub.com/api/icons/0x8492a6/glyph:rep.svg')
+              url('/patterns/rep-8492a6.svg')
             `,
             backgroundSize: '40px 40px',
             backgroundRepeat: 'repeat',
@@ -1216,13 +1229,10 @@ function Page({
             sx={{
               position: 'relative',
               background: 'snow',
-              backgroundImage: `url('https://icons.hackclub.com/api/icons/0xF4F7FB/glyph:rep.svg')`,
+              backgroundImage: `url('/patterns/rep-f4f7fb.svg')`,
               backgroundSize: '40px 40px',
               backgroundRepeat: 'repeat',
               backgroundPosition: '10% 10%'
-              // '&:hover': {
-              //   backgroundImage: `url('https://icons.hackclub.com/api/icons/0x000000/glyph:rep.svg')`
-              // }
             }}
           >
             <Box

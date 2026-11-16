@@ -1,5 +1,4 @@
-Contact: mailto:security@hackclub.com
+Contact: mailto:team@happyhacking.space
 Expires: 2026-12-31T11:59:00.000Z
-Preferred-Languages: en-US
-Policy: https://security.hackclub.com
-Canonical: https://security.hackclub.com
+Preferred-Languages: en-US, tr
+Canonical: https://happyhacking.space/.well-known/security.txt

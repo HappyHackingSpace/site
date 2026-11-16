@@ -109,12 +109,12 @@ export default function Philosophy() {
   return (
     <Box sx={{ bg: 'white', color: 'black', minHeight: '100vh' }}>
       <Nav />
-      {/* TODO: Update description and iamge */}
+      {/* TODO: Update description */}
       <Meta
         as={Head}
         title="Philosophy"
         description="Read about Happy Hacking Space, a network of hackers. We want to make building apps and websites accessible to everyone."
-        image="https://cloud-cz9a6kt0a-hack-club-bot.vercel.app/0social-photo_2.jpg"
+        image="https://happyhacking.space/home/hacker-team.png"
       />
       <Box>
         <Header>

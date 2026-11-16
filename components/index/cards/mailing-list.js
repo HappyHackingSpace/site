@@ -263,7 +263,7 @@ const MailingList = () => {
         gradient="linear-gradient(rgba(0,0,0,0.125), rgba(0,0,0,0.25))"
         src={background}
         placeholder="blur"
-        alt="Globe with hundreds of Hack Clubs"
+        alt="Globe with community locations"
       />
     </Box>
   )

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import Meta from '@happyhackingspace/meta'
 import Head from 'next/head'
 import { Box, Heading, Container, Text, Link, Grid, Card } from 'theme-ui'
@@ -6,22 +5,7 @@ import Nav from '../components/nav'
 import styled from '@emotion/styled'
 import Footer from '../components/footer'
 import Icon from '../components/icon'
-
-// Obfuscate email to prevent bot scraping
-const useObfuscatedEmail = () => {
-  const [email, setEmail] = useState('')
-  const [mailto, setMailto] = useState('#')
-
-  useEffect(() => {
-    // Only reveal email on client-side after hydration
-    const parts = ['team', 'happyhacking', 'space']
-    const assembled = `${parts[0]}@${parts[1]}.${parts[2]}`
-    setEmail(assembled)
-    setMailto(`mailto:${assembled}`)
-  }, [])
-
-  return { email, mailto }
-}
+import { org, registry } from '../lib/organization'
 
 const Header = styled(Box)`
   color: white;
@@ -91,8 +75,6 @@ const SocialSubtitle = styled(Text)`
 `
 
 export default function Contact() {
-  const { email, mailto } = useObfuscatedEmail()
-
   return (
     <Box sx={{ bg: 'white', color: 'black', minHeight: '100vh' }}>
       <Nav />
@@ -100,7 +82,7 @@ export default function Contact() {
         as={Head}
         title="Contact"
         description="Get in touch with Happy Hacking Space. Visit us, send an email, or connect on social media."
-        image="https://cloud-cz9a6kt0a-hack-club-bot.vercel.app/0social-photo_2.jpg"
+        image="https://happyhacking.space/home/hacker-team.png"
       />
       <Box>
         <Header>
@@ -134,14 +116,18 @@ export default function Contact() {
                   Visit Us
                 </Heading>
               </Box>
-              <Text sx={{ fontSize: 2, lineHeight: 1.6, color: 'slate' }}>
-                Talaytepe Mah. 4009/1 Sokak
+              <Text as="p" sx={{ fontSize: 2, lineHeight: 1.6, mb: 2 }}>
+                <strong>{org.legalName}</strong>
                 <br />
-                Ay Yapi Corner Ofis A Blok
-                <br />
-                Dis Kapi No: 4A Ic Kapi No: 4
-                <br />
-                Diyarbakir, Turkey 21070
+                {registry}
+              </Text>
+              <Text as="p" sx={{ fontSize: 2, lineHeight: 1.6, color: 'slate' }}>
+                {org.address.lines.map((line, i) => (
+                  <span key={line}>
+                    {i > 0 && <br />}
+                    {line}
+                  </span>
+                ))}
               </Text>
               <Link
                 href="https://maps.app.goo.gl/fx44ZMf3NFSA46Qn9"
@@ -173,7 +159,7 @@ export default function Contact() {
                 Have a question or want to collaborate? Send us an email and we'll get back to you as soon as possible.
               </Text>
               <Link
-                href={mailto}
+                href={`mailto:${org.email}`}
                 sx={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -194,7 +180,7 @@ export default function Contact() {
                 }}
               >
                 <Icon glyph="send" size={18} />
-                {email || 'Loading...'}
+                {org.email}
               </Link>
             </ContactCard>
           </Grid>

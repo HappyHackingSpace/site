@@ -1,11 +1,27 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { org } from '../lib/organization'
 // import { InitializeColorMode } from 'theme-ui'
 
-const org = {
-  '@context': 'http://schema.org',
+const orgSchema = {
+  '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Happy Hacking Space',
-  url: 'https://happyhacking.space/',
+  name: org.publicName,
+  legalName: org.legalName,
+  alternateName: [org.publicName, org.shortName],
+  url: org.url,
+  email: org.email,
+  identifier: {
+    '@type': 'PropertyValue',
+    propertyID: org.registryLabel,
+    value: org.registryNumber
+  },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: org.address.street,
+    addressLocality: org.address.locality,
+    postalCode: org.address.postalCode,
+    addressCountry: org.address.countryCode
+  },
   logo: 'https://assets.happyhacking.space/flag-standalone.svg',
   sameAs: [
     'https://x.com/happyhackings',
@@ -16,7 +32,7 @@ const org = {
   contactPoint: [
     {
       '@type': 'ContactPoint',
-      email: 'team@happyhacking.space',
+      email: org.email,
       contactType: 'customer support',
       url: 'https://happyhacking.space/'
     }
@@ -37,7 +53,7 @@ class MyDocument extends Document {
           <link rel="icon" type="image/png" href="https://assets.happyhacking.space/favicons/favicon-32x32.png" />
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(org) }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
           />
         </Head>
         <body>

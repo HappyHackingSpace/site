@@ -3,7 +3,8 @@ import styled from '@emotion/styled'
 import { Box, Container, Image, Grid, Heading, Link, Text } from 'theme-ui'
 import NextLink from 'next/link'
 import theme from '@happyhackingspace/theme'
-import Icon from './icon'   
+import Icon from './icon'
+import { org, identityStatement } from '../lib/organization'
 
 
 const FooterLinkText = styled.span`
@@ -54,7 +55,7 @@ const Service = ({ href, icon, name = '', ...props }) => (
 
 const Footer = ({
   dark = false,
-  email = 'team@happyhacking.space',
+  email = org.email,
   children = undefined,
   ...props
 }) => (
@@ -113,6 +114,9 @@ const Footer = ({
           </NextLink>
           <NextLink href="/contact">
             <FooterLinkText>Contact</FooterLinkText>
+          </NextLink>
+          <NextLink href="/legal">
+            <FooterLinkText>Legal / Künye</FooterLinkText>
           </NextLink>
         </Box>
         <Box>
@@ -200,8 +204,11 @@ const Footer = ({
           </Text> */}
         </Box>
       </Grid>
-      <Text as="p" variant="caption" sx={{ mt: 3 }}>
-         © {new Date().getFullYear()} Happy Hacking Space. Registered under Mezopotamya Teknoloji, Bilim ve Kültür Derneği, a nonprofit association in Türkiye (Kütük No: 21-020-179).
+      <Text
+        as="p"
+        sx={{ mt: 3, fontSize: 1, color: dark ? 'smoke' : 'slate' }}
+      >
+        © {new Date().getFullYear()} {org.publicName}. {identityStatement.en}
       </Text>
     </Container>
   </Base>

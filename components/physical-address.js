@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import { Flex, Text, Button } from 'theme-ui'
+import { fullAddress as address } from '../lib/organization'
 
 const PhysicalAddress = ({ lang = 'en', sx = {} }) => {
   const [copied, setCopied] = useState(false)
-  const address =
-    'Talaytepe Mah. 4009/1 Sk. Corner Ofis, A Blok Dis Kapi No: 4A, Ic Kapi No:4 Kayapinar/Diyarbakir'
 
   const labels = {
     en: {
