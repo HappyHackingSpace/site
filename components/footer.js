@@ -4,7 +4,7 @@ import { Box, Container, Image, Grid, Heading, Link, Text } from 'theme-ui'
 import NextLink from 'next/link'
 import theme from '@happyhackingspace/theme'
 import Icon from './icon'
-import { org, identityStatement } from '../lib/organization'
+import { org, identityStatement, fullAddress } from '../lib/organization'
 
 
 const FooterLinkText = styled.span`
@@ -209,6 +209,13 @@ const Footer = ({
         sx={{ mt: 3, fontSize: 1, color: dark ? 'smoke' : 'slate' }}
       >
         © {new Date().getFullYear()} {org.publicName}. {identityStatement.en}
+      </Text>
+      <Text
+        as="p"
+        sx={{ mt: 1, fontSize: 1, color: dark ? 'smoke' : 'slate' }}
+      >
+        Registered address: {fullAddress} ·{' '}
+        <Link href={`mailto:${org.email}`}>{org.email}</Link>
       </Text>
     </Container>
   </Base>
