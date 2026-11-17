@@ -110,7 +110,7 @@ export default function Slack({ data, slackKey, events }) {
           </Text>
           {/* <Event events={events} /> */}
           <Box sx={{ mt: [3, 3, 4] }}>
-            <Buttons id="13" link="https://discord.happyhacking.space" icon="discord" primary="purple">
+            <Buttons id="13" link="https://join.happyhacking.space" icon="message-fill" primary="purple">
               Join our community
             </Buttons>
           </Box>

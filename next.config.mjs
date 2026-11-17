@@ -46,7 +46,7 @@ const nextConfig = withBundleAnalyzer({
       { source: '/hackathons/', destination: '/events/', permanent: true },
       {
         source: '/community/',
-        destination: 'https://discord.happyhacking.space',
+        destination: 'https://join.happyhacking.space',
         permanent: false
       },
       {

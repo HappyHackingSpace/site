@@ -189,7 +189,7 @@ const Page = ({ jobs }) => (
           <Button
             as="a"
             variant="ctaLg"
-            href="https://discord.happyhacking.space"
+            href="https://join.happyhacking.space"
             target="_blank"
             rel="noopener"
             sx={{ mt: 3, background: theme.util.gx('purple', 'blue') }}

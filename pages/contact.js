@@ -447,7 +447,7 @@ export default function Contact() {
               Join our community of hackers
             </Text>
             <Link
-              href="https://discord.happyhacking.space"
+              href="https://join.happyhacking.space"
               target="_blank"
               rel="noopener noreferrer"
               sx={{

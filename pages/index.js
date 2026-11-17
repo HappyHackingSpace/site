@@ -121,7 +121,7 @@ const FAQ = () => {
     },
     {
       question: 'How can I join?',
-      answer: 'You can become a part of our community by joining our Discord channel or attending our physical events.'
+      answer: 'You can become a part of our community by joining our WhatsApp community or attending our physical events.'
     },
     {
       question: 'Is it free?',
@@ -263,7 +263,7 @@ function Page({
     loadJSConfetti()
 
     window.kc = `In the days of old, when gaming was young \nA mysterious code was found among \nA sequence of buttons, pressed in a row \nIt unlocked something special, we all know \n\nUp, up, down, down, left, right, left, right \nB, A, Start, we all have heard it's plight \nIn the 8-bit days, it was all the rage \nAnd it still lives on, with time, it will never age \n\nKonami Code, it's a legend of days gone by \nIt's a reminder of the classics we still try \nNo matter the game, no matter the system \nThe code will live on, and still be with them \n\nSo the next time you play, take a moment to pause \nAnd remember the code, and the Konami cause \nIt's a part of gaming's history, and a part of our lives \nLet's keep it alive, and let the Konami Code thrive!\n`
-    window.paper = `Welcome, intrepid hacker! We'd love to have you in our community. Get your invite at discord.happyhacking.space.`
+    window.paper = `Welcome, intrepid hacker! We'd love to have you in our community. Get your invite at join.happyhacking.space.`
   }, [])
 
   // Async API loading - GitHub data (loads after initial page render)
@@ -545,7 +545,7 @@ function Page({
               <Button
                 variant="ctaLg"
                 as="a"
-                href="https://discord.happyhacking.space"
+                href="https://join.happyhacking.space"
                 mt={[3, 0, 0]}
                 mr={3}
                 sx={{ transformOrigin: 'center left' }}
@@ -606,7 +606,7 @@ function Page({
           >
             <Badge
               as="a"
-              href="https://discord.happyhacking.space"
+              href="https://join.happyhacking.space"
               target="_blank"
               rel="noopener"
               variant="pill"
@@ -841,7 +841,7 @@ function Page({
                     </strong>
                     Have a coding question? Looking for project feedback? You'll
                     find hundreds of fabulous people to talk to in our {' '}
-                    <Link href="https://discord.happyhacking.space" target="_blank" rel="noopener">
+                    <Link href="https://join.happyhacking.space" target="_blank" rel="noopener">
                       Community{' '}
                     </Link>
                     , active at all hours.
@@ -1242,7 +1242,7 @@ function Page({
             >
               <Card
                 as="a"
-                href="https://discord.happyhacking.space"
+                href="https://join.happyhacking.space"
                 target="_blank"
                 rel="noopener"
                 variant="interactive"
@@ -1279,7 +1279,7 @@ function Page({
                   }}
                 />
                 <Stage
-                  icon="discord"
+                  icon="message-fill"
                   color="white"
                   name="Join Our Community"
                   desc="Connect with other technical people and hack on things together."

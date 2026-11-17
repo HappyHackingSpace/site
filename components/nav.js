@@ -278,7 +278,7 @@ const Navigation = props => {
       <NextLink href="/philosophy">
         <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Philosophy</NavLinkText>
       </NextLink>
-      <NextLink href="https://discord.happyhacking.space" target="_blank" rel="noopener noreferrer">
+      <NextLink href="https://join.happyhacking.space" target="_blank" rel="noopener noreferrer">
 
         <NavLinkText color={props.color} scrolled={props.scrolled} isMobile={props.isMobile}>Community</NavLinkText>
 

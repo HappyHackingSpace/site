@@ -265,7 +265,7 @@ export default function Philosophy() {
             <Button
               sx={{ bg: 'white', color: 'red' }}
               as="a"
-              href="https://discord.happyhacking.space"
+              href="https://join.happyhacking.space"
               target="_blank"
               rel="noopener noreferrer"
             >
