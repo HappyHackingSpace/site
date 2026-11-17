@@ -4,3 +4,6 @@ som = "som"
 # Turkish: official registered address ("Blok") and genitive suffix ("'nin")
 blok = "blok"
 nin = "nin"
+# Short math variable names in the vulnerable-target canvas animation
+nd = "nd"
+ba = "ba"

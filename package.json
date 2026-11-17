@@ -8,7 +8,7 @@
     "dev": "next",
     "build": "node lib/sitemap.js && next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "format": "prettier --write .",
     "analyze": "ANALYZE=true npm run build"
   },
@@ -115,7 +115,7 @@
   },
   "devDependencies": {
     "eslint": "^10.0.1",
-    "eslint-config-next": "^12.0.4",
+    "eslint-config-next": "16.4.6",
     "prettier": "^3.5.3",
     "typescript": "^5.8.2"
   },

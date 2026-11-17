@@ -404,7 +404,7 @@ export default function VulnerableTarget({ stars }) {
                 fontFamily: 'monospace'
               }}
             >
-              // spin up vulnerable targets from your terminal //
+              {'// spin up vulnerable targets from your terminal //'}
             </Text>
 
             <Flex sx={{ gap: [3, 3, 4], flexWrap: 'wrap' }}>

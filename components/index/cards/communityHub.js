@@ -51,7 +51,7 @@ export default function CommunityHub({ stars }) {
         }}
       />
       
-      /* Mobile video - visible only on mobile */
+      {/* Mobile video - visible only on mobile */}
         <video
           autoPlay
           loop
